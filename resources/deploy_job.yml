@@ -9,16 +9,16 @@ resources:
         environment: dev
         project: stateful_processor
 
-    tasks:
-      - task_key: data_ingestion
-        max_retries: 0
-        notebook_task:
-          notebook_path: ../src/data_ingestions.py
+      tasks:
+        - task_key: data_ingestion
+          max_retries: 0
+          notebook_task:
+            notebook_path: ../src/data_ingestions.py
 
-      - task_key: state_store_alert
-        max_retries: 0
-        depends_on:
-          - task_key: data_ingestion
-        notebook_task:
-          notebook_path: ../src/stateful_streaming_logic.py
+        - task_key: state_store_alert
+          max_retries: 0
+          depends_on:
+            - task_key: data_ingestion
+          notebook_task:
+            notebook_path: ../src/stateful_streaming_logic.py
           
