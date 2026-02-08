@@ -1,6 +1,7 @@
 resources: 
   jobs:
     deploy_job:
+      name: "ecommerse_cart_alert"
       description: |
         Building custom streaming logic for a simple e-commerce scenerio
       
