@@ -6,5 +6,5 @@ df = (spark.readStream.format("cloudFiles")
       .option("cloudFiles.schemaEvolutionMode", "addNewColumns")
       .load("/Volumes/stateful_processor/default/raw_data/*.csv"))
 
-# Command ----------
+# COMMAND ----------
 df.writeStream.format("delta").option("checkpointLocation", "/Volumes/stateful_processor/default/raw_data/CheckPoint/").outputMode("append").trigger(availableNow=True).toTable("stateful_processor.default.streaming_query")

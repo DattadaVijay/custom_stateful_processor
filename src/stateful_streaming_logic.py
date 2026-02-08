@@ -1,46 +1,111 @@
-# Databricks notebook source
-
 from pyspark.sql.streaming import StatefulProcessor, StatefulProcessorHandle
-from typing import Iterator
 from pyspark.sql import Row
+from typing import Iterator
+from datetime import timedelta
 
-class NativeDistributedProcessor(StatefulProcessor):
+class SessionFraudProcessor(StatefulProcessor):
+
     def init(self, handle: StatefulProcessorHandle) -> None:
-        self.total_sum = handle.getValueState("totalSum", "count INT")
+        self.txn_state = handle.getValueState(
+            "txnState",
+            "timestamps ARRAY<TIMESTAMP>, amounts ARRAY<INT>, sessionTotal INT"
+        )
 
     def handleInputRows(self, key, rows: Iterator[Row], timerValues) -> Iterator[Row]:
         user_id = key[0]
-        batch_sum = 0
-    
+
+        existing = self.txn_state.get()
+        if existing:
+            timestamps = list(existing[0])
+            amounts = list(existing[1])
+            session_total = existing[2]
+        else:
+            timestamps = []
+            amounts = []
+            session_total = 0
+
+        latest_event_time = None
+
         for row in rows:
-            if row.amount is not None:
-                batch_sum += int(row.amount) 
+            if row.event_time and row.amount is not None:
+                timestamps.append(row.event_time)
+                amounts.append(int(row.amount))
+                session_total += int(row.amount)
+                latest_event_time = row.event_time
 
-        existing = self.total_sum.get()
-        old_total = existing[0] if existing else 0
-        new_total = old_total + batch_sum
-        self.total_sum.update((new_total,))
+        if latest_event_time:
+            # keep only last 60 sec window
+            window_start = latest_event_time - timedelta(seconds=60)
 
-        yield Row(id=user_id, countAsString=str(new_total))
+            filtered = [
+                (ts, amt) for ts, amt in zip(timestamps, amounts)
+                if ts >= window_start
+            ]
 
-# Command ----------
+            timestamps = [x[0] for x in filtered]
+            amounts = [x[1] for x in filtered]
 
-batch_1_df = spark.readStream.table("stateful_processor.default.streaming_query")
+            # set inactivity timer (2 min)
+            timerValues.setTimer(latest_event_time + timedelta(minutes=2))
 
-output_schema = "id STRING, countAsString STRING"
+        self.txn_state.update((timestamps, amounts, session_total))
+
+        # burst + spend rule
+        suspicious = len(timestamps) > 5 and sum(amounts) > 500
+
+        yield Row(
+            user_id=user_id,
+            txn_last_60s=len(timestamps),
+            spend_last_60s=sum(amounts),
+            session_total=session_total,
+            suspicious=suspicious,
+            event_type="update"
+        )
+
+    def handleExpiredTimer(self, key, timerValues):
+        user_id = key[0]
+
+        existing = self.txn_state.get()
+        if existing:
+            timestamps, amounts, session_total = existing
+
+            yield Row(
+                user_id=user_id,
+                txn_last_60s=len(timestamps),
+                spend_last_60s=sum(amounts),
+                session_total=session_total,
+                suspicious=False,
+                event_type="session_expired"
+            )
+
+        # clear state after expiry
+        self.txn_state.clear()
+
+# COMMAND ----------
+batch_df = spark.readStream.table("stateful_processor.default.streaming_query")
+
+output_schema = """
+user_id STRING,
+txn_last_60s INT,
+spend_last_60s INT,
+session_total INT,
+suspicious BOOLEAN,
+event_type STRING
+"""
 
 streaming_query = (
-    batch_1_df.groupBy("user_id")
+    batch_df
+    .groupBy("user_id")
     .transformWithState(
-        statefulProcessor=NativeDistributedProcessor(),
+        statefulProcessor=SessionFraudProcessor(),
         outputStructType=output_schema,
         outputMode="Update",
-        timeMode="None"
+        timeMode="EventTime"
     )
     .writeStream
     .format("delta")
     .outputMode("append")
     .option("checkpointLocation", "/Volumes/stateful_processor/default/silver/CheckPoint/")
-    .trigger(availableNow=True)
     .toTable("stateful_processor.default.streaming_query_silver")
 )
+
