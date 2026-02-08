@@ -1,5 +1,3 @@
-# Databricks notebook source
-
 from pyspark.sql.streaming import StatefulProcessor, StatefulProcessorHandle
 from pyspark.sql import Row
 from typing import Iterator
@@ -8,10 +6,13 @@ from datetime import timedelta
 class SessionFraudProcessor(StatefulProcessor):
 
     def init(self, handle: StatefulProcessorHandle) -> None:
+        # State schema matches the tuple structure: (List[Timestamp], List[int], int)
         self.txn_state = handle.getValueState(
             "txnState",
             "timestamps ARRAY<TIMESTAMP>, amounts ARRAY<INT>, sessionTotal INT"
         )
+        # Store handle to register timers later
+        self.handle = handle
 
     def handleInputRows(self, key, rows: Iterator[Row], timerValues) -> Iterator[Row]:
         user_id = key[0]
@@ -22,9 +23,7 @@ class SessionFraudProcessor(StatefulProcessor):
             amounts = list(existing[1])
             session_total = existing[2]
         else:
-            timestamps = []
-            amounts = []
-            session_total = 0
+            timestamps, amounts, session_total = [], [], 0
 
         latest_event_time = None
 
@@ -33,26 +32,27 @@ class SessionFraudProcessor(StatefulProcessor):
                 timestamps.append(row.event_time)
                 amounts.append(int(row.amount))
                 session_total += int(row.amount)
-                latest_event_time = row.event_time
+                # Keep track of the most recent event time to set the timer
+                if latest_event_time is None or row.event_time > latest_event_time:
+                    latest_event_time = row.event_time
 
         if latest_event_time:
-            # keep only last 60 sec window
+            # Keep only records from the last 60 seconds relative to the latest event
             window_start = latest_event_time - timedelta(seconds=60)
-
-            filtered = [
-                (ts, amt) for ts, amt in zip(timestamps, amounts)
-                if ts >= window_start
-            ]
-
+            filtered = [(ts, amt) for ts, amt in zip(timestamps, amounts) if ts >= window_start]
+            
             timestamps = [x[0] for x in filtered]
             amounts = [x[1] for x in filtered]
 
-            # set inactivity timer (2 min)
-            timerValues.setTimer(latest_event_time + timedelta(minutes=2))
+            # Register timer: Convert datetime to epoch milliseconds
+            # Timer fires 2 minutes after the latest event seen for this user
+            timeout_ms = int((latest_event_time + timedelta(minutes=2)).timestamp() * 1000)
+            self.handle.registerTimer(timeout_ms)
 
+        # Update state with the cleaned lists and new total
         self.txn_state.update((timestamps, amounts, session_total))
 
-        # burst + spend rule
+        # Fraud Rule: > 5 transactions AND > $500 in the 60s sliding window
         suspicious = len(timestamps) > 5 and sum(amounts) > 500
 
         yield Row(
@@ -64,13 +64,12 @@ class SessionFraudProcessor(StatefulProcessor):
             event_type="update"
         )
 
-    def handleExpiredTimer(self, key, timerValues):
+    def handleExpiration(self, key, expirationTimerTimestampInMs) -> Iterator[Row]:
         user_id = key[0]
-
         existing = self.txn_state.get()
+        
         if existing:
             timestamps, amounts, session_total = existing
-
             yield Row(
                 user_id=user_id,
                 txn_last_60s=len(timestamps),
@@ -80,35 +79,32 @@ class SessionFraudProcessor(StatefulProcessor):
                 event_type="session_expired"
             )
 
-        # clear state after expiry
+        # Clear state to free up RocksDB memory
         self.txn_state.clear()
 
-# COMMAND ----------
+# --- Execution ---
 batch_df = spark.readStream.table("stateful_processor.default.streaming_query")
 
 output_schema = """
-user_id STRING,
-txn_last_60s INT,
-spend_last_60s INT,
-session_total INT,
-suspicious BOOLEAN,
-event_type STRING
+    user_id STRING, txn_last_60s INT, spend_last_60s INT, 
+    session_total INT, suspicious BOOLEAN, event_type STRING
 """
 
 streaming_query = (
     batch_df
+    .withWatermark("event_time", "5 minutes") # Required for EventTime timers
     .groupBy("user_id")
     .transformWithState(
         statefulProcessor=SessionFraudProcessor(),
         outputStructType=output_schema,
         outputMode="Update",
-        timeMode="EventTime"
+        timeMode="EventTime",
+        eventTimeColumnName="event_time" # Mandatory when timeMode is EventTime
     )
     .writeStream
     .format("delta")
     .outputMode("append")
-    .trigger(availableNow = True)
+    .trigger(availableNow=True)
     .option("checkpointLocation", "/Volumes/stateful_processor/default/silver/CheckPoint/")
     .toTable("stateful_processor.default.streaming_query_silver")
 )
-
