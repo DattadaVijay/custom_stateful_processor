@@ -1,3 +1,5 @@
+# Databricks notebook source
+
 from pyspark.sql.streaming import StatefulProcessor, StatefulProcessorHandle
 from pyspark.sql import Row
 from typing import Iterator
