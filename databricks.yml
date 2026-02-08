@@ -1,0 +1,16 @@
+bundle:
+  name: custom streaming application
+  uuid: 6374dede-1724-4fd7-b78c-7c3fe77fb488
+
+
+include:
+  - resources/*.yml
+  - resources/*/*.yml
+
+
+targets:
+  dev:
+    mode: development
+    default: true
+    workspace:
+      host: https://dbc-e3761da8-7d95.cloud.databricks.com
