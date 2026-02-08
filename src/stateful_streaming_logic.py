@@ -107,6 +107,7 @@ streaming_query = (
     .writeStream
     .format("delta")
     .outputMode("append")
+    .trigger(available_now = True)
     .option("checkpointLocation", "/Volumes/stateful_processor/default/silver/CheckPoint/")
     .toTable("stateful_processor.default.streaming_query_silver")
 )
