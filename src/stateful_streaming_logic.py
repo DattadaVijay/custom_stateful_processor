@@ -2,7 +2,7 @@
 
 from pyspark.sql.streaming import StatefulProcessor, StatefulProcessorHandle
 from typing import Iterator
-from pyspark.sql.functions import Row
+from pyspark.sql import Row
 
 class NativeDistributedProcessor(StatefulProcessor):
     def init(self, handle: StatefulProcessorHandle) -> None:
