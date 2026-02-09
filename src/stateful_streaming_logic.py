@@ -88,9 +88,15 @@ class SessionFraudProcessor(StatefulProcessor):
 batch_df = spark.readStream.table("stateful_processor.default.streaming_query")
 
 output_schema = """
-    user_id STRING, txn_last_60s INT, spend_last_60s INT, 
-    session_total INT, suspicious BOOLEAN, event_type STRING
+    user_id STRING,
+    event_time TIMESTAMP,
+    txn_last_60s INT,
+    spend_last_60s INT,
+    session_total INT,
+    suspicious BOOLEAN,
+    event_type STRING
 """
+
 
 streaming_query = (
     batch_df
