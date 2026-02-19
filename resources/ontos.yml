@@ -2,4 +2,4 @@ resources:
   apps:
     ontos_platform:
       name: ontos-app-${bundle.target}
-      source_code_path: ../ontos_src
+      source_code_path: ../ontos_src/src
