@@ -1,0 +1,123 @@
+{
+  "title": "Métadonnées",
+  "description": "Notes, liens et pièces jointes.",
+  "previewRenderedPage": "Aperçu de la page rendue",
+  "notes": {
+    "title": "Notes supplémentaires",
+    "add": "Ajouter",
+    "refresh": "Actualiser",
+    "noNotes": "Aucune note pour le moment.",
+    "preview": "Aperçu",
+    "edit": "Modifier",
+    "delete": "Supprimer",
+    "editTitle": "Modifier la note",
+    "addTitle": "Ajouter une note",
+    "attachShared": "Joindre une note partagée",
+    "selectShared": "Sélectionner une note partagée",
+    "table": {
+      "title": "Titre",
+      "description": "Description",
+      "created": "Créé",
+      "actions": "Actions",
+      "level": "Niveau",
+      "flags": "Indicateurs"
+    },
+    "form": {
+      "title": "Titre",
+      "shortDescription": "Description courte",
+      "content": "Contenu (Markdown)",
+      "save": "Enregistrer",
+      "cancel": "Annuler",
+      "level": "Niveau",
+      "inheritable": "Héritable",
+      "shared": "Asset partagé"
+    },
+    "messages": {
+      "deleteFailed": "Échec de la suppression",
+      "addFailed": "Échec de l'ajout de la note",
+      "updateFailed": "Échec de la mise à jour"
+    }
+  },
+  "links": {
+    "title": "Liens associés",
+    "add": "Ajouter",
+    "refresh": "Actualiser",
+    "noLinks": "Aucun lien pour le moment.",
+    "open": "Ouvrir",
+    "edit": "Modifier",
+    "delete": "Supprimer",
+    "editTitle": "Modifier le lien",
+    "addTitle": "Ajouter un lien",
+    "attachShared": "Joindre un lien partagé",
+    "selectShared": "Sélectionner un lien partagé",
+    "table": {
+      "title": "Titre",
+      "url": "URL",
+      "description": "Description",
+      "created": "Créé",
+      "actions": "Actions",
+      "level": "Niveau",
+      "flags": "Indicateurs"
+    },
+    "form": {
+      "title": "Titre",
+      "url": "URL",
+      "shortDescription": "Description courte",
+      "save": "Enregistrer",
+      "cancel": "Annuler",
+      "level": "Niveau",
+      "inheritable": "Héritable",
+      "shared": "Asset partagé"
+    },
+    "messages": {
+      "deleteFailed": "Échec de la suppression",
+      "addFailed": "Échec de l'ajout du lien",
+      "updateFailed": "Échec de la mise à jour"
+    }
+  },
+  "documents": {
+    "title": "Documents joints",
+    "add": "Ajouter",
+    "refresh": "Actualiser",
+    "noDocuments": "Aucun document téléchargé.",
+    "preview": "Aperçu",
+    "delete": "Supprimer",
+    "attachShared": "Joindre un document partagé",
+    "selectShared": "Sélectionner un document partagé",
+    "table": {
+      "title": "Titre",
+      "filename": "Nom du fichier",
+      "description": "Description",
+      "size": "Taille",
+      "created": "Créé",
+      "actions": "Actions",
+      "level": "Niveau",
+      "flags": "Indicateurs"
+    },
+    "form": {
+      "title": "Titre",
+      "shortDescription": "Description courte",
+      "file": "Fichier",
+      "upload": "Télécharger",
+      "cancel": "Annuler",
+      "level": "Niveau",
+      "inheritable": "Héritable",
+      "shared": "Asset partagé"
+    },
+    "messages": {
+      "deleteFailed": "Échec de la suppression",
+      "uploadFailed": "Échec du téléchargement"
+    }
+  },
+  "sharedAssets": {
+    "selectDescription": "Sélectionnez un asset partagé à joindre à cette entité",
+    "noSharedNotes": "Aucune note partagée disponible",
+    "noSharedLinks": "Aucun lien partagé disponible",
+    "noSharedDocuments": "Aucun document partagé disponible"
+  },
+  "messages": {
+    "loadFailed": "Échec du chargement des métadonnées",
+    "attachSuccess": "Asset partagé joint avec succès",
+    "attachFailed": "Échec de l'attachement de l'asset partagé"
+  }
+}

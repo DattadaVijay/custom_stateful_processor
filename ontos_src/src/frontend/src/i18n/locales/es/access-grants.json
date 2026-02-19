@@ -1,0 +1,48 @@
+{
+  "request": {
+    "title": "Solicitar Acceso",
+    "description": "Solicitar permiso para ver y usar este {{entityType}}.",
+    "reason": {
+      "label": "Motivo del Acceso",
+      "placeholder": "Explique por qué necesita acceso a este {{entityType}}...",
+      "required": "Por favor proporcione un motivo para solicitar acceso",
+      "minLength": "Por favor proporcione un motivo más detallado (mínimo 10 caracteres)"
+    },
+    "duration": {
+      "label": "Duración del Acceso",
+      "placeholder": "Seleccionar duración",
+      "helpText": "El acceso expirará después de la duración seleccionada. Puede solicitar renovación antes de que expire.",
+      "days": "{{count}} día",
+      "days_plural": "{{count}} días",
+      "months": "{{count}} mes",
+      "months_plural": "{{count}} meses",
+      "years": "{{count}} año",
+      "years_plural": "{{count}} años"
+    },
+    "submit": "Enviar Solicitud",
+    "cancel": "Cancelar",
+    "success": "Solicitud de acceso enviada exitosamente",
+    "error": "Error al enviar la solicitud de acceso"
+  },
+  "panel": {
+    "title": "Permisos de Acceso",
+    "description": "Usuarios con acceso limitado en tiempo a este recurso",
+    "noGrants": "Sin permisos de acceso para este recurso",
+    "noGrantsHint": "Los usuarios pueden solicitar acceso limitado en tiempo usando el botón \"Solicitar Acceso\".",
+    "columns": {
+      "user": "Usuario",
+      "permission": "Nivel de Permiso",
+      "granted": "Otorgado",
+      "expires": "Expira",
+      "actions": "Acciones"
+    },
+    "revoke": "Revocar",
+    "revokeConfirm": "¿Está seguro de que desea revocar este permiso de acceso?"
+  },
+  "entityTypes": {
+    "data_product": "producto de datos",
+    "dataset": "conjunto de datos",
+    "data_contract": "contrato de datos"
+  }
+}
+

@@ -1,0 +1,69 @@
+{
+  "title": "データアセットレビュー",
+  "subtitle": "データアセットのレビューと承認",
+  "newReview": "新規レビュー",
+  "createRequest": "新規データアセットレビューリクエストを作成",
+  "searchPlaceholder": "レビューを検索...",
+  "loading": "レビューを読み込み中...",
+  "noRequests": "レビューリクエストが見つかりません。",
+  "toast": {
+    "requestCreated": "レビューリクエスト {{id}} が作成されました。",
+    "requestDeleted": "レビューリクエストが削除されました。",
+    "deleteError": "リクエストの削除に失敗しました。",
+    "bulkDeleted": "{{count}} 件のリクエストが削除されました。",
+    "bulkDeleteError": "一部のリクエストを削除できませんでした。"
+  },
+  "confirm": {
+    "deleteRequest": "このレビューリクエストを削除してもよろしいですか？",
+    "bulkDelete": "選択した {{count}} 件のリクエストを削除してもよろしいですか？"
+  },
+  "filters": {
+    "allStatus": "すべてのステータス",
+    "pending": "保留中",
+    "approved": "承認済み",
+    "rejected": "却下"
+  },
+  "table": {
+    "requestId": "リクエストID",
+    "asset": "アセット",
+    "type": "タイプ",
+    "requester": "依頼者",
+    "reviewer": "レビューア",
+    "status": "ステータス",
+    "assets": "アセット",
+    "requested": "依頼日",
+    "created": "作成日",
+    "updated": "更新日",
+    "actions": "アクション"
+  },
+  "messages": {
+    "success": "成功",
+    "error": "エラー",
+    "approveSuccess": "レビューが承認されました",
+    "rejectSuccess": "レビューが却下されました",
+    "approveError": "レビューの承認に失敗しました",
+    "rejectError": "レビューの却下に失敗しました"
+  },
+  "status": {
+    "pending": "保留中",
+    "in_review": "レビュー中",
+    "approved": "承認済み",
+    "rejected": "却下",
+    "cancelled": "キャンセル"
+  },
+  "details": {
+    "backToList": "レビュー一覧に戻る",
+    "approve": "承認",
+    "reject": "却下",
+    "cancel": "レビューをキャンセル",
+    "notFound": "レビューが見つかりません",
+    "loading": "読み込み中...",
+    "asset": "アセット",
+    "requester": "依頼者",
+    "reviewer": "レビューア",
+    "reason": "理由",
+    "comments": "コメント",
+    "addComment": "コメントを追加"
+  }
+}
+

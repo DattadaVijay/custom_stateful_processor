@@ -1,0 +1,172 @@
+{
+  "title": "Search",
+  "placeholder": "Search across all assets...",
+  "tabs": {
+    "askOntos": "Ask Ontos",
+    "indexSearch": "Index Search",
+    "conceptGraph": "Concept Graph",
+    "knowledgeGraph": "Knowledge Graph",
+    "concepts": "Concepts",
+    "properties": "Properties"
+  },
+  "noResults": "No results found",
+  "noResultsHint": "Try adjusting your search terms or filters",
+  "results": "{{count}} result found",
+  "results_plural": "{{count}} results found",
+  "filters": {
+    "all": "All",
+    "dataProducts": "Data Products",
+    "dataContracts": "Data Contracts",
+    "datasets": "Datasets",
+    "glossaryTerms": "Glossary Terms",
+    "teams": "Teams",
+    "projects": "Projects"
+  },
+  "sort": {
+    "relevance": "Relevance",
+    "newest": "Newest",
+    "oldest": "Oldest",
+    "name": "Name"
+  },
+  "resultItem": {
+    "type": "Type",
+    "owner": "Owner",
+    "updated": "Updated"
+  },
+  "kg": {
+    "prefixSearch": "Prefix Search",
+    "prefixSearchDesc": "Find resources or properties by IRI substring.",
+    "startPath": "Start path",
+    "pathExplorer": "Path Explorer",
+    "pathExplorerDesc": "Click objects to extend the path horizontally.",
+    "directionFilter": "Direction Filter",
+    "everything": "Everything",
+    "incomingOnly": "Incoming Only",
+    "outgoingOnly": "Outgoing Only",
+    "contentFilter": "Content Filter",
+    "showConceptsOnly": "Show concepts/classes only",
+    "noOutgoingLinks": "No outgoing links for current selection.",
+    "noLinksMatch": "No links match the current filters.",
+    "step": "Step",
+    "sparql": "SPARQL",
+    "sparqlDesc": "Run advanced queries over the loaded graph.",
+    "examples": "Examples",
+    "runSparql": "Run SPARQL",
+    "resourcesInNamespace": "Resources in app namespace",
+    "resourcesWithLabel": "Resources with rdfs:label",
+    "subjectsAndTypes": "Subjects and their types",
+    "topPredicates": "Top predicates by frequency",
+    "mostLinkedSeeAlso": "Most linked via rdfs:seeAlso"
+  },
+  "index": {
+    "title": "Index Search",
+    "description": "Search across all indexed application data. Type to search."
+  },
+  "concepts": {
+    "searchAndSelect": "Search and select a concept:",
+    "searchPlaceholder": "Type to search by name, label, or IRI...",
+    "clear": "Clear",
+    "conceptHierarchy": "Concept Hierarchy",
+    "parentClasses": "Parent Classes:",
+    "noParentClasses": "No parent classes found",
+    "subclasses": "Subclasses:",
+    "noSubclasses": "No subclasses found",
+    "relatedProperties": "Related Properties",
+    "noRelatedProperties": "No related properties found.",
+    "linkedCatalogObjects": "Linked Catalog Objects",
+    "noCatalogObjects": "No catalog objects assigned.",
+    "linkedUCTable": "UC Table",
+    "linkedUCColumn": "UC Column",
+    "linkedUCCatalog": "UC Catalog",
+    "linkedUCSchema": "UC Schema",
+    "assignToConcept": "Assign to Concept",
+    "assignDialog": {
+      "title": "Assign Object to Concept",
+      "entityType": "Entity Type",
+      "selectEntityType": "Select entity type...",
+      "dataProduct": "Data Product",
+      "dataContract": "Data Contract",
+      "dataDomain": "Data Domain",
+      "dataset": "Dataset",
+      "ucCatalog": "UC Catalog",
+      "ucSchema": "UC Schema",
+      "ucTable": "UC Table",
+      "browseUCCatalog": "Browse UC Catalog...",
+      "browseUCSchema": "Browse UC Schema...",
+      "browseUCTable": "Browse UC Table...",
+      "ucCatalogTitle": "Select UC Catalog",
+      "ucSchemaTitle": "Select UC Schema",
+      "ucTableTitle": "Select UC Table",
+      "selectEntity": "Select {{entityType}}..."
+    },
+    "messages": {
+      "linkedSuccess": "Concept \"{{label}}\" linked to {{entityType}} \"{{entityId}}\".",
+      "assignError": "Please select both an entity type and specific entity.",
+      "assignFailed": "Failed to assign concept to object.",
+      "navigationError": "Cannot navigate to {{entityType}}"
+    }
+  },
+  "properties": {
+    "searchAndSelect": "Search and select a property:",
+    "searchPlaceholder": "Type to search by name, label, or IRI...",
+    "clear": "Clear",
+    "domainRange": "Domain / Range",
+    "linkedCatalogObjects": "Linked Catalog Objects",
+    "noCatalogObjects": "No catalog objects assigned.",
+    "assignToProperty": "Assign to Property",
+    "assignDialog": {
+      "title": "Assign Object to Property",
+      "targetType": "Target Type",
+      "selectTargetType": "Select target type...",
+      "dataContractProperty": "Data Contract Property",
+      "ucTable": "UC Table",
+      "ucColumn": "UC Column",
+      "contract": "Contract",
+      "selectContract": "Select contract...",
+      "schema": "Schema",
+      "selectSchema": "Select schema...",
+      "property": "Property",
+      "selectProperty": "Select property...",
+      "browseUCColumn": "Browse UC table and select column...",
+      "ucColumnTitle": "Select UC Column"
+    },
+    "messages": {
+      "selectPropertyTarget": "Please select a contract, schema, and property.",
+      "linkedSuccess": "Property linked successfully.",
+      "assignFailed": "Failed to assign property to object."
+    }
+  },
+  "llm": {
+    "title": "Ask Ontos",
+    "subtitle": "Ask questions about data products, costs, and analytics",
+    "rerun": "Run again",
+    "copyToInput": "Edit & resend",
+    "disabledTitle": "AI-Powered Search",
+    "disabledSubtitle": "Natural language search is not currently enabled.",
+    "disabledMessage": "LLM search requires configuration. Please contact your administrator to enable this feature.",
+    "welcomeTitle": "How can I help you today?",
+    "welcomeMessage": "I can help you discover data products, understand business terms, analyze costs, and run analytics queries.",
+    "tryAsking": "Try asking:",
+    "inputPlaceholder": "Ask a question about your data...",
+    "inputHint": "Press Enter to send, Shift+Enter for new line",
+    "model": "Model",
+    "thinking": "Thinking...",
+    "history": "History",
+    "newConversation": "New Conversation",
+    "untitled": "Untitled",
+    "examples": {
+      "findCustomerData": "Where can I find customer data?",
+      "dataProductsCost": "How much do all data products cost?",
+      "businessTermsSales": "What business terms are related to sales?",
+      "showDataProducts": "Show me data products in the Customer domain"
+    },
+    "messages": {
+      "sessionDeleted": "Session deleted",
+      "sessionDeletedDesc": "The conversation has been removed.",
+      "loadSessionFailed": "Failed to load session",
+      "deleteSessionFailed": "Failed to delete session",
+      "loadFailed": "Failed to load LLM search. Please try again later."
+    }
+  }
+}
+

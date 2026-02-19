@@ -1,0 +1,61 @@
+{
+  "request": {
+    "title": "Request Access",
+    "description": "Request permission to view and use this {{entityType}}.",
+    "reason": {
+      "label": "Reason for Access",
+      "placeholder": "Explain why you need access to this {{entityType}}...",
+      "required": "Please provide a reason for requesting access",
+      "minLength": "Please provide a more detailed reason (at least 10 characters)"
+    },
+    "duration": {
+      "label": "Access Duration",
+      "placeholder": "Select duration",
+      "helpText": "Access will expire after the selected duration. You can request renewal before expiry.",
+      "days": "{{count}} day",
+      "days_plural": "{{count}} days",
+      "months": "{{count}} month",
+      "months_plural": "{{count}} months",
+      "years": "{{count}} year",
+      "years_plural": "{{count}} years"
+    },
+    "submit": "Send Request",
+    "submitting": "Sending Request...",
+    "success": "Your access request has been submitted and you will be notified of the decision."
+  },
+  "panel": {
+    "title": "Access Grants",
+    "description": "Users with time-limited access to this resource",
+    "noGrants": "No access grants for this resource",
+    "noGrantsHint": "Users can request time-limited access using the \"Request Access\" button.",
+    "requestButton": "Request Access",
+    "refresh": "Refresh",
+    "activeGrants": "Active Grants",
+    "pendingRequests": "Pending Requests",
+    "expiresAt": "Expires",
+    "grantedAt": "Granted",
+    "requestedAt": "Requested",
+    "revoke": "Revoke",
+    "revokeConfirm": "Are you sure you want to revoke access for {{user}}?",
+    "revokeSuccess": "Access revoked successfully",
+    "handle": "Handle Request"
+  },
+  "handle": {
+    "title": "Handle Access Request",
+    "approve": "Approve",
+    "deny": "Deny",
+    "clarify": "Request Clarification",
+    "grantDuration": "Grant Duration",
+    "response": "Response Message",
+    "responsePlaceholder": "Provide feedback or additional information...",
+    "approveSuccess": "Access request approved",
+    "denySuccess": "Access request denied",
+    "clarifySuccess": "Clarification requested"
+  },
+  "entityTypes": {
+    "data_product": "data product",
+    "dataset": "dataset",
+    "data_contract": "data contract"
+  }
+}
+

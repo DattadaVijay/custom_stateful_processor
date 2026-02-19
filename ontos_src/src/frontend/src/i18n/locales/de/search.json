@@ -1,0 +1,171 @@
+{
+  "title": "Suche",
+  "placeholder": "Alle Assets durchsuchen...",
+  "tabs": {
+    "askOntos": "Ontos fragen",
+    "indexSearch": "Index-Suche",
+    "conceptGraph": "Konzeptgraph",
+    "knowledgeGraph": "Wissensgraph",
+    "concepts": "Konzepte",
+    "properties": "Eigenschaften"
+  },
+  "noResults": "Keine Ergebnisse gefunden",
+  "noResultsHint": "Versuchen Sie, Ihre Suchbegriffe oder Filter anzupassen",
+  "results": "{{count}} Ergebnis gefunden",
+  "results_plural": "{{count}} Ergebnisse gefunden",
+  "filters": {
+    "all": "Alle",
+    "dataProducts": "Datenprodukte",
+    "dataContracts": "Datenverträge",
+    "datasets": "Datensätze",
+    "glossaryTerms": "Glossarbegriffe",
+    "teams": "Teams",
+    "projects": "Projekte"
+  },
+  "sort": {
+    "relevance": "Relevanz",
+    "newest": "Neueste",
+    "oldest": "Älteste",
+    "name": "Name"
+  },
+  "resultItem": {
+    "type": "Typ",
+    "owner": "Eigentümer",
+    "updated": "Aktualisiert"
+  },
+  "kg": {
+    "prefixSearch": "Präfix-Suche",
+    "prefixSearchDesc": "Ressourcen oder Eigenschaften nach IRI-Teilstring finden.",
+    "startPath": "Pfad starten",
+    "pathExplorer": "Pfad-Explorer",
+    "pathExplorerDesc": "Klicken Sie auf Objekte, um den Pfad horizontal zu erweitern.",
+    "directionFilter": "Richtungsfilter",
+    "everything": "Alles",
+    "incomingOnly": "Nur eingehend",
+    "outgoingOnly": "Nur ausgehend",
+    "contentFilter": "Inhaltsfilter",
+    "showConceptsOnly": "Nur Konzepte/Klassen anzeigen",
+    "noOutgoingLinks": "Keine ausgehenden Links für aktuelle Auswahl.",
+    "noLinksMatch": "Keine Links entsprechen den aktuellen Filtern.",
+    "step": "Schritt",
+    "sparql": "SPARQL",
+    "sparqlDesc": "Erweiterte Abfragen über den geladenen Graphen ausführen.",
+    "examples": "Beispiele",
+    "runSparql": "SPARQL ausführen",
+    "resourcesInNamespace": "Ressourcen im App-Namespace",
+    "resourcesWithLabel": "Ressourcen mit rdfs:label",
+    "subjectsAndTypes": "Subjekte und ihre Typen",
+    "topPredicates": "Top-Prädikate nach Häufigkeit",
+    "mostLinkedSeeAlso": "Am häufigsten verlinkt via rdfs:seeAlso"
+  },
+  "index": {
+    "title": "Index-Suche",
+    "description": "Durchsuchen Sie alle indizierten Anwendungsdaten. Geben Sie zum Suchen ein."
+  },
+  "concepts": {
+    "searchAndSelect": "Suchen und wählen Sie ein Konzept:",
+    "searchPlaceholder": "Tippen Sie, um nach Name, Label oder IRI zu suchen...",
+    "clear": "Löschen",
+    "conceptHierarchy": "Konzepthierarchie",
+    "parentClasses": "Elternklassen:",
+    "noParentClasses": "Keine Elternklassen gefunden",
+    "subclasses": "Unterklassen:",
+    "noSubclasses": "Keine Unterklassen gefunden",
+    "relatedProperties": "Verwandte Eigenschaften",
+    "noRelatedProperties": "Keine verwandten Eigenschaften gefunden.",
+    "linkedCatalogObjects": "Verknüpfte Katalog-Objekte",
+    "noCatalogObjects": "Keine Katalog-Objekte zugewiesen.",
+    "linkedUCTable": "UC-Tabelle",
+    "linkedUCColumn": "UC-Spalte",
+    "linkedUCCatalog": "UC-Katalog",
+    "linkedUCSchema": "UC-Schema",
+    "assignToConcept": "Konzept zuweisen",
+    "assignDialog": {
+      "title": "Objekt einem Konzept zuweisen",
+      "entityType": "Entitätstyp",
+      "selectEntityType": "Entitätstyp auswählen...",
+      "dataProduct": "Datenprodukt",
+      "dataContract": "Datenvertrag",
+      "dataDomain": "Datendomäne",
+      "dataset": "Datensatz",
+      "ucCatalog": "UC-Katalog",
+      "ucSchema": "UC-Schema",
+      "ucTable": "UC-Tabelle",
+      "browseUCCatalog": "UC-Katalog durchsuchen...",
+      "browseUCSchema": "UC-Schema durchsuchen...",
+      "browseUCTable": "UC-Tabelle durchsuchen...",
+      "ucCatalogTitle": "UC-Katalog auswählen",
+      "ucSchemaTitle": "UC-Schema auswählen",
+      "ucTableTitle": "UC-Tabelle auswählen",
+      "selectEntity": "{{entityType}} auswählen..."
+    },
+    "messages": {
+      "linkedSuccess": "Konzept \"{{label}}\" mit {{entityType}} \"{{entityId}}\" verknüpft.",
+      "assignError": "Bitte wählen Sie sowohl einen Entitätstyp als auch eine spezifische Entität.",
+      "assignFailed": "Konzept konnte nicht zugewiesen werden.",
+      "navigationError": "Navigation zu {{entityType}} nicht möglich"
+    }
+  },
+  "properties": {
+    "searchAndSelect": "Suchen und wählen Sie eine Eigenschaft:",
+    "searchPlaceholder": "Tippen Sie, um nach Name, Label oder IRI zu suchen...",
+    "clear": "Löschen",
+    "domainRange": "Domain / Range",
+    "linkedCatalogObjects": "Verknüpfte Katalog-Objekte",
+    "noCatalogObjects": "Keine Katalog-Objekte zugewiesen.",
+    "assignToProperty": "Eigenschaft zuweisen",
+    "assignDialog": {
+      "title": "Objekt einer Eigenschaft zuweisen",
+      "targetType": "Zieltyp",
+      "selectTargetType": "Zieltyp auswählen...",
+      "dataContractProperty": "Datenvertrag-Eigenschaft",
+      "ucTable": "UC-Tabelle",
+      "ucColumn": "UC-Spalte",
+      "contract": "Vertrag",
+      "selectContract": "Vertrag auswählen...",
+      "schema": "Schema",
+      "selectSchema": "Schema auswählen...",
+      "property": "Eigenschaft",
+      "selectProperty": "Eigenschaft auswählen...",
+      "browseUCColumn": "UC-Tabelle durchsuchen und Spalte wählen...",
+      "ucColumnTitle": "UC-Spalte auswählen"
+    },
+    "messages": {
+      "selectPropertyTarget": "Bitte wählen Sie Vertrag, Schema und Eigenschaft.",
+      "linkedSuccess": "Eigenschaft erfolgreich verknüpft.",
+      "assignFailed": "Eigenschaft konnte nicht zugewiesen werden."
+    }
+  },
+  "llm": {
+    "title": "Ontos fragen",
+    "subtitle": "Stellen Sie Fragen zu Datenprodukten, Kosten und Analysen",
+    "rerun": "Erneut ausführen",
+    "copyToInput": "Bearbeiten & erneut senden",
+    "disabledTitle": "KI-gestützte Suche",
+    "disabledSubtitle": "Die natürliche Sprachsuche ist derzeit nicht aktiviert.",
+    "disabledMessage": "Die LLM-Suche erfordert Konfiguration. Bitte kontaktieren Sie Ihren Administrator, um diese Funktion zu aktivieren.",
+    "welcomeTitle": "Wie kann ich Ihnen heute helfen?",
+    "welcomeMessage": "Ich kann Ihnen helfen, Datenprodukte zu entdecken, Geschäftsbegriffe zu verstehen, Kosten zu analysieren und Analyseabfragen auszuführen.",
+    "tryAsking": "Probieren Sie zu fragen:",
+    "inputPlaceholder": "Stellen Sie eine Frage zu Ihren Daten...",
+    "inputHint": "Enter zum Senden, Shift+Enter für neue Zeile",
+    "model": "Modell",
+    "thinking": "Denke nach...",
+    "history": "Verlauf",
+    "newConversation": "Neue Konversation",
+    "untitled": "Unbenannt",
+    "examples": {
+      "findCustomerData": "Wo finde ich Kundendaten?",
+      "dataProductsCost": "Wie viel kosten alle Datenprodukte?",
+      "businessTermsSales": "Welche Geschäftsbegriffe beziehen sich auf Verkauf?",
+      "showDataProducts": "Zeige mir Datenprodukte in der Kundendomäne"
+    },
+    "messages": {
+      "sessionDeleted": "Sitzung gelöscht",
+      "sessionDeletedDesc": "Die Konversation wurde entfernt.",
+      "loadSessionFailed": "Sitzung konnte nicht geladen werden",
+      "deleteSessionFailed": "Sitzung konnte nicht gelöscht werden",
+      "loadFailed": "LLM-Suche konnte nicht geladen werden. Bitte versuchen Sie es später erneut."
+    }
+  }
+}

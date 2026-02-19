@@ -1,0 +1,123 @@
+name: "UC Tag Sync"
+description: "Sync Ontos metadata to UC governed tags"
+format: "MULTI_TASK"
+environments:
+  - environment_key: "uc-tag-sync-env"
+    spec:
+      dependencies:
+        - "databricks-sdk>=0.60.0"
+        - "sqlalchemy"
+        - "psycopg2-binary"
+tasks:
+  - task_key: "uc_tag_sync"
+    spark_python_task:
+      python_file: "uc_tag_sync.py"
+      parameters:
+        - "--tag_sync_configs"
+        - "{{job.parameters.tag_sync_configs}}"
+        - "--prefix"
+        - "{{job.parameters.prefix}}"
+        - "--dry_run"
+        - "{{job.parameters.dry_run}}"
+        - "--default_catalog"
+        - "{{job.parameters.default_catalog}}"
+        - "--default_schema"
+        - "{{job.parameters.default_schema}}"
+        - "--limit"
+        - "{{job.parameters.limit}}"
+        - "--verbose"
+        - "{{job.parameters.verbose}}"
+        - "--lakebase_instance_name"
+        - "{{job.parameters.lakebase_instance_name}}"
+        - "--postgres_host"
+        - "{{job.parameters.postgres_host}}"
+        - "--postgres_db"
+        - "{{job.parameters.postgres_db}}"
+        - "--postgres_port"
+        - "{{job.parameters.postgres_port}}"
+        - "--postgres_schema"
+        - "{{job.parameters.postgres_schema}}"
+        - "--product_name"
+        - "{{job.parameters.product_name}}"
+        - "--product_version"
+        - "{{job.parameters.product_version}}"
+    environment_key: "uc-tag-sync-env"
+
+# Schedule to run every 4 hours
+schedule:
+  quartz_cron_expression: "0 0 */4 * * ?"
+  timezone_id: "UTC"
+  pause_status: "UNPAUSED"
+
+# Standard runtime parameters (defaults, overridden by configurable_parameters from UI)
+parameters:
+  prefix: "x_ontos_"
+  dry_run: "false"
+  default_catalog: ""
+  default_schema: ""
+  limit: ""
+  verbose: "false"
+  lakebase_instance_name: ""
+  postgres_host: ""
+  postgres_db: ""
+  postgres_port: "5432"
+  postgres_schema: "public"
+  tag_sync_configs: "[]"
+  product_name: "ontos"
+  product_version: "0.0.0"
+
+# Configurable parameters (managed via UI)
+configurable_parameters:
+  - name: "tag_sync_configs"
+    type: "tag_sync_configs"
+    description: "Configure which metadata to sync to Unity Catalog tags and customize tag formats"
+    required: true
+    entity_types: ["semantic_assignment", "data_domain", "data_contract", "data_product"]
+    default:
+      - entity_type: "semantic_assignment"
+        enabled: true
+        tag_key_format: "ontos_semantic_{LINK.SLUG}"
+        tag_value_format: "{LINK.IRI}"
+      - entity_type: "data_domain"
+        enabled: true
+        tag_key_format: "ontos_data_domain_name"
+        tag_value_format: "{DOMAIN.NAME}"
+      - entity_type: "data_contract"
+        enabled: true
+        tag_key_format: "ontos_contract_name"
+        tag_value_format: "{CONTRACT.NAME}"
+      - entity_type: "data_product"
+        enabled: true
+        tag_key_format: "ontos_product_name"
+        tag_value_format: "{PRODUCT.NAME}"
+
+  - name: "prefix"
+    type: "string"
+    description: "Prefix for tag keys (deprecated - use tag_key_format in tag_sync_configs)"
+    required: false
+    default: "x_ontos_"
+
+  - name: "default_catalog"
+    type: "string"
+    description: "Default catalog for unqualified table names"
+    required: false
+    default: ""
+
+  - name: "default_schema"
+    type: "string"
+    description: "Default schema for unqualified table names"
+    required: false
+    default: ""
+
+# Job timeout (in seconds)
+timeout_seconds: 3600
+
+max_concurrent_runs: 1
+
+tags:
+  environment: "production"
+  team: "data_governance"
+  workflow_type: "sync"
+  owner: "ontos"
+
+

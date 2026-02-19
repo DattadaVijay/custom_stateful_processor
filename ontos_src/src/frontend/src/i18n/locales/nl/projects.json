@@ -1,0 +1,89 @@
+{
+  "title": "Projecten",
+  "addNewProject": "Nieuw Project Toevoegen",
+  "editProject": "Project Bewerken",
+  "deleteProject": "Project Verwijderen",
+  "form": {
+    "dialog": {
+      "createTitle": "Nieuw Project Aanmaken",
+      "editTitle": "Project Bewerken",
+      "createDescription": "Maak een nieuw project aan en wijs teams toe voor workspace isolatie.",
+      "editDescription": "Werk projectdetails en teamtoewijzingen bij."
+    },
+    "sections": {
+      "info": "Project Informatie",
+      "teams": "Team Toewijzingen",
+      "tags": "Tags"
+    },
+    "labels": {
+      "name": "Projectnaam *",
+      "title": "Weergavetitel",
+      "description": "Beschrijving",
+      "projectType": "Projecttype",
+      "assignTeams": "Teams Toewijzen",
+      "assignedTeams": "Toegewezen Teams:",
+      "tags": "Tags"
+    },
+    "placeholders": {
+      "name": "Voer projectnaam in",
+      "title": "Voer weergavetitel in (optioneel)",
+      "description": "Voer projectbeschrijving in (optioneel)",
+      "selectProjectType": "Selecteer projecttype",
+      "assignTeams": "Selecteer teams om toe te wijzen aan dit project",
+      "noTeamsAvailable": "Geen teams beschikbaar",
+      "allTeamsAssigned": "Alle teams al toegewezen",
+      "selectTags": "Selecteer tags...",
+      "enterTag": "Voer tag in",
+      "noTagsHelp": "Nog geen tags toegevoegd. Klik \"Tag Toevoegen\" om project tags toe te voegen."
+    },
+    "types": {
+      "PERSONAL": "PERSOONLIJK",
+      "TEAM": "TEAM"
+    },
+    "buttons": {
+      "addTag": "Tag Toevoegen",
+      "update": "Project Bijwerken",
+      "create": "Project Aanmaken"
+    },
+    "toasts": {
+      "createdTitle": "Project Aangemaakt",
+      "updatedTitle": "Project Bijgewerkt",
+      "createdDescription": "Project \"{{name}}\" is succesvol aangemaakt.",
+      "updatedDescription": "Project \"{{name}}\" is succesvol bijgewerkt.",
+      "createFailedTitle": "Kon Project Niet Aanmaken",
+      "updateFailedTitle": "Kon Project Niet Bijwerken",
+      "failedDescription": "Er is een onverwachte fout opgetreden."
+    }
+  },
+  "table": {
+    "name": "Naam",
+    "description": "Beschrijving",
+    "teams": "Teams",
+    "tags": "Tags",
+    "lastUpdated": "Laatst Bijgewerkt",
+    "actions": "Acties",
+    "moreTeams": "meer",
+    "moreTags": "meer"
+  },
+  "permissions": {
+    "deniedView": "Je hebt geen toestemming om projecten te bekijken.",
+    "deniedCreate": "Je hebt geen toestemming om projecten aan te maken.",
+    "deniedEdit": "Je hebt geen toestemming om projecten te bewerken.",
+    "deniedDelete": "Je hebt geen toestemming om projecten te verwijderen.",
+    "permissionDenied": "Geen Toegang"
+  },
+  "messages": {
+    "projectDeleted": "Project Verwijderd",
+    "projectDeletedSuccess": "Het project is succesvol verwijderd.",
+    "errorFetchingProjects": "Fout bij ophalen projecten",
+    "errorDeletingProject": "Fout bij Verwijderen Project",
+    "errorLoadingData": "Fout bij Laden Data"
+  },
+  "deleteDialog": {
+    "title": "Weet je het absoluut zeker?",
+    "description": "Deze actie kan niet ongedaan worden gemaakt. Dit zal het project permanent verwijderen en uit alle teams verwijderen.",
+    "cancel": "Annuleren",
+    "delete": "Verwijderen"
+  }
+}
+

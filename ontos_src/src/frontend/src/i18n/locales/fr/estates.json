@@ -1,0 +1,108 @@
+{
+  "title": "Gestionnaire d'Estates",
+  "subtitle": "Gérez vos estates de données et la synchronisation",
+  "newEstate": "Nouvel Estate",
+  "addEstate": "Ajouter un Estate",
+  "editEstate": "Modifier l'Estate",
+  "searchPlaceholder": "Rechercher des estates...",
+  "loading": "Chargement des estates...",
+  "errors": {
+    "fetchEstates": "Erreur lors du Chargement des Estates",
+    "couldNotLoad": "Impossible de charger les estates.",
+    "savingEstate": "Erreur lors de l'Enregistrement de l'Estate",
+    "deletingEstate": "Erreur lors de la Suppression de l'Estate",
+    "triggeringSync": "Erreur lors du Déclenchement de la Synchronisation",
+    "validationError": "Erreur de Validation",
+    "validationMessage": "Veuillez remplir tous les champs requis : Nom, Description, URL du Workspace, Nom du Metastore, Type de Cloud et Type de Connexion."
+  },
+  "toast": {
+    "estateCreated": "Estate créé avec succès",
+    "estateUpdated": "Estate mis à jour avec succès",
+    "estateDeleted": "Estate supprimé avec succès",
+    "triggeringSync": "Déclenchement de la Synchronisation",
+    "syncRequested": "Demande de synchronisation pour l'estate...",
+    "syncTriggered": "Synchronisation déclenchée avec succès. Actualisation des données..."
+  },
+  "connectionTypes": {
+    "deltaShare": "Delta Share",
+    "unityCatalog": "Unity Catalog",
+    "database": "Base de Données (Usage Futur)"
+  },
+  "filters": {
+    "allStatus": "Tous les Statuts"
+  },
+  "table": {
+    "name": "Nom",
+    "workspaceUrl": "URL du Workspace",
+    "cloud": "Cloud",
+    "connection": "Connexion",
+    "metastore": "Metastore",
+    "syncStatus": "État de Synchronisation",
+    "type": "Type",
+    "status": "Statut",
+    "lastSync": "Dernière Synchronisation",
+    "assets": "Actifs",
+    "actions": "Actions"
+  },
+  "messages": {
+    "success": "Succès",
+    "error": "Erreur",
+    "deleteConfirm": "Êtes-vous sûr de vouloir supprimer cet estate ?",
+    "deleteSuccess": "Estate supprimé avec succès",
+    "deleteError": "Échec de la suppression de l'estate",
+    "syncSuccess": "Synchronisation démarrée avec succès",
+    "syncError": "Échec du démarrage de la synchronisation"
+  },
+  "status": {
+    "connected": "Connecté",
+    "disconnected": "Déconnecté",
+    "syncing": "Synchronisation",
+    "error": "Erreur"
+  },
+  "details": {
+    "backToList": "Retour aux Estates",
+    "edit": "Modifier",
+    "delete": "Supprimer",
+    "sync": "Synchroniser Maintenant",
+    "viewDetails": "Voir les Détails",
+    "notFound": "Estate non trouvé",
+    "loading": "Chargement...",
+    "overview": {
+      "title": "Aperçu de l'Estate",
+      "type": "Type",
+      "status": "Statut",
+      "lastSync": "Dernière Synchronisation",
+      "created": "Créé"
+    },
+    "assets": {
+      "title": "Actifs",
+      "catalogs": "Catalogues",
+      "schemas": "Schémas",
+      "tables": "Tables"
+    },
+    "syncHistory": {
+      "title": "Historique de Synchronisation",
+      "noHistory": "Aucun historique de synchronisation"
+    }
+  },
+  "form": {
+    "createTitle": "Créer un Estate",
+    "editTitle": "Modifier l'Estate",
+    "dialogDescription": "Configurez la connexion de l'estate Databricks et les paramètres de base. Les politiques de partage sont gérées sur la page de détails.",
+    "name": "Nom",
+    "description": "Description",
+    "type": "Type",
+    "workspaceUrl": "URL du Workspace",
+    "cloud": "Cloud",
+    "selectCloudProvider": "Sélectionner le fournisseur cloud",
+    "connectionType": "Type de Connexion",
+    "selectConnectionType": "Sélectionner le type de connexion",
+    "connectionString": "Chaîne de Connexion",
+    "metastoreName": "Nom du Metastore",
+    "syncSchedule": "Programme de Synchronisation",
+    "enableSync": "Activer la Synchronisation",
+    "cancel": "Annuler",
+    "save": "Enregistrer"
+  }
+}
+

@@ -1,0 +1,30 @@
+version: 1
+name: "ontos"
+description: "An app for managing data products, contracts, and more"
+resource_specs:
+  - name: "database"
+    description: "Lakebase database for the apps metadata"
+    database_spec:
+      permission: "CAN_CONNECT_AND_CREATE"
+  - name: "sql-warehouse"
+    description: "SQL warehouse for the app to query datasets"
+    sql_warehouse_spec:
+      permission: "CAN_USE"
+  - name: "serving-endpoint"
+    description: "LLM serving endpoint for Ask Ontos"
+    serving_endpoint_spec:
+      permission: "CAN_QUERY"
+  - name: "volume"
+    description: "Volume for the app to store files"
+    uc_securable_spec:
+      securable_type: "VOLUME"
+      permission: "WRITE_VOLUME"
+user_api_scopes:
+  - "sql"
+  - "serving.serving-endpoints"
+  - "files.files"
+  - "dashboards.genie"
+  - "catalog.connections"
+  - "catalog.catalogs:read"
+  - "catalog.schemas:read"
+  - "catalog.tables:read"

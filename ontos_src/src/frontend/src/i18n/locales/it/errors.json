@@ -1,0 +1,28 @@
+{
+  "notFound": {
+    "title": "404 - Pagina Non Trovata",
+    "message": "La pagina che stai cercando non esiste o è stata spostata.",
+    "backHome": "Torna alla Home"
+  },
+  "unauthorized": {
+    "title": "401 - Non Autorizzato",
+    "message": "Non hai il permesso di accedere a questa risorsa.",
+    "login": "Accedi"
+  },
+  "forbidden": {
+    "title": "403 - Accesso Negato",
+    "message": "Non hai i permessi necessari per accedere a questa pagina.",
+    "contact": "Contatta il tuo amministratore per ottenere l'accesso."
+  },
+  "serverError": {
+    "title": "500 - Errore del Server",
+    "message": "Qualcosa è andato storto. Riprova più tardi.",
+    "retry": "Riprova"
+  },
+  "generic": {
+    "title": "Errore",
+    "message": "Si è verificato un errore imprevisto.",
+    "retry": "Riprova"
+  }
+}
+

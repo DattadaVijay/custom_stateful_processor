@@ -1,0 +1,16 @@
+{
+  "title": "Schema del Database",
+  "loading": "Caricamento schema database...",
+  "errorLoadingSchema": "Errore nel Caricamento dello Schema",
+  "legend": "Legenda",
+  "notNull": "NON NULL",
+  "tableCount": "{{count}} tabelle",
+  "tableCount_one": "{{count}} tabella",
+  "relationshipCount": "{{count}} relazioni",
+  "relationshipCount_one": "{{count}} relazione",
+  "columns": "{{count}} colonne",
+  "columns_one": "{{count}} colonna",
+  "tableInfo": "Documentazione tabella",
+  "noDescription": "Nessuna descrizione disponibile per questa tabella."
+}
+

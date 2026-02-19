@@ -1,0 +1,123 @@
+{
+  "title": "Metadati",
+  "description": "Note, link e allegati.",
+  "previewRenderedPage": "Anteprima della pagina renderizzata",
+  "notes": {
+    "title": "Note aggiuntive",
+    "add": "Aggiungi",
+    "refresh": "Aggiorna",
+    "noNotes": "Nessuna nota ancora.",
+    "preview": "Anteprima",
+    "edit": "Modifica",
+    "delete": "Elimina",
+    "editTitle": "Modifica nota",
+    "addTitle": "Aggiungi nota",
+    "attachShared": "Allega nota condivisa",
+    "selectShared": "Seleziona nota condivisa",
+    "table": {
+      "title": "Titolo",
+      "description": "Descrizione",
+      "created": "Creato",
+      "actions": "Azioni",
+      "level": "Livello",
+      "flags": "Flag"
+    },
+    "form": {
+      "title": "Titolo",
+      "shortDescription": "Descrizione breve",
+      "content": "Contenuto (Markdown)",
+      "save": "Salva",
+      "cancel": "Annulla",
+      "level": "Livello",
+      "inheritable": "Ereditabile",
+      "shared": "Asset condiviso"
+    },
+    "messages": {
+      "deleteFailed": "Eliminazione fallita",
+      "addFailed": "Aggiunta nota fallita",
+      "updateFailed": "Aggiornamento fallito"
+    }
+  },
+  "links": {
+    "title": "Link correlati",
+    "add": "Aggiungi",
+    "refresh": "Aggiorna",
+    "noLinks": "Nessun link ancora.",
+    "open": "Apri",
+    "edit": "Modifica",
+    "delete": "Elimina",
+    "editTitle": "Modifica link",
+    "addTitle": "Aggiungi link",
+    "attachShared": "Allega link condiviso",
+    "selectShared": "Seleziona link condiviso",
+    "table": {
+      "title": "Titolo",
+      "url": "URL",
+      "description": "Descrizione",
+      "created": "Creato",
+      "actions": "Azioni",
+      "level": "Livello",
+      "flags": "Flag"
+    },
+    "form": {
+      "title": "Titolo",
+      "url": "URL",
+      "shortDescription": "Descrizione breve",
+      "save": "Salva",
+      "cancel": "Annulla",
+      "level": "Livello",
+      "inheritable": "Ereditabile",
+      "shared": "Asset condiviso"
+    },
+    "messages": {
+      "deleteFailed": "Eliminazione fallita",
+      "addFailed": "Aggiunta link fallita",
+      "updateFailed": "Aggiornamento fallito"
+    }
+  },
+  "documents": {
+    "title": "Documenti allegati",
+    "add": "Aggiungi",
+    "refresh": "Aggiorna",
+    "noDocuments": "Nessun documento caricato.",
+    "preview": "Anteprima",
+    "delete": "Elimina",
+    "attachShared": "Allega documento condiviso",
+    "selectShared": "Seleziona documento condiviso",
+    "table": {
+      "title": "Titolo",
+      "filename": "Nome file",
+      "description": "Descrizione",
+      "size": "Dimensione",
+      "created": "Creato",
+      "actions": "Azioni",
+      "level": "Livello",
+      "flags": "Flag"
+    },
+    "form": {
+      "title": "Titolo",
+      "shortDescription": "Descrizione breve",
+      "file": "File",
+      "upload": "Carica",
+      "cancel": "Annulla",
+      "level": "Livello",
+      "inheritable": "Ereditabile",
+      "shared": "Asset condiviso"
+    },
+    "messages": {
+      "deleteFailed": "Eliminazione fallita",
+      "uploadFailed": "Caricamento fallito"
+    }
+  },
+  "sharedAssets": {
+    "selectDescription": "Seleziona un asset condiviso da allegare a questa entità",
+    "noSharedNotes": "Nessuna nota condivisa disponibile",
+    "noSharedLinks": "Nessun link condiviso disponibile",
+    "noSharedDocuments": "Nessun documento condiviso disponibile"
+  },
+  "messages": {
+    "loadFailed": "Caricamento metadati fallito",
+    "attachSuccess": "Asset condiviso allegato con successo",
+    "attachFailed": "Allegamento asset condiviso fallito"
+  }
+}

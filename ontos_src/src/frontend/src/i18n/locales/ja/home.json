@@ -1,0 +1,223 @@
+{
+  "title": "Ontosへようこそ",
+  "tagline": "ビジネス用語集、データ契約、データ製品、ペルソナなどを管理",
+  "search": {
+    "placeholder": "データ製品、用語集の用語、契約を検索..."
+  },
+  "overview": {
+    "title": "概要",
+    "loading": "読み込み中...",
+    "noData": "選択した機能プレビューまたは権限に利用可能な概要データがありません。",
+    "error": "エラー",
+    "tiles": {
+      "compliance": {
+        "title": "コンプライアンス",
+        "description": "現在のコンプライアンススコア",
+        "notAvailable": "N/A"
+      },
+      "dataContracts": {
+        "title": "データ契約",
+        "description": "アクティブな契約"
+      },
+      "dataProducts": {
+        "title": "データ製品",
+        "description": "データ製品の合計"
+      },
+      "semanticModels": {
+        "title": "ビジネス用語集",
+        "description": "モデル / 用語"
+      },
+      "estates": {
+        "title": "エステート",
+        "description": "設定されたエステートはありません",
+        "lastSync": "最終同期: {{date}} ({{status}})",
+        "syncStatus": {
+          "success": "成功",
+          "failed": "失敗",
+          "in_progress": "進行中",
+          "unknown": "不明"
+        }
+      }
+    }
+  },
+  "complianceTrend": {
+    "title": "コンプライアンストレンド",
+    "period": "過去30日間",
+    "loading": "コンプライアンスデータを読み込み中...",
+    "error": "トレンドデータの読み込みエラー: {{error}}",
+    "noData": "選択した期間に利用可能なコンプライアンスデータがありません。",
+    "chartLabel": "コンプライアンススコア"
+  },
+  "noAccess": {
+    "message": "現在、特定のロールが割り当てられていません。",
+    "action": "機能にアクセスするには、",
+    "link": "ロールへのアクセスをリクエスト",
+    "contactAdmin": "アプリケーションへのアクセスをリクエストするには、管理者に連絡してください。"
+  },
+  "requestRoleSection": {
+    "title": "ロール",
+    "cardTitle": "利用可能なロール",
+    "description": "現在、アプリケーションロールが割り当てられていません。下のロールを選択してアクセスをリクエストし、始めましょう。",
+    "info": "リクエストを送信すると、管理者がレビューし、通知ベルを通じて決定が通知されます。",
+    "noDescription": "説明はありません",
+    "requestAccess": "アクセスをリクエスト",
+    "moreRoles": "他に{{count}}個のロールが利用可能..."
+  },
+  "quickActions": {
+    "title": "クイックアクション",
+    "loading": "読み込み中...",
+    "noActions": "利用可能なアクションはありません。",
+    "actions": {
+      "browseProducts": "データ製品を参照",
+      "browseGlossary": "ビジネス用語集を参照",
+      "createProduct": "データ製品を作成",
+      "defineContract": "データ契約を定義",
+      "reviewAssets": "データアセットをレビュー",
+      "manageEntitlements": "エンタイトルメントを管理",
+      "catalogCommander": "カタログコマンダー",
+      "settings": "設定"
+    }
+  },
+  "recentActivity": {
+    "title": "最近のアクティビティ",
+    "loading": "最近のアクティビティを読み込み中...",
+    "error": "最近のアクティビティの読み込みに失敗",
+    "noActivity": "最近のアクティビティはありません。",
+    "entityLabel": "エンティティ:",
+    "actionLabel": "アクション:",
+    "userLabel": "ユーザー:",
+    "timeLabel": "時刻:",
+    "iriLabel": "Iri:",
+    "linkIdLabel": "リンクID:",
+    "openButton": "開く",
+    "openDetails": "詳細を開く",
+    "noDetails": "詳細はありません",
+    "by": "作成者",
+    "at": "時刻"
+  },
+  "discoverySection": {
+    "title": "発見",
+    "dataDomains": "データドメイン",
+    "exactMatchOnly": "完全一致のみ",
+    "allDomains": "すべてのドメイン",
+    "clearFilter": "ドメインフィルタをクリア",
+    "selectDomain": "ドメインを選択して階層を表示し、製品をフィルタします。",
+    "popularProducts": "人気のデータ製品",
+    "loading": "製品を読み込み中...",
+    "error": "データ製品の読み込みに失敗",
+    "noProducts": "データ製品が見つかりません。",
+    "domain": "ドメイン",
+    "owner": "所有者",
+    "unknown": "不明",
+    "status": "N/A",
+    "untitled": "無題",
+    "info": "情報"
+  },
+  "dataCurationSection": {
+    "title": "データキュレーション",
+    "createDataProduct": {
+      "title": "データ製品を作成",
+      "description": "ウィザードを使用して新しいデータ製品を定義します。",
+      "button": "開く"
+    },
+    "defineDataContract": {
+      "title": "データ契約を定義",
+      "description": "技術契約を作成または更新します。",
+      "button": "開く"
+    },
+    "createDataset": {
+      "title": "データセットを作成",
+      "description": "マッチングとマスタリングのためのデータセットを管理します。",
+      "button": "開く"
+    },
+    "createSchema": {
+      "title": "スキーマを作成",
+      "description": "スキーマと権限を作成または管理します。",
+      "openButton": "開く",
+      "createButton": "作成"
+    },
+    "createCatalog": {
+      "title": "カタログを作成",
+      "description": "カタログをプロビジョニングし、アクセスを管理します。",
+      "openButton": "開く",
+      "createButton": "作成"
+    }
+  },
+  "requiredActionsSection": {
+    "title": "必要なアクション",
+    "pendingNotifications": "保留中の通知",
+    "loading": "読み込み中...",
+    "noActions": "保留中のアクションはありません。",
+    "openButton": "開く",
+    "markReadButton": "既読にする",
+    "readLabel": "既読",
+    "alertMessage": "このリストには、あなたのロールに割り当てられたアクション必須の通知のみが表示されます。"
+  },
+  "marketplace": {
+    "welcome": "こんにちは",
+    "welcomeWithName": "こんにちは、{{name}}さん",
+    "tagline": "データマーケットプレイスへようこそ。データ製品とデータセットを発見し、理解し、購読しましょう。",
+    "searchPlaceholder": "今日は何をお探しですか？",
+    "searchDatasetsPlaceholder": "名前、パス、または契約でデータセットを検索...",
+    "browseAssetType": "参照:",
+    "assetTypes": {
+      "products": "データ製品",
+      "datasets": "データセット"
+    },
+    "browseDataDomains": "データドメインを参照",
+    "allDomains": "すべてのドメイン",
+    "loadingDomains": "ドメインを読み込み中...",
+    "tabs": {
+      "explore": "データを探索",
+      "subscriptions": "マイデータ"
+    },
+    "products": {
+      "available": "{{count}}個の製品が利用可能",
+      "available_plural": "{{count}}個の製品が利用可能",
+      "subscribed": "{{count}}個の購読済み製品",
+      "subscribed_plural": "{{count}}個の購読済み製品",
+      "noProducts": "データ製品が見つかりません。",
+      "adjustFilters": "検索またはフィルターを調整してみてください。",
+      "noSubscriptions": "まだデータ製品を購読していません。",
+      "browseToSubscribe": "「探索」タブを参照して、購読する製品を見つけてください。",
+      "exploreProducts": "データ製品を探索",
+      "owner": "所有者",
+      "unknown": "不明"
+    },
+    "datasets": {
+      "available": "{{count}}個のデータセットが利用可能",
+      "available_plural": "{{count}}個のデータセットが利用可能",
+      "subscribed": "{{count}}個の購読済みデータセット",
+      "subscribed_plural": "{{count}}個の購読済みデータセット",
+      "noDatasets": "データセットが見つかりません。",
+      "adjustFilters": "検索を調整してみてください。",
+      "noSubscriptions": "まだデータセットを購読していません。",
+      "browseToSubscribe": "「探索」タブを参照して、購読するデータセットを見つけてください。",
+      "exploreDatasets": "データセットを探索",
+      "owner": "所有者"
+    },
+    "modeToggle": {
+      "marketplace": "マーケットプレイス",
+      "management": "管理"
+    },
+    "domainView": {
+      "pills": "リスト",
+      "graph": "グラフ"
+    },
+    "exactMatchOnly": "完全一致のみ",
+    "selectDomainForGraph": "ドメインを選択して階層を表示します。",
+    "domainInfo": {
+      "parentDomain": "親",
+      "childDomains": "{{count}}個の子ドメイン",
+      "childDomains_plural": "{{count}}個の子ドメイン"
+    },
+    "tilesPerRow": {
+      "placeholder": "タイル",
+      "one": "1列",
+      "two": "2列",
+      "three": "3列",
+      "four": "4列"
+    },
+    "openInDetails": "詳細ビューで開く"
+  }
+}

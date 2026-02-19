@@ -1,0 +1,229 @@
+{
+  "title": "Dataproducten",
+  "subtitle": "Beheer je dataproducten",
+  "newProduct": "Nieuw Dataproduct",
+  "importProduct": "Importeren",
+  "searchPlaceholder": "Zoek dataproducten...",
+  "loading": "Dataproducten laden...",
+  "filters": {
+    "allStatus": "Alle Status",
+    "allOwners": "Alle Eigenaren",
+    "mySubscriptions": "Mijn Abonnementen"
+  },
+  "toolbar": {
+    "showAll": "Toon alle producten",
+    "showSubscriptions": "Toon alleen mijn abonnementen",
+    "mySubscriptionsCount": "Mijn Abonnementen ({{count}})",
+    "createProduct": "Product Aanmaken",
+    "uploadFile": "Bestand Uploaden"
+  },
+  "permissions": {
+    "denied": "Geen Toegang",
+    "noView": "Je hebt geen toestemming om dataproducten te bekijken.",
+    "noCreate": "Je hebt geen toestemming om dataproducten aan te maken.",
+    "noEdit": "Je hebt geen toestemming om dataproducten te bewerken.",
+    "noDelete": "Je hebt geen toestemming om dataproducten te verwijderen.",
+    "noBulkDelete": "Je hebt geen toestemming voor bulk verwijdering.",
+    "noGenieSpace": "Je hebt geen toestemming om Genie Spaces aan te maken."
+  },
+  "bulk": {
+    "deleteConfirm": "Weet je zeker dat je {{count}} geselecteerde product(en) wilt verwijderen?",
+    "deleteSuccess": "Bulk Verwijdering Succes",
+    "deleteSuccessCount": "{{count}} product(en) verwijderd.",
+    "deleteError": "Bulk Verwijdering Fout",
+    "deleteErrorCount": "{{count}} product(en) konden niet worden verwijderd. Eerste fout: {{error}}",
+    "requestAccessTitle": "Toegang aanvragen voor geselecteerde",
+    "requestAccess": "Toegang Aanvragen ({{count}})",
+    "createGenieSpaceTitle": "Genie Space aanmaken van geselecteerde",
+    "createGenieSpace": "Genie Space Aanmaken ({{count}})",
+    "deleteTitle": "Geselecteerde verwijderen",
+    "deleteSelected": "Geselecteerde Verwijderen ({{count}})"
+  },
+  "access": {
+    "submitting": "Verzenden",
+    "requestingAccess": "Toegang aanvragen voor {{count}} item(s)...",
+    "requestError": "Kon toegangsverzoeken niet verzenden",
+    "requestSent": "Verzoek Verzonden",
+    "requestSubmitted": "Toegangsverzoek verzonden. Je wordt op de hoogte gebracht."
+  },
+  "upload": {
+    "success": "Upload Succesvol",
+    "successMessage": "{{filename}} succesvol verwerkt. {{count}} product(en) verwerkt.",
+    "failed": "Upload Mislukt",
+    "unexpectedError": "Er is een onverwachte fout opgetreden tijdens het uploaden.",
+    "uploading": "Uploaden...",
+    "tooltipTitle": "Dataproduct Uploaden (ODPS formaat)",
+    "tooltipDescription": "Accepteert YAML of JSON bestanden die het ODPS (Open Data Product Standard) schema volgen.",
+    "tooltipHint": "Voor Datacontracten (ODCS), gebruik in plaats daarvan de Datacontracten pagina."
+  },
+  "genie": {
+    "noSelection": "Geen Selectie",
+    "selectAtLeastOne": "Selecteer alstublieft minimaal één dataproduct.",
+    "createConfirm": "Een Genie Space aanmaken voor {{count}} geselecteerde product(en)?",
+    "initiating": "Genie Space Initiëren",
+    "requestingCreation": "Genie Space aanmaak aanvragen voor {{count}} product(en)...",
+    "requestSubmitted": "Verzoek Verzonden",
+    "willBeNotified": "Genie Space aanmaak geïnitieerd. Je wordt op de hoogte gebracht.",
+    "creationError": "Kon Genie Space aanmaak niet starten."
+  },
+  "navigation": {
+    "error": "Navigatie Fout",
+    "missingId": "Kon niet naar details navigeren, product ID ontbreekt."
+  },
+  "table": {
+    "title": "Titel",
+    "name": "Naam",
+    "status": "Status",
+    "domain": "Domein",
+    "owner": "Eigenaar",
+    "version": "Versie",
+    "type": "Type",
+    "tags": "Tags",
+    "created": "Aangemaakt",
+    "updated": "Bijgewerkt",
+    "actions": "Acties",
+    "viewDetails": "Details bekijken",
+    "editProduct": "Product bewerken",
+    "deleteProduct": "Product verwijderen",
+    "subscribed": "Geabonneerd"
+  },
+  "messages": {
+    "deleteConfirm": "Weet je zeker dat je dit dataproduct wilt verwijderen?",
+    "deleteSuccess": "Dataproduct succesvol verwijderd",
+    "deleteError": "Kon dataproduct niet verwijderen",
+    "fetchError": "Kon dataproducten niet ophalen",
+    "importSuccess": "Dataproduct succesvol geïmporteerd",
+    "importError": "Kon dataproduct niet importeren",
+    "success": "Succes",
+    "error": "Fout"
+  },
+  "status": {
+    "draft": "Concept",
+    "sandbox": "Sandbox",
+    "proposed": "Voorgesteld",
+    "under_review": "In Beoordeling",
+    "in_review": "In Beoordeling",
+    "active": "Actief",
+    "approved": "Goedgekeurd",
+    "certified": "Gecertificeerd",
+    "deprecated": "Verouderd",
+    "retired": "Buiten Gebruik",
+    "published": "Gepubliceerd"
+  },
+  "viewMode": {
+    "table": "Tabel",
+    "graph": "Grafiek"
+  },
+  "details": {
+    "backToList": "Terug naar Lijst",
+    "edit": "Bewerken",
+    "delete": "Verwijderen",
+    "subscribe": "Abonneren",
+    "unsubscribe": "Afmelden",
+    "publish": "Publiceren",
+    "unpublish": "Depubliceren",
+    "published": "Gepubliceerd",
+    "notFound": "Dataproduct niet gevonden",
+    "loading": "Laden...",
+    "noDescription": "Geen beschrijving opgegeven",
+    "coreMetadata": {
+      "status": "Status",
+      "version": "Versie",
+      "owner": "Eigenaar",
+      "domain": "Domein",
+      "created": "Aangemaakt",
+      "updated": "Bijgewerkt",
+      "tags": "Tags",
+      "noTags": "Geen tags",
+      "notAssigned": "Niet toegewezen"
+    },
+    "sections": {
+      "overview": "Overzicht",
+      "description": "Beschrijving",
+      "inputPorts": "Input Poorten",
+      "outputPorts": "Output Poorten",
+      "contracts": "Datacontracten",
+      "subscribers": "Abonnees",
+      "lineage": "Lineage"
+    },
+    "inputPorts": {
+      "title": "Input Poorten",
+      "subtitle": "Databronnen gebruikt door dit product",
+      "noInputPorts": "Geen input poorten gedefinieerd",
+      "addInputPort": "Input Poort Toevoegen"
+    },
+    "outputPorts": {
+      "title": "Output Poorten",
+      "subtitle": "Data beschikbaar gesteld door dit product",
+      "noOutputPorts": "Geen output poorten gedefinieerd",
+      "addOutputPort": "Output Poort Toevoegen"
+    },
+    "contracts": {
+      "title": "Datacontracten",
+      "subtitle": "Contracten gekoppeld aan dit product",
+      "noContracts": "Geen contracten gekoppeld",
+      "viewContract": "Contract Bekijken"
+    },
+    "subscribers": {
+      "title": "Abonnees",
+      "subtitle": "Gebruikers en teams geabonneerd op dit product",
+      "noSubscribers": "Nog geen abonnees",
+      "table": {
+        "email": "E-mail",
+        "subscribed": "Geabonneerd",
+        "reason": "Reden"
+      }
+    },
+    "subscription": {
+      "subscribed": "Geabonneerd",
+      "unsubscribed": "Afgemeld",
+      "subscribeMessage": "Je ontvangt updates voor dit dataproduct",
+      "unsubscribeMessage": "Je ontvangt geen updates meer voor dit dataproduct",
+      "error": "Kon abonnement niet bijwerken"
+    },
+    "deleteConfirm": "Weet je zeker dat je \"{{name}}\" wilt verwijderen?",
+    "deleteSuccess": "Dataproduct succesvol verwijderd",
+    "deleteError": "Kon dataproduct niet verwijderen"
+  },
+  "form": {
+    "createTitle": "Dataproduct Aanmaken",
+    "editTitle": "Dataproduct Bewerken",
+    "name": "Naam",
+    "namePlaceholder": "Voer productnaam in",
+    "description": "Beschrijving",
+    "descriptionPlaceholder": "Voer productbeschrijving in",
+    "purpose": "Doel",
+    "purposePlaceholder": "Wat is het doel van dit dataproduct?",
+    "usage": "Gebruik",
+    "usagePlaceholder": "Hoe moet dit dataproduct worden gebruikt?",
+    "status": "Status",
+    "version": "Versie",
+    "versionPlaceholder": "bijv. 1.0.0",
+    "domain": "Domein",
+    "selectDomain": "Selecteer een domein",
+    "noDomain": "Geen domein",
+    "ownerTeam": "Eigenaar Team",
+    "selectOwnerTeam": "Selecteer eigenaar team",
+    "noOwner": "Geen eigenaar",
+    "tags": "Tags",
+    "tagsPlaceholder": "Voer tags in gescheiden door komma's",
+    "cancel": "Annuleren",
+    "save": "Opslaan",
+    "create": "Aanmaken",
+    "saving": "Opslaan...",
+    "createSuccess": "Dataproduct succesvol aangemaakt",
+    "updateSuccess": "Dataproduct succesvol bijgewerkt",
+    "createError": "Kon dataproduct niet aanmaken",
+    "updateError": "Kon dataproduct niet bijwerken"
+  },
+  "import": {
+    "title": "Dataproduct Importeren",
+    "dropzone": "Sleep een YAML of JSON bestand hierheen, of klik om te selecteren",
+    "pasteLabel": "Of plak inhoud direct",
+    "pastePlaceholder": "Plak YAML of JSON inhoud...",
+    "cancel": "Annuleren",
+    "import": "Importeren",
+    "importing": "Importeren..."
+  }
+}
+

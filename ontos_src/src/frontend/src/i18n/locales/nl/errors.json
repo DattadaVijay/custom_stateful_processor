@@ -1,0 +1,28 @@
+{
+  "notFound": {
+    "title": "404 - Pagina Niet Gevonden",
+    "message": "De pagina die je zoekt bestaat niet of is verplaatst.",
+    "backHome": "Ga Terug naar Home"
+  },
+  "unauthorized": {
+    "title": "401 - Niet Geautoriseerd",
+    "message": "Je hebt geen toestemming om deze resource te benaderen.",
+    "login": "Inloggen"
+  },
+  "forbidden": {
+    "title": "403 - Verboden",
+    "message": "Je hebt niet de vereiste machtigingen om deze pagina te benaderen.",
+    "contact": "Neem contact op met je beheerder voor toegang."
+  },
+  "serverError": {
+    "title": "500 - Server Fout",
+    "message": "Er is iets misgegaan aan onze kant. Probeer het later opnieuw.",
+    "retry": "Opnieuw Proberen"
+  },
+  "generic": {
+    "title": "Fout",
+    "message": "Er is een onverwachte fout opgetreden.",
+    "retry": "Opnieuw Proberen"
+  }
+}
+

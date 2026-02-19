@@ -1,0 +1,229 @@
+{
+  "title": "データ製品",
+  "subtitle": "データ製品を管理",
+  "newProduct": "新規データ製品",
+  "importProduct": "インポート",
+  "searchPlaceholder": "データ製品を検索...",
+  "loading": "データ製品を読み込み中...",
+  "filters": {
+    "allStatus": "すべてのステータス",
+    "allOwners": "すべての所有者",
+    "mySubscriptions": "マイ購読"
+  },
+  "toolbar": {
+    "showAll": "すべての製品を表示",
+    "showSubscriptions": "購読中のみ表示",
+    "mySubscriptionsCount": "マイ購読 ({{count}})",
+    "createProduct": "製品を作成",
+    "uploadFile": "ファイルをアップロード"
+  },
+  "permissions": {
+    "denied": "権限がありません",
+    "noView": "データ製品を表示する権限がありません。",
+    "noCreate": "データ製品を作成する権限がありません。",
+    "noEdit": "データ製品を編集する権限がありません。",
+    "noDelete": "データ製品を削除する権限がありません。",
+    "noBulkDelete": "一括削除の権限がありません。",
+    "noGenieSpace": "Genie Spaceを作成する権限がありません。"
+  },
+  "bulk": {
+    "deleteConfirm": "選択した{{count}}個の製品を削除してもよろしいですか？",
+    "deleteSuccess": "一括削除成功",
+    "deleteSuccessCount": "{{count}}個の製品が削除されました。",
+    "deleteError": "一括削除エラー",
+    "deleteErrorCount": "{{count}}個の製品を削除できませんでした。最初のエラー: {{error}}",
+    "requestAccessTitle": "選択項目のアクセスをリクエスト",
+    "requestAccess": "アクセスをリクエスト ({{count}})",
+    "createGenieSpaceTitle": "選択項目からGenie Spaceを作成",
+    "createGenieSpace": "Genie Spaceを作成 ({{count}})",
+    "deleteTitle": "選択項目を削除",
+    "deleteSelected": "選択項目を削除 ({{count}})"
+  },
+  "access": {
+    "submitting": "送信中",
+    "requestingAccess": "{{count}}個のアイテムのアクセスをリクエスト中...",
+    "requestError": "アクセスリクエストの送信に失敗しました",
+    "requestSent": "リクエスト送信完了",
+    "requestSubmitted": "アクセスリクエストが送信されました。通知されます。"
+  },
+  "upload": {
+    "success": "アップロード成功",
+    "successMessage": "{{filename}}の処理が完了しました。{{count}}個の製品が処理されました。",
+    "failed": "アップロード失敗",
+    "unexpectedError": "アップロード中に予期しないエラーが発生しました。",
+    "uploading": "アップロード中...",
+    "tooltipTitle": "データ製品をアップロード (ODPS形式)",
+    "tooltipDescription": "ODPS (Open Data Product Standard) スキーマに準拠したYAMLまたはJSONファイルを受け付けます。",
+    "tooltipHint": "データ契約 (ODCS) については、データ契約ページを使用してください。"
+  },
+  "genie": {
+    "noSelection": "選択なし",
+    "selectAtLeastOne": "少なくとも1つのデータ製品を選択してください。",
+    "createConfirm": "選択した{{count}}個の製品にGenie Spaceを作成しますか？",
+    "initiating": "Genie Space開始中",
+    "requestingCreation": "{{count}}個の製品のGenie Space作成をリクエスト中...",
+    "requestSubmitted": "リクエスト送信完了",
+    "willBeNotified": "Genie Space作成が開始されました。通知されます。",
+    "creationError": "Genie Space作成の開始に失敗しました。"
+  },
+  "navigation": {
+    "error": "ナビゲーションエラー",
+    "missingId": "詳細に移動できません。製品IDがありません。"
+  },
+  "table": {
+    "title": "タイトル",
+    "name": "名前",
+    "status": "ステータス",
+    "domain": "ドメイン",
+    "owner": "所有者",
+    "version": "バージョン",
+    "type": "タイプ",
+    "tags": "タグ",
+    "created": "作成日",
+    "updated": "更新日",
+    "actions": "アクション",
+    "viewDetails": "詳細を表示",
+    "editProduct": "製品を編集",
+    "deleteProduct": "製品を削除",
+    "subscribed": "購読済み"
+  },
+  "messages": {
+    "deleteConfirm": "このデータ製品を削除してもよろしいですか？",
+    "deleteSuccess": "データ製品が正常に削除されました",
+    "deleteError": "データ製品の削除に失敗しました",
+    "fetchError": "データ製品の取得に失敗しました",
+    "importSuccess": "データ製品が正常にインポートされました",
+    "importError": "データ製品のインポートに失敗しました",
+    "success": "成功",
+    "error": "エラー"
+  },
+  "status": {
+    "draft": "下書き",
+    "sandbox": "サンドボックス",
+    "proposed": "提案中",
+    "under_review": "レビュー中",
+    "in_review": "レビュー中",
+    "active": "アクティブ",
+    "approved": "承認済み",
+    "certified": "認定済み",
+    "deprecated": "非推奨",
+    "retired": "廃止",
+    "published": "公開済み"
+  },
+  "viewMode": {
+    "table": "テーブル",
+    "graph": "グラフ"
+  },
+  "details": {
+    "backToList": "リストに戻る",
+    "edit": "編集",
+    "delete": "削除",
+    "subscribe": "購読",
+    "unsubscribe": "購読解除",
+    "publish": "公開",
+    "unpublish": "公開取り消し",
+    "published": "公開済み",
+    "notFound": "データ製品が見つかりません",
+    "loading": "読み込み中...",
+    "noDescription": "説明はありません",
+    "coreMetadata": {
+      "status": "ステータス",
+      "version": "バージョン",
+      "owner": "所有者",
+      "domain": "ドメイン",
+      "created": "作成日",
+      "updated": "更新日",
+      "tags": "タグ",
+      "noTags": "タグなし",
+      "notAssigned": "未割り当て"
+    },
+    "sections": {
+      "overview": "概要",
+      "description": "説明",
+      "inputPorts": "入力ポート",
+      "outputPorts": "出力ポート",
+      "contracts": "データ契約",
+      "subscribers": "購読者",
+      "lineage": "リネージ"
+    },
+    "inputPorts": {
+      "title": "入力ポート",
+      "subtitle": "この製品が消費するデータソース",
+      "noInputPorts": "入力ポートが定義されていません",
+      "addInputPort": "入力ポートを追加"
+    },
+    "outputPorts": {
+      "title": "出力ポート",
+      "subtitle": "この製品が公開するデータ",
+      "noOutputPorts": "出力ポートが定義されていません",
+      "addOutputPort": "出力ポートを追加"
+    },
+    "contracts": {
+      "title": "データ契約",
+      "subtitle": "この製品に関連する契約",
+      "noContracts": "リンクされた契約がありません",
+      "viewContract": "契約を表示"
+    },
+    "subscribers": {
+      "title": "購読者",
+      "subtitle": "この製品を購読しているユーザーとチーム",
+      "noSubscribers": "まだ購読者がいません",
+      "table": {
+        "email": "メール",
+        "subscribed": "購読日",
+        "reason": "理由"
+      }
+    },
+    "subscription": {
+      "subscribed": "購読済み",
+      "unsubscribed": "購読解除済み",
+      "subscribeMessage": "このデータ製品の更新を受け取ります",
+      "unsubscribeMessage": "このデータ製品の更新を受け取らなくなります",
+      "error": "購読の更新に失敗しました"
+    },
+    "deleteConfirm": "「{{name}}」を削除してもよろしいですか？",
+    "deleteSuccess": "データ製品が正常に削除されました",
+    "deleteError": "データ製品の削除に失敗しました"
+  },
+  "form": {
+    "createTitle": "データ製品を作成",
+    "editTitle": "データ製品を編集",
+    "name": "名前",
+    "namePlaceholder": "製品名を入力",
+    "description": "説明",
+    "descriptionPlaceholder": "製品の説明を入力",
+    "purpose": "目的",
+    "purposePlaceholder": "このデータ製品の目的は何ですか？",
+    "usage": "使用方法",
+    "usagePlaceholder": "このデータ製品はどのように使用されるべきですか？",
+    "status": "ステータス",
+    "version": "バージョン",
+    "versionPlaceholder": "例: 1.0.0",
+    "domain": "ドメイン",
+    "selectDomain": "ドメインを選択",
+    "noDomain": "ドメインなし",
+    "ownerTeam": "所有者チーム",
+    "selectOwnerTeam": "所有者チームを選択",
+    "noOwner": "所有者なし",
+    "tags": "タグ",
+    "tagsPlaceholder": "カンマ区切りでタグを入力",
+    "cancel": "キャンセル",
+    "save": "保存",
+    "create": "作成",
+    "saving": "保存中...",
+    "createSuccess": "データ製品が正常に作成されました",
+    "updateSuccess": "データ製品が正常に更新されました",
+    "createError": "データ製品の作成に失敗しました",
+    "updateError": "データ製品の更新に失敗しました"
+  },
+  "import": {
+    "title": "データ製品をインポート",
+    "dropzone": "YAMLまたはJSONファイルをここにドロップするか、クリックして選択",
+    "pasteLabel": "または直接コンテンツを貼り付け",
+    "pastePlaceholder": "YAMLまたはJSONコンテンツを貼り付け...",
+    "cancel": "キャンセル",
+    "import": "インポート",
+    "importing": "インポート中..."
+  }
+}
+

@@ -1,0 +1,170 @@
+{
+  "rebuildGraph": "Rebuild Graph",
+  "rebuildingGraph": "Rebuilding...",
+  "rebuildGraphTooltip": "Reload ontologies, implicit sources, and app objects so everything is queryable.",
+  "title": "Business Glossary",
+  "subtitle": "Manage business glossaries and semantic definitions",
+  "newModel": "New Glossary",
+  "newTerm": "New Term",
+  "searchPlaceholder": "Search terms...",
+  "loading": "Loading semantic models...",
+  "tabs": {
+    "collections": "Collections",
+    "concepts": "Concepts",
+    "graph": "Graph"
+  },
+  "types": {
+    "concept": "Concept",
+    "class": "Class",
+    "property": "Property",
+    "individual": "Individual",
+    "term": "Term"
+  },
+  "filters": {
+    "allGlossaries": "All Glossaries",
+    "allStatus": "All Status",
+    "bySource": "Filter by Source",
+    "all": "All",
+    "none": "None",
+    "groupBySource": "Group by Source",
+    "showProperties": "Show Properties",
+    "groupByDomain": "Group by Domain",
+    "allTypes": "All Types",
+    "allScopes": "All Scopes",
+    "allCollections": "All Collections"
+  },
+  "groupBy": {
+    "collection": "By Collection",
+    "type": "By Type",
+    "flat": "Flat List"
+  },
+  "scopes": {
+    "enterprise": "Enterprise",
+    "domain": "Domain",
+    "department": "Department",
+    "team": "Team",
+    "project": "Project",
+    "external": "External"
+  },
+  "table": {
+    "name": "Name",
+    "glossary": "Glossary",
+    "definition": "Definition",
+    "status": "Status",
+    "updated": "Updated",
+    "actions": "Actions"
+  },
+  "messages": {
+    "success": "Success",
+    "error": "Error",
+    "deleteConfirm": "Are you sure you want to delete this term?",
+    "deleteSuccess": "Term deleted successfully",
+    "deleteError": "Failed to delete term",
+    "collectionCreated": "Collection created successfully",
+    "collectionUpdated": "Collection updated successfully",
+    "collectionDeleted": "Collection deleted successfully",
+    "confirmDeleteCollection": "Are you sure you want to delete the collection \"{{name}}\"? This will delete all concepts in it.",
+    "conceptCreated": "Concept created successfully",
+    "conceptUpdated": "Concept updated successfully",
+    "conceptDeleted": "Concept deleted successfully",
+    "submittedForReview": "Concept submitted for review",
+    "enterReviewerEmail": "Enter reviewer email address:",
+    "conceptPromoted": "Concept promoted successfully",
+    "conceptMigrated": "Concept migrated successfully",
+    "noCollections": "No collections found",
+    "noConceptsFound": "No concepts found",
+    "selectConcept": "Select a concept to view details",
+    "linkAdded": "Link added successfully",
+    "linkRemoved": "Link removed successfully"
+  },
+  "status": {
+    "draft": "Draft",
+    "pending": "Pending",
+    "in_review": "In Review",
+    "under_review": "Under Review",
+    "active": "Active",
+    "approved": "Approved",
+    "published": "Published",
+    "certified": "Certified",
+    "deprecated": "Deprecated",
+    "archived": "Archived",
+    "retired": "Retired"
+  },
+  "details": {
+    "backToList": "Back to Terms",
+    "edit": "Edit",
+    "delete": "Delete",
+    "notFound": "Term not found",
+    "loading": "Loading...",
+    "linkedAssets": "Linked Assets",
+    "synonyms": "Synonyms",
+    "relatedTerms": "Related Terms"
+  },
+  "fields": {
+    "definition": "Definition",
+    "domain": "Domain",
+    "range": "Range",
+    "synonyms": "Synonyms",
+    "examples": "Examples",
+    "businessOwners": "Business Owners",
+    "parentConcepts": "Parent Concepts",
+    "childConcepts": "Child Concepts",
+    "scope": "Scope",
+    "concepts": "Concepts",
+    "source": "Source"
+  },
+  "form": {
+    "createTitle": "Create Term",
+    "editTitle": "Edit Term",
+    "name": "Name",
+    "glossary": "Glossary",
+    "definition": "Definition",
+    "synonyms": "Synonyms",
+    "status": "Status",
+    "cancel": "Cancel",
+    "save": "Save"
+  },
+  "collections": {
+    "title": "Collections",
+    "glossary": "Glossary",
+    "taxonomy": "Taxonomy",
+    "ontology": "Ontology"
+  },
+  "actions": {
+    "createConcept": "Create Concept",
+    "createCollection": "Create Collection"
+  },
+  "badges": {
+    "imported": "Imported",
+    "custom": "Custom"
+  },
+  "links": {
+    "outgoing": "Outgoing Links",
+    "incoming": "Incoming Links",
+    "noOutgoing": "No outgoing links",
+    "noIncoming": "No incoming links",
+    "source": "Source",
+    "target": "Target",
+    "relationshipType": "Relationship Type",
+    "selectTarget": "Select Target",
+    "typeToSearch": "Type to search for concepts",
+    "createLink": "Create Link"
+  },
+  "graph": {
+    "legend": "Legend",
+    "layout": "Layout",
+    "hierarchical": "Hierarchical",
+    "force": "Force",
+    "circular": "Circular"
+  },
+  "dialogs": {
+    "deleteConcept": {
+      "title": "Delete Concept",
+      "description": "Are you sure you want to delete \"{{label}}\"? This action cannot be undone. Only draft concepts can be deleted."
+    },
+    "linkEditor": {
+      "title": "Create Link",
+      "description": "Define a relationship between two concepts"
+    }
+  }
+}

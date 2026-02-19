@@ -1,0 +1,89 @@
+{
+  "title": "Gestione Dati Master",
+  "subtitle": "Definisci contratti dati master e gestisci la corrispondenza delle entità tra sistemi",
+  "newConfiguration": "Nuova Configurazione MDM",
+  "configurations": "Configurazioni MDM",
+  "noConfigurations": "Nessuna configurazione MDM ancora.",
+  "getStarted": "Crea la tua prima configurazione per iniziare.",
+  "sources": "fonti",
+  "lastRun": "Ultima Esecuzione",
+  "stats": {
+    "matchingRuns": "Esecuzioni di Corrispondenza",
+    "totalMatches": "Corrispondenze Totali",
+    "newRecords": "Nuovi Record",
+    "pendingReview": "In Attesa di Revisione"
+  },
+  "configDetails": {
+    "title": "Dettagli Configurazione",
+    "selectConfig": "Seleziona una configurazione per vedere i dettagli",
+    "startMatching": "Avvia Corrispondenza",
+    "editRules": "Modifica Regole MDM",
+    "linkSource": "Collega Contratto Sorgente",
+    "deleteConfig": "Elimina Configurazione"
+  },
+  "tabs": {
+    "overview": "Panoramica",
+    "sources": "Sorgenti",
+    "matchingRules": "Regole di Corrispondenza",
+    "matchingRuns": "Esecuzioni di Corrispondenza",
+    "reviewQueue": "Coda di Revisione"
+  },
+  "overview": {
+    "description": "Descrizione",
+    "entityType": "Tipo di Entità",
+    "goldenRecordTarget": "Target Record Master"
+  },
+  "sourcesTab": {
+    "title": "Sorgenti Collegate",
+    "dataContract": "Contratto Dati",
+    "keyColumn": "Colonna Chiave",
+    "matchColumns": "Colonne di Corrispondenza",
+    "noSources": "Nessun contratto sorgente collegato ancora."
+  },
+  "rulesTab": {
+    "title": "Regole di Corrispondenza",
+    "noRules": "Nessuna regola di corrispondenza configurata ancora.",
+    "matchingRulesButton": "Modifica Regole MDM",
+    "description": "Configura le regole utilizzate per identificare e abbinare i record duplicati."
+  },
+  "runsTab": {
+    "title": "Cronologia Esecuzioni",
+    "runId": "ID Esecuzione",
+    "status": "Stato",
+    "matchesFound": "Corrispondenze Trovate",
+    "newRecords": "Nuovi Record",
+    "pendingReview": "In Attesa di Revisione",
+    "noRuns": "Nessuna esecuzione di corrispondenza ancora. Avvia un job per vedere i risultati.",
+    "selectRun": "Seleziona un'esecuzione per vedere i candidati"
+  },
+  "candidates": {
+    "title": "Candidati di Corrispondenza",
+    "sourceRecord": "Record Sorgente",
+    "targetRecord": "Record Target",
+    "matchType": "Tipo di Corrispondenza",
+    "confidence": "Confidenza",
+    "viewDetails": "Vedi Dettagli",
+    "approve": "Approva",
+    "reject": "Rifiuta",
+    "mergeApproved": "Unisci Approvati",
+    "createReview": "Crea Richiesta di Revisione",
+    "noCandidates": "Nessun candidato di corrispondenza per questa esecuzione."
+  },
+  "toast": {
+    "matchingStarted": "Job di corrispondenza MDM avviato",
+    "mergeCompleted": "Unione completata",
+    "configDeleted": "Configurazione eliminata",
+    "sourceRemoved": "Collegamento sorgente rimosso"
+  },
+  "errors": {
+    "loadFailed": "Impossibile caricare le configurazioni MDM",
+    "startMatchingFailed": "Impossibile avviare la corrispondenza",
+    "mergeFailed": "Unione fallita",
+    "deleteFailed": "Eliminazione fallita"
+  },
+  "confirm": {
+    "deleteConfig": "Sei sicuro di voler eliminare questa configurazione MDM?",
+    "deleteSource": "Sei sicuro di voler rimuovere questo collegamento sorgente?"
+  }
+}
+

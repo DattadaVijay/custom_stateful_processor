@@ -1,0 +1,123 @@
+{
+  "title": "Metadaten",
+  "description": "Notizen, Links und Anhänge.",
+  "previewRenderedPage": "Vorschau der gerenderten Seite",
+  "notes": {
+    "title": "Zusätzliche Notizen",
+    "add": "Hinzufügen",
+    "refresh": "Aktualisieren",
+    "noNotes": "Noch keine Notizen.",
+    "preview": "Vorschau",
+    "edit": "Bearbeiten",
+    "delete": "Löschen",
+    "editTitle": "Notiz bearbeiten",
+    "addTitle": "Notiz hinzufügen",
+    "attachShared": "Geteilte Notiz anhängen",
+    "selectShared": "Geteilte Notiz auswählen",
+    "table": {
+      "title": "Titel",
+      "description": "Beschreibung",
+      "created": "Erstellt",
+      "actions": "Aktionen",
+      "level": "Ebene",
+      "flags": "Flags"
+    },
+    "form": {
+      "title": "Titel",
+      "shortDescription": "Kurzbeschreibung",
+      "content": "Inhalt (Markdown)",
+      "save": "Speichern",
+      "cancel": "Abbrechen",
+      "level": "Ebene",
+      "inheritable": "Vererbbar",
+      "shared": "Geteiltes Asset"
+    },
+    "messages": {
+      "deleteFailed": "Löschen fehlgeschlagen",
+      "addFailed": "Notiz hinzufügen fehlgeschlagen",
+      "updateFailed": "Aktualisierung fehlgeschlagen"
+    }
+  },
+  "links": {
+    "title": "Verwandte Links",
+    "add": "Hinzufügen",
+    "refresh": "Aktualisieren",
+    "noLinks": "Noch keine Links.",
+    "open": "Öffnen",
+    "edit": "Bearbeiten",
+    "delete": "Löschen",
+    "editTitle": "Link bearbeiten",
+    "addTitle": "Link hinzufügen",
+    "attachShared": "Geteilten Link anhängen",
+    "selectShared": "Geteilten Link auswählen",
+    "table": {
+      "title": "Titel",
+      "url": "URL",
+      "description": "Beschreibung",
+      "created": "Erstellt",
+      "actions": "Aktionen",
+      "level": "Ebene",
+      "flags": "Flags"
+    },
+    "form": {
+      "title": "Titel",
+      "url": "URL",
+      "shortDescription": "Kurzbeschreibung",
+      "save": "Speichern",
+      "cancel": "Abbrechen",
+      "level": "Ebene",
+      "inheritable": "Vererbbar",
+      "shared": "Geteiltes Asset"
+    },
+    "messages": {
+      "deleteFailed": "Löschen fehlgeschlagen",
+      "addFailed": "Link hinzufügen fehlgeschlagen",
+      "updateFailed": "Aktualisierung fehlgeschlagen"
+    }
+  },
+  "documents": {
+    "title": "Angehängte Dokumente",
+    "add": "Hinzufügen",
+    "refresh": "Aktualisieren",
+    "noDocuments": "Keine Dokumente hochgeladen.",
+    "preview": "Vorschau",
+    "delete": "Löschen",
+    "attachShared": "Geteiltes Dokument anhängen",
+    "selectShared": "Geteiltes Dokument auswählen",
+    "table": {
+      "title": "Titel",
+      "filename": "Dateiname",
+      "description": "Beschreibung",
+      "size": "Größe",
+      "created": "Erstellt",
+      "actions": "Aktionen",
+      "level": "Ebene",
+      "flags": "Flags"
+    },
+    "form": {
+      "title": "Titel",
+      "shortDescription": "Kurzbeschreibung",
+      "file": "Datei",
+      "upload": "Hochladen",
+      "cancel": "Abbrechen",
+      "level": "Ebene",
+      "inheritable": "Vererbbar",
+      "shared": "Geteiltes Asset"
+    },
+    "messages": {
+      "deleteFailed": "Löschen fehlgeschlagen",
+      "uploadFailed": "Hochladen fehlgeschlagen"
+    }
+  },
+  "sharedAssets": {
+    "selectDescription": "Wählen Sie ein geteiltes Asset zum Anhängen aus",
+    "noSharedNotes": "Keine geteilten Notizen verfügbar",
+    "noSharedLinks": "Keine geteilten Links verfügbar",
+    "noSharedDocuments": "Keine geteilten Dokumente verfügbar"
+  },
+  "messages": {
+    "loadFailed": "Metadaten-Laden fehlgeschlagen",
+    "attachSuccess": "Geteiltes Asset erfolgreich angehängt",
+    "attachFailed": "Anhängen des geteilten Assets fehlgeschlagen"
+  }
+}

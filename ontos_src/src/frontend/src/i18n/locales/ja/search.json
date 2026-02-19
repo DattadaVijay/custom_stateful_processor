@@ -1,0 +1,126 @@
+{
+  "title": "検索",
+  "placeholder": "すべてのアセットを検索...",
+  "tabs": {
+    "askOntos": "Ontosに聞く",
+    "indexSearch": "インデックス検索",
+    "conceptGraph": "コンセプトグラフ",
+    "knowledgeGraph": "ナレッジグラフ",
+    "concepts": "コンセプト"
+  },
+  "noResults": "結果が見つかりません",
+  "noResultsHint": "検索語句やフィルターを調整してみてください",
+  "results": "{{count}}件の結果",
+  "results_plural": "{{count}}件の結果",
+  "filters": {
+    "all": "すべて",
+    "dataProducts": "データ製品",
+    "dataContracts": "データ契約",
+    "datasets": "データセット",
+    "glossaryTerms": "用語集",
+    "teams": "チーム",
+    "projects": "プロジェクト"
+  },
+  "sort": {
+    "relevance": "関連性",
+    "newest": "最新",
+    "oldest": "最古",
+    "name": "名前"
+  },
+  "resultItem": {
+    "type": "タイプ",
+    "owner": "所有者",
+    "updated": "更新日"
+  },
+  "kg": {
+    "prefixSearch": "プレフィックス検索",
+    "prefixSearchDesc": "IRI部分文字列でリソースやプロパティを検索します。",
+    "startPath": "パス開始",
+    "pathExplorer": "パスエクスプローラー",
+    "pathExplorerDesc": "オブジェクトをクリックしてパスを水平に拡張します。",
+    "directionFilter": "方向フィルター",
+    "everything": "すべて",
+    "incomingOnly": "受信のみ",
+    "outgoingOnly": "送信のみ",
+    "contentFilter": "コンテンツフィルター",
+    "showConceptsOnly": "概念/クラスのみ表示",
+    "noOutgoingLinks": "現在の選択に対する送信リンクはありません。",
+    "noLinksMatch": "現在のフィルターに一致するリンクはありません。",
+    "step": "ステップ",
+    "sparql": "SPARQL",
+    "sparqlDesc": "読み込まれたグラフに対して高度なクエリを実行します。",
+    "examples": "例",
+    "runSparql": "SPARQL実行",
+    "resourcesInNamespace": "アプリ名前空間のリソース",
+    "resourcesWithLabel": "rdfs:labelを持つリソース",
+    "subjectsAndTypes": "サブジェクトとそのタイプ",
+    "topPredicates": "頻度別上位述語",
+    "mostLinkedSeeAlso": "rdfs:seeAlso経由で最もリンク"
+  },
+  "index": {
+    "title": "インデックス検索",
+    "description": "すべてのインデックス済みアプリケーションデータを検索します。入力して検索。"
+  },
+  "concepts": {
+    "searchAndSelect": "概念を検索して選択:",
+    "searchPlaceholder": "名前、ラベル、またはIRIで検索...",
+    "clear": "クリア",
+    "conceptHierarchy": "概念階層",
+    "parentClasses": "親クラス:",
+    "noParentClasses": "親クラスが見つかりません",
+    "subclasses": "サブクラス:",
+    "noSubclasses": "サブクラスが見つかりません",
+    "relatedProperties": "関連プロパティ",
+    "noRelatedProperties": "関連プロパティが見つかりません。",
+    "linkedCatalogObjects": "リンクされたカタログオブジェクト",
+    "noCatalogObjects": "カタログオブジェクトは割り当てられていません。",
+    "assignToConcept": "概念に割り当て",
+    "assignDialog": {
+      "title": "オブジェクトを概念に割り当て",
+      "entityType": "エンティティタイプ",
+      "selectEntityType": "エンティティタイプを選択...",
+      "dataProduct": "データ製品",
+      "dataContract": "データ契約",
+      "dataDomain": "データドメイン",
+      "selectEntity": "{{entityType}}を選択..."
+    },
+    "messages": {
+      "linkedSuccess": "概念「{{label}}」を{{entityType}}「{{entityId}}」にリンクしました。",
+      "assignError": "エンティティタイプと特定のエンティティの両方を選択してください。",
+      "assignFailed": "概念のオブジェクトへの割り当てに失敗しました。",
+      "navigationError": "{{entityType}}にナビゲートできません"
+    }
+  },
+  "llm": {
+    "title": "Ontosに聞く",
+    "subtitle": "データ製品、コスト、分析について質問する",
+    "rerun": "再実行",
+    "copyToInput": "編集して再送信",
+    "disabledTitle": "AI検索",
+    "disabledSubtitle": "自然言語検索は現在有効になっていません。",
+    "disabledMessage": "LLM検索には設定が必要です。この機能を有効にするには管理者にお問い合わせください。",
+    "welcomeTitle": "今日は何をお手伝いしましょうか？",
+    "welcomeMessage": "データ製品の発見、ビジネス用語の理解、コスト分析、分析クエリの実行をお手伝いできます。",
+    "tryAsking": "こんな質問を試してみてください:",
+    "inputPlaceholder": "データについて質問してください...",
+    "inputHint": "Enterで送信、Shift+Enterで改行",
+    "model": "モデル",
+    "thinking": "考え中...",
+    "history": "履歴",
+    "newConversation": "新しい会話",
+    "untitled": "無題",
+    "examples": {
+      "findCustomerData": "顧客データはどこにありますか？",
+      "dataProductsCost": "すべてのデータ製品のコストはいくらですか？",
+      "businessTermsSales": "売上に関連するビジネス用語は何ですか？",
+      "showDataProducts": "顧客ドメインのデータ製品を表示してください"
+    },
+    "messages": {
+      "sessionDeleted": "セッション削除",
+      "sessionDeletedDesc": "会話が削除されました。",
+      "loadSessionFailed": "セッションの読み込みに失敗しました",
+      "deleteSessionFailed": "セッションの削除に失敗しました",
+      "loadFailed": "LLM検索の読み込みに失敗しました。後でもう一度お試しください。"
+    }
+  }
+}

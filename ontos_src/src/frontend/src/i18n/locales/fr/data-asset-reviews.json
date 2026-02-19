@@ -1,0 +1,68 @@
+{
+  "title": "Révisions d'Actifs de Données",
+  "subtitle": "Révisez et approuvez les actifs de données",
+  "newReview": "Nouvelle Révision",
+  "createRequest": "Créer une Nouvelle Demande de Révision d'Actif de Données",
+  "searchPlaceholder": "Rechercher des révisions...",
+  "loading": "Chargement des révisions...",
+  "noRequests": "Aucune demande de révision trouvée.",
+  "toast": {
+    "requestCreated": "Demande de révision {{id}} créée.",
+    "requestDeleted": "Demande de révision supprimée.",
+    "deleteError": "Échec de la suppression de la demande.",
+    "bulkDeleted": "{{count}} demande(s) supprimée(s).",
+    "bulkDeleteError": "Certaines demandes n'ont pas pu être supprimées."
+  },
+  "confirm": {
+    "deleteRequest": "Êtes-vous sûr de vouloir supprimer cette demande de révision ?",
+    "bulkDelete": "Êtes-vous sûr de vouloir supprimer {{count}} demande(s) sélectionnée(s) ?"
+  },
+  "filters": {
+    "allStatus": "Tous les Statuts",
+    "pending": "En Attente",
+    "approved": "Approuvé",
+    "rejected": "Rejeté"
+  },
+  "table": {
+    "requestId": "ID de Demande",
+    "asset": "Actif",
+    "type": "Type",
+    "requester": "Demandeur",
+    "reviewer": "Réviseur",
+    "status": "Statut",
+    "assets": "Actifs",
+    "requested": "Demandé",
+    "created": "Créé",
+    "updated": "Mis à jour",
+    "actions": "Actions"
+  },
+  "messages": {
+    "success": "Succès",
+    "error": "Erreur",
+    "approveSuccess": "Révision approuvée avec succès",
+    "rejectSuccess": "Révision rejetée avec succès",
+    "approveError": "Échec de l'approbation de la révision",
+    "rejectError": "Échec du rejet de la révision"
+  },
+  "status": {
+    "pending": "En Attente",
+    "in_review": "En Révision",
+    "approved": "Approuvé",
+    "rejected": "Rejeté",
+    "cancelled": "Annulé"
+  },
+  "details": {
+    "backToList": "Retour aux Révisions",
+    "approve": "Approuver",
+    "reject": "Rejeter",
+    "cancel": "Annuler la Révision",
+    "notFound": "Révision non trouvée",
+    "loading": "Chargement...",
+    "asset": "Actif",
+    "requester": "Demandeur",
+    "reviewer": "Réviseur",
+    "reason": "Raison",
+    "comments": "Commentaires",
+    "addComment": "Ajouter un Commentaire"
+  }
+}

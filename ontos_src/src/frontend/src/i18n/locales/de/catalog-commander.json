@@ -1,0 +1,76 @@
+{
+  "title": "Katalog-Kommandant",
+  "catalogBrowser": "Katalog-Browser",
+  "target": "Ziel",
+  "objectInformation": "Objektinformationen",
+  "basicInformation": "Basisinformationen",
+  "commentsAndActivity": "Kommentare & Aktivität",
+  "askOntos": "Ontos fragen",
+  
+  "actions": {
+    "viewData": "Daten anzeigen",
+    "move": "Verschieben",
+    "delete": "Löschen",
+    "rename": "Umbenennen",
+    "info": "Info",
+    "operations": "Operationen",
+    "comments": "Kommentare",
+    "retry": "Wiederholen",
+    "newChat": "Neuer Chat",
+    "cancel": "Abbrechen",
+    "confirm": "Bestätigen"
+  },
+  
+  "tooltips": {
+    "copyToTarget": "Zum Ziel kopieren",
+    "moveToTarget": "Zum Ziel verschieben",
+    "moveFromTarget": "Vom Ziel verschieben",
+    "refresh": "Aktualisieren (Umschalttaste für erzwungene Aktualisierung)",
+    "dragToResize": "Ziehen zum Ändern der Größe"
+  },
+  
+  "labels": {
+    "metastore": "Metastore",
+    "filterCatalogs": "Kataloge filtern...",
+    "selectEstate": "Estate auswählen",
+    "name": "Name:",
+    "type": "Typ:",
+    "fullPath": "Vollständiger Pfad:",
+    "actions": "Aktionen:"
+  },
+  
+  "messages": {
+    "selectObjectToViewInfo": "Wählen Sie ein Objekt aus, um seine Informationen anzuzeigen",
+    "selectObjectToViewComments": "Wählen Sie ein Objekt aus, um Kommentare anzuzeigen",
+    "loadingDetails": "Details werden geladen...",
+    "noDataAvailable": "Keine Daten verfügbar",
+    "datasetView": "Dataset-Ansicht: {{name}}",
+    "confirmOperation": "Operation bestätigen",
+    "selectedItems": "Ausgewählte Elemente: {{items}}",
+    "noItemsSelected": "Keine Elemente ausgewählt"
+  },
+  
+  "askPanel": {
+    "title": "Ontos fragen",
+    "askAboutItem": "Fragen Sie zu diesem Katalogelement",
+    "askQuestionsAbout": "Stellen Sie Fragen zu \"{{name}}\"",
+    "selectItemFirst": "Wählen Sie ein Element aus, um Fragen zu stellen",
+    "askAboutPlaceholder": "Fragen zu {{name}}...",
+    "selectItemPlaceholder": "Wählen Sie zuerst ein Element aus...",
+    "askingAbout": "Fragen zu:",
+    "thinking": "Denkt nach...",
+    "rerun": "Erneut ausführen",
+    "copyToInput": "Bearbeiten & erneut senden",
+    "exampleQuestions": {
+      "columns": "Welche Spalten hat das?",
+      "owner": "Wem gehört das?",
+      "usage": "Wie wird das verwendet?"
+    }
+  },
+  
+  "errors": {
+    "error": "Fehler",
+    "failedToSendMessage": "Nachricht konnte nicht gesendet werden"
+  }
+}
+

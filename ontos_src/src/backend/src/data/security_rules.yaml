@@ -1,0 +1,34 @@
+rules:
+  - id: "1"
+    name: "Customer Data Masking"
+    description: "Mask customer PII data in all tables"
+    type: "MASKING"
+    target: "customer_data"
+    conditions:
+      - "column contains 'email'"
+      - "column contains 'phone'"
+      - "column contains 'ssn'"
+    status: "active"
+    last_updated: "2024-03-29T10:00:00Z"
+
+  - id: "2"
+    name: "Financial Data Row Level Security"
+    description: "Restrict access to financial data based on department"
+    type: "ROW"
+    target: "financial_data"
+    conditions:
+      - "user.department == 'finance'"
+      - "user.role == 'manager'"
+    status: "active"
+    last_updated: "2024-03-29T11:00:00Z"
+
+  - id: "3"
+    name: "Healthcare Data Privacy"
+    description: "Apply differential privacy to healthcare data"
+    type: "PRIVACY"
+    target: "healthcare_data"
+    conditions:
+      - "data_type == 'medical_records'"
+      - "privacy_level == 'high'"
+    status: "active"
+    last_updated: "2024-03-29T12:00:00Z" 

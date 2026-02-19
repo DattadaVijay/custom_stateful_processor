@@ -1,0 +1,39 @@
+{
+  "title": "Datadomeinen",
+  "addNewDomain": "Nieuw Domein Toevoegen",
+  "viewDetails": "Details Bekijken",
+  "editDomain": "Domein Bewerken",
+  "deleteDomain": "Domein Verwijderen",
+  "noDomainsYet": "Nog geen datadomeinen.",
+  "table": {
+    "name": "Naam",
+    "description": "Beschrijving",
+    "owners": "Eigenaren",
+    "tags": "Tags",
+    "children": "Kinderen",
+    "lastUpdated": "Laatst Bijgewerkt",
+    "actions": "Acties",
+    "parentPrefix": "↳ Ouder:"
+  },
+  "permissions": {
+    "deniedView": "Je hebt geen toestemming om datadomeinen te bekijken.",
+    "deniedCreate": "Je hebt geen toestemming om datadomeinen aan te maken.",
+    "deniedEdit": "Je hebt geen toestemming om datadomeinen te bewerken.",
+    "deniedDelete": "Je hebt geen toestemming om datadomeinen te verwijderen.",
+    "permissionDenied": "Geen Toegang"
+  },
+  "messages": {
+    "domainDeleted": "Domein Verwijderd",
+    "domainDeletedSuccess": "Het datadomein is succesvol verwijderd.",
+    "errorFetchingDomains": "Fout bij ophalen domeinen",
+    "errorDeletingDomain": "Fout bij Verwijderen Domein",
+    "errorLoadingData": "Fout bij Laden Data"
+  },
+  "deleteDialog": {
+    "title": "Weet je het absoluut zeker?",
+    "description": "Deze actie kan niet ongedaan worden gemaakt. Dit zal het datadomein permanent verwijderen.",
+    "cancel": "Annuleren",
+    "delete": "Verwijderen"
+  }
+}
+

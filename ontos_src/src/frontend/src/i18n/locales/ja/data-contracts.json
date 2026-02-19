@@ -1,0 +1,190 @@
+{
+  "title": "データ契約",
+  "subtitle": "データ契約と仕様を管理",
+  "newContract": "新規契約",
+  "uploadFile": "ファイルをアップロード",
+  "importContract": "インポート",
+  "searchPlaceholder": "データ契約を検索...",
+  "loading": "データ契約を読み込み中...",
+  "filters": {
+    "allStatus": "すべてのステータス",
+    "allOwners": "すべての所有者"
+  },
+  "table": {
+    "name": "名前",
+    "status": "ステータス",
+    "version": "バージョン",
+    "owner": "所有者",
+    "schema": "スキーマ",
+    "tags": "タグ",
+    "created": "作成日",
+    "updated": "更新日",
+    "actions": "アクション",
+    "viewDetails": "詳細を表示",
+    "editContract": "契約を編集",
+    "deleteContract": "契約を削除",
+    "viewSchema": "スキーマを表示"
+  },
+  "messages": {
+    "deleteConfirm": "このデータ契約を削除してもよろしいですか？",
+    "deleteSuccess": "データ契約が正常に削除されました",
+    "deleteError": "データ契約の削除に失敗しました",
+    "fetchError": "データ契約の取得に失敗しました",
+    "importSuccess": "データ契約が正常にインポートされました",
+    "importError": "データ契約のインポートに失敗しました",
+    "success": "成功",
+    "error": "エラー"
+  },
+  "status": {
+    "draft": "下書き",
+    "sandbox": "サンドボックス",
+    "proposed": "提案中",
+    "under_review": "レビュー中",
+    "in_review": "レビュー中",
+    "active": "アクティブ",
+    "approved": "承認済み",
+    "certified": "認定済み",
+    "deprecated": "非推奨",
+    "retired": "廃止",
+    "published": "公開済み"
+  },
+  "details": {
+    "backToList": "リストに戻る",
+    "edit": "編集",
+    "delete": "削除",
+    "export": "エクスポート",
+    "clone": "クローン",
+    "validate": "検証",
+    "notFound": "データ契約が見つかりません",
+    "loading": "読み込み中...",
+    "noDescription": "説明はありません",
+    "coreMetadata": {
+      "status": "ステータス",
+      "version": "バージョン",
+      "owner": "所有者",
+      "domain": "ドメイン",
+      "created": "作成日",
+      "updated": "更新日",
+      "tags": "タグ",
+      "noTags": "タグなし",
+      "notAssigned": "未割り当て"
+    },
+    "sections": {
+      "overview": "概要",
+      "schema": "スキーマ",
+      "qualityRules": "品質ルール",
+      "sampleData": "サンプルデータ",
+      "accessControl": "アクセス制御",
+      "linkedEntities": "リンクされたエンティティ",
+      "history": "履歴"
+    },
+    "schema": {
+      "title": "スキーマ定義",
+      "subtitle": "この契約で定義されたフィールドとデータ型",
+      "noSchema": "スキーマが定義されていません",
+      "addField": "フィールドを追加",
+      "columns": {
+        "name": "名前",
+        "type": "型",
+        "nullable": "Nullable",
+        "description": "説明",
+        "constraints": "制約"
+      }
+    },
+    "qualityRules": {
+      "title": "データ品質ルール",
+      "subtitle": "品質チェックと検証",
+      "noRules": "品質ルールが定義されていません",
+      "addRule": "ルールを追加",
+      "columns": {
+        "name": "ルール名",
+        "type": "タイプ",
+        "severity": "重要度",
+        "description": "説明",
+        "status": "ステータス"
+      }
+    },
+    "sampleData": {
+      "title": "サンプルデータ",
+      "subtitle": "期待されるデータ形式のプレビュー",
+      "noData": "サンプルデータがありません",
+      "loadSample": "サンプルを読み込む"
+    },
+    "accessControl": {
+      "title": "アクセス制御",
+      "subtitle": "権限とアクセスポリシー",
+      "noRules": "アクセスルールが定義されていません"
+    },
+    "linkedEntities": {
+      "title": "リンクされたエンティティ",
+      "subtitle": "この契約を使用するデータ製品とデータセット",
+      "dataProducts": "データ製品",
+      "datasets": "データセット",
+      "noLinkedProducts": "リンクされたデータ製品がありません",
+      "noLinkedDatasets": "リンクされたデータセットがありません"
+    },
+    "deleteConfirm": "「{{name}}」を削除してもよろしいですか？",
+    "deleteSuccess": "データ契約が正常に削除されました",
+    "deleteError": "データ契約の削除に失敗しました",
+    "validationSuccess": "契約の検証に成功しました",
+    "validationError": "契約の検証に失敗しました"
+  },
+  "form": {
+    "createTitle": "データ契約を作成",
+    "editTitle": "データ契約を編集",
+    "name": "名前",
+    "namePlaceholder": "契約名を入力",
+    "description": "説明",
+    "descriptionPlaceholder": "契約の説明を入力",
+    "status": "ステータス",
+    "version": "バージョン",
+    "versionPlaceholder": "例: 1.0.0",
+    "domain": "ドメイン",
+    "selectDomain": "ドメインを選択",
+    "noDomain": "ドメインなし",
+    "ownerTeam": "所有者チーム",
+    "selectOwnerTeam": "所有者チームを選択",
+    "noOwner": "所有者なし",
+    "format": "フォーマット",
+    "selectFormat": "フォーマットを選択",
+    "tags": "タグ",
+    "tagsPlaceholder": "カンマ区切りでタグを入力",
+    "cancel": "キャンセル",
+    "save": "保存",
+    "create": "作成",
+    "saving": "保存中...",
+    "createSuccess": "データ契約が正常に作成されました",
+    "updateSuccess": "データ契約が正常に更新されました",
+    "createError": "データ契約の作成に失敗しました",
+    "updateError": "データ契約の更新に失敗しました"
+  },
+  "import": {
+    "title": "データ契約をインポート",
+    "dropzone": "YAMLまたはJSONファイルをここにドロップするか、クリックして選択",
+    "pasteLabel": "または直接コンテンツを貼り付け",
+    "pastePlaceholder": "YAMLまたはJSONコンテンツを貼り付け...",
+    "cancel": "キャンセル",
+    "import": "インポート",
+    "importing": "インポート中..."
+  },
+  "editor": {
+    "title": "契約エディタ",
+    "schemaTab": "スキーマ",
+    "qualityTab": "品質",
+    "rawTab": "Raw",
+    "preview": "プレビュー",
+    "validate": "検証",
+    "save": "保存"
+  },
+  "schemaEditor": {
+    "unsavedChanges": "未保存の変更",
+    "editingColumn": "列の編集",
+    "addingNewColumn": "新しい列を追加",
+    "applyWithUpdateOrSave": "「列を更新」で適用するか、「変更を保存」でスキーマに含めます。",
+    "updateColumn": "列を更新",
+    "addColumn": "列を追加",
+    "addSchema": "スキーマを追加",
+    "cancel": "キャンセル"
+  }
+}
+

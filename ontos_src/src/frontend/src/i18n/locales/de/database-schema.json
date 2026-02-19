@@ -1,0 +1,16 @@
+{
+  "title": "Datenbankschema",
+  "loading": "Datenbankschema wird geladen...",
+  "errorLoadingSchema": "Fehler beim Laden des Schemas",
+  "legend": "Legende",
+  "notNull": "NICHT NULL",
+  "tableCount": "{{count}} Tabellen",
+  "tableCount_one": "{{count}} Tabelle",
+  "relationshipCount": "{{count}} Beziehungen",
+  "relationshipCount_one": "{{count}} Beziehung",
+  "columns": "{{count}} Spalten",
+  "columns_one": "{{count}} Spalte",
+  "tableInfo": "Tabellen-Dokumentation",
+  "noDescription": "Keine Beschreibung für diese Tabelle verfügbar."
+}
+

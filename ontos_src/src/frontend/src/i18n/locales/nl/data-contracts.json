@@ -1,0 +1,190 @@
+{
+  "title": "Datacontracten",
+  "subtitle": "Beheer je datacontracten en specificaties",
+  "newContract": "Nieuw Contract",
+  "uploadFile": "Bestand Uploaden",
+  "importContract": "Importeren",
+  "searchPlaceholder": "Zoek datacontracten...",
+  "loading": "Datacontracten laden...",
+  "filters": {
+    "allStatus": "Alle Status",
+    "allOwners": "Alle Eigenaren"
+  },
+  "table": {
+    "name": "Naam",
+    "status": "Status",
+    "version": "Versie",
+    "owner": "Eigenaar",
+    "schema": "Schema",
+    "tags": "Tags",
+    "created": "Aangemaakt",
+    "updated": "Bijgewerkt",
+    "actions": "Acties",
+    "viewDetails": "Details bekijken",
+    "editContract": "Contract bewerken",
+    "deleteContract": "Contract verwijderen",
+    "viewSchema": "Schema bekijken"
+  },
+  "messages": {
+    "deleteConfirm": "Weet je zeker dat je dit datacontract wilt verwijderen?",
+    "deleteSuccess": "Datacontract succesvol verwijderd",
+    "deleteError": "Kon datacontract niet verwijderen",
+    "fetchError": "Kon datacontracten niet ophalen",
+    "importSuccess": "Datacontract succesvol geïmporteerd",
+    "importError": "Kon datacontract niet importeren",
+    "success": "Succes",
+    "error": "Fout"
+  },
+  "status": {
+    "draft": "Concept",
+    "sandbox": "Sandbox",
+    "proposed": "Voorgesteld",
+    "under_review": "In Beoordeling",
+    "in_review": "In Beoordeling",
+    "active": "Actief",
+    "approved": "Goedgekeurd",
+    "certified": "Gecertificeerd",
+    "deprecated": "Verouderd",
+    "retired": "Buiten Gebruik",
+    "published": "Gepubliceerd"
+  },
+  "details": {
+    "backToList": "Terug naar Lijst",
+    "edit": "Bewerken",
+    "delete": "Verwijderen",
+    "export": "Exporteren",
+    "clone": "Klonen",
+    "validate": "Valideren",
+    "notFound": "Datacontract niet gevonden",
+    "loading": "Laden...",
+    "noDescription": "Geen beschrijving opgegeven",
+    "coreMetadata": {
+      "status": "Status",
+      "version": "Versie",
+      "owner": "Eigenaar",
+      "domain": "Domein",
+      "created": "Aangemaakt",
+      "updated": "Bijgewerkt",
+      "tags": "Tags",
+      "noTags": "Geen tags",
+      "notAssigned": "Niet toegewezen"
+    },
+    "sections": {
+      "overview": "Overzicht",
+      "schema": "Schema",
+      "qualityRules": "Kwaliteitsregels",
+      "sampleData": "Voorbeelddata",
+      "accessControl": "Toegangscontrole",
+      "linkedEntities": "Gekoppelde Entiteiten",
+      "history": "Geschiedenis"
+    },
+    "schema": {
+      "title": "Schema Definitie",
+      "subtitle": "Velden en datatypes gedefinieerd in dit contract",
+      "noSchema": "Geen schema gedefinieerd",
+      "addField": "Veld Toevoegen",
+      "columns": {
+        "name": "Naam",
+        "type": "Type",
+        "nullable": "Nullable",
+        "description": "Beschrijving",
+        "constraints": "Beperkingen"
+      }
+    },
+    "qualityRules": {
+      "title": "Datakwaliteit Regels",
+      "subtitle": "Kwaliteitscontroles en validaties",
+      "noRules": "Geen kwaliteitsregels gedefinieerd",
+      "addRule": "Regel Toevoegen",
+      "columns": {
+        "name": "Regelnaam",
+        "type": "Type",
+        "severity": "Ernst",
+        "description": "Beschrijving",
+        "status": "Status"
+      }
+    },
+    "sampleData": {
+      "title": "Voorbeelddata",
+      "subtitle": "Voorbeeld van verwacht dataformaat",
+      "noData": "Geen voorbeelddata beschikbaar",
+      "loadSample": "Voorbeeld Laden"
+    },
+    "accessControl": {
+      "title": "Toegangscontrole",
+      "subtitle": "Machtigingen en toegangsbeleid",
+      "noRules": "Geen toegangsregels gedefinieerd"
+    },
+    "linkedEntities": {
+      "title": "Gekoppelde Entiteiten",
+      "subtitle": "Dataproducten en datasets die dit contract gebruiken",
+      "dataProducts": "Dataproducten",
+      "datasets": "Datasets",
+      "noLinkedProducts": "Geen gekoppelde dataproducten",
+      "noLinkedDatasets": "Geen gekoppelde datasets"
+    },
+    "deleteConfirm": "Weet je zeker dat je \"{{name}}\" wilt verwijderen?",
+    "deleteSuccess": "Datacontract succesvol verwijderd",
+    "deleteError": "Kon datacontract niet verwijderen",
+    "validationSuccess": "Contract validatie geslaagd",
+    "validationError": "Contract validatie mislukt"
+  },
+  "form": {
+    "createTitle": "Datacontract Aanmaken",
+    "editTitle": "Datacontract Bewerken",
+    "name": "Naam",
+    "namePlaceholder": "Voer contractnaam in",
+    "description": "Beschrijving",
+    "descriptionPlaceholder": "Voer contractbeschrijving in",
+    "status": "Status",
+    "version": "Versie",
+    "versionPlaceholder": "bijv. 1.0.0",
+    "domain": "Domein",
+    "selectDomain": "Selecteer een domein",
+    "noDomain": "Geen domein",
+    "ownerTeam": "Eigenaar Team",
+    "selectOwnerTeam": "Selecteer eigenaar team",
+    "noOwner": "Geen eigenaar",
+    "format": "Formaat",
+    "selectFormat": "Selecteer formaat",
+    "tags": "Tags",
+    "tagsPlaceholder": "Voer tags in gescheiden door komma's",
+    "cancel": "Annuleren",
+    "save": "Opslaan",
+    "create": "Aanmaken",
+    "saving": "Opslaan...",
+    "createSuccess": "Datacontract succesvol aangemaakt",
+    "updateSuccess": "Datacontract succesvol bijgewerkt",
+    "createError": "Kon datacontract niet aanmaken",
+    "updateError": "Kon datacontract niet bijwerken"
+  },
+  "import": {
+    "title": "Datacontract Importeren",
+    "dropzone": "Sleep een YAML of JSON bestand hierheen, of klik om te selecteren",
+    "pasteLabel": "Of plak inhoud direct",
+    "pastePlaceholder": "Plak YAML of JSON inhoud...",
+    "cancel": "Annuleren",
+    "import": "Importeren",
+    "importing": "Importeren..."
+  },
+  "editor": {
+    "title": "Contract Editor",
+    "schemaTab": "Schema",
+    "qualityTab": "Kwaliteit",
+    "rawTab": "Raw",
+    "preview": "Voorbeeld",
+    "validate": "Valideren",
+    "save": "Opslaan"
+  },
+  "schemaEditor": {
+    "unsavedChanges": "Niet-opgeslagen wijzigingen",
+    "editingColumn": "Kolom bewerken",
+    "addingNewColumn": "Nieuwe kolom toevoegen",
+    "applyWithUpdateOrSave": "Toepassen met Kolom bijwerken, of Wijzigingen opslaan om ze in het schema op te nemen.",
+    "updateColumn": "Kolom bijwerken",
+    "addColumn": "Kolom toevoegen",
+    "addSchema": "Schema toevoegen",
+    "cancel": "Annuleren"
+  }
+}
+

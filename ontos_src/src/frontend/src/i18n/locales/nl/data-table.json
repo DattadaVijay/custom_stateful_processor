@@ -1,0 +1,18 @@
+{
+  "filter": "Filteren",
+  "items": "items",
+  "columns": "Kolommen",
+  "selected": "geselecteerd",
+  "noResults": "Geen resultaten.",
+  "rowsSelected": "rij(en) geselecteerd.",
+  "of": "van",
+  "pagination": {
+    "rowsPerPage": "Rijen per pagina",
+    "page": "Pagina",
+    "goToFirstPage": "Ga naar eerste pagina",
+    "goToPreviousPage": "Ga naar vorige pagina",
+    "goToNextPage": "Ga naar volgende pagina",
+    "goToLastPage": "Ga naar laatste pagina"
+  }
+}
+

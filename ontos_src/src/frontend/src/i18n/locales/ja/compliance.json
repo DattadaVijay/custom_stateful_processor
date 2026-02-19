@@ -1,0 +1,105 @@
+{
+  "title": "コンプライアンス",
+  "subtitle": "コンプライアンスポリシーと実行を管理",
+  "newPolicy": "新規ポリシー",
+  "createRule": "ルールを作成",
+  "editRule": "コンプライアンスルールを編集",
+  "createNewRule": "新規コンプライアンスルールを作成",
+  "searchPlaceholder": "ポリシーを検索...",
+  "loading": "コンプライアンスデータを読み込み中...",
+  "stats": {
+    "overallCompliance": "全体のコンプライアンス",
+    "acrossAllRules": "全ルール対象",
+    "activeRules": "アクティブなルール",
+    "currentlyEnforced": "現在適用中",
+    "criticalIssues": "重大な問題",
+    "requireAttention": "対応が必要",
+    "lastUpdated": "最終更新",
+    "today": "今日"
+  },
+  "form": {
+    "name": "名前",
+    "description": "説明",
+    "category": "カテゴリ",
+    "selectCategory": "カテゴリを選択",
+    "severity": "重大度",
+    "selectSeverity": "重大度を選択",
+    "ruleCode": "ルールコード",
+    "rulePlaceholder": "コンプライアンスDSL形式でルールを入力",
+    "failureMessage": "失敗メッセージ",
+    "failureMessagePlaceholder": "例: 名前はスネークケース（小文字とアンダースコア）を使用する必要があります",
+    "failureMessageHint": "このポリシーが失敗した場合にユーザーに表示される分かりやすいメッセージ。問題点と修正方法を説明します。"
+  },
+  "categories": {
+    "security": "セキュリティ",
+    "dataQuality": "データ品質",
+    "privacy": "プライバシー",
+    "governance": "ガバナンス"
+  },
+  "errors": {
+    "loadingPolicies": "ポリシーの読み込みエラー",
+    "savingPolicy": "ポリシーの保存エラー",
+    "deletingPolicy": "ポリシーの削除エラー"
+  },
+  "toast": {
+    "policySaved": "ポリシー '{{name}}' を保存しました",
+    "policyDeleted": "ポリシーを削除しました"
+  },
+  "score": {
+    "title": "コンプライアンススコア",
+    "overall": "総合スコア",
+    "trend": "トレンド"
+  },
+  "filters": {
+    "allStatus": "すべてのステータス",
+    "allSeverity": "すべての重要度"
+  },
+  "table": {
+    "name": "名前",
+    "status": "ステータス",
+    "severity": "重要度",
+    "lastRun": "最終実行",
+    "score": "スコア",
+    "actions": "アクション"
+  },
+  "messages": {
+    "success": "成功",
+    "error": "エラー",
+    "deleteConfirm": "このポリシーを削除してもよろしいですか？",
+    "deleteSuccess": "ポリシーが正常に削除されました",
+    "deleteError": "ポリシーの削除に失敗しました"
+  },
+  "status": {
+    "draft": "下書き",
+    "active": "アクティブ",
+    "paused": "一時停止",
+    "disabled": "無効"
+  },
+  "severity": {
+    "critical": "重大",
+    "high": "高",
+    "medium": "中",
+    "low": "低"
+  },
+  "details": {
+    "backToList": "ポリシーに戻る",
+    "edit": "編集",
+    "delete": "削除",
+    "run": "今すぐ実行",
+    "notFound": "ポリシーが見つかりません",
+    "loading": "読み込み中..."
+  },
+  "runs": {
+    "title": "コンプライアンス実行",
+    "runNow": "今すぐ実行",
+    "noRuns": "コンプライアンス実行がありません",
+    "table": {
+      "startTime": "開始時刻",
+      "endTime": "終了時刻",
+      "status": "ステータス",
+      "score": "スコア",
+      "issues": "問題"
+    }
+  }
+}
+

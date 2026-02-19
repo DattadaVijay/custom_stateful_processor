@@ -1,0 +1,105 @@
+{
+  "title": "Compliance",
+  "subtitle": "Beheer compliance beleid en uitvoeringen",
+  "newPolicy": "Nieuw Beleid",
+  "createRule": "Regel Aanmaken",
+  "editRule": "Compliance Regel Bewerken",
+  "createNewRule": "Nieuwe Compliance Regel Aanmaken",
+  "searchPlaceholder": "Zoek beleid...",
+  "loading": "Compliance data laden...",
+  "stats": {
+    "overallCompliance": "Algemene Compliance",
+    "acrossAllRules": "Over alle regels",
+    "activeRules": "Actieve Regels",
+    "currentlyEnforced": "Momenteel afgedwongen",
+    "criticalIssues": "Kritieke Problemen",
+    "requireAttention": "Vereisen aandacht",
+    "lastUpdated": "Laatst Bijgewerkt",
+    "today": "Vandaag"
+  },
+  "form": {
+    "name": "Naam",
+    "description": "Beschrijving",
+    "category": "Categorie",
+    "selectCategory": "Selecteer categorie",
+    "severity": "Ernst",
+    "selectSeverity": "Selecteer ernst",
+    "ruleCode": "Regelcode",
+    "rulePlaceholder": "Voer de compliance regel in Compliance DSL formaat in",
+    "failureMessage": "Foutmelding",
+    "failureMessagePlaceholder": "bijv. Namen moeten snake_case gebruiken (kleine letters met underscores)",
+    "failureMessageHint": "Leesbare melding die aan gebruikers wordt getoond wanneer dit beleid faalt. Helpt uit te leggen wat er mis ging en hoe het op te lossen."
+  },
+  "categories": {
+    "security": "Beveiliging",
+    "dataQuality": "Datakwaliteit",
+    "privacy": "Privacy",
+    "governance": "Governance"
+  },
+  "errors": {
+    "loadingPolicies": "Fout bij Laden van Beleid",
+    "savingPolicy": "Fout bij Opslaan van Beleid",
+    "deletingPolicy": "Fout bij Verwijderen van Beleid"
+  },
+  "toast": {
+    "policySaved": "Beleid '{{name}}' succesvol opgeslagen",
+    "policyDeleted": "Beleid succesvol verwijderd"
+  },
+  "score": {
+    "title": "Compliance Score",
+    "overall": "Algemene Score",
+    "trend": "Trend"
+  },
+  "filters": {
+    "allStatus": "Alle Status",
+    "allSeverity": "Alle Ernst"
+  },
+  "table": {
+    "name": "Naam",
+    "status": "Status",
+    "severity": "Ernst",
+    "lastRun": "Laatste Uitvoering",
+    "score": "Score",
+    "actions": "Acties"
+  },
+  "messages": {
+    "success": "Succes",
+    "error": "Fout",
+    "deleteConfirm": "Weet je zeker dat je dit beleid wilt verwijderen?",
+    "deleteSuccess": "Beleid succesvol verwijderd",
+    "deleteError": "Kon beleid niet verwijderen"
+  },
+  "status": {
+    "draft": "Concept",
+    "active": "Actief",
+    "paused": "Gepauzeerd",
+    "disabled": "Uitgeschakeld"
+  },
+  "severity": {
+    "critical": "Kritiek",
+    "high": "Hoog",
+    "medium": "Gemiddeld",
+    "low": "Laag"
+  },
+  "details": {
+    "backToList": "Terug naar Beleid",
+    "edit": "Bewerken",
+    "delete": "Verwijderen",
+    "run": "Nu Uitvoeren",
+    "notFound": "Beleid niet gevonden",
+    "loading": "Laden..."
+  },
+  "runs": {
+    "title": "Compliance Uitvoeringen",
+    "runNow": "Nu Uitvoeren",
+    "noRuns": "Nog geen compliance uitvoeringen",
+    "table": {
+      "startTime": "Starttijd",
+      "endTime": "Eindtijd",
+      "status": "Status",
+      "score": "Score",
+      "issues": "Problemen"
+    }
+  }
+}
+

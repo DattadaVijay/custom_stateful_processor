@@ -1,0 +1,229 @@
+{
+  "title": "Prodotti Dati",
+  "subtitle": "Gestisci i tuoi prodotti dati",
+  "newProduct": "Nuovo Prodotto Dati",
+  "importProduct": "Importa",
+  "searchPlaceholder": "Cerca prodotti dati...",
+  "loading": "Caricamento prodotti dati...",
+  "filters": {
+    "allStatus": "Tutti gli Stati",
+    "allOwners": "Tutti i Proprietari",
+    "mySubscriptions": "Le Mie Iscrizioni"
+  },
+  "toolbar": {
+    "showAll": "Mostra tutti i prodotti",
+    "showSubscriptions": "Mostra solo le mie iscrizioni",
+    "mySubscriptionsCount": "Le Mie Iscrizioni ({{count}})",
+    "createProduct": "Crea Prodotto",
+    "uploadFile": "Carica File"
+  },
+  "permissions": {
+    "denied": "Permesso Negato",
+    "noView": "Non hai il permesso di visualizzare i prodotti dati.",
+    "noCreate": "Non hai il permesso di creare prodotti dati.",
+    "noEdit": "Non hai il permesso di modificare prodotti dati.",
+    "noDelete": "Non hai il permesso di eliminare prodotti dati.",
+    "noBulkDelete": "Non hai il permesso per l'eliminazione massiva.",
+    "noGenieSpace": "Non hai il permesso di creare Genie Space."
+  },
+  "bulk": {
+    "deleteConfirm": "Sei sicuro di voler eliminare {{count}} prodotto/i selezionato/i?",
+    "deleteSuccess": "Eliminazione Massiva Riuscita",
+    "deleteSuccessCount": "{{count}} prodotto/i eliminato/i.",
+    "deleteError": "Errore Eliminazione Massiva",
+    "deleteErrorCount": "{{count}} prodotto/i non è stato possibile eliminare. Primo errore: {{error}}",
+    "requestAccessTitle": "Richiedi accesso per la selezione",
+    "requestAccess": "Richiedi Accesso ({{count}})",
+    "createGenieSpaceTitle": "Crea Genie Space dalla selezione",
+    "createGenieSpace": "Crea Genie Space ({{count}})",
+    "deleteTitle": "Elimina selezione",
+    "deleteSelected": "Elimina Selezionati ({{count}})"
+  },
+  "access": {
+    "submitting": "Invio in corso",
+    "requestingAccess": "Richiesta accesso per {{count}} elemento/i...",
+    "requestError": "Invio richieste di accesso fallito",
+    "requestSent": "Richiesta Inviata",
+    "requestSubmitted": "Richiesta di accesso inviata. Sarai notificato."
+  },
+  "upload": {
+    "success": "Caricamento Riuscito",
+    "successMessage": "{{filename}} elaborato con successo. {{count}} prodotto/i elaborato/i.",
+    "failed": "Caricamento Fallito",
+    "unexpectedError": "Si è verificato un errore imprevisto durante il caricamento.",
+    "uploading": "Caricamento...",
+    "tooltipTitle": "Carica Prodotto Dati (formato ODPS)",
+    "tooltipDescription": "Accetta file YAML o JSON seguendo lo schema ODPS (Open Data Product Standard).",
+    "tooltipHint": "Per i Contratti Dati (ODCS), usa la pagina Contratti Dati."
+  },
+  "genie": {
+    "noSelection": "Nessuna Selezione",
+    "selectAtLeastOne": "Seleziona almeno un prodotto dati.",
+    "createConfirm": "Creare un Genie Space per {{count}} prodotto/i selezionato/i?",
+    "initiating": "Avvio Genie Space",
+    "requestingCreation": "Richiesta creazione Genie Space per {{count}} prodotto/i...",
+    "requestSubmitted": "Richiesta Inviata",
+    "willBeNotified": "Creazione Genie Space avviata. Sarai notificato.",
+    "creationError": "Avvio creazione Genie Space fallito."
+  },
+  "navigation": {
+    "error": "Errore di Navigazione",
+    "missingId": "Impossibile navigare ai dettagli, ID prodotto mancante."
+  },
+  "table": {
+    "title": "Titolo",
+    "name": "Nome",
+    "status": "Stato",
+    "domain": "Dominio",
+    "owner": "Proprietario",
+    "version": "Versione",
+    "type": "Tipo",
+    "tags": "Tag",
+    "created": "Creato",
+    "updated": "Aggiornato",
+    "actions": "Azioni",
+    "viewDetails": "Visualizza dettagli",
+    "editProduct": "Modifica prodotto",
+    "deleteProduct": "Elimina prodotto",
+    "subscribed": "Iscritto"
+  },
+  "messages": {
+    "deleteConfirm": "Sei sicuro di voler eliminare questo prodotto dati?",
+    "deleteSuccess": "Prodotto dati eliminato con successo",
+    "deleteError": "Impossibile eliminare il prodotto dati",
+    "fetchError": "Impossibile recuperare i prodotti dati",
+    "importSuccess": "Prodotto dati importato con successo",
+    "importError": "Impossibile importare il prodotto dati",
+    "success": "Successo",
+    "error": "Errore"
+  },
+  "status": {
+    "draft": "Bozza",
+    "sandbox": "Sandbox",
+    "proposed": "Proposto",
+    "under_review": "In revisione",
+    "in_review": "In revisione",
+    "active": "Attivo",
+    "approved": "Approvato",
+    "certified": "Certificato",
+    "deprecated": "Obsoleto",
+    "retired": "Ritirato",
+    "published": "Pubblicato"
+  },
+  "viewMode": {
+    "table": "Tabella",
+    "graph": "Grafo"
+  },
+  "details": {
+    "backToList": "Torna alla Lista",
+    "edit": "Modifica",
+    "delete": "Elimina",
+    "subscribe": "Iscriviti",
+    "unsubscribe": "Annulla Iscrizione",
+    "publish": "Pubblica",
+    "unpublish": "Rimuovi Pubblicazione",
+    "published": "Pubblicato",
+    "notFound": "Prodotto dati non trovato",
+    "loading": "Caricamento...",
+    "noDescription": "Nessuna descrizione fornita",
+    "coreMetadata": {
+      "status": "Stato",
+      "version": "Versione",
+      "owner": "Proprietario",
+      "domain": "Dominio",
+      "created": "Creato",
+      "updated": "Aggiornato",
+      "tags": "Tag",
+      "noTags": "Nessun tag",
+      "notAssigned": "Non assegnato"
+    },
+    "sections": {
+      "overview": "Panoramica",
+      "description": "Descrizione",
+      "inputPorts": "Porte di Ingresso",
+      "outputPorts": "Porte di Uscita",
+      "contracts": "Contratti Dati",
+      "subscribers": "Abbonati",
+      "lineage": "Lignaggio"
+    },
+    "inputPorts": {
+      "title": "Porte di Ingresso",
+      "subtitle": "Fonti dati consumate da questo prodotto",
+      "noInputPorts": "Nessuna porta di ingresso definita",
+      "addInputPort": "Aggiungi Porta di Ingresso"
+    },
+    "outputPorts": {
+      "title": "Porte di Uscita",
+      "subtitle": "Dati esposti da questo prodotto",
+      "noOutputPorts": "Nessuna porta di uscita definita",
+      "addOutputPort": "Aggiungi Porta di Uscita"
+    },
+    "contracts": {
+      "title": "Contratti Dati",
+      "subtitle": "Contratti associati a questo prodotto",
+      "noContracts": "Nessun contratto collegato",
+      "viewContract": "Visualizza Contratto"
+    },
+    "subscribers": {
+      "title": "Abbonati",
+      "subtitle": "Utenti e team iscritti a questo prodotto",
+      "noSubscribers": "Nessun abbonato ancora",
+      "table": {
+        "email": "Email",
+        "subscribed": "Iscritto",
+        "reason": "Motivo"
+      }
+    },
+    "subscription": {
+      "subscribed": "Iscritto",
+      "unsubscribed": "Iscrizione Annullata",
+      "subscribeMessage": "Riceverai aggiornamenti per questo prodotto dati",
+      "unsubscribeMessage": "Non riceverai più aggiornamenti per questo prodotto dati",
+      "error": "Impossibile aggiornare l'iscrizione"
+    },
+    "deleteConfirm": "Sei sicuro di voler eliminare \"{{name}}\"?",
+    "deleteSuccess": "Prodotto dati eliminato con successo",
+    "deleteError": "Impossibile eliminare il prodotto dati"
+  },
+  "form": {
+    "createTitle": "Crea Prodotto Dati",
+    "editTitle": "Modifica Prodotto Dati",
+    "name": "Nome",
+    "namePlaceholder": "Inserisci il nome del prodotto",
+    "description": "Descrizione",
+    "descriptionPlaceholder": "Inserisci la descrizione del prodotto",
+    "purpose": "Scopo",
+    "purposePlaceholder": "Qual è lo scopo di questo prodotto dati?",
+    "usage": "Utilizzo",
+    "usagePlaceholder": "Come dovrebbe essere utilizzato questo prodotto dati?",
+    "status": "Stato",
+    "version": "Versione",
+    "versionPlaceholder": "es., 1.0.0",
+    "domain": "Dominio",
+    "selectDomain": "Seleziona un dominio",
+    "noDomain": "Nessun dominio",
+    "ownerTeam": "Team Proprietario",
+    "selectOwnerTeam": "Seleziona team proprietario",
+    "noOwner": "Nessun proprietario",
+    "tags": "Tag",
+    "tagsPlaceholder": "Inserisci tag separati da virgole",
+    "cancel": "Annulla",
+    "save": "Salva",
+    "create": "Crea",
+    "saving": "Salvataggio...",
+    "createSuccess": "Prodotto dati creato con successo",
+    "updateSuccess": "Prodotto dati aggiornato con successo",
+    "createError": "Impossibile creare il prodotto dati",
+    "updateError": "Impossibile aggiornare il prodotto dati"
+  },
+  "import": {
+    "title": "Importa Prodotto Dati",
+    "dropzone": "Trascina un file YAML o JSON qui, o clicca per selezionare",
+    "pasteLabel": "O incolla il contenuto direttamente",
+    "pastePlaceholder": "Incolla contenuto YAML o JSON...",
+    "cancel": "Annulla",
+    "import": "Importa",
+    "importing": "Importazione..."
+  }
+}
+

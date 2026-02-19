@@ -1,0 +1,16 @@
+{
+  "title": "Database Schema",
+  "loading": "Loading database schema...",
+  "errorLoadingSchema": "Error Loading Schema",
+  "legend": "Legend",
+  "notNull": "NOT NULL",
+  "tableCount": "{{count}} tables",
+  "tableCount_one": "{{count}} table",
+  "relationshipCount": "{{count}} relationships",
+  "relationshipCount_one": "{{count}} relationship",
+  "columns": "{{count}} columns",
+  "columns_one": "{{count}} column",
+  "tableInfo": "Table documentation",
+  "noDescription": "No description available for this table."
+}
+

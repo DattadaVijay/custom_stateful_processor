@@ -1,0 +1,57 @@
+{
+  "title": "Auditlogboek",
+  "description": "Bekijk en filter applicatie auditlogs",
+  "filters": {
+    "title": "Filters",
+    "description": "Filter auditlogs op criteria",
+    "username": "Gebruikersnaam",
+    "usernamePlaceholder": "Filter op gebruikersnaam",
+    "feature": "Functie",
+    "featurePlaceholder": "Filter op functie",
+    "action": "Actie",
+    "actionPlaceholder": "Filter op actie",
+    "success": "Succes",
+    "successOptions": {
+      "all": "Alles",
+      "successOnly": "Alleen Succes",
+      "failuresOnly": "Alleen Mislukkingen"
+    },
+    "applyButton": "Filters Toepassen",
+    "clearButton": "Filters Wissen",
+    "exportButton": "Exporteer CSV"
+  },
+  "results": {
+    "title": "Auditlogs",
+    "showing": "Toont {{count}} van {{total}} log entries",
+    "loading": "Laden...",
+    "noLogs": "Geen auditlogs gevonden"
+  },
+  "table": {
+    "timestamp": "Tijdstempel",
+    "username": "Gebruikersnaam",
+    "ipAddress": "IP-adres",
+    "feature": "Functie",
+    "action": "Actie",
+    "status": "Status",
+    "details": "Details",
+    "viewButton": "Bekijk",
+    "success": "Succes",
+    "failed": "Mislukt",
+    "notAvailable": "N.v.t."
+  },
+  "pagination": {
+    "page": "Pagina {{current}} van {{total}}",
+    "previous": "Vorige",
+    "next": "Volgende"
+  },
+  "detailsDialog": {
+    "title": "Auditlog Details"
+  },
+  "messages": {
+    "exportSuccess": "Auditlogs geëxporteerd naar CSV",
+    "exportSuccessTitle": "Succes",
+    "loadError": "Kon auditlogs niet laden",
+    "loadErrorTitle": "Fout"
+  }
+}
+

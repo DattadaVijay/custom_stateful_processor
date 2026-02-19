@@ -1,0 +1,190 @@
+{
+  "title": "Data Contracts",
+  "subtitle": "Manage your data contracts and specifications",
+  "newContract": "New Contract",
+  "uploadFile": "Upload File",
+  "importContract": "Import",
+  "searchPlaceholder": "Search data contracts...",
+  "loading": "Loading data contracts...",
+  "filters": {
+    "allStatus": "All Status",
+    "allOwners": "All Owners"
+  },
+  "table": {
+    "name": "Name",
+    "status": "Status",
+    "version": "Version",
+    "owner": "Owner",
+    "schema": "Schema",
+    "tags": "Tags",
+    "created": "Created",
+    "updated": "Updated",
+    "actions": "Actions",
+    "viewDetails": "View details",
+    "editContract": "Edit contract",
+    "deleteContract": "Delete contract",
+    "viewSchema": "View schema"
+  },
+  "messages": {
+    "deleteConfirm": "Are you sure you want to delete this data contract?",
+    "deleteSuccess": "Data contract deleted successfully",
+    "deleteError": "Failed to delete data contract",
+    "fetchError": "Failed to fetch data contracts",
+    "importSuccess": "Data contract imported successfully",
+    "importError": "Failed to import data contract",
+    "success": "Success",
+    "error": "Error"
+  },
+  "status": {
+    "draft": "Draft",
+    "sandbox": "Sandbox",
+    "proposed": "Proposed",
+    "under_review": "Under Review",
+    "in_review": "In Review",
+    "active": "Active",
+    "approved": "Approved",
+    "certified": "Certified",
+    "deprecated": "Deprecated",
+    "retired": "Retired",
+    "published": "Published"
+  },
+  "details": {
+    "backToList": "Back to List",
+    "edit": "Edit",
+    "delete": "Delete",
+    "export": "Export",
+    "clone": "Clone",
+    "validate": "Validate",
+    "notFound": "Data contract not found",
+    "loading": "Loading...",
+    "noDescription": "No description provided",
+    "coreMetadata": {
+      "status": "Status",
+      "version": "Version",
+      "owner": "Owner",
+      "domain": "Domain",
+      "created": "Created",
+      "updated": "Updated",
+      "tags": "Tags",
+      "noTags": "No tags",
+      "notAssigned": "Not assigned"
+    },
+    "sections": {
+      "overview": "Overview",
+      "schema": "Schema",
+      "qualityRules": "Quality Rules",
+      "sampleData": "Sample Data",
+      "accessControl": "Access Control",
+      "linkedEntities": "Linked Entities",
+      "history": "History"
+    },
+    "schema": {
+      "title": "Schema Definition",
+      "subtitle": "Fields and data types defined in this contract",
+      "noSchema": "No schema defined",
+      "addField": "Add Field",
+      "columns": {
+        "name": "Name",
+        "type": "Type",
+        "nullable": "Nullable",
+        "description": "Description",
+        "constraints": "Constraints"
+      }
+    },
+    "qualityRules": {
+      "title": "Data Quality Rules",
+      "subtitle": "Quality checks and validations",
+      "noRules": "No quality rules defined",
+      "addRule": "Add Rule",
+      "columns": {
+        "name": "Rule Name",
+        "type": "Type",
+        "severity": "Severity",
+        "description": "Description",
+        "status": "Status"
+      }
+    },
+    "sampleData": {
+      "title": "Sample Data",
+      "subtitle": "Preview of expected data format",
+      "noData": "No sample data available",
+      "loadSample": "Load Sample"
+    },
+    "accessControl": {
+      "title": "Access Control",
+      "subtitle": "Permissions and access policies",
+      "noRules": "No access rules defined"
+    },
+    "linkedEntities": {
+      "title": "Linked Entities",
+      "subtitle": "Data products and datasets using this contract",
+      "dataProducts": "Data Products",
+      "datasets": "Datasets",
+      "noLinkedProducts": "No linked data products",
+      "noLinkedDatasets": "No linked datasets"
+    },
+    "deleteConfirm": "Are you sure you want to delete \"{{name}}\"?",
+    "deleteSuccess": "Data contract deleted successfully",
+    "deleteError": "Failed to delete data contract",
+    "validationSuccess": "Contract validation passed",
+    "validationError": "Contract validation failed"
+  },
+  "form": {
+    "createTitle": "Create Data Contract",
+    "editTitle": "Edit Data Contract",
+    "name": "Name",
+    "namePlaceholder": "Enter contract name",
+    "description": "Description",
+    "descriptionPlaceholder": "Enter contract description",
+    "status": "Status",
+    "version": "Version",
+    "versionPlaceholder": "e.g., 1.0.0",
+    "domain": "Domain",
+    "selectDomain": "Select a domain",
+    "noDomain": "No domain",
+    "ownerTeam": "Owner Team",
+    "selectOwnerTeam": "Select owner team",
+    "noOwner": "No owner",
+    "format": "Format",
+    "selectFormat": "Select format",
+    "tags": "Tags",
+    "tagsPlaceholder": "Enter tags separated by commas",
+    "cancel": "Cancel",
+    "save": "Save",
+    "create": "Create",
+    "saving": "Saving...",
+    "createSuccess": "Data contract created successfully",
+    "updateSuccess": "Data contract updated successfully",
+    "createError": "Failed to create data contract",
+    "updateError": "Failed to update data contract"
+  },
+  "import": {
+    "title": "Import Data Contract",
+    "dropzone": "Drop a YAML or JSON file here, or click to select",
+    "pasteLabel": "Or paste content directly",
+    "pastePlaceholder": "Paste YAML or JSON content...",
+    "cancel": "Cancel",
+    "import": "Import",
+    "importing": "Importing..."
+  },
+  "editor": {
+    "title": "Contract Editor",
+    "schemaTab": "Schema",
+    "qualityTab": "Quality",
+    "rawTab": "Raw",
+    "preview": "Preview",
+    "validate": "Validate",
+    "save": "Save"
+  },
+  "schemaEditor": {
+    "unsavedChanges": "Unsaved changes",
+    "editingColumn": "Editing Column",
+    "addingNewColumn": "Adding New Column",
+    "applyWithUpdateOrSave": "Apply with Update Column, or Save Changes to include them in the schema.",
+    "updateColumn": "Update Column",
+    "addColumn": "Add Column",
+    "addSchema": "Add Schema",
+    "cancel": "Cancel"
+  }
+}
+

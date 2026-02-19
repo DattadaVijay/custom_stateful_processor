@@ -1,0 +1,28 @@
+{
+  "notFound": {
+    "title": "404 - Seite nicht gefunden",
+    "message": "Die gesuchte Seite existiert nicht oder wurde verschoben.",
+    "backHome": "Zur Startseite"
+  },
+  "unauthorized": {
+    "title": "401 - Nicht autorisiert",
+    "message": "Sie haben keine Berechtigung, auf diese Ressource zuzugreifen.",
+    "login": "Anmelden"
+  },
+  "forbidden": {
+    "title": "403 - Verboten",
+    "message": "Sie haben nicht die erforderlichen Berechtigungen, um auf diese Seite zuzugreifen.",
+    "contact": "Wenden Sie sich an Ihren Administrator für den Zugriff."
+  },
+  "serverError": {
+    "title": "500 - Serverfehler",
+    "message": "Auf unserer Seite ist etwas schief gelaufen. Bitte versuchen Sie es später erneut.",
+    "retry": "Erneut versuchen"
+  },
+  "generic": {
+    "title": "Fehler",
+    "message": "Ein unerwarteter Fehler ist aufgetreten.",
+    "retry": "Erneut versuchen"
+  }
+}
+

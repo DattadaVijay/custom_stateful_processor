@@ -1,0 +1,108 @@
+{
+  "title": "Gestione Estate",
+  "subtitle": "Gestisci i tuoi estate dati e la sincronizzazione",
+  "newEstate": "Nuovo Estate",
+  "addEstate": "Aggiungi Estate",
+  "editEstate": "Modifica Estate",
+  "searchPlaceholder": "Cerca estate...",
+  "loading": "Caricamento estate...",
+  "errors": {
+    "fetchEstates": "Errore nel Caricamento degli Estate",
+    "couldNotLoad": "Impossibile caricare gli estate.",
+    "savingEstate": "Errore nel Salvataggio dell'Estate",
+    "deletingEstate": "Errore nell'Eliminazione dell'Estate",
+    "triggeringSync": "Errore nell'Avvio della Sincronizzazione",
+    "validationError": "Errore di Validazione",
+    "validationMessage": "Compila tutti i campi obbligatori: Nome, Descrizione, URL Workspace, Nome Metastore, Tipo Cloud e Tipo Connessione."
+  },
+  "toast": {
+    "estateCreated": "Estate creato con successo",
+    "estateUpdated": "Estate aggiornato con successo",
+    "estateDeleted": "Estate eliminato con successo",
+    "triggeringSync": "Avvio Sincronizzazione",
+    "syncRequested": "Richiesta sincronizzazione per l'estate...",
+    "syncTriggered": "Sincronizzazione avviata con successo. Aggiornamento dati..."
+  },
+  "connectionTypes": {
+    "deltaShare": "Delta Share",
+    "unityCatalog": "Unity Catalog",
+    "database": "Database (Uso Futuro)"
+  },
+  "filters": {
+    "allStatus": "Tutti gli Stati"
+  },
+  "table": {
+    "name": "Nome",
+    "workspaceUrl": "URL Workspace",
+    "cloud": "Cloud",
+    "connection": "Connessione",
+    "metastore": "Metastore",
+    "syncStatus": "Stato Sincronizzazione",
+    "type": "Tipo",
+    "status": "Stato",
+    "lastSync": "Ultima Sincronizzazione",
+    "assets": "Asset",
+    "actions": "Azioni"
+  },
+  "messages": {
+    "success": "Successo",
+    "error": "Errore",
+    "deleteConfirm": "Sei sicuro di voler eliminare questo estate?",
+    "deleteSuccess": "Estate eliminato con successo",
+    "deleteError": "Impossibile eliminare l'estate",
+    "syncSuccess": "Sincronizzazione avviata con successo",
+    "syncError": "Impossibile avviare la sincronizzazione"
+  },
+  "status": {
+    "connected": "Connesso",
+    "disconnected": "Disconnesso",
+    "syncing": "Sincronizzazione",
+    "error": "Errore"
+  },
+  "details": {
+    "backToList": "Torna agli Estate",
+    "edit": "Modifica",
+    "delete": "Elimina",
+    "sync": "Sincronizza Ora",
+    "viewDetails": "Visualizza Dettagli",
+    "notFound": "Estate non trovato",
+    "loading": "Caricamento...",
+    "overview": {
+      "title": "Panoramica Estate",
+      "type": "Tipo",
+      "status": "Stato",
+      "lastSync": "Ultima Sincronizzazione",
+      "created": "Creato"
+    },
+    "assets": {
+      "title": "Asset",
+      "catalogs": "Cataloghi",
+      "schemas": "Schema",
+      "tables": "Tabelle"
+    },
+    "syncHistory": {
+      "title": "Cronologia Sincronizzazione",
+      "noHistory": "Nessuna cronologia di sincronizzazione"
+    }
+  },
+  "form": {
+    "createTitle": "Crea Estate",
+    "editTitle": "Modifica Estate",
+    "dialogDescription": "Configura la connessione dell'estate Databricks e le impostazioni di base. Le politiche di condivisione sono gestite nella pagina dei dettagli.",
+    "name": "Nome",
+    "description": "Descrizione",
+    "type": "Tipo",
+    "workspaceUrl": "URL Workspace",
+    "cloud": "Cloud",
+    "selectCloudProvider": "Seleziona provider cloud",
+    "connectionType": "Tipo di Connessione",
+    "selectConnectionType": "Seleziona tipo di connessione",
+    "connectionString": "Stringa di Connessione",
+    "metastoreName": "Nome Metastore",
+    "syncSchedule": "Programma di Sincronizzazione",
+    "enableSync": "Abilita Sincronizzazione",
+    "cancel": "Annulla",
+    "save": "Salva"
+  }
+}
+

@@ -1,0 +1,223 @@
+{
+  "title": "Welcome to Ontos",
+  "tagline": "Manage business glossary, data contracts, data products, personas, and more",
+  "search": {
+    "placeholder": "Search for data products, glossary terms, contracts..."
+  },
+  "overview": {
+    "title": "Overview",
+    "loading": "Loading...",
+    "noData": "No overview data available for the selected feature previews or your permissions.",
+    "error": "Error",
+    "tiles": {
+      "compliance": {
+        "title": "Compliance",
+        "description": "Current compliance score",
+        "notAvailable": "N/A"
+      },
+      "dataContracts": {
+        "title": "Data Contracts",
+        "description": "Active contracts"
+      },
+      "dataProducts": {
+        "title": "Data Products",
+        "description": "Total data products"
+      },
+      "semanticModels": {
+        "title": "Business Glossary",
+        "description": "Models / Terms"
+      },
+      "estates": {
+        "title": "Estates",
+        "description": "No estates configured",
+        "lastSync": "Last sync: {{date}} ({{status}})",
+        "syncStatus": {
+          "success": "success",
+          "failed": "failed",
+          "in_progress": "in progress",
+          "unknown": "unknown"
+        }
+      }
+    }
+  },
+  "complianceTrend": {
+    "title": "Compliance Trend",
+    "period": "Last 30 days",
+    "loading": "Loading compliance data...",
+    "error": "Error loading trend data: {{error}}",
+    "noData": "No compliance data available for the selected period.",
+    "chartLabel": "Compliance Score"
+  },
+  "noAccess": {
+    "message": "You currently don't have a specific role assigned.",
+    "action": "To access features, please",
+    "link": "request access to a role",
+    "contactAdmin": "Please contact an administrator to request access to the application."
+  },
+  "requestRoleSection": {
+    "title": "Roles",
+    "cardTitle": "Available Roles",
+    "description": "You currently have no application roles assigned. Select a role below to request access and get started.",
+    "info": "After submitting a request, an administrator will review it and you will be notified of the decision via the notification bell.",
+    "noDescription": "No description available",
+    "requestAccess": "Request Access",
+    "moreRoles": "And {{count}} more roles available..."
+  },
+  "quickActions": {
+    "title": "Quick Actions",
+    "loading": "Loading...",
+    "noActions": "No actions available.",
+    "actions": {
+      "browseProducts": "Browse Data Products",
+      "browseGlossary": "Browse Business Glossary",
+      "createProduct": "Create Data Product",
+      "defineContract": "Define Data Contract",
+      "reviewAssets": "Review Data Assets",
+      "manageEntitlements": "Manage Entitlements",
+      "catalogCommander": "Catalog Commander",
+      "settings": "Settings"
+    }
+  },
+  "recentActivity": {
+    "title": "Recent Activity",
+    "loading": "Loading recent activity...",
+    "error": "Failed to load recent activity",
+    "noActivity": "No recent activity.",
+    "entityLabel": "Entity:",
+    "actionLabel": "Action:",
+    "userLabel": "User:",
+    "timeLabel": "Time:",
+    "iriLabel": "Iri:",
+    "linkIdLabel": "Link Id:",
+    "openButton": "Open",
+    "openDetails": "Open details",
+    "noDetails": "No details available",
+    "by": "by",
+    "at": "at"
+  },
+  "discoverySection": {
+    "title": "Discovery",
+    "dataDomains": "Data Domains",
+    "exactMatchOnly": "Exact Matches Only",
+    "allDomains": "All Domains",
+    "clearFilter": "Clear domain filter",
+    "selectDomain": "Select a domain to view its hierarchy and filter products.",
+    "popularProducts": "Popular Data Products",
+    "loading": "Loading products...",
+    "error": "Failed to load data products",
+    "noProducts": "No data products found.",
+    "domain": "Domain",
+    "owner": "Owner",
+    "unknown": "Unknown",
+    "status": "N/A",
+    "untitled": "Untitled",
+    "info": "Info"
+  },
+  "dataCurationSection": {
+    "title": "Data Curation",
+    "createDataProduct": {
+      "title": "Create Data Product",
+      "description": "Use the wizard to define a new data product.",
+      "button": "Open"
+    },
+    "defineDataContract": {
+      "title": "Define Data Contract",
+      "description": "Create or update a technical contract.",
+      "button": "Open"
+    },
+    "createDataset": {
+      "title": "Create Dataset",
+      "description": "Manage datasets for matching and mastering.",
+      "button": "Open"
+    },
+    "createSchema": {
+      "title": "Create Schema",
+      "description": "Create or manage schemas and permissions.",
+      "openButton": "Open",
+      "createButton": "Create"
+    },
+    "createCatalog": {
+      "title": "Create Catalog",
+      "description": "Provision catalogs and manage access.",
+      "openButton": "Open",
+      "createButton": "Create"
+    }
+  },
+  "requiredActionsSection": {
+    "title": "Required Actions",
+    "pendingNotifications": "Pending Notifications",
+    "loading": "Loading...",
+    "noActions": "No pending actions.",
+    "openButton": "Open",
+    "markReadButton": "Mark read",
+    "readLabel": "Read",
+    "alertMessage": "This list shows only action-required notifications assigned to your role(s)."
+  },
+  "marketplace": {
+    "welcome": "Hello",
+    "welcomeWithName": "Hello, {{name}}",
+    "tagline": "Welcome to the Data Marketplace. Discover, understand, and subscribe to data products and datasets.",
+    "searchPlaceholder": "What can we help you find today?",
+    "searchDatasetsPlaceholder": "Search datasets by name, path, or contract...",
+    "browseAssetType": "Browse:",
+    "assetTypes": {
+      "products": "Data Products",
+      "datasets": "Datasets"
+    },
+    "browseDataDomains": "Browse Data Domains",
+    "allDomains": "All Domains",
+    "loadingDomains": "Loading domains...",
+    "tabs": {
+      "explore": "Explore Data",
+      "subscriptions": "My Data"
+    },
+    "products": {
+      "available": "{{count}} product available",
+      "available_plural": "{{count}} products available",
+      "subscribed": "{{count}} subscribed product",
+      "subscribed_plural": "{{count}} subscribed products",
+      "noProducts": "No data products found.",
+      "adjustFilters": "Try adjusting your search or filter.",
+      "noSubscriptions": "You haven't subscribed to any data products yet.",
+      "browseToSubscribe": "Browse the Explore tab to find products to subscribe to.",
+      "exploreProducts": "Explore Data Products",
+      "owner": "Owner",
+      "unknown": "Unknown"
+    },
+    "datasets": {
+      "available": "{{count}} dataset available",
+      "available_plural": "{{count}} datasets available",
+      "subscribed": "{{count}} subscribed dataset",
+      "subscribed_plural": "{{count}} subscribed datasets",
+      "noDatasets": "No datasets found.",
+      "adjustFilters": "Try adjusting your search.",
+      "noSubscriptions": "You haven't subscribed to any datasets yet.",
+      "browseToSubscribe": "Browse the Explore tab to find datasets to subscribe to.",
+      "exploreDatasets": "Explore Datasets",
+      "owner": "Owner"
+    },
+    "modeToggle": {
+      "marketplace": "Marketplace",
+      "management": "Management"
+    },
+    "domainView": {
+      "pills": "List",
+      "graph": "Graph"
+    },
+    "exactMatchOnly": "Exact match only",
+    "selectDomainForGraph": "Select a domain to view its hierarchy.",
+    "domainInfo": {
+      "parentDomain": "Parent",
+      "childDomains": "{{count}} child domain",
+      "childDomains_plural": "{{count}} child domains"
+    },
+    "tilesPerRow": {
+      "placeholder": "Tiles",
+      "one": "1 per row",
+      "two": "2 per row",
+      "three": "3 per row",
+      "four": "4 per row"
+    },
+    "openInDetails": "Open in details view"
+  }
+}

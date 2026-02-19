@@ -1,0 +1,224 @@
+{
+  "title": "Welkom bij Ontos",
+  "tagline": "Beheer business glossary, datacontracten, dataproducten, persona's en meer",
+  "search": {
+    "placeholder": "Zoek naar dataproducten, glossary termen, contracten..."
+  },
+  "overview": {
+    "title": "Overzicht",
+    "loading": "Laden...",
+    "noData": "Geen overzichtsdata beschikbaar voor de geselecteerde functievoorbeelden of je machtigingen.",
+    "error": "Fout",
+    "tiles": {
+      "compliance": {
+        "title": "Compliance",
+        "description": "Huidige compliance score",
+        "notAvailable": "N.v.t."
+      },
+      "dataContracts": {
+        "title": "Datacontracten",
+        "description": "Actieve contracten"
+      },
+      "dataProducts": {
+        "title": "Dataproducten",
+        "description": "Totaal dataproducten"
+      },
+      "semanticModels": {
+        "title": "Business Glossary",
+        "description": "Modellen / Termen"
+      },
+      "estates": {
+        "title": "Estates",
+        "description": "Geen estates geconfigureerd",
+        "lastSync": "Laatste sync: {{date}} ({{status}})",
+        "syncStatus": {
+          "success": "succes",
+          "failed": "mislukt",
+          "in_progress": "bezig",
+          "unknown": "onbekend"
+        }
+      }
+    }
+  },
+  "complianceTrend": {
+    "title": "Compliance Trend",
+    "period": "Laatste 30 dagen",
+    "loading": "Compliance data laden...",
+    "error": "Fout bij laden trend data: {{error}}",
+    "noData": "Geen compliance data beschikbaar voor de geselecteerde periode.",
+    "chartLabel": "Compliance Score"
+  },
+  "noAccess": {
+    "message": "Je hebt momenteel geen specifieke rol toegewezen.",
+    "action": "Om toegang te krijgen tot functies,",
+    "link": "vraag toegang aan tot een rol",
+    "contactAdmin": "Neem contact op met een beheerder om toegang tot de applicatie aan te vragen."
+  },
+  "requestRoleSection": {
+    "title": "Rollen",
+    "cardTitle": "Beschikbare Rollen",
+    "description": "Je hebt momenteel geen applicatierollen toegewezen. Selecteer hieronder een rol om toegang aan te vragen en te beginnen.",
+    "info": "Na het indienen van een verzoek zal een beheerder het beoordelen en word je op de hoogte gebracht van de beslissing via de notificatiebel.",
+    "noDescription": "Geen beschrijving beschikbaar",
+    "requestAccess": "Toegang Aanvragen",
+    "moreRoles": "En {{count}} meer rollen beschikbaar..."
+  },
+  "quickActions": {
+    "title": "Snelle Acties",
+    "loading": "Laden...",
+    "noActions": "Geen acties beschikbaar.",
+    "actions": {
+      "browseProducts": "Blader Dataproducten",
+      "browseGlossary": "Blader Business Glossary",
+      "createProduct": "Dataproduct Aanmaken",
+      "defineContract": "Datacontract Definiëren",
+      "reviewAssets": "Data Assets Beoordelen",
+      "manageEntitlements": "Rechten Beheren",
+      "catalogCommander": "Catalog Commander",
+      "settings": "Instellingen"
+    }
+  },
+  "recentActivity": {
+    "title": "Recente Activiteit",
+    "loading": "Recente activiteit laden...",
+    "error": "Kon recente activiteit niet laden",
+    "noActivity": "Geen recente activiteit.",
+    "entityLabel": "Entiteit:",
+    "actionLabel": "Actie:",
+    "userLabel": "Gebruiker:",
+    "timeLabel": "Tijd:",
+    "iriLabel": "Iri:",
+    "linkIdLabel": "Link Id:",
+    "openButton": "Openen",
+    "openDetails": "Details openen",
+    "noDetails": "Geen details beschikbaar",
+    "by": "door",
+    "at": "om"
+  },
+  "discoverySection": {
+    "title": "Ontdekking",
+    "dataDomains": "Datadomeinen",
+    "exactMatchOnly": "Alleen Exacte Overeenkomsten",
+    "allDomains": "Alle Domeinen",
+    "clearFilter": "Domeinfilter wissen",
+    "selectDomain": "Selecteer een domein om de hiërarchie te bekijken en producten te filteren.",
+    "popularProducts": "Populaire Dataproducten",
+    "loading": "Producten laden...",
+    "error": "Kon dataproducten niet laden",
+    "noProducts": "Geen dataproducten gevonden.",
+    "domain": "Domein",
+    "owner": "Eigenaar",
+    "unknown": "Onbekend",
+    "status": "N.v.t.",
+    "untitled": "Naamloos",
+    "info": "Info"
+  },
+  "dataCurationSection": {
+    "title": "Data Curatie",
+    "createDataProduct": {
+      "title": "Dataproduct Aanmaken",
+      "description": "Gebruik de wizard om een nieuw dataproduct te definiëren.",
+      "button": "Openen"
+    },
+    "defineDataContract": {
+      "title": "Datacontract Definiëren",
+      "description": "Maak of werk een technisch contract bij.",
+      "button": "Openen"
+    },
+    "createDataset": {
+      "title": "Dataset Aanmaken",
+      "description": "Beheer datasets voor matching en mastering.",
+      "button": "Openen"
+    },
+    "createSchema": {
+      "title": "Schema Aanmaken",
+      "description": "Maak of beheer schema's en machtigingen.",
+      "openButton": "Openen",
+      "createButton": "Aanmaken"
+    },
+    "createCatalog": {
+      "title": "Catalogus Aanmaken",
+      "description": "Voorzie catalogussen en beheer toegang.",
+      "openButton": "Openen",
+      "createButton": "Aanmaken"
+    }
+  },
+  "requiredActionsSection": {
+    "title": "Vereiste Acties",
+    "pendingNotifications": "Openstaande Notificaties",
+    "loading": "Laden...",
+    "noActions": "Geen openstaande acties.",
+    "openButton": "Openen",
+    "markReadButton": "Markeer als gelezen",
+    "readLabel": "Gelezen",
+    "alertMessage": "Deze lijst toont alleen actie-vereiste notificaties toegewezen aan je rol(len)."
+  },
+  "marketplace": {
+    "welcome": "Hallo",
+    "welcomeWithName": "Hallo, {{name}}",
+    "tagline": "Welkom bij de Data Marketplace. Ontdek, begrijp en abonneer op dataproducten en datasets.",
+    "searchPlaceholder": "Waar kunnen we je mee helpen vandaag?",
+    "searchDatasetsPlaceholder": "Zoek datasets op naam, pad of contract...",
+    "browseAssetType": "Bladeren:",
+    "assetTypes": {
+      "products": "Dataproducten",
+      "datasets": "Datasets"
+    },
+    "browseDataDomains": "Blader Datadomeinen",
+    "allDomains": "Alle Domeinen",
+    "loadingDomains": "Domeinen laden...",
+    "tabs": {
+      "explore": "Data Verkennen",
+      "subscriptions": "Mijn Data"
+    },
+    "products": {
+      "available": "{{count}} product beschikbaar",
+      "available_plural": "{{count}} producten beschikbaar",
+      "subscribed": "{{count}} geabonneerd product",
+      "subscribed_plural": "{{count}} geabonneerde producten",
+      "noProducts": "Geen dataproducten gevonden.",
+      "adjustFilters": "Probeer je zoekterm of filter aan te passen.",
+      "noSubscriptions": "Je hebt je nog niet geabonneerd op dataproducten.",
+      "browseToSubscribe": "Blader door de Verkennen tab om producten te vinden om op te abonneren.",
+      "exploreProducts": "Verken Dataproducten",
+      "owner": "Eigenaar",
+      "unknown": "Onbekend"
+    },
+    "datasets": {
+      "available": "{{count}} dataset beschikbaar",
+      "available_plural": "{{count}} datasets beschikbaar",
+      "subscribed": "{{count}} geabonneerde dataset",
+      "subscribed_plural": "{{count}} geabonneerde datasets",
+      "noDatasets": "Geen datasets gevonden.",
+      "adjustFilters": "Probeer je zoekterm aan te passen.",
+      "noSubscriptions": "Je hebt je nog niet geabonneerd op datasets.",
+      "browseToSubscribe": "Blader door de Verkennen tab om datasets te vinden om op te abonneren.",
+      "exploreDatasets": "Verken Datasets",
+      "owner": "Eigenaar"
+    },
+    "modeToggle": {
+      "marketplace": "Marketplace",
+      "management": "Beheer"
+    },
+    "domainView": {
+      "pills": "Lijst",
+      "graph": "Grafiek"
+    },
+    "exactMatchOnly": "Alleen exacte overeenkomst",
+    "selectDomainForGraph": "Selecteer een domein om de hiërarchie te bekijken.",
+    "domainInfo": {
+      "parentDomain": "Ouder",
+      "childDomains": "{{count}} subdomein",
+      "childDomains_plural": "{{count}} subdomeinen"
+    },
+    "tilesPerRow": {
+      "placeholder": "Tegels",
+      "one": "1 per rij",
+      "two": "2 per rij",
+      "three": "3 per rij",
+      "four": "4 per rij"
+    },
+    "openInDetails": "Openen in detailweergave"
+  }
+}
+

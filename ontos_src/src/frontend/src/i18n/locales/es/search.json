@@ -1,0 +1,126 @@
+{
+  "title": "Búsqueda",
+  "placeholder": "Buscar en todos los activos...",
+  "tabs": {
+    "askOntos": "Preguntar a Ontos",
+    "indexSearch": "Búsqueda de Índice",
+    "conceptGraph": "Grafo de Conceptos",
+    "knowledgeGraph": "Grafo de Conocimiento",
+    "concepts": "Conceptos"
+  },
+  "noResults": "No se encontraron resultados",
+  "noResultsHint": "Intenta ajustar tus términos de búsqueda o filtros",
+  "results": "{{count}} resultado encontrado",
+  "results_plural": "{{count}} resultados encontrados",
+  "filters": {
+    "all": "Todos",
+    "dataProducts": "Productos de Datos",
+    "dataContracts": "Contratos de Datos",
+    "datasets": "Datasets",
+    "glossaryTerms": "Términos del Glosario",
+    "teams": "Equipos",
+    "projects": "Proyectos"
+  },
+  "sort": {
+    "relevance": "Relevancia",
+    "newest": "Más Recientes",
+    "oldest": "Más Antiguos",
+    "name": "Nombre"
+  },
+  "resultItem": {
+    "type": "Tipo",
+    "owner": "Propietario",
+    "updated": "Actualizado"
+  },
+  "kg": {
+    "prefixSearch": "Búsqueda de Prefijo",
+    "prefixSearchDesc": "Encontrar recursos o propiedades por subcadena de IRI.",
+    "startPath": "Iniciar ruta",
+    "pathExplorer": "Explorador de Rutas",
+    "pathExplorerDesc": "Haga clic en objetos para extender la ruta horizontalmente.",
+    "directionFilter": "Filtro de Dirección",
+    "everything": "Todo",
+    "incomingOnly": "Solo Entrante",
+    "outgoingOnly": "Solo Saliente",
+    "contentFilter": "Filtro de Contenido",
+    "showConceptsOnly": "Mostrar solo conceptos/clases",
+    "noOutgoingLinks": "No hay enlaces salientes para la selección actual.",
+    "noLinksMatch": "Ningún enlace coincide con los filtros actuales.",
+    "step": "Paso",
+    "sparql": "SPARQL",
+    "sparqlDesc": "Ejecutar consultas avanzadas sobre el grafo cargado.",
+    "examples": "Ejemplos",
+    "runSparql": "Ejecutar SPARQL",
+    "resourcesInNamespace": "Recursos en el namespace de la app",
+    "resourcesWithLabel": "Recursos con rdfs:label",
+    "subjectsAndTypes": "Sujetos y sus tipos",
+    "topPredicates": "Predicados principales por frecuencia",
+    "mostLinkedSeeAlso": "Más vinculados via rdfs:seeAlso"
+  },
+  "index": {
+    "title": "Búsqueda de Índice",
+    "description": "Buscar en todos los datos indexados de la aplicación. Escriba para buscar."
+  },
+  "concepts": {
+    "searchAndSelect": "Buscar y seleccionar un concepto:",
+    "searchPlaceholder": "Escribe para buscar por nombre, etiqueta o IRI...",
+    "clear": "Limpiar",
+    "conceptHierarchy": "Jerarquía de Conceptos",
+    "parentClasses": "Clases Padre:",
+    "noParentClasses": "No se encontraron clases padre",
+    "subclasses": "Subclases:",
+    "noSubclasses": "No se encontraron subclases",
+    "relatedProperties": "Propiedades Relacionadas",
+    "noRelatedProperties": "No se encontraron propiedades relacionadas.",
+    "linkedCatalogObjects": "Objetos de Catálogo Vinculados",
+    "noCatalogObjects": "No hay objetos de catálogo asignados.",
+    "assignToConcept": "Asignar a Concepto",
+    "assignDialog": {
+      "title": "Asignar Objeto a Concepto",
+      "entityType": "Tipo de Entidad",
+      "selectEntityType": "Seleccionar tipo de entidad...",
+      "dataProduct": "Producto de Datos",
+      "dataContract": "Contrato de Datos",
+      "dataDomain": "Dominio de Datos",
+      "selectEntity": "Seleccionar {{entityType}}..."
+    },
+    "messages": {
+      "linkedSuccess": "Concepto \"{{label}}\" vinculado a {{entityType}} \"{{entityId}}\".",
+      "assignError": "Por favor seleccione tanto un tipo de entidad como una entidad específica.",
+      "assignFailed": "Error al asignar concepto al objeto.",
+      "navigationError": "No se puede navegar a {{entityType}}"
+    }
+  },
+  "llm": {
+    "title": "Preguntar a Ontos",
+    "subtitle": "Haz preguntas sobre productos de datos, costos y análisis",
+    "rerun": "Ejecutar de nuevo",
+    "copyToInput": "Editar y reenviar",
+    "disabledTitle": "Búsqueda con IA",
+    "disabledSubtitle": "La búsqueda en lenguaje natural no está habilitada actualmente.",
+    "disabledMessage": "La búsqueda LLM requiere configuración. Por favor contacte a su administrador para habilitar esta función.",
+    "welcomeTitle": "¿Cómo puedo ayudarte hoy?",
+    "welcomeMessage": "Puedo ayudarte a descubrir productos de datos, entender términos de negocio, analizar costos y ejecutar consultas analíticas.",
+    "tryAsking": "Intenta preguntar:",
+    "inputPlaceholder": "Haz una pregunta sobre tus datos...",
+    "inputHint": "Enter para enviar, Shift+Enter para nueva línea",
+    "model": "Modelo",
+    "thinking": "Pensando...",
+    "history": "Historial",
+    "newConversation": "Nueva Conversación",
+    "untitled": "Sin título",
+    "examples": {
+      "findCustomerData": "¿Dónde puedo encontrar datos de clientes?",
+      "dataProductsCost": "¿Cuánto cuestan todos los productos de datos?",
+      "businessTermsSales": "¿Qué términos de negocio están relacionados con ventas?",
+      "showDataProducts": "Muéstrame productos de datos en el dominio Cliente"
+    },
+    "messages": {
+      "sessionDeleted": "Sesión eliminada",
+      "sessionDeletedDesc": "La conversación ha sido eliminada.",
+      "loadSessionFailed": "Error al cargar la sesión",
+      "deleteSessionFailed": "Error al eliminar la sesión",
+      "loadFailed": "Error al cargar la búsqueda LLM. Por favor intente más tarde."
+    }
+  }
+}

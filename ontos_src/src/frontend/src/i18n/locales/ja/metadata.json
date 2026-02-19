@@ -1,0 +1,123 @@
+{
+  "title": "メタデータ",
+  "description": "メモ、リンク、添付ファイル。",
+  "previewRenderedPage": "レンダリングされたページをプレビュー",
+  "notes": {
+    "title": "追加メモ",
+    "add": "追加",
+    "refresh": "更新",
+    "noNotes": "メモはまだありません。",
+    "preview": "プレビュー",
+    "edit": "編集",
+    "delete": "削除",
+    "editTitle": "メモを編集",
+    "addTitle": "メモを追加",
+    "attachShared": "共有メモを添付",
+    "selectShared": "共有メモを選択",
+    "table": {
+      "title": "タイトル",
+      "description": "説明",
+      "created": "作成日",
+      "actions": "アクション",
+      "level": "レベル",
+      "flags": "フラグ"
+    },
+    "form": {
+      "title": "タイトル",
+      "shortDescription": "簡単な説明",
+      "content": "内容（Markdown）",
+      "save": "保存",
+      "cancel": "キャンセル",
+      "level": "レベル",
+      "inheritable": "継承可能",
+      "shared": "共有アセット"
+    },
+    "messages": {
+      "deleteFailed": "削除に失敗しました",
+      "addFailed": "メモの追加に失敗しました",
+      "updateFailed": "更新に失敗しました"
+    }
+  },
+  "links": {
+    "title": "関連リンク",
+    "add": "追加",
+    "refresh": "更新",
+    "noLinks": "リンクはまだありません。",
+    "open": "開く",
+    "edit": "編集",
+    "delete": "削除",
+    "editTitle": "リンクを編集",
+    "addTitle": "リンクを追加",
+    "attachShared": "共有リンクを添付",
+    "selectShared": "共有リンクを選択",
+    "table": {
+      "title": "タイトル",
+      "url": "URL",
+      "description": "説明",
+      "created": "作成日",
+      "actions": "アクション",
+      "level": "レベル",
+      "flags": "フラグ"
+    },
+    "form": {
+      "title": "タイトル",
+      "url": "URL",
+      "shortDescription": "簡単な説明",
+      "save": "保存",
+      "cancel": "キャンセル",
+      "level": "レベル",
+      "inheritable": "継承可能",
+      "shared": "共有アセット"
+    },
+    "messages": {
+      "deleteFailed": "削除に失敗しました",
+      "addFailed": "リンクの追加に失敗しました",
+      "updateFailed": "更新に失敗しました"
+    }
+  },
+  "documents": {
+    "title": "添付ドキュメント",
+    "add": "追加",
+    "refresh": "更新",
+    "noDocuments": "アップロードされたドキュメントはありません。",
+    "preview": "プレビュー",
+    "delete": "削除",
+    "attachShared": "共有ドキュメントを添付",
+    "selectShared": "共有ドキュメントを選択",
+    "table": {
+      "title": "タイトル",
+      "filename": "ファイル名",
+      "description": "説明",
+      "size": "サイズ",
+      "created": "作成日",
+      "actions": "アクション",
+      "level": "レベル",
+      "flags": "フラグ"
+    },
+    "form": {
+      "title": "タイトル",
+      "shortDescription": "簡単な説明",
+      "file": "ファイル",
+      "upload": "アップロード",
+      "cancel": "キャンセル",
+      "level": "レベル",
+      "inheritable": "継承可能",
+      "shared": "共有アセット"
+    },
+    "messages": {
+      "deleteFailed": "削除に失敗しました",
+      "uploadFailed": "アップロードに失敗しました"
+    }
+  },
+  "sharedAssets": {
+    "selectDescription": "このエンティティに添付する共有アセットを選択してください",
+    "noSharedNotes": "利用可能な共有メモがありません",
+    "noSharedLinks": "利用可能な共有リンクがありません",
+    "noSharedDocuments": "利用可能な共有ドキュメントがありません"
+  },
+  "messages": {
+    "loadFailed": "メタデータの読み込みに失敗しました",
+    "attachSuccess": "共有アセットが正常に添付されました",
+    "attachFailed": "共有アセットの添付に失敗しました"
+  }
+}

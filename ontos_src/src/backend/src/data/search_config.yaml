@@ -1,0 +1,198 @@
+# Search Configuration
+# Defines which fields are indexed per asset type, match strategies, and ranking behavior
+version: "1.0"
+
+# Global defaults applied to all asset types unless overridden
+defaults:
+  fields:
+    title:
+      indexed: true
+      match_type: prefix      # prefix | substring | exact | fuzzy
+      priority: 1             # Lower = higher priority (matched/ranked first)
+      boost: 3.0              # Score multiplier for ranking
+    description:
+      indexed: true
+      match_type: substring
+      priority: 2
+      boost: 1.0
+    tags:
+      indexed: true
+      match_type: prefix
+      priority: 3
+      boost: 0.5
+
+# Per-asset-type configuration
+asset_types:
+  data-product:
+    enabled: true
+    inherit_defaults: true
+    extra_fields:
+      owner:
+        indexed: true
+        source: "owner"
+        match_type: substring
+        priority: 4
+        boost: 1.5
+      owner_team:
+        indexed: true
+        source: "owner_team"
+        match_type: substring
+        priority: 4
+        boost: 1.5
+      product_team:
+        indexed: true
+        source: "product_team"
+        match_type: substring
+        priority: 4
+        boost: 1.2
+      team_members:
+        indexed: true
+        source: "team_members"
+        match_type: substring
+        priority: 4
+        boost: 1.2
+      status:
+        indexed: true
+        source: "status"
+        match_type: exact
+        priority: 5
+        boost: 0.8
+      version:
+        indexed: true
+        source: "version"
+        match_type: prefix
+        priority: 6
+        boost: 0.5
+      domain:
+        indexed: true
+        source: "domain"
+        match_type: substring
+        priority: 4
+        boost: 1.0
+
+  data-contract:
+    enabled: true
+    inherit_defaults: true
+    extra_fields:
+      version:
+        indexed: true
+        source: "version"
+        match_type: prefix
+        priority: 5
+        boost: 0.5
+      status:
+        indexed: true
+        source: "status"
+        match_type: exact
+        priority: 6
+        boost: 0.8
+      owner:
+        indexed: true
+        source: "owner"
+        match_type: substring
+        priority: 4
+        boost: 1.0
+      domain:
+        indexed: true
+        source: "domain"
+        match_type: substring
+        priority: 4
+        boost: 1.0
+
+  glossary-term:
+    enabled: true
+    inherit_defaults: true
+    extra_fields:
+      synonyms:
+        indexed: true
+        source: "synonyms"
+        match_type: substring
+        priority: 2
+        boost: 1.5
+
+  dataset:
+    enabled: true
+    inherit_defaults: true
+    extra_fields:
+      environment:
+        indexed: true
+        source: "environment"
+        match_type: exact
+        priority: 4
+        boost: 1.0
+      asset_type:
+        indexed: true
+        source: "asset_type"
+        match_type: exact
+        priority: 5
+        boost: 0.8
+      status:
+        indexed: true
+        source: "status"
+        match_type: exact
+        priority: 6
+        boost: 0.7
+
+  data-asset-review:
+    enabled: true
+    inherit_defaults: true
+    extra_fields:
+      requester:
+        indexed: true
+        source: "requester"
+        match_type: substring
+        priority: 4
+        boost: 1.0
+      reviewer:
+        indexed: true
+        source: "reviewer"
+        match_type: substring
+        priority: 4
+        boost: 1.0
+      status:
+        indexed: true
+        source: "status"
+        match_type: exact
+        priority: 5
+        boost: 0.8
+
+  tag:
+    enabled: true
+    inherit_defaults: true
+    extra_fields:
+      category:
+        indexed: true
+        source: "category"
+        match_type: substring
+        priority: 4
+        boost: 1.0
+      status:
+        indexed: true
+        source: "status"
+        match_type: exact
+        priority: 5
+        boost: 0.7
+
+  data-domain:
+    enabled: true
+    inherit_defaults: true
+    extra_fields:
+      owner:
+        indexed: true
+        source: "owner"
+        match_type: substring
+        priority: 4
+        boost: 1.0
+      status:
+        indexed: true
+        source: "status"
+        match_type: exact
+        priority: 5
+        boost: 0.7
+
+# Result ranking behavior
+ranking:
+  primary_sort: match_priority   # Sort by field priority first (title matches before description)
+  secondary_sort: boost_score    # Then by accumulated boost score
+  tertiary_sort: title_asc       # Finally alphabetical by title
+

@@ -1,0 +1,259 @@
+# ============================================================================
+# ODCS Data Contract: CRM Customers (Source System)
+# ============================================================================
+# This contract defines customer data from the CRM system.
+# Used as a source for MDM matching against the Customer Master.
+# ============================================================================
+
+id: mdm-demo-crm-customers-001
+version: '1.0.0'
+apiVersion: v3.0.2
+kind: DataContract
+name: CRM Customers Contract
+status: active
+domain: Customer
+
+description:
+  purpose: >-
+    Customer data contract for the CRM system. Contains customer profiles,
+    contact information, and account status from customer relationship
+    management operations.
+  usage: >-
+    Primary source for customer contact information and sales pipeline data.
+    Used as an MDM source system for matching against the Customer Master.
+    New and changed records are periodically matched and merged into master.
+  limitations: >-
+    Data may contain duplicates prior to MDM processing.
+    Phone numbers may have inconsistent formatting.
+    Some legacy records may have incomplete address information.
+
+# Contract-level semantic assignments
+authoritativeDefinitions:
+  - url: "http://example.com/business/concepts#CRMCustomer"
+    type: "businessDefinition"
+
+# MDM-specific custom properties
+customProperties:
+  - property: mdmEntityType
+    value: customer
+  - property: mdmRole
+    value: source
+  - property: mdmSourceSystem
+    value: CRM
+  - property: mdmSourcePriority
+    value: 2
+  - property: mdmKeyColumn
+    value: crm_customer_id
+  - property: mdmColumnMappings
+    value:
+      # Only map columns with different names between source and master
+      # Columns with same name (city) don't need mapping
+      email_address: email
+      phone_number: phone
+      street_address: address_line1
+      state_province: state
+      zip_code: postal_code
+      country_code: country
+      company: company_name
+      account_type: customer_type
+  - property: mdmTransformations
+    value:
+      - field: customer_name
+        type: concat
+        source_fields:
+          - first_name
+          - last_name
+        separator: " "
+      - field: phone_number
+        type: normalize_phone
+        format: E164
+      - field: email_address
+        type: lowercase
+  - property: mdmExclusionRules
+    value:
+      - field: account_type
+        operator: equals
+        value: "test"
+      - field: first_name
+        operator: is_null
+      - field: email_address
+        operator: is_null
+  - property: mdmChangeDetection
+    value:
+      timestampColumn: modified_date
+      strategy: incremental
+
+# Service level agreements
+slaProperties:
+  - property: latency
+    value: "15m"
+    unit: minutes
+    element: crm_sync
+  - property: availability
+    value: 99.5
+    unit: percent
+    element: uptime
+
+# Schema definition
+schema:
+  - name: crm_customers
+    physicalName: app_demo_data.mdm_demo.crm_customers
+    description: CRM system customer data table
+    logicalType: object
+    authoritativeDefinitions:
+      - url: "http://example.com/business/concepts#CRMCustomer"
+        type: "businessDefinition"
+    properties:
+      - name: crm_customer_id
+        logicalType: string
+        physicalType: STRING
+        required: true
+        unique: true
+        description: CRM system unique customer identifier
+        authoritativeDefinitions:
+          - url: "http://example.com/business/properties#crmCustomerId"
+            type: "businessDefinition"
+      - name: first_name
+        logicalType: string
+        physicalType: STRING
+        required: false
+        unique: false
+        description: Customer first name
+        authoritativeDefinitions:
+          - url: "http://example.com/business/properties#firstName"
+            type: "businessDefinition"
+      - name: last_name
+        logicalType: string
+        physicalType: STRING
+        required: false
+        unique: false
+        description: Customer last name
+        authoritativeDefinitions:
+          - url: "http://example.com/business/properties#lastName"
+            type: "businessDefinition"
+      - name: email_address
+        logicalType: string
+        physicalType: STRING
+        required: false
+        unique: false
+        description: Customer email address
+        classification: PII
+        authoritativeDefinitions:
+          - url: "http://example.com/business/properties#email"
+            type: "businessDefinition"
+      - name: phone_number
+        logicalType: string
+        physicalType: STRING
+        required: false
+        unique: false
+        description: Customer phone number (various formats)
+        classification: PII
+        authoritativeDefinitions:
+          - url: "http://example.com/business/properties#phoneNumber"
+            type: "businessDefinition"
+      - name: street_address
+        logicalType: string
+        physicalType: STRING
+        required: false
+        unique: false
+        description: Full street address
+        classification: PII
+      - name: city
+        logicalType: string
+        physicalType: STRING
+        required: false
+        unique: false
+        description: City name
+      - name: state_province
+        logicalType: string
+        physicalType: STRING
+        required: false
+        unique: false
+        description: State or province code
+      - name: zip_code
+        logicalType: string
+        physicalType: STRING
+        required: false
+        unique: false
+        description: ZIP or postal code
+      - name: country_code
+        logicalType: string
+        physicalType: STRING
+        required: false
+        unique: false
+        description: Country code (ISO 3166-1 alpha-2)
+      - name: company
+        logicalType: string
+        physicalType: STRING
+        required: false
+        unique: false
+        description: Company or organization name
+      - name: account_type
+        logicalType: string
+        physicalType: STRING
+        required: false
+        unique: false
+        description: "Account type: lead, prospect, customer"
+      - name: lead_source
+        logicalType: string
+        physicalType: STRING
+        required: false
+        unique: false
+        description: How the customer was acquired
+      - name: last_contact_date
+        logicalType: date
+        physicalType: DATE
+        required: false
+        unique: false
+        description: Last contact date with customer
+      - name: created_date
+        logicalType: date
+        physicalType: TIMESTAMP
+        required: false
+        unique: false
+        description: Record creation timestamp
+      - name: modified_date
+        logicalType: date
+        physicalType: TIMESTAMP
+        required: false
+        unique: false
+        description: Last modification timestamp
+    quality:
+      - type: library
+        dimension: completeness
+        name: crm_id_completeness
+        description: CRM customer ID must always be present
+        rule: nullCount
+        mustBe: 0
+      - type: library
+        dimension: uniqueness
+        name: crm_id_uniqueness
+        description: CRM customer ID must be unique
+        rule: duplicateCount
+        mustBe: 0
+      - type: library
+        dimension: completeness
+        name: email_completeness
+        description: Email should be present for most records
+        rule: nullPercent
+        mustBeLessThan: 10
+
+# Team and contact information
+team:
+  - username: crm-team@company.com
+    name: CRM Team
+    role: owner
+  - username: sales-ops@company.com
+    name: Sales Operations
+    role: maintainer
+  - username: data-engineering@company.com
+    name: Data Engineering
+    role: maintainer
+
+# Tags for discovery
+tags:
+  - crm
+  - customer
+  - sales
+  - mdm-source
+  - contact-data

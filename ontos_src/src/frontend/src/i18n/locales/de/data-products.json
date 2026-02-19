@@ -1,0 +1,229 @@
+{
+  "title": "Datenprodukte",
+  "subtitle": "Verwalten Sie Ihre Datenprodukte",
+  "newProduct": "Neues Datenprodukt",
+  "importProduct": "Importieren",
+  "searchPlaceholder": "Datenprodukte suchen...",
+  "loading": "Datenprodukte werden geladen...",
+  "filters": {
+    "allStatus": "Alle Status",
+    "allOwners": "Alle Eigentümer",
+    "mySubscriptions": "Meine Abonnements"
+  },
+  "toolbar": {
+    "showAll": "Alle Produkte anzeigen",
+    "showSubscriptions": "Nur meine Abonnements anzeigen",
+    "mySubscriptionsCount": "Meine Abonnements ({{count}})",
+    "createProduct": "Produkt erstellen",
+    "uploadFile": "Datei hochladen"
+  },
+  "permissions": {
+    "denied": "Zugriff verweigert",
+    "noView": "Sie haben keine Berechtigung, Datenprodukte anzuzeigen.",
+    "noCreate": "Sie haben keine Berechtigung, Datenprodukte zu erstellen.",
+    "noEdit": "Sie haben keine Berechtigung, Datenprodukte zu bearbeiten.",
+    "noDelete": "Sie haben keine Berechtigung, Datenprodukte zu löschen.",
+    "noBulkDelete": "Sie haben keine Berechtigung für Massenlöschung.",
+    "noGenieSpace": "Sie haben keine Berechtigung, Genie Spaces zu erstellen."
+  },
+  "bulk": {
+    "deleteConfirm": "Möchten Sie wirklich {{count}} ausgewählte(s) Produkt(e) löschen?",
+    "deleteSuccess": "Massenlöschung erfolgreich",
+    "deleteSuccessCount": "{{count}} Produkt(e) gelöscht.",
+    "deleteError": "Fehler bei Massenlöschung",
+    "deleteErrorCount": "{{count}} Produkt(e) konnten nicht gelöscht werden. Erster Fehler: {{error}}",
+    "requestAccessTitle": "Zugriff für Auswahl anfordern",
+    "requestAccess": "Zugriff anfordern ({{count}})",
+    "createGenieSpaceTitle": "Genie Space aus Auswahl erstellen",
+    "createGenieSpace": "Genie Space erstellen ({{count}})",
+    "deleteTitle": "Auswahl löschen",
+    "deleteSelected": "Auswahl löschen ({{count}})"
+  },
+  "access": {
+    "submitting": "Wird gesendet",
+    "requestingAccess": "Zugriff für {{count}} Element(e) wird angefordert...",
+    "requestError": "Fehler beim Senden der Zugriffsanfrage",
+    "requestSent": "Anfrage gesendet",
+    "requestSubmitted": "Zugriffsanfrage gesendet. Sie werden benachrichtigt."
+  },
+  "upload": {
+    "success": "Upload erfolgreich",
+    "successMessage": "{{filename}} erfolgreich verarbeitet. {{count}} Produkt(e) verarbeitet.",
+    "failed": "Upload fehlgeschlagen",
+    "unexpectedError": "Ein unerwarteter Fehler ist beim Upload aufgetreten.",
+    "uploading": "Wird hochgeladen...",
+    "tooltipTitle": "Datenprodukt hochladen (ODPS-Format)",
+    "tooltipDescription": "Akzeptiert YAML- oder JSON-Dateien nach dem ODPS (Open Data Product Standard) Schema.",
+    "tooltipHint": "Für Datenverträge (ODCS) verwenden Sie bitte die Datenverträge-Seite."
+  },
+  "genie": {
+    "noSelection": "Keine Auswahl",
+    "selectAtLeastOne": "Bitte wählen Sie mindestens ein Datenprodukt aus.",
+    "createConfirm": "Genie Space für {{count}} ausgewählte(s) Produkt(e) erstellen?",
+    "initiating": "Genie Space wird initiiert",
+    "requestingCreation": "Genie Space Erstellung für {{count}} Produkt(e) wird angefordert...",
+    "requestSubmitted": "Anfrage gesendet",
+    "willBeNotified": "Genie Space Erstellung initiiert. Sie werden benachrichtigt.",
+    "creationError": "Fehler beim Starten der Genie Space Erstellung."
+  },
+  "navigation": {
+    "error": "Navigationsfehler",
+    "missingId": "Konnte nicht zu Details navigieren, Produkt-ID fehlt."
+  },
+  "table": {
+    "title": "Titel",
+    "name": "Name",
+    "status": "Status",
+    "domain": "Domäne",
+    "owner": "Eigentümer",
+    "version": "Version",
+    "type": "Typ",
+    "tags": "Tags",
+    "created": "Erstellt",
+    "updated": "Aktualisiert",
+    "actions": "Aktionen",
+    "viewDetails": "Details anzeigen",
+    "editProduct": "Produkt bearbeiten",
+    "deleteProduct": "Produkt löschen",
+    "subscribed": "Abonniert"
+  },
+  "messages": {
+    "deleteConfirm": "Möchten Sie dieses Datenprodukt wirklich löschen?",
+    "deleteSuccess": "Datenprodukt erfolgreich gelöscht",
+    "deleteError": "Fehler beim Löschen des Datenprodukts",
+    "fetchError": "Fehler beim Abrufen der Datenprodukte",
+    "importSuccess": "Datenprodukt erfolgreich importiert",
+    "importError": "Fehler beim Importieren des Datenprodukts",
+    "success": "Erfolg",
+    "error": "Fehler"
+  },
+  "status": {
+    "draft": "Entwurf",
+    "sandbox": "Sandbox",
+    "proposed": "Vorgeschlagen",
+    "under_review": "In Prüfung",
+    "in_review": "In Prüfung",
+    "active": "Aktiv",
+    "approved": "Genehmigt",
+    "certified": "Zertifiziert",
+    "deprecated": "Veraltet",
+    "retired": "Stillgelegt",
+    "published": "Veröffentlicht"
+  },
+  "viewMode": {
+    "table": "Tabelle",
+    "graph": "Graph"
+  },
+  "details": {
+    "backToList": "Zurück zur Liste",
+    "edit": "Bearbeiten",
+    "delete": "Löschen",
+    "subscribe": "Abonnieren",
+    "unsubscribe": "Abbestellen",
+    "publish": "Veröffentlichen",
+    "unpublish": "Veröffentlichung aufheben",
+    "published": "Veröffentlicht",
+    "notFound": "Datenprodukt nicht gefunden",
+    "loading": "Wird geladen...",
+    "noDescription": "Keine Beschreibung vorhanden",
+    "coreMetadata": {
+      "status": "Status",
+      "version": "Version",
+      "owner": "Eigentümer",
+      "domain": "Domäne",
+      "created": "Erstellt",
+      "updated": "Aktualisiert",
+      "tags": "Tags",
+      "noTags": "Keine Tags",
+      "notAssigned": "Nicht zugewiesen"
+    },
+    "sections": {
+      "overview": "Übersicht",
+      "description": "Beschreibung",
+      "inputPorts": "Eingangsports",
+      "outputPorts": "Ausgangsports",
+      "contracts": "Datenverträge",
+      "subscribers": "Abonnenten",
+      "lineage": "Herkunft"
+    },
+    "inputPorts": {
+      "title": "Eingangsports",
+      "subtitle": "Datenquellen, die von diesem Produkt verwendet werden",
+      "noInputPorts": "Keine Eingangsports definiert",
+      "addInputPort": "Eingangsport hinzufügen"
+    },
+    "outputPorts": {
+      "title": "Ausgangsports",
+      "subtitle": "Von diesem Produkt bereitgestellte Daten",
+      "noOutputPorts": "Keine Ausgangsports definiert",
+      "addOutputPort": "Ausgangsport hinzufügen"
+    },
+    "contracts": {
+      "title": "Datenverträge",
+      "subtitle": "Mit diesem Produkt verknüpfte Verträge",
+      "noContracts": "Keine Verträge verknüpft",
+      "viewContract": "Vertrag anzeigen"
+    },
+    "subscribers": {
+      "title": "Abonnenten",
+      "subtitle": "Benutzer und Teams, die dieses Produkt abonniert haben",
+      "noSubscribers": "Noch keine Abonnenten",
+      "table": {
+        "email": "E-Mail",
+        "subscribed": "Abonniert",
+        "reason": "Grund"
+      }
+    },
+    "subscription": {
+      "subscribed": "Abonniert",
+      "unsubscribed": "Abbestellt",
+      "subscribeMessage": "Sie erhalten Updates für dieses Datenprodukt",
+      "unsubscribeMessage": "Sie erhalten keine Updates mehr für dieses Datenprodukt",
+      "error": "Fehler beim Aktualisieren des Abonnements"
+    },
+    "deleteConfirm": "Möchten Sie \"{{name}}\" wirklich löschen?",
+    "deleteSuccess": "Datenprodukt erfolgreich gelöscht",
+    "deleteError": "Fehler beim Löschen des Datenprodukts"
+  },
+  "form": {
+    "createTitle": "Datenprodukt erstellen",
+    "editTitle": "Datenprodukt bearbeiten",
+    "name": "Name",
+    "namePlaceholder": "Produktnamen eingeben",
+    "description": "Beschreibung",
+    "descriptionPlaceholder": "Produktbeschreibung eingeben",
+    "purpose": "Zweck",
+    "purposePlaceholder": "Was ist der Zweck dieses Datenprodukts?",
+    "usage": "Verwendung",
+    "usagePlaceholder": "Wie soll dieses Datenprodukt verwendet werden?",
+    "status": "Status",
+    "version": "Version",
+    "versionPlaceholder": "z.B. 1.0.0",
+    "domain": "Domäne",
+    "selectDomain": "Domäne auswählen",
+    "noDomain": "Keine Domäne",
+    "ownerTeam": "Eigentümer-Team",
+    "selectOwnerTeam": "Eigentümer-Team auswählen",
+    "noOwner": "Kein Eigentümer",
+    "tags": "Tags",
+    "tagsPlaceholder": "Tags durch Kommas getrennt eingeben",
+    "cancel": "Abbrechen",
+    "save": "Speichern",
+    "create": "Erstellen",
+    "saving": "Wird gespeichert...",
+    "createSuccess": "Datenprodukt erfolgreich erstellt",
+    "updateSuccess": "Datenprodukt erfolgreich aktualisiert",
+    "createError": "Fehler beim Erstellen des Datenprodukts",
+    "updateError": "Fehler beim Aktualisieren des Datenprodukts"
+  },
+  "import": {
+    "title": "Datenprodukt importieren",
+    "dropzone": "YAML- oder JSON-Datei hier ablegen oder klicken zum Auswählen",
+    "pasteLabel": "Oder Inhalt direkt einfügen",
+    "pastePlaceholder": "YAML- oder JSON-Inhalt einfügen...",
+    "cancel": "Abbrechen",
+    "import": "Importieren",
+    "importing": "Wird importiert..."
+  }
+}
+

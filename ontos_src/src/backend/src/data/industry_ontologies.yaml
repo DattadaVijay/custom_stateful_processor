@@ -1,0 +1,946 @@
+# Industry Ontology Library Registry
+# Organized by industry verticals with modular ontology definitions
+# Each ontology specifies a handler type that knows how to fetch and parse its modules
+
+verticals:
+  # ============================================================================
+  # Healthcare & Life Sciences
+  # ============================================================================
+  - id: healthcare
+    name: "Healthcare & Life Sciences"
+    icon: "🏥"
+    description: "Clinical terminology, diagnostics, pharmaceuticals, and life sciences"
+    ontologies:
+      - id: snomed-ct
+        name: "SNOMED CT"
+        full_name: "Systematized Nomenclature of Medicine - Clinical Terms"
+        description: "Comprehensive clinical terminology covering diseases, procedures, and findings"
+        handler: simple_owl
+        license: "IHTSDO License (requires agreement)"
+        license_url: "https://www.snomed.org/snomed-ct/get-snomed"
+        requires_license_agreement: true
+        website: "https://www.snomed.org/"
+        modules:
+          - id: snomed-core
+            name: "SNOMED CT Core"
+            description: "Core clinical terminology concepts"
+            owl_url: "https://github.com/IHTSDO/snomed-owl-toolkit/releases/download/latest/snomed-owl-ontology.owl"
+            maturity: release
+
+      - id: loinc
+        name: "LOINC"
+        full_name: "Logical Observation Identifiers Names and Codes"
+        description: "Universal standard for identifying medical laboratory observations"
+        handler: simple_owl
+        license: "Free with registration"
+        website: "https://loinc.org/"
+        modules:
+          - id: loinc-core
+            name: "LOINC Core Ontology"
+            description: "Laboratory test and clinical observation codes"
+            owl_url: "https://loinc.org/download/loinc-owl/"
+            maturity: release
+
+      - id: rxnorm
+        name: "RxNorm"
+        full_name: "RxNorm"
+        description: "Normalized names and codes for clinical drugs"
+        handler: simple_owl
+        license: "UMLS License"
+        website: "https://www.nlm.nih.gov/research/umls/rxnorm/"
+        modules:
+          - id: rxnorm-core
+            name: "RxNorm Core"
+            description: "Drug vocabulary and relationships"
+            owl_url: "https://data.bioontology.org/ontologies/RXNORM/download"
+            maturity: release
+
+      - id: gene-ontology
+        name: "Gene Ontology"
+        full_name: "Gene Ontology (GO)"
+        description: "Molecular biology ontology for genes, proteins, and functions"
+        handler: obo
+        license: "CC BY 4.0"
+        website: "http://geneontology.org/"
+        modules:
+          - id: go-molecular-function
+            name: "Molecular Function"
+            description: "Activities at molecular level"
+            owl_url: "http://purl.obolibrary.org/obo/go/go-basic.owl"
+            maturity: release
+          - id: go-biological-process
+            name: "Biological Process"
+            description: "Biological objectives"
+            owl_url: "http://purl.obolibrary.org/obo/go/go-basic.owl"
+            maturity: release
+          - id: go-cellular-component
+            name: "Cellular Component"
+            description: "Cellular locations"
+            owl_url: "http://purl.obolibrary.org/obo/go/go-basic.owl"
+            maturity: release
+
+      - id: hl7-fhir
+        name: "HL7 FHIR"
+        full_name: "Health Level 7 - Fast Healthcare Interoperability Resources"
+        description: "Healthcare data exchange standard with semantic definitions"
+        handler: simple_owl
+        license: "Creative Commons"
+        website: "https://www.hl7.org/fhir/"
+        modules:
+          - id: fhir-resources
+            name: "FHIR Resources"
+            description: "Core FHIR resource definitions"
+            owl_url: "https://hl7.org/fhir/fhir.ttl"
+            format: turtle
+            maturity: release
+
+      - id: disease-ontology
+        name: "Disease Ontology"
+        full_name: "Human Disease Ontology"
+        description: "Standardized ontology for human disease terms"
+        handler: obo
+        license: "CC0 1.0"
+        website: "https://disease-ontology.org/"
+        modules:
+          - id: doid-core
+            name: "Disease Ontology Core"
+            description: "Human disease classifications"
+            owl_url: "http://purl.obolibrary.org/obo/doid.owl"
+            maturity: release
+
+  # ============================================================================
+  # Finance & Banking
+  # ============================================================================
+  - id: finance
+    name: "Finance & Banking"
+    icon: "💰"
+    description: "Financial instruments, trades, risk management, and regulatory reporting"
+    ontologies:
+      - id: fibo
+        name: "FIBO"
+        full_name: "Financial Industry Business Ontology"
+        description: "Comprehensive ontology for financial services by EDM Council"
+        handler: fibo
+        license: "MIT License"
+        website: "https://spec.edmcouncil.org/fibo/"
+        base_url: "https://spec.edmcouncil.org/fibo/ontology"
+        version: "2024Q1"
+        domains:
+          - id: fnd
+            name: "Foundations"
+            description: "Core concepts used across all FIBO domains"
+            maturity: release
+            modules:
+              - id: accounting
+                name: "Accounting"
+                owl_path: "FND/Accounting/"
+                maturity: release
+                ontologies:
+                  - id: accounting-equity
+                    name: "AccountingEquity"
+                    owl_url: "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/AccountingEquity/"
+                  - id: currency-amount
+                    name: "CurrencyAmount"
+                    owl_url: "https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/"
+              - id: agents-and-people
+                name: "Agents and People"
+                owl_path: "FND/AgentsAndPeople/"
+                maturity: release
+                ontologies:
+                  - id: agents
+                    name: "Agents"
+                    owl_url: "https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/Agents/"
+                  - id: people
+                    name: "People"
+                    owl_url: "https://spec.edmcouncil.org/fibo/ontology/FND/AgentsAndPeople/People/"
+                    dependencies: ["fnd/agents-and-people/agents"]
+              - id: arrangements
+                name: "Arrangements"
+                owl_path: "FND/Arrangements/"
+                maturity: release
+              - id: dates-and-times
+                name: "Dates and Times"
+                owl_path: "FND/DatesAndTimes/"
+                maturity: release
+              - id: goals-and-objectives
+                name: "Goals and Objectives"
+                owl_path: "FND/GoalsAndObjectives/"
+                maturity: release
+              - id: law
+                name: "Law"
+                owl_path: "FND/Law/"
+                maturity: release
+              - id: organizations
+                name: "Organizations"
+                owl_path: "FND/Organizations/"
+                maturity: release
+              - id: places
+                name: "Places"
+                owl_path: "FND/Places/"
+                maturity: release
+              - id: products-and-services
+                name: "Products and Services"
+                owl_path: "FND/ProductsAndServices/"
+                maturity: release
+              - id: relations
+                name: "Relations"
+                owl_path: "FND/Relations/"
+                maturity: release
+              - id: utilities
+                name: "Utilities"
+                owl_path: "FND/Utilities/"
+                maturity: release
+
+          - id: be
+            name: "Business Entities"
+            description: "Legal entities, ownership, and corporate structures"
+            maturity: release
+            dependencies: ["fnd"]
+            modules:
+              - id: corporations
+                name: "Corporations"
+                owl_path: "BE/Corporations/"
+                maturity: release
+              - id: functional-entities
+                name: "Functional Entities"
+                owl_path: "BE/FunctionalEntities/"
+                maturity: release
+              - id: government-entities
+                name: "Government Entities"
+                owl_path: "BE/GovernmentEntities/"
+                maturity: release
+              - id: legal-entities
+                name: "Legal Entities"
+                owl_path: "BE/LegalEntities/"
+                maturity: release
+              - id: ownership-and-control
+                name: "Ownership and Control"
+                owl_path: "BE/OwnershipAndControl/"
+                maturity: release
+              - id: partnerships
+                name: "Partnerships"
+                owl_path: "BE/Partnerships/"
+                maturity: release
+              - id: private-limited-companies
+                name: "Private Limited Companies"
+                owl_path: "BE/PrivateLimitedCompanies/"
+                maturity: release
+              - id: sole-proprietorships
+                name: "Sole Proprietorships"
+                owl_path: "BE/SoleProprietorships/"
+                maturity: release
+              - id: trusts
+                name: "Trusts"
+                owl_path: "BE/Trusts/"
+                maturity: release
+
+          - id: fbc
+            name: "Financial Business and Commerce"
+            description: "Financial products, markets, and business processes"
+            maturity: release
+            dependencies: ["fnd", "be"]
+            modules:
+              - id: debt-and-equities
+                name: "Debt and Equities"
+                owl_path: "FBC/DebtAndEquities/"
+                maturity: release
+              - id: financial-instruments
+                name: "Financial Instruments"
+                owl_path: "FBC/FinancialInstruments/"
+                maturity: release
+              - id: functional-entities
+                name: "Functional Entities"
+                owl_path: "FBC/FunctionalEntities/"
+                maturity: release
+              - id: product-and-service-provider
+                name: "Products and Service Providers"
+                owl_path: "FBC/ProductsAndServices/"
+                maturity: release
+
+          - id: ind
+            name: "Indices and Indicators"
+            description: "Market indices and economic indicators"
+            maturity: release
+            dependencies: ["fnd", "fbc"]
+            modules:
+              - id: economic-indicators
+                name: "Economic Indicators"
+                owl_path: "IND/EconomicIndicators/"
+                maturity: release
+              - id: interest-rates
+                name: "Interest Rates"
+                owl_path: "IND/InterestRates/"
+                maturity: release
+              - id: market-indices
+                name: "Market Indices"
+                owl_path: "IND/MarketIndices/"
+                maturity: release
+
+          - id: sec
+            name: "Securities"
+            description: "Securities instruments and markets"
+            maturity: provisional
+            dependencies: ["fnd", "be", "fbc"]
+            modules:
+              - id: debt-instruments
+                name: "Debt Instruments"
+                owl_path: "SEC/Debt/"
+                maturity: provisional
+              - id: equities
+                name: "Equities"
+                owl_path: "SEC/Equities/"
+                maturity: provisional
+              - id: funds
+                name: "Funds"
+                owl_path: "SEC/Funds/"
+                maturity: provisional
+              - id: securities-listings
+                name: "Securities Listings"
+                owl_path: "SEC/SecuritiesListings/"
+                maturity: provisional
+
+          - id: der
+            name: "Derivatives"
+            description: "Derivative instruments and contracts"
+            maturity: provisional
+            dependencies: ["fnd", "fbc", "sec"]
+            modules:
+              - id: asset-derivatives
+                name: "Asset Derivatives"
+                owl_path: "DER/AssetDerivatives/"
+                maturity: provisional
+              - id: derivative-contracts
+                name: "Derivative Contracts"
+                owl_path: "DER/DerivativesContracts/"
+                maturity: provisional
+              - id: rate-derivatives
+                name: "Rate Derivatives"
+                owl_path: "DER/RateDerivatives/"
+                maturity: provisional
+              - id: security-based-derivatives
+                name: "Security-Based Derivatives"
+                owl_path: "DER/SecurityBasedDerivatives/"
+                maturity: provisional
+
+          - id: loan
+            name: "Loans"
+            description: "Loan products and lending"
+            maturity: provisional
+            dependencies: ["fnd", "be", "fbc"]
+            modules:
+              - id: loan-contracts
+                name: "Loan Contracts"
+                owl_path: "LOAN/LoanContracts/"
+                maturity: provisional
+              - id: loan-types
+                name: "Loan Types"
+                owl_path: "LOAN/LoanTypes/"
+                maturity: provisional
+              - id: real-estate-loans
+                name: "Real Estate Loans"
+                owl_path: "LOAN/RealEstateLoans/"
+                maturity: provisional
+
+      - id: iso20022
+        name: "ISO 20022"
+        full_name: "ISO 20022 Financial Messaging"
+        description: "Universal financial messaging standard"
+        handler: simple_owl
+        license: "ISO License"
+        website: "https://www.iso20022.org/"
+        modules:
+          - id: iso20022-core
+            name: "ISO 20022 Core Messages"
+            description: "Core message definitions"
+            owl_url: "https://www.iso20022.org/sites/default/files/documents/D7/ISO20022_for_SWIFT.owl"
+            maturity: release
+
+      - id: xbrl
+        name: "XBRL"
+        full_name: "eXtensible Business Reporting Language"
+        description: "Financial reporting and regulatory filings"
+        handler: simple_owl
+        license: "Open"
+        website: "https://www.xbrl.org/"
+        modules:
+          - id: xbrl-core
+            name: "XBRL Core Ontology"
+            description: "Core XBRL concepts"
+            owl_url: "https://specs.xbrl.org/ont/xbrl.owl"
+            maturity: release
+
+  # ============================================================================
+  # Manufacturing & Industry 4.0
+  # ============================================================================
+  - id: manufacturing
+    name: "Manufacturing & Industry 4.0"
+    icon: "🏭"
+    description: "Manufacturing processes, automation, and industrial systems"
+    ontologies:
+      - id: isa95
+        name: "ISA-95 / IEC 62264"
+        full_name: "Enterprise-Control System Integration"
+        description: "Enterprise to manufacturing integration standard"
+        handler: simple_owl
+        license: "ISA License"
+        website: "https://www.isa.org/isa95/"
+        modules:
+          - id: isa95-core
+            name: "ISA-95 Core Model"
+            description: "Manufacturing operations management"
+            maturity: release
+
+      - id: eclass
+        name: "eCl@ss"
+        full_name: "eCl@ss Classification and Product Description"
+        description: "Product classification and properties standard"
+        handler: simple_owl
+        license: "eCl@ss License"
+        website: "https://eclass.eu/"
+        modules:
+          - id: eclass-basic
+            name: "eCl@ss Basic"
+            description: "Basic product classification"
+            maturity: release
+
+      - id: automationml
+        name: "AutomationML"
+        full_name: "Automation Markup Language"
+        description: "Plant engineering and automation data exchange"
+        handler: simple_owl
+        license: "Open"
+        website: "https://www.automationml.org/"
+        modules:
+          - id: aml-core
+            name: "AutomationML Core"
+            description: "Core automation concepts"
+            owl_url: "https://www.automationml.org/aml/aml.owl"
+            maturity: release
+
+      - id: opcua
+        name: "OPC UA"
+        full_name: "OPC Unified Architecture Information Models"
+        description: "Industrial interoperability and communication"
+        handler: simple_owl
+        license: "OPC Foundation"
+        website: "https://opcfoundation.org/"
+        modules:
+          - id: opcua-core
+            name: "OPC UA Core"
+            description: "Core information models"
+            maturity: release
+          - id: opcua-di
+            name: "OPC UA Device Integration"
+            description: "Device integration models"
+            maturity: release
+
+  # ============================================================================
+  # Supply Chain & Logistics
+  # ============================================================================
+  - id: supply-chain
+    name: "Supply Chain & Logistics"
+    icon: "🚚"
+    description: "Products, locations, shipments, and trade logistics"
+    ontologies:
+      - id: gs1
+        name: "GS1"
+        full_name: "GS1 Web Vocabulary"
+        description: "Global standards for products, locations, and supply chain"
+        handler: gs1
+        license: "Apache 2.0"
+        website: "https://www.gs1.org/voc/"
+        base_url: "https://www.gs1.org/voc/"
+        modules:
+          - id: gs1-core
+            name: "GS1 Core Vocabulary"
+            description: "Core GS1 concepts (GTIN, GLN, SSCC)"
+            owl_url: "https://www.gs1.org/voc/gs1.ttl"
+            format: turtle
+            maturity: release
+          - id: gs1-epcis
+            name: "GS1 EPCIS"
+            description: "Electronic Product Code Information Services"
+            owl_url: "https://www.gs1.org/voc/epcis.ttl"
+            format: turtle
+            maturity: release
+
+      - id: scor
+        name: "SCOR"
+        full_name: "Supply Chain Operations Reference"
+        description: "Process-centric supply chain model"
+        handler: simple_owl
+        license: "APICS/ASCM"
+        website: "https://www.apics.org/apics-for-business/benchmarking/scor"
+        modules:
+          - id: scor-core
+            name: "SCOR Core Model"
+            description: "Supply chain process reference"
+            maturity: release
+
+      - id: uncefact
+        name: "UN/CEFACT"
+        full_name: "UN/CEFACT Core Components"
+        description: "Trade and logistics data standards"
+        handler: simple_owl
+        license: "UN License"
+        website: "https://unece.org/trade/uncefact"
+        modules:
+          - id: uncefact-ccl
+            name: "Core Component Library"
+            description: "Reusable trade data components"
+            maturity: release
+
+  # ============================================================================
+  # Energy & Utilities
+  # ============================================================================
+  - id: energy
+    name: "Energy & Utilities"
+    icon: "⚡"
+    description: "Power systems, smart grid, and energy management"
+    ontologies:
+      - id: cim
+        name: "CIM"
+        full_name: "Common Information Model (IEC 61970/61968)"
+        description: "Power systems and utility network modeling"
+        handler: simple_owl
+        license: "IEC License"
+        website: "https://cimug.ucaiug.org/"
+        modules:
+          - id: cim-core
+            name: "CIM Core"
+            description: "Core power system concepts"
+            maturity: release
+          - id: cim-dynamics
+            name: "CIM Dynamics"
+            description: "Dynamic power system modeling"
+            maturity: release
+          - id: cim-topology
+            name: "CIM Topology"
+            description: "Network topology"
+            maturity: release
+
+      - id: saref
+        name: "SAREF"
+        full_name: "Smart Applications REFerence Ontology"
+        description: "Smart appliances and energy systems (EU standard)"
+        handler: simple_owl
+        license: "ETSI"
+        website: "https://saref.etsi.org/"
+        modules:
+          - id: saref-core
+            name: "SAREF Core"
+            description: "Core smart appliance concepts"
+            owl_url: "https://saref.etsi.org/core/v3.1.1/saref.ttl"
+            format: turtle
+            maturity: release
+          - id: saref-energy
+            name: "SAREF4ENER"
+            description: "Energy domain extension"
+            owl_url: "https://saref.etsi.org/saref4ener/v1.1.2/saref4ener.ttl"
+            format: turtle
+            maturity: release
+          - id: saref-building
+            name: "SAREF4BLDG"
+            description: "Building domain extension"
+            owl_url: "https://saref.etsi.org/saref4bldg/v1.1.2/saref4bldg.ttl"
+            format: turtle
+            maturity: release
+
+      - id: qudt
+        name: "QUDT"
+        full_name: "Quantities, Units, Dimensions, and Types"
+        description: "Standardized representation of physical quantities"
+        handler: simple_owl
+        license: "CC BY 4.0"
+        website: "https://www.qudt.org/"
+        modules:
+          - id: qudt-schema
+            name: "QUDT Schema"
+            description: "Core quantity and unit framework"
+            owl_url: "https://qudt.org/2.1/schema/qudt.ttl"
+            format: turtle
+            maturity: release
+          - id: qudt-units
+            name: "QUDT Units"
+            description: "Complete unit definitions"
+            owl_url: "https://qudt.org/2.1/vocab/unit.ttl"
+            format: turtle
+            maturity: release
+          - id: qudt-quantity-kinds
+            name: "QUDT Quantity Kinds"
+            description: "Physical quantity types"
+            owl_url: "https://qudt.org/2.1/vocab/quantitykind.ttl"
+            format: turtle
+            maturity: release
+
+      - id: emmo
+        name: "EMMO"
+        full_name: "European Materials Modelling Ontology"
+        description: "Materials science and energy modeling"
+        handler: simple_owl
+        license: "CC BY 4.0"
+        website: "https://emmc.info/emmo/"
+        modules:
+          - id: emmo-core
+            name: "EMMO Core"
+            description: "Core materials modeling concepts"
+            owl_url: "https://emmo-repo.github.io/versions/1.0.0-beta/emmo.owl"
+            maturity: release
+
+  # ============================================================================
+  # Telecom
+  # ============================================================================
+  - id: telecom
+    name: "Telecom"
+    icon: "📡"
+    description: "Telecommunications networks, services, and IoT"
+    ontologies:
+      - id: tm-forum-sid
+        name: "TM Forum SID"
+        full_name: "Shared Information/Data Model"
+        description: "Telecom service and resource information model"
+        handler: simple_owl
+        license: "TM Forum"
+        website: "https://www.tmforum.org/information-framework-sid/"
+        modules:
+          - id: sid-customer
+            name: "Customer Domain"
+            description: "Customer-related entities"
+            maturity: release
+          - id: sid-product
+            name: "Product Domain"
+            description: "Product and service offerings"
+            maturity: release
+          - id: sid-resource
+            name: "Resource Domain"
+            description: "Network and IT resources"
+            maturity: release
+          - id: sid-service
+            name: "Service Domain"
+            description: "Service definitions"
+            maturity: release
+
+      - id: ngsi-ld
+        name: "NGSI-LD"
+        full_name: "Next Generation Service Interfaces - Linked Data"
+        description: "Context information management for IoT and smart cities"
+        handler: simple_owl
+        license: "ETSI"
+        website: "https://www.etsi.org/deliver/etsi_gs/CIM/"
+        modules:
+          - id: ngsi-ld-core
+            name: "NGSI-LD Core"
+            description: "Core context information model"
+            owl_url: "https://uri.etsi.org/ngsi-ld/v1/ngsi-ld-core-context.jsonld"
+            format: jsonld
+            maturity: release
+
+  # ============================================================================
+  # Government & Public Sector
+  # ============================================================================
+  - id: government
+    name: "Government & Public Sector"
+    icon: "🏛️"
+    description: "Public data catalogs, organizational structures, and civic data"
+    ontologies:
+      - id: dcat
+        name: "DCAT"
+        full_name: "Data Catalog Vocabulary"
+        description: "RDF vocabulary for data catalogs"
+        handler: simple_owl
+        license: "W3C"
+        website: "https://www.w3.org/TR/vocab-dcat-3/"
+        modules:
+          - id: dcat-core
+            name: "DCAT Core"
+            description: "Core catalog vocabulary"
+            owl_url: "https://www.w3.org/ns/dcat.ttl"
+            format: turtle
+            maturity: release
+
+      - id: dcat-ap
+        name: "DCAT-AP"
+        full_name: "DCAT Application Profile for Europe"
+        description: "European data portal standard"
+        handler: simple_owl
+        license: "ISA2"
+        website: "https://joinup.ec.europa.eu/collection/semantic-interoperability-community-semic/solution/dcat-application-profile-data-portals-europe"
+        modules:
+          - id: dcat-ap-core
+            name: "DCAT-AP Core"
+            description: "European data catalog profile"
+            owl_url: "https://semiceu.github.io/DCAT-AP/releases/3.0.0/dcat-ap.ttl"
+            format: turtle
+            maturity: release
+
+      - id: org-ontology
+        name: "ORG"
+        full_name: "Organization Ontology"
+        description: "W3C vocabulary for organizational structures"
+        handler: simple_owl
+        license: "W3C"
+        website: "https://www.w3.org/TR/vocab-org/"
+        modules:
+          - id: org-core
+            name: "ORG Core"
+            description: "Core organization vocabulary"
+            owl_url: "https://www.w3.org/ns/org.ttl"
+            format: turtle
+            maturity: release
+
+      - id: foaf
+        name: "FOAF"
+        full_name: "Friend of a Friend"
+        description: "Vocabulary for people and social networks"
+        handler: simple_owl
+        license: "Open"
+        website: "http://xmlns.com/foaf/spec/"
+        modules:
+          - id: foaf-core
+            name: "FOAF Core"
+            description: "Core FOAF vocabulary"
+            owl_url: "http://xmlns.com/foaf/spec/index.rdf"
+            format: rdfxml
+            maturity: release
+
+  # ============================================================================
+  # E-Commerce & Web
+  # ============================================================================
+  - id: ecommerce
+    name: "E-Commerce & Web"
+    icon: "🌐"
+    description: "Products, offers, reviews, and web metadata"
+    ontologies:
+      - id: schema-org
+        name: "Schema.org"
+        full_name: "Schema.org Vocabulary"
+        description: "De facto standard for structured web data"
+        handler: schema_org
+        license: "CC BY-SA 3.0"
+        website: "https://schema.org/"
+        base_url: "https://schema.org/"
+        modules:
+          - id: schema-core
+            name: "Schema.org Core"
+            description: "Core vocabulary (Thing, Person, Organization, etc.)"
+            owl_url: "https://schema.org/version/latest/schemaorg-current-https.ttl"
+            format: turtle
+            maturity: release
+          - id: schema-pending
+            name: "Schema.org Pending"
+            description: "Proposed additions to Schema.org"
+            owl_url: "https://schema.org/version/latest/schemaorg-all-https.ttl"
+            format: turtle
+            maturity: provisional
+
+      - id: good-relations
+        name: "GoodRelations"
+        full_name: "GoodRelations E-Commerce Ontology"
+        description: "E-commerce vocabulary (now part of Schema.org)"
+        handler: simple_owl
+        license: "CC BY 3.0"
+        website: "http://www.heppnetz.de/projects/goodrelations/"
+        modules:
+          - id: gr-core
+            name: "GoodRelations Core"
+            description: "E-commerce concepts (offers, products, prices)"
+            owl_url: "http://purl.org/goodrelations/v1.owl"
+            maturity: release
+
+  # ============================================================================
+  # Cross-Industry / Foundational
+  # ============================================================================
+  - id: cross-industry
+    name: "Cross-Industry / Foundational"
+    icon: "🧱"
+    description: "Upper ontologies and foundational vocabularies used across domains"
+    ontologies:
+      - id: bfo
+        name: "BFO"
+        full_name: "Basic Formal Ontology"
+        description: "Top-level ontology for science and engineering"
+        handler: simple_owl
+        license: "CC BY 4.0"
+        website: "https://basic-formal-ontology.org/"
+        recommended_foundation: true
+        modules:
+          - id: bfo-core
+            name: "BFO Core"
+            description: "Basic Formal Ontology 2020"
+            owl_url: "https://raw.githubusercontent.com/BFO-ontology/BFO-2020/master/bfo-core.owl"
+            maturity: release
+
+      - id: dolce
+        name: "DOLCE"
+        full_name: "Descriptive Ontology for Linguistic and Cognitive Engineering"
+        description: "Foundational ontology from philosophical perspective"
+        handler: simple_owl
+        license: "LGPL"
+        website: "http://www.loa.istc.cnr.it/dolce/overview.html"
+        recommended_foundation: true
+        modules:
+          - id: dolce-lite
+            name: "DOLCE-Lite"
+            description: "Lightweight DOLCE"
+            owl_url: "http://www.loa.istc.cnr.it/ontologies/DOLCE-Lite.owl"
+            maturity: release
+
+      - id: sumo
+        name: "SUMO"
+        full_name: "Suggested Upper Merged Ontology"
+        description: "General-purpose upper ontology"
+        handler: simple_owl
+        license: "GPL"
+        website: "https://www.ontologyportal.org/"
+        recommended_foundation: true
+        modules:
+          - id: sumo-core
+            name: "SUMO Core"
+            description: "Core SUMO concepts"
+            owl_url: "https://raw.githubusercontent.com/ontologyportal/sumo/master/Merge.kif"
+            maturity: release
+
+      - id: prov-o
+        name: "PROV-O"
+        full_name: "PROV Ontology"
+        description: "W3C standard for provenance and data lineage"
+        handler: simple_owl
+        license: "W3C"
+        website: "https://www.w3.org/TR/prov-o/"
+        recommended_foundation: true
+        modules:
+          - id: prov-core
+            name: "PROV-O Core"
+            description: "Core provenance vocabulary"
+            owl_url: "https://www.w3.org/ns/prov.ttl"
+            format: turtle
+            maturity: release
+
+      - id: owl-time
+        name: "OWL-Time"
+        full_name: "Time Ontology in OWL"
+        description: "W3C ontology for temporal concepts"
+        handler: simple_owl
+        license: "W3C"
+        website: "https://www.w3.org/TR/owl-time/"
+        recommended_foundation: true
+        modules:
+          - id: time-core
+            name: "OWL-Time Core"
+            description: "Core temporal concepts"
+            owl_url: "https://www.w3.org/2006/time.ttl"
+            format: turtle
+            maturity: release
+
+      - id: skos
+        name: "SKOS"
+        full_name: "Simple Knowledge Organization System"
+        description: "W3C standard for controlled vocabularies and taxonomies"
+        handler: simple_owl
+        license: "W3C"
+        website: "https://www.w3.org/TR/skos-reference/"
+        recommended_foundation: true
+        modules:
+          - id: skos-core
+            name: "SKOS Core"
+            description: "Core SKOS vocabulary"
+            owl_url: "https://www.w3.org/2009/08/skos-reference/skos.rdf"
+            format: rdfxml
+            maturity: release
+
+      - id: dublin-core
+        name: "Dublin Core"
+        full_name: "Dublin Core Metadata Terms"
+        description: "Universal metadata vocabulary"
+        handler: simple_owl
+        license: "CC BY 4.0"
+        website: "https://www.dublincore.org/"
+        recommended_foundation: true
+        modules:
+          - id: dc-terms
+            name: "Dublin Core Terms"
+            description: "Full Dublin Core vocabulary"
+            owl_url: "https://www.dublincore.org/specifications/dublin-core/dcmi-terms/dublin_core_terms.ttl"
+            format: turtle
+            maturity: release
+          - id: dc-elements
+            name: "Dublin Core Elements"
+            description: "Original 15 Dublin Core elements"
+            owl_url: "https://www.dublincore.org/specifications/dublin-core/dcmi-terms/dublin_core_elements.rdf"
+            format: rdfxml
+            maturity: release
+
+      - id: rdfs
+        name: "RDFS"
+        full_name: "RDF Schema"
+        description: "W3C vocabulary for RDF schemas"
+        handler: simple_owl
+        license: "W3C"
+        website: "https://www.w3.org/TR/rdf-schema/"
+        modules:
+          - id: rdfs-core
+            name: "RDFS Core"
+            description: "RDF Schema vocabulary"
+            owl_url: "https://www.w3.org/2000/01/rdf-schema.ttl"
+            format: turtle
+            maturity: release
+
+      - id: owl
+        name: "OWL"
+        full_name: "Web Ontology Language"
+        description: "W3C vocabulary for ontology definition"
+        handler: simple_owl
+        license: "W3C"
+        website: "https://www.w3.org/OWL/"
+        modules:
+          - id: owl-core
+            name: "OWL Vocabulary"
+            description: "OWL language constructs"
+            owl_url: "https://www.w3.org/2002/07/owl.ttl"
+            format: turtle
+            maturity: release
+
+  # ============================================================================
+  # AI & Knowledge Graphs
+  # ============================================================================
+  - id: ai-knowledge
+    name: "AI & Knowledge Graphs"
+    icon: "🤖"
+    description: "Ontologies for AI, knowledge representation, and data integration"
+    ontologies:
+      - id: wikidata
+        name: "Wikidata"
+        full_name: "Wikidata Ontology"
+        description: "Knowledge base vocabulary from Wikimedia"
+        handler: simple_owl
+        license: "CC0"
+        website: "https://www.wikidata.org/"
+        modules:
+          - id: wikidata-ontology
+            name: "Wikidata Ontology"
+            description: "Wikidata property definitions"
+            owl_url: "https://www.wikidata.org/wiki/Special:EntityData/ontology.ttl"
+            format: turtle
+            maturity: release
+
+      - id: shacl
+        name: "SHACL"
+        full_name: "Shapes Constraint Language"
+        description: "W3C vocabulary for RDF validation and constraints"
+        handler: simple_owl
+        license: "W3C"
+        website: "https://www.w3.org/TR/shacl/"
+        modules:
+          - id: shacl-core
+            name: "SHACL Core"
+            description: "Core SHACL vocabulary"
+            owl_url: "https://www.w3.org/ns/shacl.ttl"
+            format: turtle
+            maturity: release
+
+# Metadata about this registry
+metadata:
+  version: "1.0.0"
+  last_updated: "2024-01-15"
+  description: "Industry Ontology Library for Ontos"
+  maintainer: "Ontos Team"

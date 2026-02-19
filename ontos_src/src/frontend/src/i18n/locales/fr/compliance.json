@@ -1,0 +1,105 @@
+{
+  "title": "Conformité",
+  "subtitle": "Gérez les politiques de conformité et les exécutions",
+  "newPolicy": "Nouvelle Politique",
+  "createRule": "Créer une Règle",
+  "editRule": "Modifier la Règle de Conformité",
+  "createNewRule": "Créer une Nouvelle Règle de Conformité",
+  "searchPlaceholder": "Rechercher des politiques...",
+  "loading": "Chargement des données de conformité...",
+  "stats": {
+    "overallCompliance": "Conformité Globale",
+    "acrossAllRules": "Sur toutes les règles",
+    "activeRules": "Règles Actives",
+    "currentlyEnforced": "Actuellement appliquées",
+    "criticalIssues": "Problèmes Critiques",
+    "requireAttention": "Nécessitent attention",
+    "lastUpdated": "Dernière Mise à Jour",
+    "today": "Aujourd'hui"
+  },
+  "form": {
+    "name": "Nom",
+    "description": "Description",
+    "category": "Catégorie",
+    "selectCategory": "Sélectionner une catégorie",
+    "severity": "Sévérité",
+    "selectSeverity": "Sélectionner une sévérité",
+    "ruleCode": "Code de Règle",
+    "rulePlaceholder": "Entrez la règle de conformité au format DSL",
+    "failureMessage": "Message d'Échec",
+    "failureMessagePlaceholder": "ex. Les noms doivent utiliser snake_case (minuscules avec underscores)",
+    "failureMessageHint": "Message lisible affiché aux utilisateurs lorsque cette politique échoue. Aide à expliquer le problème et comment le résoudre."
+  },
+  "categories": {
+    "security": "Sécurité",
+    "dataQuality": "Qualité des Données",
+    "privacy": "Confidentialité",
+    "governance": "Gouvernance"
+  },
+  "errors": {
+    "loadingPolicies": "Erreur lors du Chargement des Politiques",
+    "savingPolicy": "Erreur lors de l'Enregistrement de la Politique",
+    "deletingPolicy": "Erreur lors de la Suppression de la Politique"
+  },
+  "toast": {
+    "policySaved": "Politique '{{name}}' enregistrée avec succès",
+    "policyDeleted": "Politique supprimée avec succès"
+  },
+  "score": {
+    "title": "Score de Conformité",
+    "overall": "Score Global",
+    "trend": "Tendance"
+  },
+  "filters": {
+    "allStatus": "Tous les Statuts",
+    "allSeverity": "Toutes les Sévérités"
+  },
+  "table": {
+    "name": "Nom",
+    "status": "Statut",
+    "severity": "Sévérité",
+    "lastRun": "Dernière Exécution",
+    "score": "Score",
+    "actions": "Actions"
+  },
+  "messages": {
+    "success": "Succès",
+    "error": "Erreur",
+    "deleteConfirm": "Êtes-vous sûr de vouloir supprimer cette politique ?",
+    "deleteSuccess": "Politique supprimée avec succès",
+    "deleteError": "Échec de la suppression de la politique"
+  },
+  "status": {
+    "draft": "Brouillon",
+    "active": "Actif",
+    "paused": "En pause",
+    "disabled": "Désactivé"
+  },
+  "severity": {
+    "critical": "Critique",
+    "high": "Élevé",
+    "medium": "Moyen",
+    "low": "Faible"
+  },
+  "details": {
+    "backToList": "Retour aux Politiques",
+    "edit": "Modifier",
+    "delete": "Supprimer",
+    "run": "Exécuter Maintenant",
+    "notFound": "Politique non trouvée",
+    "loading": "Chargement..."
+  },
+  "runs": {
+    "title": "Exécutions de Conformité",
+    "runNow": "Exécuter Maintenant",
+    "noRuns": "Aucune exécution de conformité",
+    "table": {
+      "startTime": "Heure de Début",
+      "endTime": "Heure de Fin",
+      "status": "Statut",
+      "score": "Score",
+      "issues": "Problèmes"
+    }
+  }
+}
+

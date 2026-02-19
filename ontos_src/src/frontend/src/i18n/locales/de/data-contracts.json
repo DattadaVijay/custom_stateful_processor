@@ -1,0 +1,190 @@
+{
+  "title": "Datenverträge",
+  "subtitle": "Verwalten Sie Ihre Datenverträge und Spezifikationen",
+  "newContract": "Neuer Vertrag",
+  "uploadFile": "Datei hochladen",
+  "importContract": "Importieren",
+  "searchPlaceholder": "Datenverträge suchen...",
+  "loading": "Datenverträge werden geladen...",
+  "filters": {
+    "allStatus": "Alle Status",
+    "allOwners": "Alle Eigentümer"
+  },
+  "table": {
+    "name": "Name",
+    "status": "Status",
+    "version": "Version",
+    "owner": "Eigentümer",
+    "schema": "Schema",
+    "tags": "Tags",
+    "created": "Erstellt",
+    "updated": "Aktualisiert",
+    "actions": "Aktionen",
+    "viewDetails": "Details anzeigen",
+    "editContract": "Vertrag bearbeiten",
+    "deleteContract": "Vertrag löschen",
+    "viewSchema": "Schema anzeigen"
+  },
+  "messages": {
+    "deleteConfirm": "Möchten Sie diesen Datenvertrag wirklich löschen?",
+    "deleteSuccess": "Datenvertrag erfolgreich gelöscht",
+    "deleteError": "Fehler beim Löschen des Datenvertrags",
+    "fetchError": "Fehler beim Abrufen der Datenverträge",
+    "importSuccess": "Datenvertrag erfolgreich importiert",
+    "importError": "Fehler beim Importieren des Datenvertrags",
+    "success": "Erfolg",
+    "error": "Fehler"
+  },
+  "status": {
+    "draft": "Entwurf",
+    "sandbox": "Sandbox",
+    "proposed": "Vorgeschlagen",
+    "under_review": "In Prüfung",
+    "in_review": "In Prüfung",
+    "active": "Aktiv",
+    "approved": "Genehmigt",
+    "certified": "Zertifiziert",
+    "deprecated": "Veraltet",
+    "retired": "Stillgelegt",
+    "published": "Veröffentlicht"
+  },
+  "details": {
+    "backToList": "Zurück zur Liste",
+    "edit": "Bearbeiten",
+    "delete": "Löschen",
+    "export": "Exportieren",
+    "clone": "Klonen",
+    "validate": "Validieren",
+    "notFound": "Datenvertrag nicht gefunden",
+    "loading": "Wird geladen...",
+    "noDescription": "Keine Beschreibung vorhanden",
+    "coreMetadata": {
+      "status": "Status",
+      "version": "Version",
+      "owner": "Eigentümer",
+      "domain": "Domäne",
+      "created": "Erstellt",
+      "updated": "Aktualisiert",
+      "tags": "Tags",
+      "noTags": "Keine Tags",
+      "notAssigned": "Nicht zugewiesen"
+    },
+    "sections": {
+      "overview": "Übersicht",
+      "schema": "Schema",
+      "qualityRules": "Qualitätsregeln",
+      "sampleData": "Beispieldaten",
+      "accessControl": "Zugriffskontrolle",
+      "linkedEntities": "Verknüpfte Entitäten",
+      "history": "Verlauf"
+    },
+    "schema": {
+      "title": "Schemadefinition",
+      "subtitle": "In diesem Vertrag definierte Felder und Datentypen",
+      "noSchema": "Kein Schema definiert",
+      "addField": "Feld hinzufügen",
+      "columns": {
+        "name": "Name",
+        "type": "Typ",
+        "nullable": "Nullable",
+        "description": "Beschreibung",
+        "constraints": "Einschränkungen"
+      }
+    },
+    "qualityRules": {
+      "title": "Datenqualitätsregeln",
+      "subtitle": "Qualitätsprüfungen und Validierungen",
+      "noRules": "Keine Qualitätsregeln definiert",
+      "addRule": "Regel hinzufügen",
+      "columns": {
+        "name": "Regelname",
+        "type": "Typ",
+        "severity": "Schweregrad",
+        "description": "Beschreibung",
+        "status": "Status"
+      }
+    },
+    "sampleData": {
+      "title": "Beispieldaten",
+      "subtitle": "Vorschau des erwarteten Datenformats",
+      "noData": "Keine Beispieldaten verfügbar",
+      "loadSample": "Beispiel laden"
+    },
+    "accessControl": {
+      "title": "Zugriffskontrolle",
+      "subtitle": "Berechtigungen und Zugriffsrichtlinien",
+      "noRules": "Keine Zugriffsregeln definiert"
+    },
+    "linkedEntities": {
+      "title": "Verknüpfte Entitäten",
+      "subtitle": "Datenprodukte und Datensätze, die diesen Vertrag verwenden",
+      "dataProducts": "Datenprodukte",
+      "datasets": "Datensätze",
+      "noLinkedProducts": "Keine verknüpften Datenprodukte",
+      "noLinkedDatasets": "Keine verknüpften Datensätze"
+    },
+    "deleteConfirm": "Möchten Sie \"{{name}}\" wirklich löschen?",
+    "deleteSuccess": "Datenvertrag erfolgreich gelöscht",
+    "deleteError": "Fehler beim Löschen des Datenvertrags",
+    "validationSuccess": "Vertragsvalidierung bestanden",
+    "validationError": "Vertragsvalidierung fehlgeschlagen"
+  },
+  "form": {
+    "createTitle": "Datenvertrag erstellen",
+    "editTitle": "Datenvertrag bearbeiten",
+    "name": "Name",
+    "namePlaceholder": "Vertragsnamen eingeben",
+    "description": "Beschreibung",
+    "descriptionPlaceholder": "Vertragsbeschreibung eingeben",
+    "status": "Status",
+    "version": "Version",
+    "versionPlaceholder": "z.B. 1.0.0",
+    "domain": "Domäne",
+    "selectDomain": "Domäne auswählen",
+    "noDomain": "Keine Domäne",
+    "ownerTeam": "Eigentümer-Team",
+    "selectOwnerTeam": "Eigentümer-Team auswählen",
+    "noOwner": "Kein Eigentümer",
+    "format": "Format",
+    "selectFormat": "Format auswählen",
+    "tags": "Tags",
+    "tagsPlaceholder": "Tags durch Kommas getrennt eingeben",
+    "cancel": "Abbrechen",
+    "save": "Speichern",
+    "create": "Erstellen",
+    "saving": "Wird gespeichert...",
+    "createSuccess": "Datenvertrag erfolgreich erstellt",
+    "updateSuccess": "Datenvertrag erfolgreich aktualisiert",
+    "createError": "Fehler beim Erstellen des Datenvertrags",
+    "updateError": "Fehler beim Aktualisieren des Datenvertrags"
+  },
+  "import": {
+    "title": "Datenvertrag importieren",
+    "dropzone": "YAML- oder JSON-Datei hier ablegen oder klicken zum Auswählen",
+    "pasteLabel": "Oder Inhalt direkt einfügen",
+    "pastePlaceholder": "YAML- oder JSON-Inhalt einfügen...",
+    "cancel": "Abbrechen",
+    "import": "Importieren",
+    "importing": "Wird importiert..."
+  },
+  "editor": {
+    "title": "Vertrags-Editor",
+    "schemaTab": "Schema",
+    "qualityTab": "Qualität",
+    "rawTab": "Roh",
+    "preview": "Vorschau",
+    "validate": "Validieren",
+    "save": "Speichern"
+  },
+  "schemaEditor": {
+    "unsavedChanges": "Nicht gespeicherte Änderungen",
+    "editingColumn": "Spalte bearbeiten",
+    "addingNewColumn": "Neue Spalte hinzufügen",
+    "applyWithUpdateOrSave": "Mit „Spalte aktualisieren“ übernehmen oder „Änderungen speichern“, um sie ins Schema aufzunehmen.",
+    "updateColumn": "Spalte aktualisieren",
+    "addColumn": "Spalte hinzufügen",
+    "addSchema": "Schema hinzufügen",
+    "cancel": "Abbrechen"
+  }
+}
+

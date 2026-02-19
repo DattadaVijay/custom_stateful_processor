@@ -1,0 +1,105 @@
+{
+  "title": "Compliance",
+  "subtitle": "Manage compliance policies and runs",
+  "newPolicy": "New Policy",
+  "createRule": "Create Rule",
+  "editRule": "Edit Compliance Rule",
+  "createNewRule": "Create New Compliance Rule",
+  "searchPlaceholder": "Search policies...",
+  "loading": "Loading compliance data...",
+  "stats": {
+    "overallCompliance": "Overall Compliance",
+    "acrossAllRules": "Across all rules",
+    "activeRules": "Active Rules",
+    "currentlyEnforced": "Currently enforced",
+    "criticalIssues": "Critical Issues",
+    "requireAttention": "Require attention",
+    "lastUpdated": "Last Updated",
+    "today": "Today"
+  },
+  "form": {
+    "name": "Name",
+    "description": "Description",
+    "category": "Category",
+    "selectCategory": "Select category",
+    "severity": "Severity",
+    "selectSeverity": "Select severity",
+    "ruleCode": "Rule Code",
+    "rulePlaceholder": "Enter the compliance rule in Compliance DSL format",
+    "failureMessage": "Failure Message",
+    "failureMessagePlaceholder": "e.g., Names must use snake_case (lowercase with underscores)",
+    "failureMessageHint": "Human-readable message shown to users when this policy fails. Helps explain what went wrong and how to fix it."
+  },
+  "categories": {
+    "security": "Security",
+    "dataQuality": "Data Quality",
+    "privacy": "Privacy",
+    "governance": "Governance"
+  },
+  "errors": {
+    "loadingPolicies": "Error Loading Policies",
+    "savingPolicy": "Error Saving Policy",
+    "deletingPolicy": "Error Deleting Policy"
+  },
+  "toast": {
+    "policySaved": "Policy '{{name}}' saved successfully",
+    "policyDeleted": "Policy deleted successfully"
+  },
+  "score": {
+    "title": "Compliance Score",
+    "overall": "Overall Score",
+    "trend": "Trend"
+  },
+  "filters": {
+    "allStatus": "All Status",
+    "allSeverity": "All Severity"
+  },
+  "table": {
+    "name": "Name",
+    "status": "Status",
+    "severity": "Severity",
+    "lastRun": "Last Run",
+    "score": "Score",
+    "actions": "Actions"
+  },
+  "messages": {
+    "success": "Success",
+    "error": "Error",
+    "deleteConfirm": "Are you sure you want to delete this policy?",
+    "deleteSuccess": "Policy deleted successfully",
+    "deleteError": "Failed to delete policy"
+  },
+  "status": {
+    "draft": "Draft",
+    "active": "Active",
+    "paused": "Paused",
+    "disabled": "Disabled"
+  },
+  "severity": {
+    "critical": "Critical",
+    "high": "High",
+    "medium": "Medium",
+    "low": "Low"
+  },
+  "details": {
+    "backToList": "Back to Policies",
+    "edit": "Edit",
+    "delete": "Delete",
+    "run": "Run Now",
+    "notFound": "Policy not found",
+    "loading": "Loading..."
+  },
+  "runs": {
+    "title": "Compliance Runs",
+    "runNow": "Run Now",
+    "noRuns": "No compliance runs yet",
+    "table": {
+      "startTime": "Start Time",
+      "endTime": "End Time",
+      "status": "Status",
+      "score": "Score",
+      "issues": "Issues"
+    }
+  }
+}
+

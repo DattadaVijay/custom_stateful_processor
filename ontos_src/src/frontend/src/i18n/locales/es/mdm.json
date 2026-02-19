@@ -1,0 +1,89 @@
+{
+  "title": "Gestión de Datos Maestros",
+  "subtitle": "Define contratos de datos maestros y gestiona la coincidencia de entidades entre sistemas",
+  "newConfiguration": "Nueva Configuración MDM",
+  "configurations": "Configuraciones MDM",
+  "noConfigurations": "No hay configuraciones MDM aún.",
+  "getStarted": "Crea tu primera configuración para comenzar.",
+  "sources": "fuentes",
+  "lastRun": "Última Ejecución",
+  "stats": {
+    "matchingRuns": "Ejecuciones de Coincidencia",
+    "totalMatches": "Coincidencias Totales",
+    "newRecords": "Nuevos Registros",
+    "pendingReview": "Pendiente de Revisión"
+  },
+  "configDetails": {
+    "title": "Detalles de Configuración",
+    "selectConfig": "Selecciona una configuración para ver detalles",
+    "startMatching": "Iniciar Coincidencia",
+    "editRules": "Editar Reglas MDM",
+    "linkSource": "Vincular Contrato Fuente",
+    "deleteConfig": "Eliminar Configuración"
+  },
+  "tabs": {
+    "overview": "Resumen",
+    "sources": "Fuentes",
+    "matchingRules": "Reglas de Coincidencia",
+    "matchingRuns": "Ejecuciones de Coincidencia",
+    "reviewQueue": "Cola de Revisión"
+  },
+  "overview": {
+    "description": "Descripción",
+    "entityType": "Tipo de Entidad",
+    "goldenRecordTarget": "Objetivo de Registro Dorado"
+  },
+  "sourcesTab": {
+    "title": "Fuentes Vinculadas",
+    "dataContract": "Contrato de Datos",
+    "keyColumn": "Columna Clave",
+    "matchColumns": "Columnas de Coincidencia",
+    "noSources": "No hay contratos fuente vinculados aún."
+  },
+  "rulesTab": {
+    "title": "Reglas de Coincidencia",
+    "noRules": "No hay reglas de coincidencia configuradas aún.",
+    "matchingRulesButton": "Editar Reglas MDM",
+    "description": "Configura las reglas utilizadas para identificar y coincidir registros duplicados."
+  },
+  "runsTab": {
+    "title": "Historial de Ejecuciones",
+    "runId": "ID de Ejecución",
+    "status": "Estado",
+    "matchesFound": "Coincidencias Encontradas",
+    "newRecords": "Nuevos Registros",
+    "pendingReview": "Pendiente de Revisión",
+    "noRuns": "No hay ejecuciones de coincidencia aún. Inicia un trabajo de coincidencia para ver resultados.",
+    "selectRun": "Selecciona una ejecución para ver candidatos"
+  },
+  "candidates": {
+    "title": "Candidatos de Coincidencia",
+    "sourceRecord": "Registro Fuente",
+    "targetRecord": "Registro Destino",
+    "matchType": "Tipo de Coincidencia",
+    "confidence": "Confianza",
+    "viewDetails": "Ver Detalles",
+    "approve": "Aprobar",
+    "reject": "Rechazar",
+    "mergeApproved": "Fusionar Aprobados",
+    "createReview": "Crear Solicitud de Revisión",
+    "noCandidates": "No hay candidatos de coincidencia para esta ejecución."
+  },
+  "toast": {
+    "matchingStarted": "Trabajo de coincidencia MDM iniciado",
+    "mergeCompleted": "Fusión completada",
+    "configDeleted": "Configuración eliminada",
+    "sourceRemoved": "Vínculo de fuente eliminado"
+  },
+  "errors": {
+    "loadFailed": "Error al cargar configuraciones MDM",
+    "startMatchingFailed": "Error al iniciar coincidencia",
+    "mergeFailed": "Error en fusión",
+    "deleteFailed": "Error al eliminar"
+  },
+  "confirm": {
+    "deleteConfig": "¿Estás seguro de que deseas eliminar esta configuración MDM?",
+    "deleteSource": "¿Estás seguro de que deseas eliminar este vínculo de fuente?"
+  }
+}
+

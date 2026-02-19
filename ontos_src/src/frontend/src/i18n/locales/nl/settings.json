@@ -1,0 +1,379 @@
+{
+  "title": "Instellingen",
+  "tabs": {
+    "general": "Algemeen",
+    "databricks": "Databricks",
+    "git": "Git",
+    "jobs": "Jobs & Workflows",
+    "roles": "Rollen",
+    "semanticModels": "Semantische Modellen",
+    "tags": "Tags",
+    "search": "Zoeken",
+    "mcpTokens": "MCP Tokens",
+    "workflows": "Workflows",
+    "uiCustomization": "UI-aanpassing"
+  },
+  "accessDenied": {
+    "title": "Toegang Geweigerd",
+    "message": "Je hebt geen toestemming om de Instellingen pagina te benaderen. Deze pagina is beperkt tot gebruikers met beheerdersrechten.",
+    "action": "Als je denkt dat je toegang zou moeten hebben, neem dan contact op met je beheerder of ",
+    "returnHome": "keer terug naar de homepagina",
+    "requestRole": " om een passende rol aan te vragen."
+  },
+  "general": {
+    "title": "Algemene Instellingen",
+    "description": "Configureer basis applicatie-instellingen",
+    "enableBackgroundJobs": "Achtergrond Jobs Inschakelen",
+    "workspaceDeploymentPath": {
+      "label": "Workspace Deployment Pad",
+      "placeholder": "/Workspace/Users/user@domain.com/ontos-workflows",
+      "help": "Pad in Databricks workspace waar workflow bestanden worden gedeployed voor achtergrond jobs."
+    },
+    "unityCatalog": {
+      "title": "Unity Catalog",
+      "help": "Unity Catalog locatie voor het opslaan van applicatiedata.",
+      "catalog": {
+        "label": "Catalogus",
+        "placeholder": "app_data"
+      },
+      "schema": {
+        "label": "Schema",
+        "placeholder": "app_ontos"
+      },
+      "volume": {
+        "label": "Volume",
+        "placeholder": "app_files"
+      }
+    },
+    "auditLog": {
+      "label": "Auditlog Directory",
+      "placeholder": "audit_logs",
+      "help": "Directory waar auditlog bestanden worden opgeslagen."
+    },
+    "llm": {
+      "title": "AI / LLM Configuratie",
+      "enabled": {
+        "label": "AI Functies Inschakelen"
+      },
+      "endpoint": {
+        "label": "LLM Endpoint",
+        "placeholder": "databricks-claude-sonnet-4-5",
+        "help": "Databricks serving endpoint naam voor de LLM."
+      },
+      "systemPrompt": {
+        "label": "Systeem Prompt",
+        "placeholder": "Je bent een Data Steward...",
+        "help": "Systeem prompt die het gedrag van de AI assistent definieert."
+      },
+      "disclaimer": {
+        "label": "Disclaimer Tekst",
+        "placeholder": "Deze functie gebruikt AI om data assets te analyseren...",
+        "help": "Disclaimer getoond aan gebruikers bij het gebruik van AI functies."
+      }
+    },
+    "saveButton": "Instellingen Opslaan",
+    "messages": {
+      "saveSuccess": "Instellingen succesvol opgeslagen",
+      "saveError": "Kon instellingen niet opslaan"
+    }
+  },
+  "databricks": {
+    "title": "Databricks Instellingen",
+    "description": "Configureer Databricks verbindingsinstellingen",
+    "labels": {
+      "host": "Host",
+      "token": "Token",
+      "warehouseId": "Warehouse ID",
+      "catalog": "Catalogus",
+      "schema": "Schema"
+    },
+    "placeholders": {
+      "host": "https://<jouw-workspace>.cloud.databricks.com",
+      "token": "dapi...",
+      "warehouseId": "1234abcd5678efgh",
+      "catalog": "main",
+      "schema": "uc_swiss_knife"
+    }
+  },
+  "git": {
+    "title": "Git Instellingen",
+    "description": "Configureer Git repository voor YAML opslag",
+    "labels": {
+      "repoUrl": "Repository URL",
+      "branch": "Branch",
+      "token": "Token"
+    },
+    "placeholders": {
+      "repoUrl": "https://github.com/jouw-org/jouw-repo.git",
+      "branch": "main",
+      "token": "ghp_... of vergelijkbaar"
+    }
+  },
+  "jobs": {
+    "title": "Jobs & Workflows Configuratie",
+    "description": "Configureer Databricks job cluster en schakel achtergrond workflows in",
+    "jobClusterId": {
+      "label": "Job Cluster ID (optioneel)",
+      "placeholder": "Laat leeg voor serverless compute"
+    },
+    "availableWorkflows": {
+      "label": "Beschikbare Workflows",
+      "description": "Schakel achtergrond workflows in of uit"
+    },
+    "noWorkflows": "Geen workflows beschikbaar",
+    "saveButton": "Configuratie Opslaan",
+    "messages": {
+      "saveSuccess": "Instellingen succesvol opgeslagen",
+      "saveError": "Kon instellingen niet opslaan"
+    }
+  },
+  "jobsActions": {
+    "start": "Starten",
+    "stop": "Stoppen",
+    "pause": "Planning pauzeren",
+    "resume": "Hervatten",
+    "history": "Uitvoeringsgeschiedenis bekijken",
+    "cannotDisableRunning": "Kan een lopende workflow niet uitschakelen"
+  },
+  "jobRuns": {
+    "viewHistory": "Uitvoeringsgeschiedenis bekijken",
+    "dialogTitle": "Job Uitvoeringsgeschiedenis: {{workflowName}}",
+    "dialogDescription": "Recente uitvoeringsgeschiedenis voor deze workflow",
+    "emptyState": "Geen uitvoeringen gevonden voor deze workflow",
+    "runId": "Uitvoerings ID",
+    "runName": "Naam",
+    "status": "Status",
+    "started": "Gestart",
+    "duration": "Duur",
+    "notified": "Gemeld",
+    "statuses": {
+      "success": "Succes",
+      "failed": "Mislukt",
+      "canceled": "Geannuleerd",
+      "timedout": "Timeout",
+      "running": "Lopend",
+      "pending": "In Afwachting",
+      "unknown": "Onbekend"
+    }
+  },
+  "roles": {
+    "title": "Rolgebaseerde Toegangscontrole",
+    "description": "Definieer applicatierollen en wijs machtigingen toe aan directory groepen.",
+    "table": {
+      "nameColumn": "Naam",
+      "descriptionColumn": "Beschrijving",
+      "assignedGroupsColumn": "Toegewezen Groepen",
+      "none": "Geen",
+      "assigned": "Toegewezen",
+      "request": "Aanvragen",
+      "requestTooltip": "Vraag toegang aan tot deze rol",
+      "alreadyAssignedTooltip": "Je hebt deze rol al"
+    },
+    "dialog": {
+      "createTitle": "Rol Aanmaken",
+      "editTitle": "Rol Bewerken: {{name}}",
+      "description": "Definieer de rolnaam, toegewezen groepen, functie machtigingen en goedkeuringsprivileges."
+    },
+    "tabs": {
+      "general": "Algemeen",
+      "privileges": "Privileges",
+      "permissions": "Machtigingen",
+      "deployment": "Deployment",
+      "accessControl": "Toegangscontrole"
+    },
+    "general": {
+      "roleName": "Rolnaam",
+      "roleNameRequired": "Rolnaam is verplicht",
+      "description": "Beschrijving",
+      "assignedGroups": "Toegewezen Directory Groepen (komma-gescheiden)",
+      "assignedGroupsPlaceholder": "bijv. data-stewards, finance-team",
+      "assignedGroupsHelp": "Gebruikers die tot deze groepen behoren zullen de machtigingen van deze rol erven."
+    },
+    "privileges": {
+      "homeSections": {
+        "title": "Home Secties",
+        "description": "Selecteer welke secties op de homepagina verschijnen voor gebruikers met deze rol."
+      },
+      "approvalPrivileges": {
+        "title": "Goedkeuringsprivileges",
+        "description": "Verleen deze rol de mogelijkheid om specifieke soorten verzoeken goed te keuren."
+      }
+    },
+    "permissions": {
+      "featurePermissions": {
+        "title": "Functie Machtigingen",
+        "description": "Configureer toegangsniveaus voor elke functie in de applicatie."
+      }
+    },
+    "deployment": {
+      "title": "Deployment Beleid",
+      "description": "Bepaal naar welke Unity Catalog catalogussen/schema's gebruikers met deze rol kunnen deployen. Ondersteunt wildcards (* voor alles) en sjabloonvariabelen ({username}, {email}).",
+      "allowedCatalogs": {
+        "label": "Toegestane Catalogussen (komma-gescheiden)",
+        "placeholder": "bijv. prod_catalog, {username}_sandbox, *",
+        "help": "Laat leeg om deployments te voorkomen. Gebruik * om alle catalogussen toe te staan."
+      },
+      "allowedSchemas": {
+        "label": "Toegestane Schema's (komma-gescheiden, optioneel)",
+        "placeholder": "bijv. dev, {username}_schema, *",
+        "help": "Laat leeg om elk schema binnen toegestane catalogussen toe te staan."
+      },
+      "defaultCatalog": {
+        "label": "Standaard Catalogus",
+        "placeholder": "bijv. {username}_sandbox",
+        "help": "Voorgeselecteerd in UI"
+      },
+      "defaultSchema": {
+        "label": "Standaard Schema",
+        "placeholder": "bijv. default",
+        "help": "Voorgeselecteerd in UI"
+      },
+      "requireApproval": "Goedkeuring vereisen voor deployments",
+      "canApprove": "Kan deployment verzoeken goedkeuren"
+    },
+    "accessControl": {
+      "requestableBy": {
+        "title": "Wie kan deze rol aanvragen?",
+        "description": "Selecteer welke rollen toegang mogen aanvragen tot deze rol. Gebruikers met deze rollen zien deze rol in hun aanvraagbare rollenlijst."
+      },
+      "approvers": {
+        "title": "Wie kan verzoeken voor deze rol goedkeuren?",
+        "description": "Selecteer welke rollen toegangsverzoeken voor deze rol kunnen goedkeuren. Gebruikers met deze rollen ontvangen notificaties wanneer iemand deze rol aanvraagt.",
+        "hint": "Als er geen goedkeurders zijn geselecteerd, worden verzoeken standaard naar Admin gestuurd."
+      },
+      "noRole": "Gebruikers zonder rol (nieuwe gebruikers)",
+      "noRolesAvailable": "Geen andere rollen beschikbaar",
+      "defaultApprover": "Standaard"
+    },
+    "actions": {
+      "cancel": "Annuleren",
+      "create": "Rol Aanmaken",
+      "update": "Rol Bijwerken",
+      "addRole": "Rol Toevoegen",
+      "actions": "Acties",
+      "editRole": "Rol Bewerken",
+      "deleteRole": "Rol Verwijderen"
+    }
+  },
+  "mcpTokens": {
+    "title": "MCP API Tokens",
+    "description": "Beheer API tokens voor AI assistent integraties via het Model Context Protocol",
+    "refresh": "Vernieuwen",
+    "createToken": "Token Aanmaken",
+    "showRevokedTokens": "Ingetrokken tokens tonen",
+    "emptyState": {
+      "title": "Nog geen MCP tokens",
+      "description": "Maak een token aan om AI assistenten toegang te geven tot je tools"
+    },
+    "table": {
+      "name": "Naam",
+      "scopes": "Scopes",
+      "created": "Aangemaakt",
+      "lastUsed": "Laatst Gebruikt",
+      "expires": "Verloopt",
+      "status": "Status",
+      "actions": "Acties",
+      "never": "Nooit",
+      "moreScopes": "+{{count}} meer",
+      "createdBy": "door {{name}}"
+    },
+    "status": {
+      "active": "Actief",
+      "revoked": "Ingetrokken",
+      "expired": "Verlopen"
+    },
+    "tooltips": {
+      "revokeToken": "Token intrekken"
+    },
+    "info": {
+      "title": "MCP Tokens Gebruiken",
+      "description": "MCP tokens stellen AI assistenten in staat om te communiceren met je data governance platform. Elk token heeft specifieke scopes die bepalen welke tools toegankelijk zijn.",
+      "endpoint": "Endpoint:",
+      "header": "Header:"
+    },
+    "createDialog": {
+      "title": "MCP Token Aanmaken",
+      "description": "Maak een nieuwe API token aan voor AI assistent integraties. De token wordt slechts één keer getoond.",
+      "tokenName": "Token Naam",
+      "tokenNamePlaceholder": "bijv. Claude Assistent - Analytics Team",
+      "tokenNameHelp": "Een beschrijvende naam om deze token te identificeren",
+      "expiration": "Vervaldatum (dagen)",
+      "expirationHelp": "Laat leeg voor geen vervaldatum",
+      "scopes": "Scopes",
+      "scopesHelp": "Selecteer de machtigingen die deze token moet hebben",
+      "selectedScopes": "Geselecteerd:",
+      "cancel": "Annuleren",
+      "create": "Token Aanmaken",
+      "creating": "Aanmaken..."
+    },
+    "createdDialog": {
+      "title": "Token Succesvol Aangemaakt",
+      "warning": "Kopieer deze token nu — hij wordt niet opnieuw getoond!",
+      "tokenName": "Token Naam",
+      "apiToken": "API Token",
+      "scopes": "Scopes",
+      "expires": "Verloopt",
+      "copy": "Kopiëren",
+      "copied": "Gekopieerd!",
+      "done": "Klaar"
+    },
+    "revokeDialog": {
+      "title": "Token Intrekken?",
+      "description": "Weet je zeker dat je de token wilt intrekken",
+      "warning": "Deze actie kan niet ongedaan worden gemaakt. AI assistenten die deze token gebruiken verliezen onmiddellijk toegang.",
+      "cancel": "Annuleren",
+      "revoke": "Token Intrekken"
+    },
+    "messages": {
+      "loadError": "Kon MCP tokens niet laden",
+      "tokenNameRequired": "Token naam is verplicht",
+      "scopeRequired": "Minimaal één scope is verplicht",
+      "createError": "Kon token niet aanmaken",
+      "copied": "Token gekopieerd naar klembord",
+      "revoked": "Token \"{{name}}\" is ingetrokken",
+      "revokeError": "Kon token niet intrekken"
+    }
+  },
+  "uiCustomization": {
+    "title": "UI-aanpassing",
+    "description": "Pas de branding, taalinstellingen en weergave van de applicatie aan.",
+    "i18n": {
+      "title": "Taalinstellingen",
+      "enableLabel": "Internationalisering inschakelen",
+      "enableDescription": "Indien uitgeschakeld, gebruikt de applicatie altijd Engels."
+    },
+    "logo": {
+      "title": "Aangepast logo",
+      "urlLabel": "Logo URL",
+      "urlPlaceholder": "https://voorbeeld.nl/logo.svg",
+      "help": "Voer de URL van uw aangepaste logo in. Ondersteunde formaten: SVG, PNG, JPG.",
+      "invalidUrl": "Voer een geldige HTTP of HTTPS URL in",
+      "preview": "Voorbeeld:",
+      "loadError": "Afbeelding kon niet worden geladen",
+      "openInNewTab": "Open in nieuw tabblad"
+    },
+    "about": {
+      "title": "Aangepaste Over-pagina inhoud",
+      "description": "Vervang de standaard Over-pagina door aangepaste Markdown.",
+      "editTab": "Bewerken",
+      "previewTab": "Voorbeeld",
+      "placeholder": "# Over ons bedrijf\n\nSchrijf hier uw aangepaste inhoud met **Markdown**...",
+      "noContent": "Geen aangepaste inhoud. De standaard Over-pagina wordt weergegeven."
+    },
+    "css": {
+      "title": "Aangepast stylesheet",
+      "warningTitle": "Voorzichtig gebruiken",
+      "warningDescription": "Ongeldige CSS kan de interface breken. Wijzigingen vereisen herladen van de pagina.",
+      "label": "Aangepaste CSS",
+      "placeholder": "/* CSS-variabelen overschrijven */\n:root {\n  --primary: 220 70% 50%;\n}",
+      "help": "Voer aangepaste CSS in om het standaardthema te overschrijven."
+    },
+    "saveButton": "UI-instellingen opslaan",
+    "messages": {
+      "saveSuccess": "UI-aanpassingsinstellingen opgeslagen",
+      "saveError": "Kon instellingen niet opslaan",
+      "reloadRequired": "Herlaad de pagina om sommige wijzigingen te zien."
+    }
+  }
+}
+

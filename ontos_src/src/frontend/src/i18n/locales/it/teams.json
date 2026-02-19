@@ -1,0 +1,88 @@
+{
+  "title": "Team",
+  "addNewTeam": "Aggiungi nuovo team",
+  "editTeam": "Modifica team",
+  "deleteTeam": "Elimina team",
+  "showingTeamsForProject": "Visualizzazione team per progetto:",
+  "form": {
+    "dialog": {
+      "createTitle": "Crea nuovo team",
+      "editTitle": "Modifica team",
+      "createDescription": "Crea un nuovo team con membri e sostituzioni di ruolo.",
+      "editDescription": "Aggiorna i dettagli del team e i membri."
+    },
+    "sections": {
+      "info": "Informazioni sul team",
+      "members": "Membri del team",
+      "tags": "Tag"
+    },
+    "labels": {
+      "name": "Nome del team *",
+      "title": "Titolo visualizzato",
+      "description": "Descrizione",
+      "domain": "Dominio dati",
+      "type": "Tipo",
+      "identifier": "Email / Nome gruppo",
+      "roleOverride": "Sostituzione ruolo",
+      "noOverride": "Nessuna sostituzione"
+    },
+    "placeholders": {
+      "name": "Inserisci il nome del team",
+      "title": "Inserisci il titolo visualizzato (opzionale)",
+      "description": "Inserisci la descrizione del team (opzionale)",
+      "selectDomain": "Seleziona un dominio dati (opzionale)",
+      "userEmail": "utente@example.com",
+      "groupName": "nome-gruppo",
+      "noMembersHelp": "Nessun membro aggiunto. Clicca \"Aggiungi membro\" per iniziare a creare il team.",
+      "tagSearch": "Cerca e seleziona tag per questo team..."
+    },
+    "memberTypes": {
+      "user": "Utente",
+      "group": "Gruppo"
+    },
+    "buttons": {
+      "addMember": "Aggiungi membro",
+      "removeMember": "Rimuovi membro",
+      "update": "Aggiorna team",
+      "create": "Crea team"
+    },
+    "toasts": {
+      "createdTitle": "Team creato",
+      "updatedTitle": "Team aggiornato",
+      "createdDescription": "Il team \"{{name}}\" è stato creato con successo.",
+      "updatedDescription": "Il team \"{{name}}\" è stato aggiornato con successo.",
+      "createFailedTitle": "Creazione del team non riuscita",
+      "updateFailedTitle": "Aggiornamento del team non riuscito",
+      "failedDescription": "Si è verificato un errore imprevisto."
+    }
+  },
+  "table": {
+    "name": "Nome",
+    "description": "Descrizione",
+    "members": "Membri",
+    "lastUpdated": "Ultimo aggiornamento",
+    "actions": "Azioni",
+    "domainPrefix": "↳ Dominio:",
+    "moreMembers": "altri"
+  },
+  "permissions": {
+    "deniedView": "Non hai il permesso di visualizzare i team.",
+    "deniedCreate": "Non hai il permesso di creare team.",
+    "deniedEdit": "Non hai il permesso di modificare i team.",
+    "deniedDelete": "Non hai il permesso di eliminare i team.",
+    "permissionDenied": "Permesso negato"
+  },
+  "messages": {
+    "teamDeleted": "Team eliminato",
+    "teamDeletedSuccess": "Il team è stato eliminato con successo.",
+    "errorFetchingTeams": "Errore nel recupero dei team",
+    "errorDeletingTeam": "Errore nell'eliminazione del team",
+    "errorLoadingData": "Errore nel caricamento dei dati"
+  },
+  "deleteDialog": {
+    "title": "Sei assolutamente sicuro?",
+    "description": "Questa azione non può essere annullata. Questo eliminerà permanentemente il team e tutti i suoi membri.",
+    "cancel": "Annulla",
+    "delete": "Elimina"
+  }
+}

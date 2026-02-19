@@ -1,0 +1,142 @@
+[build-system]
+requires = ["hatchling>=1.21.0", "hatch-requirements-txt~=0.4.1"]
+build-backend = "hatchling.build"
+
+[project]
+name = "ontos"
+version = "0.5.4"
+description = "A Business Catalog for the Databricks Platform"
+readme = "../README.md"
+authors = [
+    { name="Databricks", email="ontos-support@databricks.com" }
+]
+license = {text = "Databricks License"}
+requires-python = ">=3.10,<3.13"
+dynamic = ["dependencies"]
+
+[tool.hatch.metadata.hooks.requirements_txt]
+files = ["requirements.txt"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/backend"]
+
+[tool.hatch.envs.default]
+python = "3.10"
+
+[tool.hatch.envs.dev]
+type = "virtual"
+builder = true
+dependencies = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+    "ruff>=0.8.0",
+    "pre-commit>=3.0.0",
+]
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "src",
+    "pyproject.toml",
+    "../README.md",
+]
+
+[tool.hatch.envs.dev.scripts]
+dev-frontend = "yarn dev:frontend"
+dev-backend = "uvicorn --app-dir backend src.app:app --reload --host=0.0.0.0 --port=8000"
+deploy-and-run = [
+  'databricks bundle deploy --var="catalog=app_data" --var="schema=app_ontos"',
+  "databricks bundle run app_ontos",
+]
+version-bump = "python3 scripts/bump_version.py {args}"
+version-show = "python3 scripts/bump_version.py"
+test = "pytest"
+test-cov = "pytest --cov=backend/src --cov-report=html --cov-report=term"
+test-unit = "pytest backend/src/tests/unit"
+test-integration = "pytest backend/src/tests/integration"
+test-cov-xml = "pytest --cov=backend/src --cov-report=xml --cov-report=term"
+lint = "ruff check backend"
+lint-fix = "ruff check backend --fix"
+format = "ruff format backend"
+format-check = "ruff format backend --check"
+pre-commit-run = "pre-commit run --all-files"
+pre-commit-setup = "pre-commit install"
+
+[tool.hatch.envs.dev.env]
+PYTHONPATH = "./backend"
+
+[tool.pytest.ini_options]
+pythonpath = [
+  ".",
+  "backend",
+  "backend/src"
+]
+testpaths = ["backend/tests"]
+addopts = [
+    "--cov=backend/src",
+    "--cov-report=html",
+    "--cov-report=term-missing",
+    "--cov-report=xml",
+    "-v"
+]
+
+[tool.coverage.run]
+source = ["backend/src"]
+omit = [
+    "*/tests/*",
+    "*/test_*.py",
+    "*/__init__.py",
+    "*/migrations/*",
+    "*/alembic/*",
+]
+
+[tool.coverage.report]
+precision = 2
+show_missing = true
+skip_covered = false
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "raise AssertionError",
+    "raise NotImplementedError",
+    "if __name__ == .__main__.:",
+    "if TYPE_CHECKING:",
+    "@abstractmethod",
+    "@abc.abstractmethod",
+]
+
+[tool.coverage.html]
+directory = "backend/htmlcov"
+
+[tool.ruff]
+target-version = "0.5.4"
+line-length = 100
+src = ["backend/src"]
+
+[tool.ruff.lint]
+select = [
+    "E",      # pycodestyle errors
+    "W",      # pycodestyle warnings
+    "F",      # pyflakes
+    "I",      # isort
+    "B",      # flake8-bugbear
+    "C4",     # flake8-comprehensions
+    "UP",     # pyupgrade
+    "SIM",    # flake8-simplify
+]
+ignore = [
+    "E501",   # line too long (handled by formatter)
+    "B008",   # do not perform function calls in argument defaults (FastAPI depends)
+    "B904",   # raise without from (too noisy for existing code)
+]
+
+[tool.ruff.lint.isort]
+known-first-party = ["src"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"

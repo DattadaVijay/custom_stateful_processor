@@ -1,0 +1,108 @@
+{
+  "title": "Estate Manager",
+  "subtitle": "Beheer je data estates en synchronisatie",
+  "newEstate": "Nieuw Estate",
+  "addEstate": "Estate Toevoegen",
+  "editEstate": "Estate Bewerken",
+  "searchPlaceholder": "Zoek estates...",
+  "loading": "Estates laden...",
+  "errors": {
+    "fetchEstates": "Fout bij Ophalen Estates",
+    "couldNotLoad": "Kon estates niet laden.",
+    "savingEstate": "Fout bij Opslaan Estate",
+    "deletingEstate": "Fout bij Verwijderen Estate",
+    "triggeringSync": "Fout bij Starten Sync",
+    "validationError": "Validatie Fout",
+    "validationMessage": "Vul alstublieft alle vereiste velden in: Naam, Beschrijving, Workspace URL, Metastore Naam, Cloud Type en Verbindingstype."
+  },
+  "toast": {
+    "estateCreated": "Estate succesvol aangemaakt",
+    "estateUpdated": "Estate succesvol bijgewerkt",
+    "estateDeleted": "Estate succesvol verwijderd",
+    "triggeringSync": "Sync Starten",
+    "syncRequested": "Sync aanvragen voor de estate...",
+    "syncTriggered": "Sync succesvol gestart. Data wordt vernieuwd..."
+  },
+  "form": {
+    "createTitle": "Nieuw Estate Toevoegen",
+    "editTitle": "Estate Bewerken",
+    "dialogDescription": "Configureer de Databricks estate verbinding en basisinstellingen. Deelbeleid wordt beheerd op de detailpagina.",
+    "name": "Naam",
+    "description": "Beschrijving",
+    "type": "Type",
+    "workspaceUrl": "Workspace URL",
+    "cloud": "Cloud",
+    "selectCloudProvider": "Selecteer cloud provider",
+    "connectionType": "Verbindingstype",
+    "selectConnectionType": "Selecteer verbindingstype",
+    "connectionString": "Verbindingsstring",
+    "metastoreName": "Metastore Naam",
+    "syncSchedule": "Sync Schema",
+    "enableSync": "Sync Inschakelen",
+    "cancel": "Annuleren",
+    "save": "Opslaan"
+  },
+  "connectionTypes": {
+    "deltaShare": "Delta Share",
+    "unityCatalog": "Unity Catalog",
+    "database": "Database (Toekomstig Gebruik)"
+  },
+  "table": {
+    "name": "Naam",
+    "workspaceUrl": "Workspace URL",
+    "cloud": "Cloud",
+    "connection": "Verbinding",
+    "metastore": "Metastore",
+    "syncStatus": "Sync Status",
+    "lastSync": "Laatste Sync",
+    "type": "Type",
+    "status": "Status",
+    "assets": "Assets",
+    "actions": "Acties"
+  },
+  "filters": {
+    "allStatus": "Alle Status"
+  },
+  "messages": {
+    "success": "Succes",
+    "error": "Fout",
+    "deleteConfirm": "Weet je zeker dat je dit estate wilt verwijderen?",
+    "deleteSuccess": "Estate succesvol verwijderd",
+    "deleteError": "Kon estate niet verwijderen",
+    "syncSuccess": "Sync succesvol gestart",
+    "syncError": "Kon sync niet starten"
+  },
+  "status": {
+    "connected": "Verbonden",
+    "disconnected": "Niet Verbonden",
+    "syncing": "Synchroniseren",
+    "error": "Fout"
+  },
+  "details": {
+    "backToList": "Terug naar Estates",
+    "edit": "Bewerken",
+    "delete": "Verwijderen",
+    "sync": "Nu Synchroniseren",
+    "viewDetails": "Details Bekijken",
+    "notFound": "Estate niet gevonden",
+    "loading": "Laden...",
+    "overview": {
+      "title": "Estate Overzicht",
+      "type": "Type",
+      "status": "Status",
+      "lastSync": "Laatste Sync",
+      "created": "Aangemaakt"
+    },
+    "assets": {
+      "title": "Assets",
+      "catalogs": "Catalogussen",
+      "schemas": "Schema's",
+      "tables": "Tabellen"
+    },
+    "syncHistory": {
+      "title": "Sync Geschiedenis",
+      "noHistory": "Geen sync geschiedenis"
+    }
+  }
+}
+

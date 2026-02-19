@@ -1,0 +1,67 @@
+{
+  "rebuildGraph": "グラフを再構築",
+  "rebuildingGraph": "再構築中…",
+  "rebuildGraphTooltip": "オントロジー、暗黙ソース、アプリオブジェクトを再読み込みしてすべてをクエリ可能にします。",
+  "title": "ビジネス用語集",
+  "subtitle": "ビジネス用語集とセマンティック定義の管理",
+  "newModel": "新規用語集",
+  "newTerm": "新規用語",
+  "searchPlaceholder": "用語を検索...",
+  "loading": "セマンティックモデルを読み込み中...",
+  "filters": {
+    "allGlossaries": "すべての用語集",
+    "allStatus": "すべてのステータス",
+    "bySource": "ソースでフィルター",
+    "all": "すべて",
+    "none": "なし",
+    "groupBySource": "ソースでグループ化"
+  },
+  "table": {
+    "name": "名前",
+    "glossary": "用語集",
+    "definition": "定義",
+    "status": "ステータス",
+    "updated": "更新日",
+    "actions": "アクション"
+  },
+  "messages": {
+    "success": "成功",
+    "error": "エラー",
+    "deleteConfirm": "この用語を削除してもよろしいですか？",
+    "deleteSuccess": "用語が正常に削除されました",
+    "deleteError": "用語の削除に失敗しました"
+  },
+  "status": {
+    "draft": "下書き",
+    "pending": "保留中",
+    "in_review": "レビュー中",
+    "under_review": "レビュー中",
+    "active": "アクティブ",
+    "approved": "承認済み",
+    "certified": "認定済み",
+    "deprecated": "非推奨",
+    "retired": "廃止"
+  },
+  "details": {
+    "backToList": "用語一覧に戻る",
+    "edit": "編集",
+    "delete": "削除",
+    "notFound": "用語が見つかりません",
+    "loading": "読み込み中...",
+    "linkedAssets": "リンクされたアセット",
+    "synonyms": "同義語",
+    "relatedTerms": "関連用語"
+  },
+  "form": {
+    "createTitle": "用語を作成",
+    "editTitle": "用語を編集",
+    "name": "名前",
+    "glossary": "用語集",
+    "definition": "定義",
+    "synonyms": "同義語",
+    "status": "ステータス",
+    "cancel": "キャンセル",
+    "save": "保存"
+  }
+}
+

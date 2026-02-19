@@ -1,0 +1,89 @@
+{
+  "title": "マスターデータ管理",
+  "subtitle": "マスターデータ契約を定義し、システム間でエンティティマッチングを管理",
+  "newConfiguration": "新規MDM設定",
+  "configurations": "MDM設定",
+  "noConfigurations": "MDM設定がありません。",
+  "getStarted": "最初の設定を作成して開始してください。",
+  "sources": "ソース",
+  "lastRun": "最終実行",
+  "stats": {
+    "matchingRuns": "マッチング実行",
+    "totalMatches": "合計マッチ数",
+    "newRecords": "新規レコード",
+    "pendingReview": "レビュー待ち"
+  },
+  "configDetails": {
+    "title": "設定詳細",
+    "selectConfig": "詳細を表示するには設定を選択してください",
+    "startMatching": "マッチングを開始",
+    "editRules": "MDMルールを編集",
+    "linkSource": "ソース契約をリンク",
+    "deleteConfig": "設定を削除"
+  },
+  "tabs": {
+    "overview": "概要",
+    "sources": "ソース",
+    "matchingRules": "マッチングルール",
+    "matchingRuns": "マッチング実行",
+    "reviewQueue": "レビューキュー"
+  },
+  "overview": {
+    "description": "説明",
+    "entityType": "エンティティタイプ",
+    "goldenRecordTarget": "ゴールデンレコードターゲット"
+  },
+  "sourcesTab": {
+    "title": "リンクされたソース",
+    "dataContract": "データ契約",
+    "keyColumn": "キー列",
+    "matchColumns": "マッチ列",
+    "noSources": "ソース契約がまだリンクされていません。"
+  },
+  "rulesTab": {
+    "title": "マッチングルール",
+    "noRules": "マッチングルールがまだ設定されていません。",
+    "matchingRulesButton": "MDMルールを編集",
+    "description": "重複レコードの識別とマッチングに使用するルールを設定します。"
+  },
+  "runsTab": {
+    "title": "マッチング実行履歴",
+    "runId": "実行ID",
+    "status": "ステータス",
+    "matchesFound": "マッチ数",
+    "newRecords": "新規レコード",
+    "pendingReview": "レビュー待ち",
+    "noRuns": "マッチング実行がありません。結果を確認するにはマッチングジョブを開始してください。",
+    "selectRun": "候補を表示するには実行を選択してください"
+  },
+  "candidates": {
+    "title": "マッチ候補",
+    "sourceRecord": "ソースレコード",
+    "targetRecord": "ターゲットレコード",
+    "matchType": "マッチタイプ",
+    "confidence": "信頼度",
+    "viewDetails": "詳細を表示",
+    "approve": "承認",
+    "reject": "却下",
+    "mergeApproved": "承認済みをマージ",
+    "createReview": "レビューリクエストを作成",
+    "noCandidates": "この実行のマッチ候補はありません。"
+  },
+  "toast": {
+    "matchingStarted": "MDMマッチングジョブを開始しました",
+    "mergeCompleted": "マージが完了しました",
+    "configDeleted": "設定を削除しました",
+    "sourceRemoved": "ソースリンクを削除しました"
+  },
+  "errors": {
+    "loadFailed": "MDM設定の読み込みに失敗しました",
+    "startMatchingFailed": "マッチングの開始に失敗しました",
+    "mergeFailed": "マージに失敗しました",
+    "deleteFailed": "削除に失敗しました"
+  },
+  "confirm": {
+    "deleteConfig": "このMDM設定を削除してもよろしいですか？",
+    "deleteSource": "このソースリンクを削除してもよろしいですか？"
+  }
+}
+

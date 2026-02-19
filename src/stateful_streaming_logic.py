@@ -45,7 +45,6 @@ class SessionFraudProcessor(StatefulProcessor):
             self.handle.registerTimer(timeout_ms)
         self.txn_state.update((timestamps, amounts, session_total))
 
-        # Fraud Rule: > 5 transactions AND > $500 in the 60s sliding window
         suspicious = len(timestamps) > 5 and sum(amounts) > 500
 
         yield Row(

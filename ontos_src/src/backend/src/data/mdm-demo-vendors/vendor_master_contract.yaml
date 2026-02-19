@@ -1,0 +1,332 @@
+# ============================================================================
+# ODCS Data Contract: Vendor Master (SAP ERP)
+# ============================================================================
+# This contract defines the golden record master data for vendor entities.
+# Used as the MDM master contract against which source systems are matched.
+# ============================================================================
+
+id: mdm-demo-vendor-master-001
+version: '1.0.0'
+apiVersion: v3.0.2
+kind: DataContract
+name: Vendor Master Contract (SAP)
+status: active
+domain: Procurement
+
+description:
+  purpose: >-
+    Master vendor data contract defining the golden record structure for 
+    vendor/supplier entities from SAP ERP. This is the authoritative source 
+    for vendor information after MDM deduplication and matching processes.
+  usage: >-
+    Used as the target master data for MDM matching operations. Source systems
+    (Contract Management, Procurement, etc.) are compared against this master 
+    to identify duplicates, matches, and new vendors. All matched records are 
+    merged into this master based on survivorship rules.
+  limitations: >-
+    Data quality confidence score must be >= 0.80 for production use.
+    Source system provenance must be maintained for audit purposes.
+    Tax and financial fields require appropriate access controls.
+
+# Contract-level semantic assignments
+authoritativeDefinitions:
+  - url: "http://example.com/business/concepts#VendorMaster"
+    type: "businessDefinition"
+
+# MDM-specific custom properties
+customProperties:
+  - property: mdmEntityType
+    value: vendor
+  - property: mdmRole
+    value: master
+  - property: mdmMatchingRules
+    value:
+      - name: vendor_name_exact_match
+        type: deterministic
+        fields:
+          - vendor_name
+        weight: 1.0
+        threshold: 1.0
+      - name: vendor_name_fuzzy_match
+        type: probabilistic
+        fields:
+          - vendor_name
+        weight: 0.5
+        threshold: 0.85
+        algorithm: jaro_winkler
+      - name: city_fuzzy_match
+        type: probabilistic
+        fields:
+          - city
+        weight: 0.3
+        threshold: 0.90
+        algorithm: levenshtein
+      - name: tax_number_exact
+        type: deterministic
+        fields:
+          - tax_number
+        weight: 0.8
+        threshold: 1.0
+      - name: duns_exact
+        type: deterministic
+        fields:
+          - duns_number
+        weight: 0.9
+        threshold: 1.0
+  - property: mdmSurvivorshipRules
+    value:
+      - field: vendor_name
+        strategy: most_trusted
+        priority:
+          - SAP_ERP
+          - CONTRACT_MGMT
+          - PROCUREMENT
+      - field: vendor_name_2
+        strategy: most_complete
+      - field: country_code
+        strategy: most_trusted
+        priority:
+          - SAP_ERP
+      - field: city
+        strategy: most_recent
+      - field: street_address
+        strategy: most_complete
+      - field: contact_person
+        strategy: most_recent
+      - field: email
+        strategy: most_recent
+      - field: phone
+        strategy: most_complete
+      - field: tax_number
+        strategy: most_trusted
+        priority:
+          - SAP_ERP
+      - field: duns_number
+        strategy: most_complete
+  - property: mdmConfidenceThreshold
+    value: 0.80
+  - property: mdmReviewThreshold
+    value: 0.90
+  - property: mdmAutoMergeAbove
+    value: 0.95
+
+# Service level agreements
+slaProperties:
+  - property: latency
+    value: "1h"
+    unit: hours
+    element: data_freshness
+  - property: availability
+    value: 99.9
+    unit: percent
+    element: uptime
+
+# Schema definition
+schema:
+  - name: vendor_master
+    physicalName: vf_it4it_demo_catalog.mdm_vendor_demo.vendor_master
+    description: Vendor golden record master table from SAP ERP
+    logicalType: object
+    authoritativeDefinitions:
+      - url: "http://example.com/business/concepts#VendorMaster"
+        type: "businessDefinition"
+    properties:
+      - name: vendor_id
+        logicalType: string
+        physicalType: STRING
+        required: true
+        unique: true
+        description: SAP vendor account number (unique golden record ID)
+        authoritativeDefinitions:
+          - url: "http://example.com/business/properties#vendorId"
+            type: "businessDefinition"
+      - name: vendor_name
+        logicalType: string
+        physicalType: STRING
+        required: true
+        unique: false
+        description: Primary vendor name (legal name)
+        authoritativeDefinitions:
+          - url: "http://example.com/business/properties#vendorName"
+            type: "businessDefinition"
+      - name: vendor_name_2
+        logicalType: string
+        physicalType: STRING
+        required: false
+        unique: false
+        description: Secondary name field (legal form, division, etc.)
+      - name: country_code
+        logicalType: string
+        physicalType: STRING
+        required: false
+        unique: false
+        description: ISO 3166-1 alpha-2 country code
+      - name: city
+        logicalType: string
+        physicalType: STRING
+        required: false
+        unique: false
+        description: City name
+      - name: postal_code
+        logicalType: string
+        physicalType: STRING
+        required: false
+        unique: false
+        description: Postal/ZIP code
+      - name: street_address
+        logicalType: string
+        physicalType: STRING
+        required: false
+        unique: false
+        description: Street address
+      - name: company_code
+        logicalType: string
+        physicalType: STRING
+        required: false
+        unique: false
+        description: SAP company code
+      - name: purchasing_org
+        logicalType: string
+        physicalType: STRING
+        required: false
+        unique: false
+        description: Purchasing organization code
+      - name: account_group
+        logicalType: string
+        physicalType: STRING
+        required: false
+        unique: false
+        description: Vendor account group
+      - name: payment_terms
+        logicalType: string
+        physicalType: STRING
+        required: false
+        unique: false
+        description: Payment terms code (NET30, NET45, etc.)
+      - name: industry_code
+        logicalType: string
+        physicalType: STRING
+        required: false
+        unique: false
+        description: Industry classification code
+      - name: vendor_type
+        logicalType: string
+        physicalType: STRING
+        required: false
+        unique: false
+        description: "Vendor type: supplier, service, contractor"
+      - name: contact_person
+        logicalType: string
+        physicalType: STRING
+        required: false
+        unique: false
+        description: Primary contact name
+      - name: phone
+        logicalType: string
+        physicalType: STRING
+        required: false
+        unique: false
+        description: Primary phone number
+      - name: email
+        logicalType: string
+        physicalType: STRING
+        required: false
+        unique: false
+        description: Primary email address
+      - name: website
+        logicalType: string
+        physicalType: STRING
+        required: false
+        unique: false
+        description: Company website URL
+      - name: currency
+        logicalType: string
+        physicalType: STRING
+        required: false
+        unique: false
+        description: Default currency code (ISO 4217)
+      - name: tax_number
+        logicalType: string
+        physicalType: STRING
+        required: false
+        unique: false
+        description: Tax identification number (VAT/EIN)
+        classification: Confidential
+      - name: duns_number
+        logicalType: string
+        physicalType: STRING
+        required: false
+        unique: false
+        description: D&B DUNS number
+      - name: confidence_score
+        logicalType: number
+        physicalType: DOUBLE
+        required: false
+        unique: false
+        description: Overall data quality confidence score (0-1)
+      - name: created_at
+        logicalType: date
+        physicalType: TIMESTAMP
+        required: false
+        unique: false
+        description: Record creation timestamp
+      - name: updated_at
+        logicalType: date
+        physicalType: TIMESTAMP
+        required: false
+        unique: false
+        description: Last update timestamp
+      - name: last_merged_at
+        logicalType: date
+        physicalType: TIMESTAMP
+        required: false
+        unique: false
+        description: Last MDM merge timestamp
+    quality:
+      - type: library
+        dimension: completeness
+        name: vendor_id_completeness
+        description: Vendor ID must always be present
+        rule: nullCount
+        mustBe: 0
+      - type: library
+        dimension: uniqueness
+        name: vendor_id_uniqueness
+        description: Vendor ID must be unique
+        rule: duplicateCount
+        mustBe: 0
+      - type: library
+        dimension: completeness
+        name: vendor_name_completeness
+        description: Vendor name must always be present
+        rule: nullCount
+        mustBe: 0
+      - type: library
+        dimension: validity
+        name: country_code_validity
+        description: Country code must be valid ISO 3166-1 alpha-2
+        rule: regex
+        pattern: "^[A-Z]{2}$"
+
+# Team and contact information
+team:
+  - username: mdm-team@company.com
+    name: MDM Team
+    role: owner
+  - username: procurement@company.com
+    name: Procurement Team
+    role: maintainer
+  - username: data-governance@company.com
+    name: Data Governance
+    role: steward
+
+# Tags for discovery
+tags:
+  - mdm
+  - master-data
+  - vendor
+  - supplier
+  - procurement
+  - sap
+  - golden-record
+

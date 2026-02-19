@@ -1,0 +1,1489 @@
+@prefix : <http://www.databricks.com/ontology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.databricks.com/ontology/> .
+
+<http://www.databricks.com/ontology> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.databricks.com/ontology/clusterInWorkspace
+:clusterInWorkspace rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf :inWorkspace ;
+                    rdfs:domain :Cluster .
+
+
+###  http://www.databricks.com/ontology/executedBy
+:executedBy rdf:type owl:ObjectProperty ;
+            rdfs:domain :Query ;
+            rdfs:range :User .
+
+
+###  http://www.databricks.com/ontology/executedInWorkspace
+:executedInWorkspace rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf :inWorkspace ;
+                     rdfs:domain :Query .
+
+
+###  http://www.databricks.com/ontology/functionInSchema
+:functionInSchema rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf :inSchema ;
+                  rdfs:domain :Function .
+
+
+###  http://www.databricks.com/ontology/inCatalog
+:inCatalog rdf:type owl:ObjectProperty ;
+           rdfs:domain :Schema ;
+           rdfs:range :Catalog .
+
+
+###  http://www.databricks.com/ontology/inMetastore
+:inMetastore rdf:type owl:ObjectProperty ;
+             rdfs:domain :Catalog ;
+             rdfs:range :Metastore .
+
+
+###  http://www.databricks.com/ontology/inSchema
+:inSchema rdf:type owl:ObjectProperty ;
+          rdfs:range :Schema .
+
+
+###  http://www.databricks.com/ontology/inTable
+:inTable rdf:type owl:ObjectProperty ;
+         rdfs:domain :Column ;
+         rdfs:range :Table .
+
+
+###  http://www.databricks.com/ontology/inWorkspace
+:inWorkspace rdf:type owl:ObjectProperty ;
+             rdfs:range :Workspace .
+
+
+###  http://www.databricks.com/ontology/lineageAction
+:lineageAction rdf:type owl:ObjectProperty .
+
+
+###  http://www.databricks.com/ontology/metastoreRegion
+:metastoreRegion rdf:type owl:ObjectProperty ;
+                 rdfs:domain :Metastore ;
+                 rdfs:range :Region .
+
+
+###  http://www.databricks.com/ontology/notebookReadTable
+:notebookReadTable rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf :readTable ;
+                   rdfs:domain :Notebook .
+
+
+###  http://www.databricks.com/ontology/notebookWriteTable
+:notebookWriteTable rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf :writeTable ;
+                    rdfs:domain :Notebook .
+
+
+###  http://www.databricks.com/ontology/pipelineInWorkspace
+:pipelineInWorkspace rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf :inWorkspace ;
+                     rdfs:domain :Pipeline .
+
+
+###  http://www.databricks.com/ontology/pipelineReadTable
+:pipelineReadTable rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf :readTable ;
+                   rdfs:domain :Pipeline .
+
+
+###  http://www.databricks.com/ontology/pipelineWriteTable
+:pipelineWriteTable rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf :writeTable ;
+                    rdfs:domain :Pipeline .
+
+
+###  http://www.databricks.com/ontology/queryCompute
+:queryCompute rdf:type owl:ObjectProperty ;
+              rdfs:domain :Query ;
+              rdfs:range :Compute .
+
+
+###  http://www.databricks.com/ontology/queryReadTable
+:queryReadTable rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf :readTable ;
+                rdfs:domain :Query .
+
+
+###  http://www.databricks.com/ontology/queryWriteTable
+:queryWriteTable rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf :writeTable ;
+                 rdfs:domain :Query .
+
+
+###  http://www.databricks.com/ontology/readTable
+:readTable rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf :tableLineageAction ;
+           rdfs:range :Tabular .
+
+
+###  http://www.databricks.com/ontology/regionCloud
+:regionCloud rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdfs:domain :Region ;
+             rdfs:range :Cloud ;
+             rdfs:comment "Specifies the cloud vendor of a particular region." .
+
+
+###  http://www.databricks.com/ontology/tableInSchema
+:tableInSchema rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf :inSchema ;
+               rdfs:domain :Table .
+
+
+###  http://www.databricks.com/ontology/tableLineageAction
+:tableLineageAction rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf :lineageAction .
+
+
+###  http://www.databricks.com/ontology/volumeInSchema
+:volumeInSchema rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf :inSchema ;
+                rdfs:domain :Volume .
+
+
+###  http://www.databricks.com/ontology/warehouseInWorkspace
+:warehouseInWorkspace rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf :inWorkspace ;
+                      rdfs:domain :Warehouse .
+
+
+###  http://www.databricks.com/ontology/writeTable
+:writeTable rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf :tableLineageAction ;
+            rdfs:range :Table .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.databricks.com/ontology/catalogName
+:catalogName rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf :name ;
+             rdfs:domain :Catalog .
+
+
+###  http://www.databricks.com/ontology/catalogOwnerEmail
+:catalogOwnerEmail rdf:type owl:DatatypeProperty ;
+                   rdfs:subPropertyOf :email ;
+                   rdfs:domain :Catalog .
+
+
+###  http://www.databricks.com/ontology/clusterId
+:clusterId rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf :id ;
+           rdfs:domain :Cluster .
+
+
+###  http://www.databricks.com/ontology/clusterName
+:clusterName rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf :name ;
+             rdfs:domain :Cluster .
+
+
+###  http://www.databricks.com/ontology/clusterOwnerEmail
+:clusterOwnerEmail rdf:type owl:DatatypeProperty ;
+                   rdfs:subPropertyOf :email ;
+                   rdfs:domain :Cluster .
+
+
+###  http://www.databricks.com/ontology/columnDataType
+:columnDataType rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Column .
+
+
+###  http://www.databricks.com/ontology/columnName
+:columnName rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf :name ;
+            rdfs:domain :Column .
+
+
+###  http://www.databricks.com/ontology/dbrVersion
+:dbrVersion rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Cluster .
+
+
+###  http://www.databricks.com/ontology/email
+:email rdf:type owl:DatatypeProperty .
+
+
+###  http://www.databricks.com/ontology/functionName
+:functionName rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf :name ;
+              rdfs:domain :Function .
+
+
+###  http://www.databricks.com/ontology/id
+:id rdf:type owl:DatatypeProperty .
+
+
+###  http://www.databricks.com/ontology/metastoreId
+:metastoreId rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf :id ;
+             rdfs:domain :Metastore .
+
+
+###  http://www.databricks.com/ontology/metastoreName
+:metastoreName rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf :name ;
+               rdfs:domain :Metastore .
+
+
+###  http://www.databricks.com/ontology/name
+:name rdf:type owl:DatatypeProperty .
+
+
+###  http://www.databricks.com/ontology/pipelineCreatorEmail
+:pipelineCreatorEmail rdf:type owl:DatatypeProperty ;
+                      rdfs:subPropertyOf :email ;
+                      rdfs:domain :Pipeline .
+
+
+###  http://www.databricks.com/ontology/pipelineId
+:pipelineId rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf :id ;
+            rdfs:domain :Pipeline .
+
+
+###  http://www.databricks.com/ontology/pipelineName
+:pipelineName rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf :name ;
+              rdfs:domain :Pipeline .
+
+
+###  http://www.databricks.com/ontology/pipelineRunAsEmail
+:pipelineRunAsEmail rdf:type owl:DatatypeProperty ;
+                    rdfs:subPropertyOf :email ;
+                    rdfs:domain :Pipeline .
+
+
+###  http://www.databricks.com/ontology/schemaName
+:schemaName rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf :name ;
+            rdfs:domain :Schema .
+
+
+###  http://www.databricks.com/ontology/schemaOwnerEmail
+:schemaOwnerEmail rdf:type owl:DatatypeProperty ;
+                  rdfs:subPropertyOf :email ;
+                  rdfs:domain :Schema .
+
+
+###  http://www.databricks.com/ontology/statementId
+:statementId rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf :id ;
+             rdfs:domain :Query .
+
+
+###  http://www.databricks.com/ontology/tableName
+:tableName rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf :name ;
+           rdfs:domain :Table .
+
+
+###  http://www.databricks.com/ontology/tableOwnerEmail
+:tableOwnerEmail rdf:type owl:DatatypeProperty ;
+                 rdfs:subPropertyOf :email ;
+                 rdfs:domain :Table .
+
+
+###  http://www.databricks.com/ontology/tableType
+:tableType rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Table .
+
+
+###  http://www.databricks.com/ontology/userEmail
+:userEmail rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf :email ;
+           rdfs:domain :User .
+
+
+###  http://www.databricks.com/ontology/userId
+:userId rdf:type owl:DatatypeProperty ;
+        rdfs:subPropertyOf :id ;
+        rdfs:domain :User .
+
+
+###  http://www.databricks.com/ontology/volumeName
+:volumeName rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf :name ;
+            rdfs:domain :Volume .
+
+
+###  http://www.databricks.com/ontology/volumeOwnerEmail
+:volumeOwnerEmail rdf:type owl:DatatypeProperty ;
+                  rdfs:subPropertyOf :email ;
+                  rdfs:domain :Volume .
+
+
+###  http://www.databricks.com/ontology/warehouseId
+:warehouseId rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf :id ;
+             rdfs:domain :Warehouse .
+
+
+###  http://www.databricks.com/ontology/warehouseName
+:warehouseName rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf :name ;
+               rdfs:domain :Warehouse .
+
+
+###  http://www.databricks.com/ontology/workspaceName
+:workspaceName rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf :name ;
+               rdfs:domain :Workspace .
+
+
+###  http://www.databricks.com/ontology/workspaceStatus
+:workspaceStatus rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :Workspace .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.databricks.com/ontology/Access
+:Access rdf:type owl:Class ;
+        rdfs:subClassOf :SecurablePrivilege .
+
+
+###  http://www.databricks.com/ontology/AllPrivileges
+:AllPrivileges rdf:type owl:Class ;
+               rdfs:subClassOf :SecurablePrivilege .
+
+
+###  http://www.databricks.com/ontology/ApplyTag
+:ApplyTag rdf:type owl:Class ;
+          rdfs:subClassOf :SecurablePrivilege .
+
+
+###  http://www.databricks.com/ontology/Browse
+:Browse rdf:type owl:Class ;
+        rdfs:subClassOf :SecurablePrivilege .
+
+
+###  http://www.databricks.com/ontology/Catalog
+:Catalog rdf:type owl:Class ;
+         rdfs:subClassOf :Securable .
+
+
+###  http://www.databricks.com/ontology/CatalogAllPrivileges
+:CatalogAllPrivileges rdf:type owl:Class ;
+                      rdfs:subClassOf :AllPrivileges ,
+                                      :CatalogPrivilege ;
+                      rdfs:label "ALL PRIVILEGES" .
+
+
+###  http://www.databricks.com/ontology/CatalogApplyTag
+:CatalogApplyTag rdf:type owl:Class ;
+                 rdfs:subClassOf :ApplyTag ,
+                                 :CatalogPrivilege ;
+                 rdfs:label "APPLY TAG" .
+
+
+###  http://www.databricks.com/ontology/CatalogBrowse
+:CatalogBrowse rdf:type owl:Class ;
+               rdfs:subClassOf :Browse ,
+                               :CatalogPrivilege ;
+               rdfs:label "BROWSE" .
+
+
+###  http://www.databricks.com/ontology/CatalogCreateFunction
+:CatalogCreateFunction rdf:type owl:Class ;
+                       rdfs:subClassOf :CatalogPrivilege ,
+                                       :Create ;
+                       rdfs:label "CREATE FUNCTION" .
+
+
+###  http://www.databricks.com/ontology/CatalogCreateMaterializedView
+:CatalogCreateMaterializedView rdf:type owl:Class ;
+                               rdfs:subClassOf :CatalogPrivilege ,
+                                               :Create ;
+                               rdfs:label "CREATE MATERIALIZED VIEW" .
+
+
+###  http://www.databricks.com/ontology/CatalogCreateModel
+:CatalogCreateModel rdf:type owl:Class ;
+                    rdfs:subClassOf :CatalogPrivilege ,
+                                    :Create ;
+                    rdfs:label "CREATE MODEL" .
+
+
+###  http://www.databricks.com/ontology/CatalogCreateSchema
+:CatalogCreateSchema rdf:type owl:Class ;
+                     rdfs:subClassOf :CatalogPrivilege ,
+                                     :Create ;
+                     rdfs:label "CREATE SCHEMA" .
+
+
+###  http://www.databricks.com/ontology/CatalogCreateTable
+:CatalogCreateTable rdf:type owl:Class ;
+                    rdfs:subClassOf :CatalogPrivilege ,
+                                    :Create ;
+                    rdfs:label "CREATE TABLE" .
+
+
+###  http://www.databricks.com/ontology/CatalogCreateVolume
+:CatalogCreateVolume rdf:type owl:Class ;
+                     rdfs:subClassOf :CatalogPrivilege ,
+                                     :Create ;
+                     rdfs:label "CREATE VOLUME" .
+
+
+###  http://www.databricks.com/ontology/CatalogExecute
+:CatalogExecute rdf:type owl:Class ;
+                rdfs:subClassOf :CatalogPrivilege ,
+                                :Execute ;
+                rdfs:label "EXECUTE" .
+
+
+###  http://www.databricks.com/ontology/CatalogExternalUseSchema
+:CatalogExternalUseSchema rdf:type owl:Class ;
+                          rdfs:subClassOf :CatalogPrivilege ,
+                                          :Use ;
+                          rdfs:label "EXTERNAL USE SCHEMA" .
+
+
+###  http://www.databricks.com/ontology/CatalogManage
+:CatalogManage rdf:type owl:Class ;
+               rdfs:subClassOf :CatalogPrivilege ,
+                               :Manage ;
+               rdfs:label "MANAGE" .
+
+
+###  http://www.databricks.com/ontology/CatalogModify
+:CatalogModify rdf:type owl:Class ;
+               rdfs:subClassOf :CatalogPrivilege ,
+                               :Modify ;
+               rdfs:label "MODIFY" .
+
+
+###  http://www.databricks.com/ontology/CatalogPrivilege
+:CatalogPrivilege rdf:type owl:Class ;
+                  rdfs:subClassOf :SecurablePrivilege .
+
+
+###  http://www.databricks.com/ontology/CatalogReadVolume
+:CatalogReadVolume rdf:type owl:Class ;
+                   rdfs:subClassOf :CatalogPrivilege ,
+                                   :Read ;
+                   rdfs:label "READ VOLUME" .
+
+
+###  http://www.databricks.com/ontology/CatalogRefresh
+:CatalogRefresh rdf:type owl:Class ;
+                rdfs:subClassOf :CatalogPrivilege ,
+                                :Refresh ;
+                rdfs:label "REFRESH" .
+
+
+###  http://www.databricks.com/ontology/CatalogSelect
+:CatalogSelect rdf:type owl:Class ;
+               rdfs:subClassOf :CatalogPrivilege ,
+                               :Select ;
+               rdfs:label "SELECT" .
+
+
+###  http://www.databricks.com/ontology/CatalogUseCatalog
+:CatalogUseCatalog rdf:type owl:Class ;
+                   rdfs:subClassOf :CatalogPrivilege ,
+                                   :Use ;
+                   rdfs:label "USE CATALOG" .
+
+
+###  http://www.databricks.com/ontology/CatalogUseSchema
+:CatalogUseSchema rdf:type owl:Class ;
+                  rdfs:subClassOf :CatalogPrivilege ,
+                                  :Use ;
+                  rdfs:label "USE SCHEMA" .
+
+
+###  http://www.databricks.com/ontology/CatalogWriteVolume
+:CatalogWriteVolume rdf:type owl:Class ;
+                    rdfs:subClassOf :CatalogPrivilege ,
+                                    :Write ;
+                    rdfs:label "WRITE VOLUME" .
+
+
+###  http://www.databricks.com/ontology/CleanRoom
+:CleanRoom rdf:type owl:Class ;
+           rdfs:subClassOf :Securable .
+
+
+###  http://www.databricks.com/ontology/CleanRoomAllPrivileges
+:CleanRoomAllPrivileges rdf:type owl:Class ;
+                        rdfs:subClassOf :AllPrivileges ,
+                                        :CleanRoomPrivilege ;
+                        rdfs:label "ALL PRIVILEGES" .
+
+
+###  http://www.databricks.com/ontology/CleanRoomBrowse
+:CleanRoomBrowse rdf:type owl:Class ;
+                 rdfs:subClassOf :Browse ,
+                                 :CleanRoomPrivilege ;
+                 rdfs:label "BROWSE" .
+
+
+###  http://www.databricks.com/ontology/CleanRoomExecuteCleanRoomTask
+:CleanRoomExecuteCleanRoomTask rdf:type owl:Class ;
+                               rdfs:subClassOf :CleanRoomPrivilege ,
+                                               :Execute ;
+                               rdfs:label "EXECUTE CLEAN ROOM TASK" .
+
+
+###  http://www.databricks.com/ontology/CleanRoomManage
+:CleanRoomManage rdf:type owl:Class ;
+                 rdfs:subClassOf :CleanRoomPrivilege ,
+                                 :Manage ;
+                 rdfs:label "MANAGE" .
+
+
+###  http://www.databricks.com/ontology/CleanRoomModifyCleanRoom
+:CleanRoomModifyCleanRoom rdf:type owl:Class ;
+                          rdfs:subClassOf :CleanRoomPrivilege ,
+                                          :Modify ;
+                          rdfs:label "MODIFY CLEAN ROOM" .
+
+
+###  http://www.databricks.com/ontology/CleanRoomPrivilege
+:CleanRoomPrivilege rdf:type owl:Class ;
+                    rdfs:subClassOf :SecurablePrivilege .
+
+
+###  http://www.databricks.com/ontology/Cloud
+:Cloud rdf:type owl:Class ;
+       rdfs:comment "A cloud environment that Databricks can be deployed into." .
+
+
+###  http://www.databricks.com/ontology/Cluster
+:Cluster rdf:type owl:Class ;
+         rdfs:subClassOf :Compute .
+
+
+###  http://www.databricks.com/ontology/Column
+:Column rdf:type owl:Class ;
+        rdfs:subClassOf :Securable .
+
+
+###  http://www.databricks.com/ontology/Compute
+:Compute rdf:type owl:Class ;
+         rdfs:subClassOf :DatabricksResource .
+
+
+###  http://www.databricks.com/ontology/Connection
+:Connection rdf:type owl:Class ;
+            rdfs:subClassOf :Securable .
+
+
+###  http://www.databricks.com/ontology/ConnectionAllPrivileges
+:ConnectionAllPrivileges rdf:type owl:Class ;
+                         rdfs:subClassOf :AllPrivileges ,
+                                         :ConnectionPrivilege ;
+                         rdfs:label "ALL PRIVILEGES" .
+
+
+###  http://www.databricks.com/ontology/ConnectionCreateForeignCatalog
+:ConnectionCreateForeignCatalog rdf:type owl:Class ;
+                                rdfs:subClassOf :ConnectionPrivilege ,
+                                                :Create ;
+                                rdfs:label "CREATE FOREIGN CATALOG" .
+
+
+###  http://www.databricks.com/ontology/ConnectionManage
+:ConnectionManage rdf:type owl:Class ;
+                  rdfs:subClassOf :ConnectionPrivilege ,
+                                  :Manage ;
+                  rdfs:label "MANAGE" .
+
+
+###  http://www.databricks.com/ontology/ConnectionPrivilege
+:ConnectionPrivilege rdf:type owl:Class ;
+                     rdfs:subClassOf :SecurablePrivilege .
+
+
+###  http://www.databricks.com/ontology/ConnectionUseConnection
+:ConnectionUseConnection rdf:type owl:Class ;
+                         rdfs:subClassOf :ConnectionPrivilege ,
+                                         :Use ;
+                         rdfs:label "USE CONNECTION" .
+
+
+###  http://www.databricks.com/ontology/Create
+:Create rdf:type owl:Class ;
+        rdfs:subClassOf :SecurablePrivilege .
+
+
+###  http://www.databricks.com/ontology/CreateSchema
+:CreateSchema rdf:type owl:Class ;
+              rdfs:subClassOf :CatalogPrivilege ,
+                              :Create ;
+              rdfs:label "CREATE SCHEMA" .
+
+
+###  http://www.databricks.com/ontology/DatabricksResource
+:DatabricksResource rdf:type owl:Class .
+
+
+###  http://www.databricks.com/ontology/Execute
+:Execute rdf:type owl:Class ;
+         rdfs:subClassOf :SecurablePrivilege .
+
+
+###  http://www.databricks.com/ontology/ExternalLocation
+:ExternalLocation rdf:type owl:Class ;
+                  rdfs:subClassOf :Securable .
+
+
+###  http://www.databricks.com/ontology/ExternalLocationAllPrivileges
+:ExternalLocationAllPrivileges rdf:type owl:Class ;
+                               rdfs:subClassOf :AllPrivileges ,
+                                               :ExternalLocationPrivilege ;
+                               rdfs:label "ALL PRIVILEGES" .
+
+
+###  http://www.databricks.com/ontology/ExternalLocationBrowse
+:ExternalLocationBrowse rdf:type owl:Class ;
+                        rdfs:subClassOf :Browse ,
+                                        :ExternalLocationPrivilege ;
+                        rdfs:label "BROWSE" .
+
+
+###  http://www.databricks.com/ontology/ExternalLocationCreateExternalTable
+:ExternalLocationCreateExternalTable rdf:type owl:Class ;
+                                     rdfs:subClassOf :Create ,
+                                                     :ExternalLocationPrivilege ;
+                                     rdfs:label "CREATE EXTERNAL TABLE" .
+
+
+###  http://www.databricks.com/ontology/ExternalLocationCreateExternalVolume
+:ExternalLocationCreateExternalVolume rdf:type owl:Class ;
+                                      rdfs:subClassOf :Create ,
+                                                      :ExternalLocationPrivilege ;
+                                      rdfs:label "CREATE EXTERNAL VOLUME" .
+
+
+###  http://www.databricks.com/ontology/ExternalLocationCreateForeignSecurable
+:ExternalLocationCreateForeignSecurable rdf:type owl:Class ;
+                                        rdfs:subClassOf :Create ,
+                                                        :ExternalLocationPrivilege ;
+                                        rdfs:label "CREATE FOREIGN SECURABLE" .
+
+
+###  http://www.databricks.com/ontology/ExternalLocationCreateManagedStorage
+:ExternalLocationCreateManagedStorage rdf:type owl:Class ;
+                                      rdfs:subClassOf :Create ,
+                                                      :ExternalLocationPrivilege ;
+                                      rdfs:label "CREATE MANAGED STORAGE" .
+
+
+###  http://www.databricks.com/ontology/ExternalLocationExternalUseLocation
+:ExternalLocationExternalUseLocation rdf:type owl:Class ;
+                                     rdfs:subClassOf :ExternalLocationPrivilege ,
+                                                     :Use ;
+                                     rdfs:label "EXTERNAL USE LOCATION" .
+
+
+###  http://www.databricks.com/ontology/ExternalLocationManage
+:ExternalLocationManage rdf:type owl:Class ;
+                        rdfs:subClassOf :ExternalLocationPrivilege ,
+                                        :Manage ;
+                        rdfs:label "MANAGE" .
+
+
+###  http://www.databricks.com/ontology/ExternalLocationPrivilege
+:ExternalLocationPrivilege rdf:type owl:Class ;
+                           rdfs:subClassOf :SecurablePrivilege .
+
+
+###  http://www.databricks.com/ontology/ExternalLocationReadFiles
+:ExternalLocationReadFiles rdf:type owl:Class ;
+                           rdfs:subClassOf :ExternalLocationPrivilege ,
+                                           :Read ;
+                           rdfs:label "READ FILES" .
+
+
+###  http://www.databricks.com/ontology/ExternalLocationWriteFiles
+:ExternalLocationWriteFiles rdf:type owl:Class ;
+                            rdfs:subClassOf :ExternalLocationPrivilege ,
+                                            :Write ;
+                            rdfs:label "WRITE FILES" .
+
+
+###  http://www.databricks.com/ontology/ExternalMetadata
+:ExternalMetadata rdf:type owl:Class ;
+                  rdfs:subClassOf :Securable .
+
+
+###  http://www.databricks.com/ontology/ExternalMetadataAllPrivileges
+:ExternalMetadataAllPrivileges rdf:type owl:Class ;
+                               rdfs:subClassOf :AllPrivileges ,
+                                               :ExternalMetadataPrivilege ;
+                               rdfs:label "ALL PRIVILEGES" .
+
+
+###  http://www.databricks.com/ontology/ExternalMetadataBrowse
+:ExternalMetadataBrowse rdf:type owl:Class ;
+                        rdfs:subClassOf :Browse ,
+                                        :ExternalMetadataPrivilege ;
+                        rdfs:label "BROWSE" .
+
+
+###  http://www.databricks.com/ontology/ExternalMetadataManage
+:ExternalMetadataManage rdf:type owl:Class ;
+                        rdfs:subClassOf :ExternalMetadataPrivilege ,
+                                        :Manage ;
+                        rdfs:label "MANAGE" .
+
+
+###  http://www.databricks.com/ontology/ExternalMetadataModify
+:ExternalMetadataModify rdf:type owl:Class ;
+                        rdfs:subClassOf :ExternalMetadataPrivilege ,
+                                        :Modify ;
+                        rdfs:label "MODIFY" .
+
+
+###  http://www.databricks.com/ontology/ExternalMetadataPrivilege
+:ExternalMetadataPrivilege rdf:type owl:Class ;
+                           rdfs:subClassOf :SecurablePrivilege .
+
+
+###  http://www.databricks.com/ontology/File
+:File rdf:type owl:Class ;
+      rdfs:subClassOf :Securable .
+
+
+###  http://www.databricks.com/ontology/Function
+:Function rdf:type owl:Class ;
+          rdfs:subClassOf :Securable .
+
+
+###  http://www.databricks.com/ontology/FunctionAllPrivileges
+:FunctionAllPrivileges rdf:type owl:Class ;
+                       rdfs:subClassOf :AllPrivileges ,
+                                       :FunctionPrivilege ;
+                       rdfs:label "ALL PRIVILEGES" .
+
+
+###  http://www.databricks.com/ontology/FunctionApplyTag
+:FunctionApplyTag rdf:type owl:Class ;
+                  rdfs:subClassOf :ApplyTag ,
+                                  :FunctionPrivilege ;
+                  rdfs:label "APPLY TAG" .
+
+
+###  http://www.databricks.com/ontology/FunctionCreateModelVersion
+:FunctionCreateModelVersion rdf:type owl:Class ;
+                            rdfs:subClassOf :Create ,
+                                            :FunctionPrivilege ;
+                            rdfs:label "CREATE MODEL VERSION" .
+
+
+###  http://www.databricks.com/ontology/FunctionExecute
+:FunctionExecute rdf:type owl:Class ;
+                 rdfs:subClassOf :Execute ,
+                                 :FunctionPrivilege ;
+                 rdfs:label "EXECUTE" .
+
+
+###  http://www.databricks.com/ontology/FunctionManage
+:FunctionManage rdf:type owl:Class ;
+                rdfs:subClassOf :FunctionPrivilege ,
+                                :Manage ;
+                rdfs:label "MANAGE" .
+
+
+###  http://www.databricks.com/ontology/FunctionPrivilege
+:FunctionPrivilege rdf:type owl:Class ;
+                   rdfs:subClassOf :SecurablePrivilege .
+
+
+###  http://www.databricks.com/ontology/Manage
+:Manage rdf:type owl:Class ;
+        rdfs:subClassOf :SecurablePrivilege .
+
+
+###  http://www.databricks.com/ontology/MaterializedView
+:MaterializedView rdf:type owl:Class ;
+                  rdfs:subClassOf :Tabular .
+
+
+###  http://www.databricks.com/ontology/MaterializedViewAllPrivileges
+:MaterializedViewAllPrivileges rdf:type owl:Class ;
+                               rdfs:subClassOf :AllPrivileges ,
+                                               :MaterializedViewPrivilege ;
+                               rdfs:label "ALL PRIVILEGES" .
+
+
+###  http://www.databricks.com/ontology/MaterializedViewApplyTag
+:MaterializedViewApplyTag rdf:type owl:Class ;
+                          rdfs:subClassOf :ApplyTag ,
+                                          :MaterializedViewPrivilege ;
+                          rdfs:label "APPLY TAG" .
+
+
+###  http://www.databricks.com/ontology/MaterializedViewManage
+:MaterializedViewManage rdf:type owl:Class ;
+                        rdfs:subClassOf :Manage ,
+                                        :MaterializedViewPrivilege ;
+                        rdfs:label "MANAGE" .
+
+
+###  http://www.databricks.com/ontology/MaterializedViewPrivilege
+:MaterializedViewPrivilege rdf:type owl:Class ;
+                           rdfs:subClassOf :SecurablePrivilege .
+
+
+###  http://www.databricks.com/ontology/MaterializedViewRefresh
+:MaterializedViewRefresh rdf:type owl:Class ;
+                         rdfs:subClassOf :MaterializedViewPrivilege ,
+                                         :Refresh ;
+                         rdfs:label "REFRESH" .
+
+
+###  http://www.databricks.com/ontology/MaterializedViewSelect
+:MaterializedViewSelect rdf:type owl:Class ;
+                        rdfs:subClassOf :MaterializedViewPrivilege ,
+                                        :Select ;
+                        rdfs:label "SELECT" .
+
+
+###  http://www.databricks.com/ontology/Metastore
+:Metastore rdf:type owl:Class ;
+           rdfs:subClassOf :Securable .
+
+
+###  http://www.databricks.com/ontology/MetastoreCreateCatalog
+:MetastoreCreateCatalog rdf:type owl:Class ;
+                        rdfs:subClassOf :Create ,
+                                        :MetastorePrivilege ;
+                        rdfs:label "CREATE CATALOG" .
+
+
+###  http://www.databricks.com/ontology/MetastoreCreateCleanRoom
+:MetastoreCreateCleanRoom rdf:type owl:Class ;
+                          rdfs:subClassOf :Create ,
+                                          :MetastorePrivilege ;
+                          rdfs:label "CREATE CLEAN ROOM" .
+
+
+###  http://www.databricks.com/ontology/MetastoreCreateConnection
+:MetastoreCreateConnection rdf:type owl:Class ;
+                           rdfs:subClassOf :Create ,
+                                           :MetastorePrivilege ;
+                           rdfs:label "CREATE CONNECTION" .
+
+
+###  http://www.databricks.com/ontology/MetastoreCreateExternalLocation
+:MetastoreCreateExternalLocation rdf:type owl:Class ;
+                                 rdfs:subClassOf :Create ,
+                                                 :MetastorePrivilege ;
+                                 rdfs:label "CREATE EXTERNAL LOCATION" .
+
+
+###  http://www.databricks.com/ontology/MetastoreCreateExternalMetadata
+:MetastoreCreateExternalMetadata rdf:type owl:Class ;
+                                 rdfs:subClassOf :Create ,
+                                                 :MetastorePrivilege ;
+                                 rdfs:label "CREATE EXTERNAL METADATA" .
+
+
+###  http://www.databricks.com/ontology/MetastoreCreateProvider
+:MetastoreCreateProvider rdf:type owl:Class ;
+                         rdfs:subClassOf :Create ,
+                                         :MetastorePrivilege ;
+                         rdfs:label "CREATE PROVIDER" .
+
+
+###  http://www.databricks.com/ontology/MetastoreCreateRecipient
+:MetastoreCreateRecipient rdf:type owl:Class ;
+                          rdfs:subClassOf :Create ,
+                                          :MetastorePrivilege ;
+                          rdfs:label "CREATE RECIPIENT" .
+
+
+###  http://www.databricks.com/ontology/MetastoreCreateServiceCredential
+:MetastoreCreateServiceCredential rdf:type owl:Class ;
+                                  rdfs:subClassOf :Create ,
+                                                  :MetastorePrivilege ;
+                                  rdfs:label "CREATE SERVICE CREDENTIAL" .
+
+
+###  http://www.databricks.com/ontology/MetastoreCreateShare
+:MetastoreCreateShare rdf:type owl:Class ;
+                      rdfs:subClassOf :Create ,
+                                      :MetastorePrivilege ;
+                      rdfs:label "CREATE SHARE" .
+
+
+###  http://www.databricks.com/ontology/MetastoreCreateStorageCredential
+:MetastoreCreateStorageCredential rdf:type owl:Class ;
+                                  rdfs:subClassOf :Create ,
+                                                  :MetastorePrivilege ;
+                                  rdfs:label "CREATE STORAGE CREDENTIAL" .
+
+
+###  http://www.databricks.com/ontology/MetastorePrivilege
+:MetastorePrivilege rdf:type owl:Class ;
+                    rdfs:subClassOf :SecurablePrivilege .
+
+
+###  http://www.databricks.com/ontology/MetastoreSetSharePermission
+:MetastoreSetSharePermission rdf:type owl:Class ;
+                             rdfs:subClassOf :MetastorePrivilege ,
+                                             :Set ;
+                             rdfs:label "SET SHARE PERMISSION" .
+
+
+###  http://www.databricks.com/ontology/MetastoreUseMarketplaceAssets
+:MetastoreUseMarketplaceAssets rdf:type owl:Class ;
+                               rdfs:subClassOf :MetastorePrivilege ,
+                                               :Use ;
+                               rdfs:label "USE MARKETPLACE ASSETS" .
+
+
+###  http://www.databricks.com/ontology/MetastoreUseProvider
+:MetastoreUseProvider rdf:type owl:Class ;
+                      rdfs:subClassOf :MetastorePrivilege ,
+                                      :Use ;
+                      rdfs:label "USE PROVIDER" .
+
+
+###  http://www.databricks.com/ontology/MetastoreUseRecipient
+:MetastoreUseRecipient rdf:type owl:Class ;
+                       rdfs:subClassOf :MetastorePrivilege ,
+                                       :Use ;
+                       rdfs:label "USE RECIPIENT" .
+
+
+###  http://www.databricks.com/ontology/MetastoreUseShare
+:MetastoreUseShare rdf:type owl:Class ;
+                   rdfs:subClassOf :MetastorePrivilege ,
+                                   :Use ;
+                   rdfs:label "USE SHARE" .
+
+
+###  http://www.databricks.com/ontology/MetricView
+:MetricView rdf:type owl:Class ;
+            rdfs:subClassOf :Tabular .
+
+
+###  http://www.databricks.com/ontology/Model
+:Model rdf:type owl:Class ;
+       rdfs:subClassOf :Function .
+
+
+###  http://www.databricks.com/ontology/Modify
+:Modify rdf:type owl:Class ;
+        rdfs:subClassOf :SecurablePrivilege .
+
+
+###  http://www.databricks.com/ontology/Notebook
+:Notebook rdf:type owl:Class ;
+          rdfs:subClassOf :DatabricksResource .
+
+
+###  http://www.databricks.com/ontology/Pipeline
+:Pipeline rdf:type owl:Class ;
+          rdfs:subClassOf :DatabricksResource .
+
+
+###  http://www.databricks.com/ontology/Privilege
+:Privilege rdf:type owl:Class ;
+           rdfs:subClassOf :DatabricksResource .
+
+
+###  http://www.databricks.com/ontology/ProcedureAllPrivileges
+:ProcedureAllPrivileges rdf:type owl:Class ;
+                        rdfs:subClassOf :AllPrivileges ,
+                                        :ProcedurePrivilege ;
+                        rdfs:label "ALL PRIVILEGES" .
+
+
+###  http://www.databricks.com/ontology/ProcedureExecute
+:ProcedureExecute rdf:type owl:Class ;
+                  rdfs:subClassOf :Execute ,
+                                  :ProcedurePrivilege ;
+                  rdfs:label "EXECUTE" .
+
+
+###  http://www.databricks.com/ontology/ProcedureManage
+:ProcedureManage rdf:type owl:Class ;
+                 rdfs:subClassOf :Manage ,
+                                 :ProcedurePrivilege ;
+                 rdfs:label "MANAGE" .
+
+
+###  http://www.databricks.com/ontology/ProcedurePrivilege
+:ProcedurePrivilege rdf:type owl:Class ;
+                    rdfs:subClassOf :SecurablePrivilege .
+
+
+###  http://www.databricks.com/ontology/Provider
+:Provider rdf:type owl:Class ;
+          rdfs:subClassOf :Securable .
+
+
+###  http://www.databricks.com/ontology/Query
+:Query rdf:type owl:Class ;
+       rdfs:subClassOf :DatabricksResource .
+
+
+###  http://www.databricks.com/ontology/Read
+:Read rdf:type owl:Class ;
+      rdfs:subClassOf :SecurablePrivilege .
+
+
+###  http://www.databricks.com/ontology/Recipient
+:Recipient rdf:type owl:Class ;
+           rdfs:subClassOf :Securable .
+
+
+###  http://www.databricks.com/ontology/Refresh
+:Refresh rdf:type owl:Class ;
+         rdfs:subClassOf :SecurablePrivilege .
+
+
+###  http://www.databricks.com/ontology/Region
+:Region rdf:type owl:Class .
+
+
+###  http://www.databricks.com/ontology/Schema
+:Schema rdf:type owl:Class ;
+        rdfs:subClassOf :Securable .
+
+
+###  http://www.databricks.com/ontology/SchemaAllPrivileges
+:SchemaAllPrivileges rdf:type owl:Class ;
+                     rdfs:subClassOf :AllPrivileges ,
+                                     :SchemaPrivilege ;
+                     rdfs:label "ALL PRIVILEGES" .
+
+
+###  http://www.databricks.com/ontology/SchemaApplyTag
+:SchemaApplyTag rdf:type owl:Class ;
+                rdfs:subClassOf :ApplyTag ,
+                                :SchemaPrivilege ;
+                rdfs:label "APPLY TAG" .
+
+
+###  http://www.databricks.com/ontology/SchemaCreateFunction
+:SchemaCreateFunction rdf:type owl:Class ;
+                      rdfs:subClassOf :Create ,
+                                      :SchemaPrivilege ;
+                      rdfs:label "CREATE FUNCTION" .
+
+
+###  http://www.databricks.com/ontology/SchemaCreateMaterializedView
+:SchemaCreateMaterializedView rdf:type owl:Class ;
+                              rdfs:subClassOf :Create ,
+                                              :SchemaPrivilege ;
+                              rdfs:label "CREATE MATERIALIZED VIEW" .
+
+
+###  http://www.databricks.com/ontology/SchemaCreateModel
+:SchemaCreateModel rdf:type owl:Class ;
+                   rdfs:subClassOf :Create ,
+                                   :SchemaPrivilege ;
+                   rdfs:label "CREATE MODEL" .
+
+
+###  http://www.databricks.com/ontology/SchemaCreateTable
+:SchemaCreateTable rdf:type owl:Class ;
+                   rdfs:subClassOf :Create ,
+                                   :SchemaPrivilege ;
+                   rdfs:label "CREATE TABLE" .
+
+
+###  http://www.databricks.com/ontology/SchemaCreateVolume
+:SchemaCreateVolume rdf:type owl:Class ;
+                    rdfs:subClassOf :Create ,
+                                    :SchemaPrivilege ;
+                    rdfs:label "CREATE VOLUME" .
+
+
+###  http://www.databricks.com/ontology/SchemaExecute
+:SchemaExecute rdf:type owl:Class ;
+               rdfs:subClassOf :Execute ,
+                               :SchemaPrivilege ;
+               rdfs:label "EXECUTE" .
+
+
+###  http://www.databricks.com/ontology/SchemaExternalUseSchema
+:SchemaExternalUseSchema rdf:type owl:Class ;
+                         rdfs:subClassOf :SchemaPrivilege ,
+                                         :Use ;
+                         rdfs:label "EXTERNAL USE SCHEMA" .
+
+
+###  http://www.databricks.com/ontology/SchemaManage
+:SchemaManage rdf:type owl:Class ;
+              rdfs:subClassOf :Manage ,
+                              :SchemaPrivilege ;
+              rdfs:label "MANAGE" .
+
+
+###  http://www.databricks.com/ontology/SchemaModify
+:SchemaModify rdf:type owl:Class ;
+              rdfs:subClassOf :Modify ,
+                              :SchemaPrivilege ;
+              rdfs:label "MODIFY" .
+
+
+###  http://www.databricks.com/ontology/SchemaPrivilege
+:SchemaPrivilege rdf:type owl:Class ;
+                 rdfs:subClassOf :SecurablePrivilege .
+
+
+###  http://www.databricks.com/ontology/SchemaReadVolume
+:SchemaReadVolume rdf:type owl:Class ;
+                  rdfs:subClassOf :Read ,
+                                  :SchemaPrivilege ;
+                  rdfs:label "READ VOLUME" .
+
+
+###  http://www.databricks.com/ontology/SchemaRefresh
+:SchemaRefresh rdf:type owl:Class ;
+               rdfs:subClassOf :Refresh ,
+                               :SchemaPrivilege ;
+               rdfs:label "REFRESH" .
+
+
+###  http://www.databricks.com/ontology/SchemaSelect
+:SchemaSelect rdf:type owl:Class ;
+              rdfs:subClassOf :SchemaPrivilege ,
+                              :Select ;
+              rdfs:label "SELECT" .
+
+
+###  http://www.databricks.com/ontology/SchemaUseSchema
+:SchemaUseSchema rdf:type owl:Class ;
+                 rdfs:subClassOf :SchemaPrivilege ,
+                                 :Use ;
+                 rdfs:label "USE SCHEMA" .
+
+
+###  http://www.databricks.com/ontology/SchemaWriteVolume
+:SchemaWriteVolume rdf:type owl:Class ;
+                   rdfs:subClassOf :SchemaPrivilege ,
+                                   :Write ;
+                   rdfs:label "WRITE VOLUME" .
+
+
+###  http://www.databricks.com/ontology/Securable
+:Securable rdf:type owl:Class ;
+           rdfs:subClassOf :DatabricksResource .
+
+
+###  http://www.databricks.com/ontology/SecurablePrivilege
+:SecurablePrivilege rdf:type owl:Class ;
+                    rdfs:subClassOf :Privilege .
+
+
+###  http://www.databricks.com/ontology/Select
+:Select rdf:type owl:Class ;
+        rdfs:subClassOf :SecurablePrivilege .
+
+
+###  http://www.databricks.com/ontology/ServiceCredential
+:ServiceCredential rdf:type owl:Class ;
+                   rdfs:subClassOf :Securable .
+
+
+###  http://www.databricks.com/ontology/ServiceCredentialAccess
+:ServiceCredentialAccess rdf:type owl:Class ;
+                         rdfs:subClassOf :Access ,
+                                         :ServiceCredentialPrivilege ;
+                         rdfs:label "ACCESS" .
+
+
+###  http://www.databricks.com/ontology/ServiceCredentialAllPrivileges
+:ServiceCredentialAllPrivileges rdf:type owl:Class ;
+                                rdfs:subClassOf :AllPrivileges ,
+                                                :ServiceCredentialPrivilege ;
+                                rdfs:label "ALL PRIVILEGES" .
+
+
+###  http://www.databricks.com/ontology/ServiceCredentialCreateConnection
+:ServiceCredentialCreateConnection rdf:type owl:Class ;
+                                   rdfs:subClassOf :Create ,
+                                                   :ServiceCredentialPrivilege ;
+                                   rdfs:label "CREATE CONNECTION" .
+
+
+###  http://www.databricks.com/ontology/ServiceCredentialManage
+:ServiceCredentialManage rdf:type owl:Class ;
+                         rdfs:subClassOf :Manage ,
+                                         :ServiceCredentialPrivilege ;
+                         rdfs:label "MANAGE" .
+
+
+###  http://www.databricks.com/ontology/ServiceCredentialPrivilege
+:ServiceCredentialPrivilege rdf:type owl:Class ;
+                            rdfs:subClassOf :SecurablePrivilege .
+
+
+###  http://www.databricks.com/ontology/Set
+:Set rdf:type owl:Class ;
+     rdfs:subClassOf :SecurablePrivilege .
+
+
+###  http://www.databricks.com/ontology/Share
+:Share rdf:type owl:Class ;
+       rdfs:subClassOf :Securable .
+
+
+###  http://www.databricks.com/ontology/SharePrivilege
+:SharePrivilege rdf:type owl:Class ;
+                rdfs:subClassOf :SecurablePrivilege .
+
+
+###  http://www.databricks.com/ontology/ShareSelect
+:ShareSelect rdf:type owl:Class ;
+             rdfs:subClassOf :Select ,
+                             :SharePrivilege ;
+             rdfs:label "SELECT" .
+
+
+###  http://www.databricks.com/ontology/StorageCredential
+:StorageCredential rdf:type owl:Class ;
+                   rdfs:subClassOf :Securable .
+
+
+###  http://www.databricks.com/ontology/StorageCredentialAllPrivileges
+:StorageCredentialAllPrivileges rdf:type owl:Class ;
+                                rdfs:subClassOf :AllPrivileges ,
+                                                :StorageCredentialPrivilege ;
+                                rdfs:label "ALL PRIVILEGES" .
+
+
+###  http://www.databricks.com/ontology/StorageCredentialCreateExternalLocation
+:StorageCredentialCreateExternalLocation rdf:type owl:Class ;
+                                         rdfs:subClassOf :Create ,
+                                                         :StorageCredentialPrivilege ;
+                                         rdfs:label "CREATE EXTERNAL LOCATION" .
+
+
+###  http://www.databricks.com/ontology/StorageCredentialCreateExternalTable
+:StorageCredentialCreateExternalTable rdf:type owl:Class ;
+                                      rdfs:subClassOf :Create ,
+                                                      :StorageCredentialPrivilege ;
+                                      rdfs:label "CREATE EXTERNAL TABLE" .
+
+
+###  http://www.databricks.com/ontology/StorageCredentialManage
+:StorageCredentialManage rdf:type owl:Class ;
+                         rdfs:subClassOf :Manage ,
+                                         :StorageCredentialPrivilege ;
+                         rdfs:label "MANAGE" .
+
+
+###  http://www.databricks.com/ontology/StorageCredentialPrivilege
+:StorageCredentialPrivilege rdf:type owl:Class ;
+                            rdfs:subClassOf :SecurablePrivilege .
+
+
+###  http://www.databricks.com/ontology/StorageCredentialReadFiles
+:StorageCredentialReadFiles rdf:type owl:Class ;
+                            rdfs:subClassOf :Read ,
+                                            :StorageCredentialPrivilege ;
+                            rdfs:label "READ FILES" .
+
+
+###  http://www.databricks.com/ontology/StorageCredentialWriteFiles
+:StorageCredentialWriteFiles rdf:type owl:Class ;
+                             rdfs:subClassOf :StorageCredentialPrivilege ,
+                                             :Write ;
+                             rdfs:label "WRITE FILES" .
+
+
+###  http://www.databricks.com/ontology/Table
+:Table rdf:type owl:Class ;
+       rdfs:subClassOf :Tabular .
+
+
+###  http://www.databricks.com/ontology/TableAllPrivileges
+:TableAllPrivileges rdf:type owl:Class ;
+                    rdfs:subClassOf :AllPrivileges ,
+                                    :TablePrivilege ;
+                    rdfs:label "ALL PRIVILEGES" .
+
+
+###  http://www.databricks.com/ontology/TableApplyTag
+:TableApplyTag rdf:type owl:Class ;
+               rdfs:subClassOf :ApplyTag ,
+                               :TablePrivilege ;
+               rdfs:label "APPLY TAG" .
+
+
+###  http://www.databricks.com/ontology/TableManage
+:TableManage rdf:type owl:Class ;
+             rdfs:subClassOf :Manage ,
+                             :TablePrivilege ;
+             rdfs:label "MANAGE" .
+
+
+###  http://www.databricks.com/ontology/TableModify
+:TableModify rdf:type owl:Class ;
+             rdfs:subClassOf :Modify ,
+                             :TablePrivilege ;
+             rdfs:label "MODIFY" .
+
+
+###  http://www.databricks.com/ontology/TablePrivilege
+:TablePrivilege rdf:type owl:Class ;
+                rdfs:subClassOf :SecurablePrivilege .
+
+
+###  http://www.databricks.com/ontology/TableSelect
+:TableSelect rdf:type owl:Class ;
+             rdfs:subClassOf :Select ,
+                             :TablePrivilege ;
+             rdfs:label "SELECT" .
+
+
+###  http://www.databricks.com/ontology/Tabular
+:Tabular rdf:type owl:Class ;
+         rdfs:subClassOf :Securable .
+
+
+###  http://www.databricks.com/ontology/Use
+:Use rdf:type owl:Class ;
+     rdfs:subClassOf :SecurablePrivilege .
+
+
+###  http://www.databricks.com/ontology/UseCatalog
+:UseCatalog rdf:type owl:Class ;
+            rdfs:subClassOf :CatalogPrivilege ,
+                            :Use ;
+            rdfs:label "USE CATALOG" .
+
+
+###  http://www.databricks.com/ontology/User
+:User rdf:type owl:Class ;
+      rdfs:subClassOf :DatabricksResource .
+
+
+###  http://www.databricks.com/ontology/View
+:View rdf:type owl:Class ;
+      rdfs:subClassOf :Tabular .
+
+
+###  http://www.databricks.com/ontology/ViewAllPrivileges
+:ViewAllPrivileges rdf:type owl:Class ;
+                   rdfs:subClassOf :AllPrivileges ,
+                                   :ViewPrivilege ;
+                   rdfs:label "ALL PRIVILEGES" .
+
+
+###  http://www.databricks.com/ontology/ViewApplyTag
+:ViewApplyTag rdf:type owl:Class ;
+              rdfs:subClassOf :ApplyTag ,
+                              :ViewPrivilege ;
+              rdfs:label "APPLY TAG" .
+
+
+###  http://www.databricks.com/ontology/ViewManage
+:ViewManage rdf:type owl:Class ;
+            rdfs:subClassOf :Manage ,
+                            :ViewPrivilege ;
+            rdfs:label "MANAGE" .
+
+
+###  http://www.databricks.com/ontology/ViewPrivilege
+:ViewPrivilege rdf:type owl:Class ;
+               rdfs:subClassOf :SecurablePrivilege .
+
+
+###  http://www.databricks.com/ontology/ViewSelect
+:ViewSelect rdf:type owl:Class ;
+            rdfs:subClassOf :Select ,
+                            :ViewPrivilege ;
+            rdfs:label "SELECT" .
+
+
+###  http://www.databricks.com/ontology/Volume
+:Volume rdf:type owl:Class ;
+        rdfs:subClassOf :Securable .
+
+
+###  http://www.databricks.com/ontology/VolumeAllPrivileges
+:VolumeAllPrivileges rdf:type owl:Class ;
+                     rdfs:subClassOf :AllPrivileges ,
+                                     :VolumePrivilege ;
+                     rdfs:label "ALL PRIVILEGES" .
+
+
+###  http://www.databricks.com/ontology/VolumeManage
+:VolumeManage rdf:type owl:Class ;
+              rdfs:subClassOf :Manage ,
+                              :VolumePrivilege ;
+              rdfs:label "MANAGE" .
+
+
+###  http://www.databricks.com/ontology/VolumePrivilege
+:VolumePrivilege rdf:type owl:Class ;
+                 rdfs:subClassOf :SecurablePrivilege .
+
+
+###  http://www.databricks.com/ontology/VolumeReadVolume
+:VolumeReadVolume rdf:type owl:Class ;
+                  rdfs:subClassOf :Read ,
+                                  :VolumePrivilege ;
+                  rdfs:label "READ VOLUME" .
+
+
+###  http://www.databricks.com/ontology/VolumeWriteVolume
+:VolumeWriteVolume rdf:type owl:Class ;
+                   rdfs:subClassOf :VolumePrivilege ,
+                                   :Write ;
+                   rdfs:label "WRITE VOLUME" .
+
+
+###  http://www.databricks.com/ontology/Warehouse
+:Warehouse rdf:type owl:Class ;
+           rdfs:subClassOf :Compute .
+
+
+###  http://www.databricks.com/ontology/Workspace
+:Workspace rdf:type owl:Class ;
+           rdfs:subClassOf :DatabricksResource .
+
+
+###  http://www.databricks.com/ontology/Write
+:Write rdf:type owl:Class ;
+       rdfs:subClassOf :SecurablePrivilege .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.databricks.com/ontology/AWS
+:AWS rdf:type owl:NamedIndividual ,
+              :Cloud .
+
+
+###  http://www.databricks.com/ontology/Azure
+:Azure rdf:type owl:NamedIndividual ,
+                :Cloud .
+
+
+###  http://www.databricks.com/ontology/GoogleCloud
+:GoogleCloud rdf:type owl:NamedIndividual ,
+                      :Cloud .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi

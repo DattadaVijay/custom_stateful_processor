@@ -1,0 +1,41 @@
+command: ['python', 'backend/src/app.py']
+
+env:
+  - name: "ENV"
+    value: "PROD"
+  - name: "APP_DEMO_MODE"
+    value: "false"
+  - name: "APP_DB_DROP_ON_START"
+    value: "false"
+
+  - name: "PYTHONPATH"
+    value: "./backend:${PYTHONPATH}"
+  - name: "PYTHONUNBUFFERED"
+    value: "1"
+  - name: "FRONTEND_STATIC_DIR"
+    value: "./static"
+
+  # Keep valueFrom to trigger database resource injection (PGHOST is also auto-injected with same value)
+  # - name: "PGHOST"
+  #   valueFrom: "database"
+  # PGDATABASE, PGPORT, PGUSER are auto-injected by Databricks Apps
+  # Keep schema (no PG* auto-injection):
+  - name: "PGSCHEMA"
+    value: "app_ontos"
+  
+  - name: "DATABRICKS_WAREHOUSE_ID"
+    valueFrom: "sql-warehouse"
+  - name: "DATABRICKS_VOLUME"
+    valueFrom: "volume"
+
+  - name: "APP_ADMIN_DEFAULT_GROUPS"
+    value: '["admins"]'
+  - name: "APP_AUDIT_LOG_DIR"
+    value: "audit_logs"
+    #value: "/Volumes/${workspace.env.DATABRICKS_CATALOG}/${workspace.env.DATABRICKS_SCHEMA}/${workspace.env.DATABRICKS_VOLUME}/audit_logs"
+
+  - name: "LLM_ENABLED"
+    value: "True"
+  - name: "LLM_ENDPOINT"
+    valueFrom: "serving-endpoint"
+  

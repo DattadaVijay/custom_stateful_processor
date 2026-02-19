@@ -1,0 +1,105 @@
+{
+  "title": "Cumplimiento",
+  "subtitle": "Gestiona políticas de cumplimiento y ejecuciones",
+  "newPolicy": "Nueva Política",
+  "createRule": "Crear Regla",
+  "editRule": "Editar Regla de Cumplimiento",
+  "createNewRule": "Crear Nueva Regla de Cumplimiento",
+  "searchPlaceholder": "Buscar políticas...",
+  "loading": "Cargando datos de cumplimiento...",
+  "stats": {
+    "overallCompliance": "Cumplimiento General",
+    "acrossAllRules": "En todas las reglas",
+    "activeRules": "Reglas Activas",
+    "currentlyEnforced": "Actualmente aplicadas",
+    "criticalIssues": "Problemas Críticos",
+    "requireAttention": "Requieren atención",
+    "lastUpdated": "Última Actualización",
+    "today": "Hoy"
+  },
+  "form": {
+    "name": "Nombre",
+    "description": "Descripción",
+    "category": "Categoría",
+    "selectCategory": "Seleccionar categoría",
+    "severity": "Severidad",
+    "selectSeverity": "Seleccionar severidad",
+    "ruleCode": "Código de Regla",
+    "rulePlaceholder": "Ingrese la regla de cumplimiento en formato DSL",
+    "failureMessage": "Mensaje de Error",
+    "failureMessagePlaceholder": "ej. Los nombres deben usar snake_case (minúsculas con guiones bajos)",
+    "failureMessageHint": "Mensaje legible mostrado a los usuarios cuando esta política falla. Ayuda a explicar qué salió mal y cómo solucionarlo."
+  },
+  "categories": {
+    "security": "Seguridad",
+    "dataQuality": "Calidad de Datos",
+    "privacy": "Privacidad",
+    "governance": "Gobernanza"
+  },
+  "errors": {
+    "loadingPolicies": "Error al Cargar Políticas",
+    "savingPolicy": "Error al Guardar Política",
+    "deletingPolicy": "Error al Eliminar Política"
+  },
+  "toast": {
+    "policySaved": "Política '{{name}}' guardada correctamente",
+    "policyDeleted": "Política eliminada correctamente"
+  },
+  "score": {
+    "title": "Puntuación de Cumplimiento",
+    "overall": "Puntuación General",
+    "trend": "Tendencia"
+  },
+  "filters": {
+    "allStatus": "Todos los Estados",
+    "allSeverity": "Todas las Severidades"
+  },
+  "table": {
+    "name": "Nombre",
+    "status": "Estado",
+    "severity": "Severidad",
+    "lastRun": "Última Ejecución",
+    "score": "Puntuación",
+    "actions": "Acciones"
+  },
+  "messages": {
+    "success": "Éxito",
+    "error": "Error",
+    "deleteConfirm": "¿Estás seguro de que quieres eliminar esta política?",
+    "deleteSuccess": "Política eliminada exitosamente",
+    "deleteError": "Error al eliminar la política"
+  },
+  "status": {
+    "draft": "Borrador",
+    "active": "Activo",
+    "paused": "Pausado",
+    "disabled": "Deshabilitado"
+  },
+  "severity": {
+    "critical": "Crítico",
+    "high": "Alto",
+    "medium": "Medio",
+    "low": "Bajo"
+  },
+  "details": {
+    "backToList": "Volver a Políticas",
+    "edit": "Editar",
+    "delete": "Eliminar",
+    "run": "Ejecutar Ahora",
+    "notFound": "Política no encontrada",
+    "loading": "Cargando..."
+  },
+  "runs": {
+    "title": "Ejecuciones de Cumplimiento",
+    "runNow": "Ejecutar Ahora",
+    "noRuns": "Sin ejecuciones de cumplimiento aún",
+    "table": {
+      "startTime": "Hora de Inicio",
+      "endTime": "Hora de Fin",
+      "status": "Estado",
+      "score": "Puntuación",
+      "issues": "Problemas"
+    }
+  }
+}
+

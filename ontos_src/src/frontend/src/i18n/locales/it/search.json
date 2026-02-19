@@ -1,0 +1,126 @@
+{
+  "title": "Ricerca",
+  "placeholder": "Cerca in tutti gli asset...",
+  "tabs": {
+    "askOntos": "Chiedi a Ontos",
+    "indexSearch": "Ricerca Indice",
+    "conceptGraph": "Grafo dei Concetti",
+    "knowledgeGraph": "Grafo della Conoscenza",
+    "concepts": "Concetti"
+  },
+  "noResults": "Nessun risultato trovato",
+  "noResultsHint": "Prova a modificare i termini di ricerca o i filtri",
+  "results": "{{count}} risultato trovato",
+  "results_plural": "{{count}} risultati trovati",
+  "filters": {
+    "all": "Tutti",
+    "dataProducts": "Prodotti Dati",
+    "dataContracts": "Contratti Dati",
+    "datasets": "Dataset",
+    "glossaryTerms": "Termini del Glossario",
+    "teams": "Team",
+    "projects": "Progetti"
+  },
+  "sort": {
+    "relevance": "Rilevanza",
+    "newest": "Più Recenti",
+    "oldest": "Più Vecchi",
+    "name": "Nome"
+  },
+  "resultItem": {
+    "type": "Tipo",
+    "owner": "Proprietario",
+    "updated": "Aggiornato"
+  },
+  "kg": {
+    "prefixSearch": "Ricerca per Prefisso",
+    "prefixSearchDesc": "Trova risorse o proprietà per sottostringa IRI.",
+    "startPath": "Inizia percorso",
+    "pathExplorer": "Esploratore di Percorso",
+    "pathExplorerDesc": "Clicca sugli oggetti per estendere il percorso orizzontalmente.",
+    "directionFilter": "Filtro Direzione",
+    "everything": "Tutto",
+    "incomingOnly": "Solo Entranti",
+    "outgoingOnly": "Solo Uscenti",
+    "contentFilter": "Filtro Contenuto",
+    "showConceptsOnly": "Mostra solo concetti/classi",
+    "noOutgoingLinks": "Nessun link in uscita per la selezione corrente.",
+    "noLinksMatch": "Nessun link corrisponde ai filtri correnti.",
+    "step": "Passo",
+    "sparql": "SPARQL",
+    "sparqlDesc": "Esegui query avanzate sul grafo caricato.",
+    "examples": "Esempi",
+    "runSparql": "Esegui SPARQL",
+    "resourcesInNamespace": "Risorse nel namespace dell'app",
+    "resourcesWithLabel": "Risorse con rdfs:label",
+    "subjectsAndTypes": "Soggetti e loro tipi",
+    "topPredicates": "Predicati principali per frequenza",
+    "mostLinkedSeeAlso": "Più collegati via rdfs:seeAlso"
+  },
+  "index": {
+    "title": "Ricerca Indice",
+    "description": "Cerca in tutti i dati indicizzati dell'applicazione. Digita per cercare."
+  },
+  "concepts": {
+    "searchAndSelect": "Cerca e seleziona un concetto:",
+    "searchPlaceholder": "Digita per cercare per nome, etichetta o IRI...",
+    "clear": "Cancella",
+    "conceptHierarchy": "Gerarchia dei Concetti",
+    "parentClasses": "Classi Padre:",
+    "noParentClasses": "Nessuna classe padre trovata",
+    "subclasses": "Sottoclassi:",
+    "noSubclasses": "Nessuna sottoclasse trovata",
+    "relatedProperties": "Proprietà Correlate",
+    "noRelatedProperties": "Nessuna proprietà correlata trovata.",
+    "linkedCatalogObjects": "Oggetti Catalogo Collegati",
+    "noCatalogObjects": "Nessun oggetto catalogo assegnato.",
+    "assignToConcept": "Assegna a Concetto",
+    "assignDialog": {
+      "title": "Assegna Oggetto a Concetto",
+      "entityType": "Tipo di Entità",
+      "selectEntityType": "Seleziona tipo di entità...",
+      "dataProduct": "Prodotto Dati",
+      "dataContract": "Contratto Dati",
+      "dataDomain": "Dominio Dati",
+      "selectEntity": "Seleziona {{entityType}}..."
+    },
+    "messages": {
+      "linkedSuccess": "Concetto \"{{label}}\" collegato a {{entityType}} \"{{entityId}}\".",
+      "assignError": "Seleziona sia un tipo di entità che un'entità specifica.",
+      "assignFailed": "Assegnazione del concetto all'oggetto non riuscita.",
+      "navigationError": "Impossibile navigare a {{entityType}}"
+    }
+  },
+  "llm": {
+    "title": "Chiedi a Ontos",
+    "subtitle": "Fai domande su prodotti dati, costi e analisi",
+    "rerun": "Esegui di nuovo",
+    "copyToInput": "Modifica e reinvia",
+    "disabledTitle": "Ricerca IA",
+    "disabledSubtitle": "La ricerca in linguaggio naturale non è attualmente abilitata.",
+    "disabledMessage": "La ricerca LLM richiede configurazione. Contatta il tuo amministratore per abilitare questa funzionalità.",
+    "welcomeTitle": "Come posso aiutarti oggi?",
+    "welcomeMessage": "Posso aiutarti a scoprire prodotti dati, comprendere termini aziendali, analizzare costi ed eseguire query analitiche.",
+    "tryAsking": "Prova a chiedere:",
+    "inputPlaceholder": "Fai una domanda sui tuoi dati...",
+    "inputHint": "Invio per inviare, Shift+Invio per nuova riga",
+    "model": "Modello",
+    "thinking": "Sto pensando...",
+    "history": "Cronologia",
+    "newConversation": "Nuova Conversazione",
+    "untitled": "Senza titolo",
+    "examples": {
+      "findCustomerData": "Dove posso trovare dati dei clienti?",
+      "dataProductsCost": "Quanto costano tutti i prodotti dati?",
+      "businessTermsSales": "Quali termini aziendali sono legati alle vendite?",
+      "showDataProducts": "Mostrami i prodotti dati nel dominio Cliente"
+    },
+    "messages": {
+      "sessionDeleted": "Sessione eliminata",
+      "sessionDeletedDesc": "La conversazione è stata rimossa.",
+      "loadSessionFailed": "Caricamento sessione non riuscito",
+      "deleteSessionFailed": "Eliminazione sessione non riuscita",
+      "loadFailed": "Caricamento ricerca LLM non riuscito. Riprova più tardi."
+    }
+  }
+}

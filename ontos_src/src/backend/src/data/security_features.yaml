@@ -1,0 +1,66 @@
+features:
+  - id: "sf-001"
+    name: "Customer Data Row Filtering"
+    description: "Row-level security for customer data based on department and role"
+    type: "ROW_FILTERING"
+    target: "main.retail.customers"
+    conditions:
+      - "user.department = 'sales'"
+      - "user.role = 'analyst'"
+    status: "active"
+    last_updated: "2024-03-29T10:00:00Z"
+
+  - id: "sf-002"
+    name: "PII Column Masking"
+    description: "Dynamic data masking for PII columns in customer tables"
+    type: "COLUMN_MASKING"
+    target: "main.retail.customer_profiles"
+    conditions:
+      - "user.role != 'admin'"
+      - "column.name IN ('email', 'phone', 'ssn')"
+    status: "active"
+    last_updated: "2024-03-29T11:00:00Z"
+
+  - id: "sf-003"
+    name: "Healthcare Analytics Privacy"
+    description: "Differential privacy for medical records analysis"
+    type: "DIFFERENTIAL_PRIVACY"
+    target: "main.healthcare.patient_records"
+    conditions:
+      - "query.type = 'analytics'"
+      - "user.role = 'researcher'"
+    status: "active"
+    last_updated: "2024-03-29T12:00:00Z"
+
+  - id: "sf-004"
+    name: "Financial Data Homomorphic Encryption"
+    description: "Encrypted computation on financial transaction data"
+    type: "HOMOMORPHIC_ENCRYPTION"
+    target: "main.finance.transactions"
+    conditions:
+      - "operation.type = 'computation'"
+      - "user.role = 'analyst'"
+    status: "active"
+    last_updated: "2024-03-29T13:00:00Z"
+
+  - id: "sf-005"
+    name: "Sensitive Data Envelope Encryption"
+    description: "Envelope encryption for confidential business data"
+    type: "ENVELOPE_ENCRYPTION"
+    target: "main.hr.employee_records"
+    conditions:
+      - "data.sensitivity = 'high'"
+      - "user.role = 'hr_manager'"
+    status: "active"
+    last_updated: "2024-03-29T14:00:00Z"
+
+  - id: "sf-006"
+    name: "Payment Data Tokenization"
+    description: "Tokenization for secure payment card data processing"
+    type: "TOKENIZATION"
+    target: "main.payments.card_transactions"
+    conditions:
+      - "data.type = 'payment_card'"
+      - "user.role = 'payment_processor'"
+    status: "active"
+    last_updated: "2024-03-29T15:00:00Z" 

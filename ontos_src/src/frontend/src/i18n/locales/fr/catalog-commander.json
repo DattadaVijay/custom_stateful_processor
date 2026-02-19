@@ -1,0 +1,76 @@
+{
+  "title": "Commandant de Catalogue",
+  "catalogBrowser": "Navigateur de Catalogue",
+  "target": "Cible",
+  "objectInformation": "Informations sur l'objet",
+  "basicInformation": "Informations de base",
+  "commentsAndActivity": "Commentaires & Activité",
+  "askOntos": "Demander à Ontos",
+  
+  "actions": {
+    "viewData": "Voir les données",
+    "move": "Déplacer",
+    "delete": "Supprimer",
+    "rename": "Renommer",
+    "info": "Info",
+    "operations": "Opérations",
+    "comments": "Commentaires",
+    "retry": "Réessayer",
+    "newChat": "Nouvelle conversation",
+    "cancel": "Annuler",
+    "confirm": "Confirmer"
+  },
+  
+  "tooltips": {
+    "copyToTarget": "Copier vers la cible",
+    "moveToTarget": "Déplacer vers la cible",
+    "moveFromTarget": "Déplacer depuis la cible",
+    "refresh": "Actualiser (Maj pour forcer l'actualisation)",
+    "dragToResize": "Glisser pour redimensionner"
+  },
+  
+  "labels": {
+    "metastore": "Metastore",
+    "filterCatalogs": "Filtrer les catalogues...",
+    "selectEstate": "Sélectionner un Estate",
+    "name": "Nom :",
+    "type": "Type :",
+    "fullPath": "Chemin complet :",
+    "actions": "Actions :"
+  },
+  
+  "messages": {
+    "selectObjectToViewInfo": "Sélectionnez un objet pour voir ses informations",
+    "selectObjectToViewComments": "Sélectionnez un objet pour voir les commentaires",
+    "loadingDetails": "Chargement des détails...",
+    "noDataAvailable": "Aucune donnée disponible",
+    "datasetView": "Vue du dataset : {{name}}",
+    "confirmOperation": "Confirmer l'opération",
+    "selectedItems": "Éléments sélectionnés : {{items}}",
+    "noItemsSelected": "Aucun élément sélectionné"
+  },
+  
+  "askPanel": {
+    "title": "Demander à Ontos",
+    "askAboutItem": "Poser une question sur cet élément",
+    "askQuestionsAbout": "Posez des questions sur \"{{name}}\"",
+    "selectItemFirst": "Sélectionnez un élément pour poser des questions",
+    "askAboutPlaceholder": "Questions sur {{name}}...",
+    "selectItemPlaceholder": "Sélectionnez d'abord un élément...",
+    "askingAbout": "Question sur :",
+    "thinking": "Réflexion en cours...",
+    "rerun": "Exécuter à nouveau",
+    "copyToInput": "Modifier et renvoyer",
+    "exampleQuestions": {
+      "columns": "Quelles colonnes a-t-il ?",
+      "owner": "À qui appartient-il ?",
+      "usage": "Comment est-il utilisé ?"
+    }
+  },
+  
+  "errors": {
+    "error": "Erreur",
+    "failedToSendMessage": "Échec de l'envoi du message"
+  }
+}
+

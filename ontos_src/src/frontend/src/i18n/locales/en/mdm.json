@@ -1,0 +1,89 @@
+{
+  "title": "Master Data Management",
+  "subtitle": "Define master data contracts and manage entity matching across systems",
+  "newConfiguration": "New MDM Configuration",
+  "configurations": "MDM Configurations",
+  "noConfigurations": "No MDM configurations yet.",
+  "getStarted": "Create your first configuration to get started.",
+  "sources": "sources",
+  "lastRun": "Last Run",
+  "stats": {
+    "matchingRuns": "Matching Runs",
+    "totalMatches": "Total Matches",
+    "newRecords": "New Records",
+    "pendingReview": "Pending Review"
+  },
+  "configDetails": {
+    "title": "Configuration Details",
+    "selectConfig": "Select a configuration to view details",
+    "startMatching": "Start Matching",
+    "editRules": "Edit MDM Rules",
+    "linkSource": "Link Source Contract",
+    "deleteConfig": "Delete Configuration"
+  },
+  "tabs": {
+    "overview": "Overview",
+    "sources": "Sources",
+    "matchingRules": "Matching Rules",
+    "matchingRuns": "Matching Runs",
+    "reviewQueue": "Review Queue"
+  },
+  "overview": {
+    "description": "Description",
+    "entityType": "Entity Type",
+    "goldenRecordTarget": "Golden Record Target"
+  },
+  "sourcesTab": {
+    "title": "Linked Sources",
+    "dataContract": "Data Contract",
+    "keyColumn": "Key Column",
+    "matchColumns": "Match Columns",
+    "noSources": "No source contracts linked yet."
+  },
+  "rulesTab": {
+    "title": "Matching Rules",
+    "noRules": "No matching rules configured yet.",
+    "matchingRulesButton": "Edit MDM Rules",
+    "description": "Configure the rules used to identify and match duplicate records."
+  },
+  "runsTab": {
+    "title": "Matching Run History",
+    "runId": "Run ID",
+    "status": "Status",
+    "matchesFound": "Matches Found",
+    "newRecords": "New Records",
+    "pendingReview": "Pending Review",
+    "noRuns": "No matching runs yet. Start a matching job to see results.",
+    "selectRun": "Select a run to view candidates"
+  },
+  "candidates": {
+    "title": "Match Candidates",
+    "sourceRecord": "Source Record",
+    "targetRecord": "Target Record",
+    "matchType": "Match Type",
+    "confidence": "Confidence",
+    "viewDetails": "View Details",
+    "approve": "Approve",
+    "reject": "Reject",
+    "mergeApproved": "Merge Approved",
+    "createReview": "Create Review Request",
+    "noCandidates": "No match candidates for this run."
+  },
+  "toast": {
+    "matchingStarted": "MDM matching job started",
+    "mergeCompleted": "Merge completed",
+    "configDeleted": "Configuration deleted",
+    "sourceRemoved": "Source link removed"
+  },
+  "errors": {
+    "loadFailed": "Failed to load MDM configurations",
+    "startMatchingFailed": "Failed to start matching",
+    "mergeFailed": "Merge failed",
+    "deleteFailed": "Delete failed"
+  },
+  "confirm": {
+    "deleteConfig": "Are you sure you want to delete this MDM configuration?",
+    "deleteSource": "Are you sure you want to remove this source link?"
+  }
+}
+

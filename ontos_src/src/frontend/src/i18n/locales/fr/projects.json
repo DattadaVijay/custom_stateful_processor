@@ -1,0 +1,88 @@
+{
+  "title": "Projets",
+  "addNewProject": "Ajouter un nouveau projet",
+  "editProject": "Modifier le projet",
+  "deleteProject": "Supprimer le projet",
+  "form": {
+    "dialog": {
+      "createTitle": "Créer un nouveau projet",
+      "editTitle": "Modifier le projet",
+      "createDescription": "Créer un nouveau projet et attribuer des équipes pour l'isolation de l'espace de travail.",
+      "editDescription": "Mettre à jour les détails du projet et les affectations d'équipe."
+    },
+    "sections": {
+      "info": "Informations sur le projet",
+      "teams": "Affectations d'équipe",
+      "tags": "Étiquettes"
+    },
+    "labels": {
+      "name": "Nom du projet *",
+      "title": "Titre d'affichage",
+      "description": "Description",
+      "projectType": "Type de projet",
+      "assignTeams": "Affecter des équipes",
+      "assignedTeams": "Équipes attribuées :",
+      "tags": "Étiquettes"
+    },
+    "placeholders": {
+      "name": "Saisir le nom du projet",
+      "title": "Saisir le titre d'affichage (optionnel)",
+      "description": "Saisir la description du projet (optionnel)",
+      "selectProjectType": "Sélectionner le type de projet",
+      "assignTeams": "Sélectionner des équipes à attribuer à ce projet",
+      "noTeamsAvailable": "Aucune équipe disponible",
+      "allTeamsAssigned": "Toutes les équipes déjà attribuées",
+      "selectTags": "Sélectionner des étiquettes...",
+      "enterTag": "Saisir une étiquette",
+      "noTagsHelp": "Aucune étiquette ajoutée pour le moment. Cliquez sur \"Ajouter une étiquette\" pour ajouter des étiquettes de projet."
+    },
+    "types": {
+      "PERSONAL": "PERSONAL",
+      "TEAM": "TEAM"
+    },
+    "buttons": {
+      "addTag": "Ajouter une étiquette",
+      "update": "Mettre à jour le projet",
+      "create": "Créer le projet"
+    },
+    "toasts": {
+      "createdTitle": "Projet créé",
+      "updatedTitle": "Projet mis à jour",
+      "createdDescription": "Le projet \"{{name}}\" a été créé avec succès.",
+      "updatedDescription": "Le projet \"{{name}}\" a été mis à jour avec succès.",
+      "createFailedTitle": "Échec de la création du projet",
+      "updateFailedTitle": "Échec de la mise à jour du projet",
+      "failedDescription": "Une erreur inattendue s'est produite."
+    }
+  },
+  "table": {
+    "name": "Nom",
+    "description": "Description",
+    "teams": "Équipes",
+    "tags": "Étiquettes",
+    "lastUpdated": "Dernière mise à jour",
+    "actions": "Actions",
+    "moreTeams": "de plus",
+    "moreTags": "de plus"
+  },
+  "permissions": {
+    "deniedView": "Vous n'avez pas la permission de voir les projets.",
+    "deniedCreate": "Vous n'avez pas la permission de créer des projets.",
+    "deniedEdit": "Vous n'avez pas la permission de modifier les projets.",
+    "deniedDelete": "Vous n'avez pas la permission de supprimer les projets.",
+    "permissionDenied": "Permission refusée"
+  },
+  "messages": {
+    "projectDeleted": "Projet supprimé",
+    "projectDeletedSuccess": "Le projet a été supprimé avec succès.",
+    "errorFetchingProjects": "Erreur lors de la récupération des projets",
+    "errorDeletingProject": "Erreur lors de la suppression du projet",
+    "errorLoadingData": "Erreur lors du chargement des données"
+  },
+  "deleteDialog": {
+    "title": "Êtes-vous absolument sûr ?",
+    "description": "Cette action ne peut pas être annulée. Cela supprimera définitivement le projet et le retirera de toutes les équipes.",
+    "cancel": "Annuler",
+    "delete": "Supprimer"
+  }
+}

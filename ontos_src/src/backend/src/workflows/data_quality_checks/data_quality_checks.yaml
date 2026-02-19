@@ -1,0 +1,93 @@
+name: "Data Quality Checks"
+description: "Run data quality checks on active data contracts"
+format: "MULTI_TASK"
+environments:
+  - environment_key: "dq-checks-env"
+    spec:
+      dependencies:
+        - "databricks-sdk>=0.60.0"
+        - "sqlalchemy"
+        - "psycopg2-binary"
+tasks:
+  - task_key: "data_quality_checks"
+    spark_python_task:
+      python_file: "data_quality_checks.py"
+      parameters:
+        - "--catalog"
+        - "{{job.parameters.catalog}}"
+        - "--schema"
+        - "{{job.parameters.schema}}"
+        - "--contract_statuses"
+        - "{{job.parameters.contract_statuses}}"
+        - "--verbose"
+        - "{{job.parameters.verbose}}"
+        - "--lakebase_instance_name"
+        - "{{job.parameters.lakebase_instance_name}}"
+        - "--postgres_host"
+        - "{{job.parameters.postgres_host}}"
+        - "--postgres_db"
+        - "{{job.parameters.postgres_db}}"
+        - "--postgres_port"
+        - "{{job.parameters.postgres_port}}"
+        - "--postgres_schema"
+        - "{{job.parameters.postgres_schema}}"
+        - "--product_name"
+        - "{{job.parameters.product_name}}"
+        - "--product_version"
+        - "{{job.parameters.product_version}}"
+    environment_key: "dq-checks-env"
+
+schedule:
+  quartz_cron_expression: "0 0 1 * * ?"  # Daily at 1 AM
+  timezone_id: "UTC"
+  pause_status: "PAUSED"
+
+# Standard runtime parameters (defaults, overridden by configurable_parameters from UI)
+parameters:
+  catalog: ""
+  schema: ""
+  contract_statuses: '["active", "certified"]'
+  verbose: "false"
+  lakebase_instance_name: ""
+  postgres_host: ""
+  postgres_db: ""
+  postgres_port: "5432"
+  postgres_schema: "public"
+  product_name: "ontos"
+  product_version: "0.0.0"
+
+# Configurable parameters (managed via UI)
+configurable_parameters:
+  - name: "contract_statuses"
+    type: "multi_select"
+    description: "Contract statuses to check for data quality"
+    required: true
+    default: ["active", "certified"]
+    options: ["draft", "active", "certified", "deprecated", "retired"]
+
+  - name: "catalog"
+    type: "string"
+    description: "Default catalog for unqualified table names"
+    required: false
+    default: null
+
+  - name: "schema"
+    type: "string"
+    description: "Default schema for unqualified table names"
+    required: false
+    default: null
+
+  - name: "verbose"
+    type: "boolean"
+    description: "Enable verbose logging"
+    required: false
+    default: false
+
+timeout_seconds: 3600
+max_concurrent_runs: 1
+
+tags:
+  environment: "production"
+  team: "data_quality"
+  workflow_type: "validation"
+  owner: "ontos"

@@ -1,0 +1,378 @@
+{
+  "title": "Impostazioni",
+  "tabs": {
+    "general": "Generale",
+    "databricks": "Databricks",
+    "git": "Git",
+    "jobs": "Job & Workflow",
+    "roles": "Ruoli",
+    "semanticModels": "Modelli semantici",
+    "tags": "Tag",
+    "search": "Ricerca",
+    "mcpTokens": "Token MCP",
+    "workflows": "Workflow",
+    "uiCustomization": "Personalizzazione UI"
+  },
+  "accessDenied": {
+    "title": "Accesso negato",
+    "message": "Non hai il permesso di accedere alla pagina Impostazioni. Questa pagina è riservata agli utenti con privilegi amministrativi.",
+    "action": "Se ritieni di dover avere accesso, contatta il tuo amministratore o ",
+    "returnHome": "torna alla home page",
+    "requestRole": " per richiedere un ruolo appropriato."
+  },
+  "general": {
+    "title": "Impostazioni generali",
+    "description": "Configura le impostazioni di base dell'applicazione",
+    "enableBackgroundJobs": "Abilita job in background",
+    "workspaceDeploymentPath": {
+      "label": "Percorso di distribuzione del workspace",
+      "placeholder": "/Workspace/Users/user@domain.com/ontos-workflows",
+      "help": "Percorso nel workspace Databricks dove vengono distribuiti i file di workflow per i job in background."
+    },
+    "unityCatalog": {
+      "title": "Unity Catalog",
+      "help": "Posizione Unity Catalog per l'archiviazione dei dati dell'applicazione.",
+      "catalog": {
+        "label": "Catalogo",
+        "placeholder": "app_data"
+      },
+      "schema": {
+        "label": "Schema",
+        "placeholder": "app_ontos"
+      },
+      "volume": {
+        "label": "Volume",
+        "placeholder": "app_files"
+      }
+    },
+    "auditLog": {
+      "label": "Directory log di audit",
+      "placeholder": "audit_logs",
+      "help": "Directory dove vengono archiviati i file di log di audit."
+    },
+    "llm": {
+      "title": "Configurazione AI / LLM",
+      "enabled": {
+        "label": "Abilita funzionalità AI"
+      },
+      "endpoint": {
+        "label": "Endpoint LLM",
+        "placeholder": "databricks-claude-sonnet-4-5",
+        "help": "Nome dell'endpoint di serving Databricks per l'LLM."
+      },
+      "systemPrompt": {
+        "label": "Prompt di sistema",
+        "placeholder": "Sei un Data Steward...",
+        "help": "Prompt di sistema che definisce il comportamento dell'assistente AI."
+      },
+      "disclaimer": {
+        "label": "Testo di esclusione di responsabilità",
+        "placeholder": "Questa funzionalità utilizza l'AI per analizzare le risorse dati...",
+        "help": "Esclusione di responsabilità mostrata agli utenti quando utilizzano le funzionalità AI."
+      }
+    },
+    "saveButton": "Salva impostazioni",
+    "messages": {
+      "saveSuccess": "Impostazioni salvate con successo",
+      "saveError": "Impossibile salvare le impostazioni"
+    }
+  },
+  "databricks": {
+    "title": "Impostazioni Databricks",
+    "description": "Configura le impostazioni di connessione Databricks",
+    "labels": {
+      "host": "Host",
+      "token": "Token",
+      "warehouseId": "ID Warehouse",
+      "catalog": "Catalogo",
+      "schema": "Schema"
+    },
+    "placeholders": {
+      "host": "https://<il-tuo-workspace>.cloud.databricks.com",
+      "token": "dapi...",
+      "warehouseId": "1234abcd5678efgh",
+      "catalog": "main",
+      "schema": "uc_swiss_knife"
+    }
+  },
+  "git": {
+    "title": "Impostazioni Git",
+    "description": "Configura il repository Git per l'archiviazione YAML",
+    "labels": {
+      "repoUrl": "URL del repository",
+      "branch": "Branch",
+      "token": "Token"
+    },
+    "placeholders": {
+      "repoUrl": "https://github.com/la-tua-org/il-tuo-repo.git",
+      "branch": "main",
+      "token": "ghp_... o simile"
+    }
+  },
+  "jobs": {
+    "title": "Configurazione job & workflow",
+    "description": "Configura il cluster job Databricks e abilita i workflow in background",
+    "jobClusterId": {
+      "label": "ID cluster job (opzionale)",
+      "placeholder": "Lascia vuoto per il calcolo serverless"
+    },
+    "availableWorkflows": {
+      "label": "Workflow disponibili",
+      "description": "Abilita o disabilita i workflow in background"
+    },
+    "noWorkflows": "Nessun workflow disponibile",
+    "saveButton": "Salva configurazione",
+    "messages": {
+      "saveSuccess": "Impostazioni salvate con successo",
+      "saveError": "Impossibile salvare le impostazioni"
+    }
+  },
+  "jobsActions": {
+    "start": "Avvia",
+    "stop": "Ferma",
+    "pause": "Metti in pausa",
+    "resume": "Riprendi",
+    "history": "Visualizza cronologia esecuzioni",
+    "cannotDisableRunning": "Impossibile disabilitare un workflow in esecuzione"
+  },
+  "jobRuns": {
+    "viewHistory": "Visualizza cronologia esecuzioni",
+    "dialogTitle": "Cronologia esecuzioni: {{workflowName}}",
+    "dialogDescription": "Cronologia recente delle esecuzioni per questo workflow",
+    "emptyState": "Nessuna esecuzione trovata per questo workflow",
+    "runId": "ID esecuzione",
+    "runName": "Nome",
+    "status": "Stato",
+    "started": "Avviato",
+    "duration": "Durata",
+    "notified": "Notificato",
+    "statuses": {
+      "success": "Successo",
+      "failed": "Fallito",
+      "canceled": "Annullato",
+      "timedout": "Tempo scaduto",
+      "running": "In esecuzione",
+      "pending": "In attesa",
+      "unknown": "Sconosciuto"
+    }
+  },
+  "roles": {
+    "title": "Controllo accessi basato sui ruoli",
+    "description": "Definire i ruoli dell'applicazione e assegnare permessi ai gruppi di directory.",
+    "table": {
+      "nameColumn": "Nome",
+      "descriptionColumn": "Descrizione",
+      "assignedGroupsColumn": "Gruppi assegnati",
+      "none": "Nessuno",
+      "assigned": "Assegnato",
+      "request": "Richiedi",
+      "requestTooltip": "Richiedi accesso a questo ruolo",
+      "alreadyAssignedTooltip": "Hai già questo ruolo"
+    },
+    "dialog": {
+      "createTitle": "Crea ruolo",
+      "editTitle": "Modifica ruolo: {{name}}",
+      "description": "Definire il nome del ruolo, i gruppi assegnati, i permessi delle funzionalità e i privilegi di approvazione."
+    },
+    "tabs": {
+      "general": "Generale",
+      "privileges": "Privilegi",
+      "permissions": "Permessi",
+      "deployment": "Distribuzione",
+      "accessControl": "Controllo accessi"
+    },
+    "general": {
+      "roleName": "Nome ruolo",
+      "roleNameRequired": "Il nome del ruolo è obbligatorio",
+      "description": "Descrizione",
+      "assignedGroups": "Gruppi di directory assegnati (separati da virgola)",
+      "assignedGroupsPlaceholder": "es. data-stewards, finance-team",
+      "assignedGroupsHelp": "Gli utenti appartenenti a questi gruppi erediteranno i permessi di questo ruolo."
+    },
+    "privileges": {
+      "homeSections": {
+        "title": "Sezioni home",
+        "description": "Selezionare quali sezioni appaiono nella pagina home per gli utenti con questo ruolo."
+      },
+      "approvalPrivileges": {
+        "title": "Privilegi di approvazione",
+        "description": "Concedere a questo ruolo la capacità di approvare tipi specifici di richieste."
+      }
+    },
+    "permissions": {
+      "featurePermissions": {
+        "title": "Permessi delle funzionalità",
+        "description": "Configurare i livelli di accesso per ogni funzionalità nell'applicazione."
+      }
+    },
+    "deployment": {
+      "title": "Politica di distribuzione",
+      "description": "Controllare in quali cataloghi/schemi Unity Catalog gli utenti con questo ruolo possono distribuire. Supporta caratteri jolly (* per qualsiasi) e variabili template ({username}, {email}).",
+      "allowedCatalogs": {
+        "label": "Cataloghi consentiti (separati da virgola)",
+        "placeholder": "es. prod_catalog, {username}_sandbox, *",
+        "help": "Lasciare vuoto per impedire le distribuzioni. Usare * per consentire tutti i cataloghi."
+      },
+      "allowedSchemas": {
+        "label": "Schemi consentiti (separati da virgola, opzionale)",
+        "placeholder": "es. dev, {username}_schema, *",
+        "help": "Lasciare vuoto per consentire qualsiasi schema all'interno dei cataloghi consentiti."
+      },
+      "defaultCatalog": {
+        "label": "Catalogo predefinito",
+        "placeholder": "es. {username}_sandbox",
+        "help": "Preselezionato nell'interfaccia"
+      },
+      "defaultSchema": {
+        "label": "Schema predefinito",
+        "placeholder": "es. default",
+        "help": "Preselezionato nell'interfaccia"
+      },
+      "requireApproval": "Richiede approvazione per le distribuzioni",
+      "canApprove": "Può approvare richieste di distribuzione"
+    },
+    "accessControl": {
+      "requestableBy": {
+        "title": "Chi può richiedere questo ruolo?",
+        "description": "Seleziona quali ruoli sono autorizzati a richiedere l'accesso a questo ruolo. Gli utenti con questi ruoli vedranno questo ruolo nella loro lista dei ruoli richiedibili."
+      },
+      "approvers": {
+        "title": "Chi può approvare le richieste per questo ruolo?",
+        "description": "Seleziona quali ruoli possono approvare le richieste di accesso per questo ruolo. Gli utenti con questi ruoli riceveranno notifiche quando qualcuno richiede questo ruolo.",
+        "hint": "Se non sono selezionati approvatori, le richieste saranno inviate all'Admin per impostazione predefinita."
+      },
+      "noRole": "Utenti senza ruolo (nuovi utenti)",
+      "noRolesAvailable": "Nessun altro ruolo disponibile",
+      "defaultApprover": "Predefinito"
+    },
+    "actions": {
+      "cancel": "Annulla",
+      "create": "Crea ruolo",
+      "update": "Aggiorna ruolo",
+      "addRole": "Aggiungi ruolo",
+      "actions": "Azioni",
+      "editRole": "Modifica ruolo",
+      "deleteRole": "Elimina ruolo"
+    }
+  },
+  "mcpTokens": {
+    "title": "Token API MCP",
+    "description": "Gestisci i token API per le integrazioni degli assistenti AI tramite il Model Context Protocol",
+    "refresh": "Aggiorna",
+    "createToken": "Crea token",
+    "showRevokedTokens": "Mostra token revocati",
+    "emptyState": {
+      "title": "Ancora nessun token MCP",
+      "description": "Crea un token per consentire agli assistenti AI di accedere ai tuoi strumenti"
+    },
+    "table": {
+      "name": "Nome",
+      "scopes": "Ambiti",
+      "created": "Creato",
+      "lastUsed": "Ultimo utilizzo",
+      "expires": "Scade",
+      "status": "Stato",
+      "actions": "Azioni",
+      "never": "Mai",
+      "moreScopes": "+{{count}} altri",
+      "createdBy": "da {{name}}"
+    },
+    "status": {
+      "active": "Attivo",
+      "revoked": "Revocato",
+      "expired": "Scaduto"
+    },
+    "tooltips": {
+      "revokeToken": "Revoca token"
+    },
+    "info": {
+      "title": "Utilizzo dei token MCP",
+      "description": "I token MCP consentono agli assistenti AI di interagire con la piattaforma di governance dei dati. Ogni token ha ambiti specifici che controllano quali strumenti sono accessibili.",
+      "endpoint": "Endpoint:",
+      "header": "Header:"
+    },
+    "createDialog": {
+      "title": "Crea token MCP",
+      "description": "Crea un nuovo token API per le integrazioni degli assistenti AI. Il token verrà mostrato solo una volta.",
+      "tokenName": "Nome del token",
+      "tokenNamePlaceholder": "es., Assistente Claude - Team Analytics",
+      "tokenNameHelp": "Un nome descrittivo per identificare questo token",
+      "expiration": "Scadenza (giorni)",
+      "expirationHelp": "Lascia vuoto per nessuna scadenza",
+      "scopes": "Ambiti",
+      "scopesHelp": "Seleziona i permessi che questo token deve avere",
+      "selectedScopes": "Selezionati:",
+      "cancel": "Annulla",
+      "create": "Crea token",
+      "creating": "Creazione..."
+    },
+    "createdDialog": {
+      "title": "Token creato con successo",
+      "warning": "Copia questo token ora — non verrà mostrato di nuovo!",
+      "tokenName": "Nome del token",
+      "apiToken": "Token API",
+      "scopes": "Ambiti",
+      "expires": "Scade",
+      "copy": "Copia",
+      "copied": "Copiato!",
+      "done": "Fatto"
+    },
+    "revokeDialog": {
+      "title": "Revocare il token?",
+      "description": "Sei sicuro di voler revocare il token",
+      "warning": "Questa azione non può essere annullata. Gli assistenti AI che utilizzano questo token perderanno immediatamente l'accesso.",
+      "cancel": "Annulla",
+      "revoke": "Revoca token"
+    },
+    "messages": {
+      "loadError": "Impossibile caricare i token MCP",
+      "tokenNameRequired": "Il nome del token è obbligatorio",
+      "scopeRequired": "È richiesto almeno un ambito",
+      "createError": "Impossibile creare il token",
+      "copied": "Token copiato negli appunti",
+      "revoked": "Il token \"{{name}}\" è stato revocato",
+      "revokeError": "Impossibile revocare il token"
+    }
+  },
+  "uiCustomization": {
+    "title": "Personalizzazione UI",
+    "description": "Personalizza il branding, le impostazioni della lingua e l'aspetto dell'applicazione.",
+    "i18n": {
+      "title": "Impostazioni lingua",
+      "enableLabel": "Abilita internazionalizzazione",
+      "enableDescription": "Quando disabilitato, l'applicazione userà sempre l'inglese."
+    },
+    "logo": {
+      "title": "Logo personalizzato",
+      "urlLabel": "URL del logo",
+      "urlPlaceholder": "https://esempio.com/logo.svg",
+      "help": "Inserisci l'URL del tuo logo personalizzato. Formati supportati: SVG, PNG, JPG.",
+      "invalidUrl": "Inserisci un URL HTTP o HTTPS valido",
+      "preview": "Anteprima:",
+      "loadError": "Impossibile caricare l'immagine",
+      "openInNewTab": "Apri in nuova scheda"
+    },
+    "about": {
+      "title": "Contenuto personalizzato pagina Informazioni",
+      "description": "Sostituisci il contenuto predefinito con Markdown personalizzato.",
+      "editTab": "Modifica",
+      "previewTab": "Anteprima",
+      "placeholder": "# Informazioni sulla nostra azienda\n\nScrivi qui il tuo contenuto personalizzato con **Markdown**...",
+      "noContent": "Nessun contenuto personalizzato. Verrà mostrata la pagina predefinita."
+    },
+    "css": {
+      "title": "Foglio di stile personalizzato",
+      "warningTitle": "Usare con cautela",
+      "warningDescription": "CSS non valido può rompere l'interfaccia. Le modifiche richiedono il ricaricamento della pagina.",
+      "label": "CSS personalizzato",
+      "placeholder": "/* Sovrascrivi variabili CSS */\n:root {\n  --primary: 220 70% 50%;\n}",
+      "help": "Inserisci CSS personalizzato per sovrascrivere il tema predefinito."
+    },
+    "saveButton": "Salva impostazioni UI",
+    "messages": {
+      "saveSuccess": "Impostazioni di personalizzazione salvate",
+      "saveError": "Impossibile salvare le impostazioni",
+      "reloadRequired": "Ricarica la pagina per vedere alcune modifiche."
+    }
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "title": "セキュリティ機能",
+  "subtitle": "データセキュリティとプライバシー設定の管理",
+  "newFeature": "新規セキュリティ機能",
+  "addFeature": "セキュリティ機能を追加",
+  "editFeature": "セキュリティ機能を編集",
+  "searchPlaceholder": "セキュリティ機能を検索...",
+  "loading": "セキュリティ機能を読み込み中...",
+  "toast": {
+    "featureCreated": "セキュリティ機能が正常に作成されました",
+    "featureUpdated": "セキュリティ機能が正常に更新されました",
+    "featureDeleted": "セキュリティ機能が正常に削除されました",
+    "loadError": "セキュリティ機能の読み込みに失敗しました",
+    "saveError": "セキュリティ機能の保存に失敗しました",
+    "deleteError": "セキュリティ機能の削除に失敗しました"
+  },
+  "table": {
+    "name": "名前",
+    "type": "タイプ",
+    "target": "対象アセット",
+    "status": "ステータス",
+    "enabled": "有効",
+    "updated": "更新日",
+    "actions": "アクション",
+    "conditions": "条件",
+    "lastUpdated": "最終更新"
+  },
+  "messages": {
+    "success": "成功",
+    "error": "エラー",
+    "deleteConfirm": "このセキュリティ機能を削除してもよろしいですか？",
+    "deleteSuccess": "セキュリティ機能が正常に削除されました",
+    "deleteError": "セキュリティ機能の削除に失敗しました",
+    "enableSuccess": "セキュリティ機能が有効になりました",
+    "disableSuccess": "セキュリティ機能が無効になりました"
+  },
+  "types": {
+    "encryption": "暗号化",
+    "masking": "データマスキング",
+    "rowLevel": "行レベルセキュリティ",
+    "columnLevel": "列レベルセキュリティ",
+    "differential": "差分プライバシー",
+    "rowFiltering": "行フィルタリング",
+    "columnMasking": "列マスキング",
+    "differentialPrivacy": "差分プライバシー",
+    "homomorphicEncryption": "準同型暗号",
+    "envelopeEncryption": "エンベロープ暗号化",
+    "tokenization": "トークン化"
+  },
+  "details": {
+    "backToList": "セキュリティ機能一覧に戻る",
+    "edit": "編集",
+    "delete": "削除",
+    "enable": "有効化",
+    "disable": "無効化",
+    "notFound": "セキュリティ機能が見つかりません",
+    "loading": "読み込み中..."
+  },
+  "form": {
+    "createTitle": "セキュリティ機能を追加",
+    "editTitle": "セキュリティ機能を編集",
+    "name": "名前",
+    "type": "タイプ",
+    "selectType": "タイプを選択",
+    "target": "対象",
+    "configuration": "設定",
+    "cancel": "キャンセル",
+    "save": "保存",
+    "saveChanges": "変更を保存",
+    "addFeature": "機能を追加"
+  }
+}
+

@@ -1,0 +1,190 @@
+{
+  "title": "Contratti Dati",
+  "subtitle": "Gestisci i tuoi contratti dati e specifiche",
+  "newContract": "Nuovo Contratto",
+  "uploadFile": "Carica File",
+  "importContract": "Importa",
+  "searchPlaceholder": "Cerca contratti dati...",
+  "loading": "Caricamento contratti dati...",
+  "filters": {
+    "allStatus": "Tutti gli Stati",
+    "allOwners": "Tutti i Proprietari"
+  },
+  "table": {
+    "name": "Nome",
+    "status": "Stato",
+    "version": "Versione",
+    "owner": "Proprietario",
+    "schema": "Schema",
+    "tags": "Tag",
+    "created": "Creato",
+    "updated": "Aggiornato",
+    "actions": "Azioni",
+    "viewDetails": "Visualizza dettagli",
+    "editContract": "Modifica contratto",
+    "deleteContract": "Elimina contratto",
+    "viewSchema": "Visualizza schema"
+  },
+  "messages": {
+    "deleteConfirm": "Sei sicuro di voler eliminare questo contratto dati?",
+    "deleteSuccess": "Contratto dati eliminato con successo",
+    "deleteError": "Impossibile eliminare il contratto dati",
+    "fetchError": "Impossibile recuperare i contratti dati",
+    "importSuccess": "Contratto dati importato con successo",
+    "importError": "Impossibile importare il contratto dati",
+    "success": "Successo",
+    "error": "Errore"
+  },
+  "status": {
+    "draft": "Bozza",
+    "sandbox": "Sandbox",
+    "proposed": "Proposto",
+    "under_review": "In revisione",
+    "in_review": "In revisione",
+    "active": "Attivo",
+    "approved": "Approvato",
+    "certified": "Certificato",
+    "deprecated": "Obsoleto",
+    "retired": "Ritirato",
+    "published": "Pubblicato"
+  },
+  "details": {
+    "backToList": "Torna alla Lista",
+    "edit": "Modifica",
+    "delete": "Elimina",
+    "export": "Esporta",
+    "clone": "Clona",
+    "validate": "Valida",
+    "notFound": "Contratto dati non trovato",
+    "loading": "Caricamento...",
+    "noDescription": "Nessuna descrizione fornita",
+    "coreMetadata": {
+      "status": "Stato",
+      "version": "Versione",
+      "owner": "Proprietario",
+      "domain": "Dominio",
+      "created": "Creato",
+      "updated": "Aggiornato",
+      "tags": "Tag",
+      "noTags": "Nessun tag",
+      "notAssigned": "Non assegnato"
+    },
+    "sections": {
+      "overview": "Panoramica",
+      "schema": "Schema",
+      "qualityRules": "Regole di Qualità",
+      "sampleData": "Dati di Esempio",
+      "accessControl": "Controllo Accesso",
+      "linkedEntities": "Entità Collegate",
+      "history": "Cronologia"
+    },
+    "schema": {
+      "title": "Definizione dello Schema",
+      "subtitle": "Campi e tipi di dati definiti in questo contratto",
+      "noSchema": "Nessuno schema definito",
+      "addField": "Aggiungi Campo",
+      "columns": {
+        "name": "Nome",
+        "type": "Tipo",
+        "nullable": "Nullable",
+        "description": "Descrizione",
+        "constraints": "Vincoli"
+      }
+    },
+    "qualityRules": {
+      "title": "Regole di Qualità dei Dati",
+      "subtitle": "Controlli e validazioni di qualità",
+      "noRules": "Nessuna regola di qualità definita",
+      "addRule": "Aggiungi Regola",
+      "columns": {
+        "name": "Nome Regola",
+        "type": "Tipo",
+        "severity": "Severità",
+        "description": "Descrizione",
+        "status": "Stato"
+      }
+    },
+    "sampleData": {
+      "title": "Dati di Esempio",
+      "subtitle": "Anteprima del formato dati atteso",
+      "noData": "Nessun dato di esempio disponibile",
+      "loadSample": "Carica Esempio"
+    },
+    "accessControl": {
+      "title": "Controllo Accesso",
+      "subtitle": "Permessi e politiche di accesso",
+      "noRules": "Nessuna regola di accesso definita"
+    },
+    "linkedEntities": {
+      "title": "Entità Collegate",
+      "subtitle": "Prodotti dati e dataset che usano questo contratto",
+      "dataProducts": "Prodotti Dati",
+      "datasets": "Dataset",
+      "noLinkedProducts": "Nessun prodotto dati collegato",
+      "noLinkedDatasets": "Nessun dataset collegato"
+    },
+    "deleteConfirm": "Sei sicuro di voler eliminare \"{{name}}\"?",
+    "deleteSuccess": "Contratto dati eliminato con successo",
+    "deleteError": "Impossibile eliminare il contratto dati",
+    "validationSuccess": "Validazione del contratto riuscita",
+    "validationError": "Validazione del contratto fallita"
+  },
+  "form": {
+    "createTitle": "Crea Contratto Dati",
+    "editTitle": "Modifica Contratto Dati",
+    "name": "Nome",
+    "namePlaceholder": "Inserisci il nome del contratto",
+    "description": "Descrizione",
+    "descriptionPlaceholder": "Inserisci la descrizione del contratto",
+    "status": "Stato",
+    "version": "Versione",
+    "versionPlaceholder": "es., 1.0.0",
+    "domain": "Dominio",
+    "selectDomain": "Seleziona un dominio",
+    "noDomain": "Nessun dominio",
+    "ownerTeam": "Team Proprietario",
+    "selectOwnerTeam": "Seleziona team proprietario",
+    "noOwner": "Nessun proprietario",
+    "format": "Formato",
+    "selectFormat": "Seleziona formato",
+    "tags": "Tag",
+    "tagsPlaceholder": "Inserisci tag separati da virgole",
+    "cancel": "Annulla",
+    "save": "Salva",
+    "create": "Crea",
+    "saving": "Salvataggio...",
+    "createSuccess": "Contratto dati creato con successo",
+    "updateSuccess": "Contratto dati aggiornato con successo",
+    "createError": "Impossibile creare il contratto dati",
+    "updateError": "Impossibile aggiornare il contratto dati"
+  },
+  "import": {
+    "title": "Importa Contratto Dati",
+    "dropzone": "Trascina un file YAML o JSON qui, o clicca per selezionare",
+    "pasteLabel": "O incolla il contenuto direttamente",
+    "pastePlaceholder": "Incolla contenuto YAML o JSON...",
+    "cancel": "Annulla",
+    "import": "Importa",
+    "importing": "Importazione..."
+  },
+  "editor": {
+    "title": "Editor Contratto",
+    "schemaTab": "Schema",
+    "qualityTab": "Qualità",
+    "rawTab": "Raw",
+    "preview": "Anteprima",
+    "validate": "Valida",
+    "save": "Salva"
+  },
+  "schemaEditor": {
+    "unsavedChanges": "Modifiche non salvate",
+    "editingColumn": "Modifica colonna",
+    "addingNewColumn": "Aggiungi nuova colonna",
+    "applyWithUpdateOrSave": "Applica con Aggiorna colonna o Salva modifiche per includerle nello schema.",
+    "updateColumn": "Aggiorna colonna",
+    "addColumn": "Aggiungi colonna",
+    "addSchema": "Aggiungi schema",
+    "cancel": "Annulla"
+  }
+}
+

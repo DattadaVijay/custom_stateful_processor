@@ -1,0 +1,223 @@
+{
+  "title": "Willkommen bei Ontos",
+  "tagline": "Verwalten Sie Business Glossar, Datenverträge, Datenprodukte, Personas und mehr",
+  "search": {
+    "placeholder": "Suche nach Datenprodukten, Glossarbegriffen, Verträgen..."
+  },
+  "overview": {
+    "title": "Übersicht",
+    "loading": "Wird geladen...",
+    "noData": "Keine Übersichtsdaten verfügbar für die ausgewählten Feature-Vorschauen oder Ihre Berechtigungen.",
+    "error": "Fehler",
+    "tiles": {
+      "compliance": {
+        "title": "Compliance",
+        "description": "Aktueller Compliance-Score",
+        "notAvailable": "N/V"
+      },
+      "dataContracts": {
+        "title": "Datenverträge",
+        "description": "Aktive Verträge"
+      },
+      "dataProducts": {
+        "title": "Datenprodukte",
+        "description": "Gesamtzahl Datenprodukte"
+      },
+      "semanticModels": {
+        "title": "Business Glossar",
+        "description": "Modelle / Begriffe"
+      },
+      "estates": {
+        "title": "Estates",
+        "description": "Keine Estates konfiguriert",
+        "lastSync": "Letzte Synchronisation: {{date}} ({{status}})",
+        "syncStatus": {
+          "success": "erfolgreich",
+          "failed": "fehlgeschlagen",
+          "in_progress": "in Bearbeitung",
+          "unknown": "unbekannt"
+        }
+      }
+    }
+  },
+  "complianceTrend": {
+    "title": "Compliance-Trend",
+    "period": "Letzte 30 Tage",
+    "loading": "Compliance-Daten werden geladen...",
+    "error": "Fehler beim Laden der Trenddaten: {{error}}",
+    "noData": "Keine Compliance-Daten für den ausgewählten Zeitraum verfügbar.",
+    "chartLabel": "Compliance-Score"
+  },
+  "noAccess": {
+    "message": "Ihnen ist derzeit keine spezifische Rolle zugewiesen.",
+    "action": "Um auf Funktionen zuzugreifen, bitte",
+    "link": "Zugriff auf eine Rolle beantragen",
+    "contactAdmin": "Bitte kontaktieren Sie einen Administrator, um Zugriff auf die Anwendung anzufordern."
+  },
+  "requestRoleSection": {
+    "title": "Rollen",
+    "cardTitle": "Verfügbare Rollen",
+    "description": "Ihnen sind derzeit keine Anwendungsrollen zugewiesen. Wählen Sie unten eine Rolle aus, um Zugriff anzufordern und loszulegen.",
+    "info": "Nach dem Absenden einer Anfrage wird ein Administrator diese prüfen und Sie werden über die Benachrichtigungsglocke über die Entscheidung informiert.",
+    "noDescription": "Keine Beschreibung verfügbar",
+    "requestAccess": "Zugriff anfordern",
+    "moreRoles": "Und {{count}} weitere Rollen verfügbar..."
+  },
+  "quickActions": {
+    "title": "Schnellzugriff",
+    "loading": "Wird geladen...",
+    "noActions": "Keine Aktionen verfügbar.",
+    "actions": {
+      "browseProducts": "Datenprodukte durchsuchen",
+      "browseGlossary": "Business Glossar durchsuchen",
+      "createProduct": "Datenprodukt erstellen",
+      "defineContract": "Datenvertrag definieren",
+      "reviewAssets": "Daten-Assets überprüfen",
+      "manageEntitlements": "Berechtigungen verwalten",
+      "catalogCommander": "Katalog-Commander",
+      "settings": "Einstellungen"
+    }
+  },
+  "recentActivity": {
+    "title": "Letzte Aktivitäten",
+    "loading": "Letzte Aktivitäten werden geladen...",
+    "error": "Fehler beim Laden der letzten Aktivitäten",
+    "noActivity": "Keine letzten Aktivitäten.",
+    "entityLabel": "Entität:",
+    "actionLabel": "Aktion:",
+    "userLabel": "Benutzer:",
+    "timeLabel": "Zeit:",
+    "iriLabel": "Iri:",
+    "linkIdLabel": "Link-ID:",
+    "openButton": "Öffnen",
+    "openDetails": "Details öffnen",
+    "noDetails": "Keine Details verfügbar",
+    "by": "von",
+    "at": "um"
+  },
+  "discoverySection": {
+    "title": "Entdeckung",
+    "dataDomains": "Daten-Domains",
+    "exactMatchOnly": "Nur exakte Übereinstimmungen",
+    "allDomains": "Alle Domains",
+    "clearFilter": "Domain-Filter löschen",
+    "selectDomain": "Wählen Sie eine Domain aus, um ihre Hierarchie anzuzeigen und Produkte zu filtern.",
+    "popularProducts": "Beliebte Datenprodukte",
+    "loading": "Produkte werden geladen...",
+    "error": "Fehler beim Laden der Datenprodukte",
+    "noProducts": "Keine Datenprodukte gefunden.",
+    "domain": "Domain",
+    "owner": "Eigentümer",
+    "unknown": "Unbekannt",
+    "status": "N/V",
+    "untitled": "Ohne Titel",
+    "info": "Info"
+  },
+  "dataCurationSection": {
+    "title": "Datenkuration",
+    "createDataProduct": {
+      "title": "Datenprodukt erstellen",
+      "description": "Verwenden Sie den Assistenten, um ein neues Datenprodukt zu definieren.",
+      "button": "Öffnen"
+    },
+    "defineDataContract": {
+      "title": "Datenvertrag definieren",
+      "description": "Erstellen oder aktualisieren Sie einen technischen Vertrag.",
+      "button": "Öffnen"
+    },
+    "createDataset": {
+      "title": "Datensatz erstellen",
+      "description": "Verwalten Sie Datensätze zum Abgleichen und Zusammenführen.",
+      "button": "Öffnen"
+    },
+    "createSchema": {
+      "title": "Schema erstellen",
+      "description": "Erstellen oder verwalten Sie Schemas und Berechtigungen.",
+      "openButton": "Öffnen",
+      "createButton": "Erstellen"
+    },
+    "createCatalog": {
+      "title": "Katalog erstellen",
+      "description": "Stellen Sie Kataloge bereit und verwalten Sie den Zugriff.",
+      "openButton": "Öffnen",
+      "createButton": "Erstellen"
+    }
+  },
+  "requiredActionsSection": {
+    "title": "Erforderliche Aktionen",
+    "pendingNotifications": "Ausstehende Benachrichtigungen",
+    "loading": "Wird geladen...",
+    "noActions": "Keine ausstehenden Aktionen.",
+    "openButton": "Öffnen",
+    "markReadButton": "Als gelesen markieren",
+    "readLabel": "Gelesen",
+    "alertMessage": "Diese Liste zeigt nur aktionserforderliche Benachrichtigungen, die Ihrer/Ihren Rolle(n) zugeordnet sind."
+  },
+  "marketplace": {
+    "welcome": "Hallo",
+    "welcomeWithName": "Hallo, {{name}}",
+    "tagline": "Willkommen auf dem Daten-Marktplatz. Entdecken, verstehen und abonnieren Sie Datenprodukte und Datensätze.",
+    "searchPlaceholder": "Wie können wir Ihnen heute helfen?",
+    "searchDatasetsPlaceholder": "Datensätze nach Name, Pfad oder Vertrag suchen...",
+    "browseAssetType": "Durchsuchen:",
+    "assetTypes": {
+      "products": "Datenprodukte",
+      "datasets": "Datensätze"
+    },
+    "browseDataDomains": "Daten-Domains durchsuchen",
+    "allDomains": "Alle Domains",
+    "loadingDomains": "Domains werden geladen...",
+    "tabs": {
+      "explore": "Daten erkunden",
+      "subscriptions": "Meine Daten"
+    },
+    "products": {
+      "available": "{{count}} Produkt verfügbar",
+      "available_plural": "{{count}} Produkte verfügbar",
+      "subscribed": "{{count}} abonniertes Produkt",
+      "subscribed_plural": "{{count}} abonnierte Produkte",
+      "noProducts": "Keine Datenprodukte gefunden.",
+      "adjustFilters": "Versuchen Sie, Ihre Suche oder Filter anzupassen.",
+      "noSubscriptions": "Sie haben noch keine Datenprodukte abonniert.",
+      "browseToSubscribe": "Durchsuchen Sie den Tab \"Erkunden\", um Produkte zum Abonnieren zu finden.",
+      "exploreProducts": "Datenprodukte erkunden",
+      "owner": "Eigentümer",
+      "unknown": "Unbekannt"
+    },
+    "datasets": {
+      "available": "{{count}} Datensatz verfügbar",
+      "available_plural": "{{count}} Datensätze verfügbar",
+      "subscribed": "{{count}} abonnierter Datensatz",
+      "subscribed_plural": "{{count}} abonnierte Datensätze",
+      "noDatasets": "Keine Datensätze gefunden.",
+      "adjustFilters": "Versuchen Sie, Ihre Suche anzupassen.",
+      "noSubscriptions": "Sie haben noch keine Datensätze abonniert.",
+      "browseToSubscribe": "Durchsuchen Sie den Tab \"Erkunden\", um Datensätze zum Abonnieren zu finden.",
+      "exploreDatasets": "Datensätze erkunden",
+      "owner": "Eigentümer"
+    },
+    "modeToggle": {
+      "marketplace": "Marktplatz",
+      "management": "Verwaltung"
+    },
+    "domainView": {
+      "pills": "Liste",
+      "graph": "Graph"
+    },
+    "exactMatchOnly": "Nur exakte Übereinstimmung",
+    "selectDomainForGraph": "Wählen Sie eine Domain, um ihre Hierarchie anzuzeigen.",
+    "domainInfo": {
+      "parentDomain": "Übergeordnet",
+      "childDomains": "{{count}} untergeordnete Domain",
+      "childDomains_plural": "{{count}} untergeordnete Domains"
+    },
+    "tilesPerRow": {
+      "placeholder": "Kacheln",
+      "one": "1 pro Zeile",
+      "two": "2 pro Zeile",
+      "three": "3 pro Zeile",
+      "four": "4 pro Zeile"
+    },
+    "openInDetails": "In Detailansicht öffnen"
+  }
+}

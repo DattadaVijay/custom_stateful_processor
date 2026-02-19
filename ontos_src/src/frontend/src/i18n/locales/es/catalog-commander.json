@@ -1,0 +1,76 @@
+{
+  "title": "Comandante de Catálogo",
+  "catalogBrowser": "Navegador de Catálogo",
+  "target": "Destino",
+  "objectInformation": "Información del Objeto",
+  "basicInformation": "Información Básica",
+  "commentsAndActivity": "Comentarios y Actividad",
+  "askOntos": "Preguntar a Ontos",
+  
+  "actions": {
+    "viewData": "Ver Datos",
+    "move": "Mover",
+    "delete": "Eliminar",
+    "rename": "Renombrar",
+    "info": "Info",
+    "operations": "Operaciones",
+    "comments": "Comentarios",
+    "retry": "Reintentar",
+    "newChat": "Nuevo Chat",
+    "cancel": "Cancelar",
+    "confirm": "Confirmar"
+  },
+  
+  "tooltips": {
+    "copyToTarget": "Copiar al destino",
+    "moveToTarget": "Mover al destino",
+    "moveFromTarget": "Mover desde el destino",
+    "refresh": "Actualizar (mantén Shift para forzar)",
+    "dragToResize": "Arrastrar para redimensionar"
+  },
+  
+  "labels": {
+    "metastore": "Metastore",
+    "filterCatalogs": "Filtrar catálogos...",
+    "selectEstate": "Seleccionar Estate",
+    "name": "Nombre:",
+    "type": "Tipo:",
+    "fullPath": "Ruta completa:",
+    "actions": "Acciones:"
+  },
+  
+  "messages": {
+    "selectObjectToViewInfo": "Seleccione un objeto para ver su información",
+    "selectObjectToViewComments": "Seleccione un objeto para ver los comentarios",
+    "loadingDetails": "Cargando detalles...",
+    "noDataAvailable": "No hay datos disponibles",
+    "datasetView": "Vista del Dataset: {{name}}",
+    "confirmOperation": "Confirmar Operación",
+    "selectedItems": "Elementos seleccionados: {{items}}",
+    "noItemsSelected": "Ningún elemento seleccionado"
+  },
+  
+  "askPanel": {
+    "title": "Preguntar a Ontos",
+    "askAboutItem": "Pregunta sobre este elemento del catálogo",
+    "askQuestionsAbout": "Haz preguntas sobre \"{{name}}\"",
+    "selectItemFirst": "Selecciona un elemento para hacer preguntas",
+    "askAboutPlaceholder": "Preguntar sobre {{name}}...",
+    "selectItemPlaceholder": "Selecciona un elemento primero...",
+    "askingAbout": "Preguntando sobre:",
+    "thinking": "Pensando...",
+    "rerun": "Ejecutar de nuevo",
+    "copyToInput": "Editar y reenviar",
+    "exampleQuestions": {
+      "columns": "¿Qué columnas tiene?",
+      "owner": "¿Quién es el propietario?",
+      "usage": "¿Cómo se usa?"
+    }
+  },
+  
+  "errors": {
+    "error": "Error",
+    "failedToSendMessage": "Error al enviar el mensaje"
+  }
+}
+

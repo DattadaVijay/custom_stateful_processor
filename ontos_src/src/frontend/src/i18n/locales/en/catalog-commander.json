@@ -1,0 +1,76 @@
+{
+  "title": "Catalog Commander",
+  "catalogBrowser": "Catalog Browser",
+  "target": "Target",
+  "objectInformation": "Object Information",
+  "basicInformation": "Basic Information",
+  "commentsAndActivity": "Comments & Activity",
+  "askOntos": "Ask Ontos",
+  
+  "actions": {
+    "viewData": "View Data",
+    "move": "Move",
+    "delete": "Delete",
+    "rename": "Rename",
+    "info": "Info",
+    "operations": "Operations",
+    "comments": "Comments",
+    "retry": "Retry",
+    "newChat": "New Chat",
+    "cancel": "Cancel",
+    "confirm": "Confirm"
+  },
+  
+  "tooltips": {
+    "copyToTarget": "Copy to target",
+    "moveToTarget": "Move to target",
+    "moveFromTarget": "Move from target",
+    "refresh": "Refresh (hold Shift for force refresh)",
+    "dragToResize": "Drag to resize"
+  },
+  
+  "labels": {
+    "metastore": "Metastore",
+    "filterCatalogs": "Filter catalogs...",
+    "selectEstate": "Select Estate",
+    "name": "Name:",
+    "type": "Type:",
+    "fullPath": "Full Path:",
+    "actions": "Actions:"
+  },
+  
+  "messages": {
+    "selectObjectToViewInfo": "Select an object to view its information",
+    "selectObjectToViewComments": "Select an object to view comments",
+    "loadingDetails": "Loading details...",
+    "noDataAvailable": "No data available",
+    "datasetView": "Dataset View: {{name}}",
+    "confirmOperation": "Confirm Operation",
+    "selectedItems": "Selected items: {{items}}",
+    "noItemsSelected": "No items selected"
+  },
+  
+  "askPanel": {
+    "title": "Ask Ontos",
+    "askAboutItem": "Ask about this catalog item",
+    "askQuestionsAbout": "Ask questions about \"{{name}}\"",
+    "selectItemFirst": "Select an item to ask questions about it",
+    "askAboutPlaceholder": "Ask about {{name}}...",
+    "selectItemPlaceholder": "Select an item first...",
+    "askingAbout": "Asking about:",
+    "thinking": "Thinking...",
+    "rerun": "Run again",
+    "copyToInput": "Edit & resend",
+    "exampleQuestions": {
+      "columns": "What columns does this have?",
+      "owner": "Who owns this?",
+      "usage": "How is this used?"
+    }
+  },
+  
+  "errors": {
+    "error": "Error",
+    "failedToSendMessage": "Failed to send message"
+  }
+}
+

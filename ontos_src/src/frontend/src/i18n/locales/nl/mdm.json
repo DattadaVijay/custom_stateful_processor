@@ -1,0 +1,89 @@
+{
+  "title": "Master Data Management",
+  "subtitle": "Definieer master data contracten en beheer entity matching over systemen",
+  "newConfiguration": "Nieuwe MDM Configuratie",
+  "configurations": "MDM Configuraties",
+  "noConfigurations": "Nog geen MDM configuraties.",
+  "getStarted": "Maak je eerste configuratie aan om te beginnen.",
+  "sources": "bronnen",
+  "lastRun": "Laatste Uitvoering",
+  "stats": {
+    "matchingRuns": "Matching Uitvoeringen",
+    "totalMatches": "Totaal Matches",
+    "newRecords": "Nieuwe Records",
+    "pendingReview": "In Afwachting van Beoordeling"
+  },
+  "configDetails": {
+    "title": "Configuratie Details",
+    "selectConfig": "Selecteer een configuratie om details te bekijken",
+    "startMatching": "Start Matching",
+    "editRules": "MDM Regels Bewerken",
+    "linkSource": "Broncontract Koppelen",
+    "deleteConfig": "Configuratie Verwijderen"
+  },
+  "tabs": {
+    "overview": "Overzicht",
+    "sources": "Bronnen",
+    "matchingRules": "Matching Regels",
+    "matchingRuns": "Matching Uitvoeringen",
+    "reviewQueue": "Beoordelingswachtrij"
+  },
+  "overview": {
+    "description": "Beschrijving",
+    "entityType": "Entity Type",
+    "goldenRecordTarget": "Golden Record Doel"
+  },
+  "sourcesTab": {
+    "title": "Gekoppelde Bronnen",
+    "dataContract": "Datacontract",
+    "keyColumn": "Sleutelkolom",
+    "matchColumns": "Match Kolommen",
+    "noSources": "Nog geen broncontracten gekoppeld."
+  },
+  "rulesTab": {
+    "title": "Matching Regels",
+    "noRules": "Nog geen matching regels geconfigureerd.",
+    "matchingRulesButton": "MDM Regels Bewerken",
+    "description": "Configureer de regels die worden gebruikt om dubbele records te identificeren en matchen."
+  },
+  "runsTab": {
+    "title": "Matching Uitvoeringsgeschiedenis",
+    "runId": "Uitvoerings ID",
+    "status": "Status",
+    "matchesFound": "Gevonden Matches",
+    "newRecords": "Nieuwe Records",
+    "pendingReview": "In Afwachting van Beoordeling",
+    "noRuns": "Nog geen matching uitvoeringen. Start een matching job om resultaten te zien.",
+    "selectRun": "Selecteer een uitvoering om kandidaten te bekijken"
+  },
+  "candidates": {
+    "title": "Match Kandidaten",
+    "sourceRecord": "Bronrecord",
+    "targetRecord": "Doelrecord",
+    "matchType": "Match Type",
+    "confidence": "Betrouwbaarheid",
+    "viewDetails": "Details Bekijken",
+    "approve": "Goedkeuren",
+    "reject": "Afwijzen",
+    "mergeApproved": "Merge Goedgekeurd",
+    "createReview": "Beoordelingsverzoek Aanmaken",
+    "noCandidates": "Geen match kandidaten voor deze uitvoering."
+  },
+  "toast": {
+    "matchingStarted": "MDM matching job gestart",
+    "mergeCompleted": "Merge voltooid",
+    "configDeleted": "Configuratie verwijderd",
+    "sourceRemoved": "Bronkoppeling verwijderd"
+  },
+  "errors": {
+    "loadFailed": "Kon MDM configuraties niet laden",
+    "startMatchingFailed": "Kon matching niet starten",
+    "mergeFailed": "Merge mislukt",
+    "deleteFailed": "Verwijderen mislukt"
+  },
+  "confirm": {
+    "deleteConfig": "Weet je zeker dat je deze MDM configuratie wilt verwijderen?",
+    "deleteSource": "Weet je zeker dat je deze bronkoppeling wilt verwijderen?"
+  }
+}
+

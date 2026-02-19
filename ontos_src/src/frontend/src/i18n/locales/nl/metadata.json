@@ -1,0 +1,124 @@
+{
+  "title": "Metadata",
+  "description": "Notities, links en bijlagen.",
+  "previewRenderedPage": "Gerenderde pagina voorvertonen",
+  "notes": {
+    "title": "Aanvullende Notities",
+    "add": "Toevoegen",
+    "refresh": "Vernieuwen",
+    "noNotes": "Nog geen notities.",
+    "preview": "Voorbeeld",
+    "edit": "Bewerken",
+    "delete": "Verwijderen",
+    "editTitle": "Notitie bewerken",
+    "addTitle": "Notitie toevoegen",
+    "attachShared": "Gedeelde notitie bijvoegen",
+    "selectShared": "Selecteer Gedeelde Notitie",
+    "table": {
+      "title": "Titel",
+      "description": "Beschrijving",
+      "created": "Aangemaakt",
+      "actions": "Acties",
+      "level": "Niveau",
+      "flags": "Vlaggen"
+    },
+    "form": {
+      "title": "Titel",
+      "shortDescription": "Korte Beschrijving",
+      "content": "Inhoud (Markdown)",
+      "save": "Opslaan",
+      "cancel": "Annuleren",
+      "level": "Niveau",
+      "inheritable": "Overerfbaar",
+      "shared": "Gedeelde asset"
+    },
+    "messages": {
+      "deleteFailed": "Verwijderen mislukt",
+      "addFailed": "Notitie toevoegen mislukt",
+      "updateFailed": "Bijwerken mislukt"
+    }
+  },
+  "links": {
+    "title": "Gerelateerde Links",
+    "add": "Toevoegen",
+    "refresh": "Vernieuwen",
+    "noLinks": "Nog geen links.",
+    "open": "Openen",
+    "edit": "Bewerken",
+    "delete": "Verwijderen",
+    "editTitle": "Link bewerken",
+    "addTitle": "Link toevoegen",
+    "attachShared": "Gedeelde link bijvoegen",
+    "selectShared": "Selecteer Gedeelde Link",
+    "table": {
+      "title": "Titel",
+      "url": "URL",
+      "description": "Beschrijving",
+      "created": "Aangemaakt",
+      "actions": "Acties",
+      "level": "Niveau",
+      "flags": "Vlaggen"
+    },
+    "form": {
+      "title": "Titel",
+      "url": "URL",
+      "shortDescription": "Korte Beschrijving",
+      "save": "Opslaan",
+      "cancel": "Annuleren",
+      "level": "Niveau",
+      "inheritable": "Overerfbaar",
+      "shared": "Gedeelde asset"
+    },
+    "messages": {
+      "deleteFailed": "Verwijderen mislukt",
+      "addFailed": "Link toevoegen mislukt",
+      "updateFailed": "Bijwerken mislukt"
+    }
+  },
+  "documents": {
+    "title": "Bijgevoegde Documenten",
+    "add": "Toevoegen",
+    "refresh": "Vernieuwen",
+    "noDocuments": "Geen documenten geüpload.",
+    "preview": "Voorbeeld",
+    "delete": "Verwijderen",
+    "attachShared": "Gedeeld document bijvoegen",
+    "selectShared": "Selecteer Gedeeld Document",
+    "table": {
+      "title": "Titel",
+      "filename": "Bestandsnaam",
+      "description": "Beschrijving",
+      "size": "Grootte",
+      "created": "Aangemaakt",
+      "actions": "Acties",
+      "level": "Niveau",
+      "flags": "Vlaggen"
+    },
+    "form": {
+      "title": "Titel",
+      "shortDescription": "Korte Beschrijving",
+      "file": "Bestand",
+      "upload": "Uploaden",
+      "cancel": "Annuleren",
+      "level": "Niveau",
+      "inheritable": "Overerfbaar",
+      "shared": "Gedeelde asset"
+    },
+    "messages": {
+      "deleteFailed": "Verwijderen mislukt",
+      "uploadFailed": "Uploaden mislukt"
+    }
+  },
+  "sharedAssets": {
+    "selectDescription": "Selecteer een gedeelde asset om bij te voegen aan deze entiteit",
+    "noSharedNotes": "Geen gedeelde notities beschikbaar",
+    "noSharedLinks": "Geen gedeelde links beschikbaar",
+    "noSharedDocuments": "Geen gedeelde documenten beschikbaar"
+  },
+  "messages": {
+    "loadFailed": "Metadata laden mislukt",
+    "attachSuccess": "Gedeelde asset succesvol bijgevoegd",
+    "attachFailed": "Kon gedeelde asset niet bijvoegen"
+  }
+}
+

@@ -1,0 +1,108 @@
+{
+  "title": "エステート管理",
+  "subtitle": "データエステートと同期を管理",
+  "newEstate": "新規エステート",
+  "addEstate": "エステートを追加",
+  "editEstate": "エステートを編集",
+  "searchPlaceholder": "エステートを検索...",
+  "loading": "エステートを読み込み中...",
+  "errors": {
+    "fetchEstates": "エステートの読み込みエラー",
+    "couldNotLoad": "エステートを読み込めませんでした。",
+    "savingEstate": "エステートの保存エラー",
+    "deletingEstate": "エステートの削除エラー",
+    "triggeringSync": "同期の開始エラー",
+    "validationError": "検証エラー",
+    "validationMessage": "必須項目をすべて入力してください：名前、説明、ワークスペースURL、メタストア名、クラウドタイプ、接続タイプ。"
+  },
+  "toast": {
+    "estateCreated": "エステートを作成しました",
+    "estateUpdated": "エステートを更新しました",
+    "estateDeleted": "エステートを削除しました",
+    "triggeringSync": "同期を開始中",
+    "syncRequested": "エステートの同期をリクエスト中...",
+    "syncTriggered": "同期を開始しました。データを更新中..."
+  },
+  "connectionTypes": {
+    "deltaShare": "Delta Share",
+    "unityCatalog": "Unity Catalog",
+    "database": "データベース（今後対応）"
+  },
+  "filters": {
+    "allStatus": "すべてのステータス"
+  },
+  "table": {
+    "name": "名前",
+    "workspaceUrl": "ワークスペースURL",
+    "cloud": "クラウド",
+    "connection": "接続",
+    "metastore": "メタストア",
+    "syncStatus": "同期ステータス",
+    "type": "タイプ",
+    "status": "ステータス",
+    "lastSync": "最終同期",
+    "assets": "アセット",
+    "actions": "アクション"
+  },
+  "messages": {
+    "success": "成功",
+    "error": "エラー",
+    "deleteConfirm": "このエステートを削除してもよろしいですか？",
+    "deleteSuccess": "エステートが正常に削除されました",
+    "deleteError": "エステートの削除に失敗しました",
+    "syncSuccess": "同期が正常に開始されました",
+    "syncError": "同期の開始に失敗しました"
+  },
+  "status": {
+    "connected": "接続済み",
+    "disconnected": "切断",
+    "syncing": "同期中",
+    "error": "エラー"
+  },
+  "details": {
+    "backToList": "エステートに戻る",
+    "edit": "編集",
+    "delete": "削除",
+    "sync": "今すぐ同期",
+    "viewDetails": "詳細を表示",
+    "notFound": "エステートが見つかりません",
+    "loading": "読み込み中...",
+    "overview": {
+      "title": "エステート概要",
+      "type": "タイプ",
+      "status": "ステータス",
+      "lastSync": "最終同期",
+      "created": "作成日"
+    },
+    "assets": {
+      "title": "アセット",
+      "catalogs": "カタログ",
+      "schemas": "スキーマ",
+      "tables": "テーブル"
+    },
+    "syncHistory": {
+      "title": "同期履歴",
+      "noHistory": "同期履歴がありません"
+    }
+  },
+  "form": {
+    "createTitle": "エステートを作成",
+    "editTitle": "エステートを編集",
+    "dialogDescription": "Databricksエステート接続と基本設定を構成します。共有ポリシーは詳細ページで管理されます。",
+    "name": "名前",
+    "description": "説明",
+    "type": "タイプ",
+    "workspaceUrl": "ワークスペースURL",
+    "cloud": "クラウド",
+    "selectCloudProvider": "クラウドプロバイダーを選択",
+    "connectionType": "接続タイプ",
+    "selectConnectionType": "接続タイプを選択",
+    "connectionString": "接続文字列",
+    "metastoreName": "メタストア名",
+    "syncSchedule": "同期スケジュール",
+    "enableSync": "同期を有効化",
+    "cancel": "キャンセル",
+    "save": "保存"
+  }
+}
+

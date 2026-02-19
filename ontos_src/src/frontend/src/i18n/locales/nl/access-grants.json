@@ -1,0 +1,61 @@
+{
+  "request": {
+    "title": "Toegang Aanvragen",
+    "description": "Vraag toestemming aan om deze {{entityType}} te bekijken en gebruiken.",
+    "reason": {
+      "label": "Reden voor Toegang",
+      "placeholder": "Leg uit waarom je toegang nodig hebt tot deze {{entityType}}...",
+      "required": "Geef alstublieft een reden op voor het aanvragen van toegang",
+      "minLength": "Geef alstublieft een meer gedetailleerde reden op (minimaal 10 tekens)"
+    },
+    "duration": {
+      "label": "Toegangsduur",
+      "placeholder": "Selecteer duur",
+      "helpText": "Toegang verloopt na de geselecteerde duur. Je kunt verlenging aanvragen voordat het verloopt.",
+      "days": "{{count}} dag",
+      "days_plural": "{{count}} dagen",
+      "months": "{{count}} maand",
+      "months_plural": "{{count}} maanden",
+      "years": "{{count}} jaar",
+      "years_plural": "{{count}} jaren"
+    },
+    "submit": "Verzoek Verzenden",
+    "submitting": "Verzoek Verzenden...",
+    "success": "Je toegangsverzoek is ingediend en je wordt op de hoogte gebracht van de beslissing."
+  },
+  "panel": {
+    "title": "Toegangsrechten",
+    "description": "Gebruikers met tijdelijke toegang tot deze resource",
+    "noGrants": "Geen toegangsrechten voor deze resource",
+    "noGrantsHint": "Gebruikers kunnen tijdelijke toegang aanvragen met de \"Toegang Aanvragen\" knop.",
+    "requestButton": "Toegang Aanvragen",
+    "refresh": "Vernieuwen",
+    "activeGrants": "Actieve Rechten",
+    "pendingRequests": "Openstaande Verzoeken",
+    "expiresAt": "Verloopt",
+    "grantedAt": "Verleend",
+    "requestedAt": "Aangevraagd",
+    "revoke": "Intrekken",
+    "revokeConfirm": "Weet je zeker dat je de toegang voor {{user}} wilt intrekken?",
+    "revokeSuccess": "Toegang succesvol ingetrokken",
+    "handle": "Verzoek Behandelen"
+  },
+  "handle": {
+    "title": "Toegangsverzoek Behandelen",
+    "approve": "Goedkeuren",
+    "deny": "Afwijzen",
+    "clarify": "Verduidelijking Vragen",
+    "grantDuration": "Toegangsduur",
+    "response": "Reactie Bericht",
+    "responsePlaceholder": "Geef feedback of aanvullende informatie...",
+    "approveSuccess": "Toegangsverzoek goedgekeurd",
+    "denySuccess": "Toegangsverzoek afgewezen",
+    "clarifySuccess": "Verduidelijking gevraagd"
+  },
+  "entityTypes": {
+    "data_product": "dataproduct",
+    "dataset": "dataset",
+    "data_contract": "datacontract"
+  }
+}
+

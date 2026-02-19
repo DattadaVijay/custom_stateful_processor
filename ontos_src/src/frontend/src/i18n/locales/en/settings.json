@@ -1,0 +1,378 @@
+{
+  "title": "Settings",
+  "tabs": {
+    "general": "General",
+    "databricks": "Databricks",
+    "git": "Git",
+    "jobs": "Jobs & Workflows",
+    "roles": "Roles",
+    "semanticModels": "Semantic Models",
+    "tags": "Tags",
+    "search": "Search",
+    "mcpTokens": "MCP Tokens",
+    "workflows": "Workflows",
+    "uiCustomization": "UI Customization"
+  },
+  "accessDenied": {
+    "title": "Access Denied",
+    "message": "You do not have permission to access the Settings page. This page is restricted to users with administrative privileges.",
+    "action": "If you believe you should have access, please contact your administrator or ",
+    "returnHome": "return to the home page",
+    "requestRole": " to request an appropriate role."
+  },
+  "general": {
+    "title": "General Settings",
+    "description": "Configure basic application settings",
+    "enableBackgroundJobs": "Enable Background Jobs",
+    "workspaceDeploymentPath": {
+      "label": "Workspace Deployment Path",
+      "placeholder": "/Workspace/Users/user@domain.com/ontos-workflows",
+      "help": "Path in Databricks workspace where workflow files are deployed for background jobs."
+    },
+    "unityCatalog": {
+      "title": "Unity Catalog",
+      "help": "Unity Catalog location for storing application data.",
+      "catalog": {
+        "label": "Catalog",
+        "placeholder": "app_data"
+      },
+      "schema": {
+        "label": "Schema",
+        "placeholder": "app_ontos"
+      },
+      "volume": {
+        "label": "Volume",
+        "placeholder": "app_files"
+      }
+    },
+    "auditLog": {
+      "label": "Audit Log Directory",
+      "placeholder": "audit_logs",
+      "help": "Directory where audit log files are stored."
+    },
+    "llm": {
+      "title": "AI / LLM Configuration",
+      "enabled": {
+        "label": "Enable AI Features"
+      },
+      "endpoint": {
+        "label": "LLM Endpoint",
+        "placeholder": "databricks-claude-sonnet-4-5",
+        "help": "Databricks serving endpoint name for the LLM."
+      },
+      "systemPrompt": {
+        "label": "System Prompt",
+        "placeholder": "You are a Data Steward...",
+        "help": "System prompt that defines the AI assistant behavior."
+      },
+      "disclaimer": {
+        "label": "Disclaimer Text",
+        "placeholder": "This feature uses AI to analyze data assets...",
+        "help": "Disclaimer shown to users when using AI features."
+      }
+    },
+    "saveButton": "Save Settings",
+    "messages": {
+      "saveSuccess": "Settings saved successfully",
+      "saveError": "Failed to save settings"
+    }
+  },
+  "databricks": {
+    "title": "Databricks Settings",
+    "description": "Configure Databricks connection settings",
+    "labels": {
+      "host": "Host",
+      "token": "Token",
+      "warehouseId": "Warehouse ID",
+      "catalog": "Catalog",
+      "schema": "Schema"
+    },
+    "placeholders": {
+      "host": "https://<your-workspace>.cloud.databricks.com",
+      "token": "dapi...",
+      "warehouseId": "1234abcd5678efgh",
+      "catalog": "main",
+      "schema": "uc_swiss_knife"
+    }
+  },
+  "git": {
+    "title": "Git Settings",
+    "description": "Configure Git repository for YAML storage",
+    "labels": {
+      "repoUrl": "Repository URL",
+      "branch": "Branch",
+      "token": "Token"
+    },
+    "placeholders": {
+      "repoUrl": "https://github.com/your-org/your-repo.git",
+      "branch": "main",
+      "token": "ghp_... or similar"
+    }
+  },
+  "jobs": {
+    "title": "Jobs & Workflows Configuration",
+    "description": "Configure Databricks job cluster and enable background workflows",
+    "jobClusterId": {
+      "label": "Job Cluster ID (optional)",
+      "placeholder": "Leave empty for serverless compute"
+    },
+    "availableWorkflows": {
+      "label": "Available Workflows",
+      "description": "Enable or disable background workflows"
+    },
+    "noWorkflows": "No workflows available",
+    "saveButton": "Save Configuration",
+    "messages": {
+      "saveSuccess": "Settings saved successfully",
+      "saveError": "Failed to save settings"
+    }
+  },
+  "jobsActions": {
+    "start": "Start",
+    "stop": "Stop",
+    "pause": "Pause schedule",
+    "resume": "Resume",
+    "history": "View run history",
+    "cannotDisableRunning": "Cannot disable a running workflow"
+  },
+  "jobRuns": {
+    "viewHistory": "View run history",
+    "dialogTitle": "Job Run History: {{workflowName}}",
+    "dialogDescription": "Recent execution history for this workflow",
+    "emptyState": "No runs found for this workflow",
+    "runId": "Run ID",
+    "runName": "Name",
+    "status": "Status",
+    "started": "Started",
+    "duration": "Duration",
+    "notified": "Notified",
+    "statuses": {
+      "success": "Success",
+      "failed": "Failed",
+      "canceled": "Canceled",
+      "timedout": "Timed Out",
+      "running": "Running",
+      "pending": "Pending",
+      "unknown": "Unknown"
+    }
+  },
+  "roles": {
+    "title": "Role Based Access Control",
+    "description": "Define application roles and assign permissions to directory groups.",
+    "table": {
+      "nameColumn": "Name",
+      "descriptionColumn": "Description",
+      "assignedGroupsColumn": "Assigned Groups",
+      "none": "None",
+      "assigned": "Assigned",
+      "request": "Request",
+      "requestTooltip": "Request access to this role",
+      "alreadyAssignedTooltip": "You already have this role"
+    },
+    "dialog": {
+      "createTitle": "Create Role",
+      "editTitle": "Edit Role: {{name}}",
+      "description": "Define the role name, assigned groups, feature permissions, and approval privileges."
+    },
+    "tabs": {
+      "general": "General",
+      "privileges": "Privileges",
+      "permissions": "Permissions",
+      "deployment": "Deployment",
+      "accessControl": "Access Control"
+    },
+    "general": {
+      "roleName": "Role Name",
+      "roleNameRequired": "Role name is required",
+      "description": "Description",
+      "assignedGroups": "Assigned Directory Groups (comma-separated)",
+      "assignedGroupsPlaceholder": "e.g., data-stewards, finance-team",
+      "assignedGroupsHelp": "Users belonging to these groups will inherit this role's permissions."
+    },
+    "privileges": {
+      "homeSections": {
+        "title": "Home Sections",
+        "description": "Select which sections appear on the home page for users with this role."
+      },
+      "approvalPrivileges": {
+        "title": "Approval Privileges",
+        "description": "Grant this role the ability to approve specific types of requests."
+      }
+    },
+    "permissions": {
+      "featurePermissions": {
+        "title": "Feature Permissions",
+        "description": "Configure access levels for each feature in the application."
+      }
+    },
+    "deployment": {
+      "title": "Deployment Policy",
+      "description": "Control which Unity Catalog catalogs/schemas users with this role can deploy to. Supports wildcards (* for any) and template variables ({username}, {email}).",
+      "allowedCatalogs": {
+        "label": "Allowed Catalogs (comma-separated)",
+        "placeholder": "e.g., prod_catalog, {username}_sandbox, *",
+        "help": "Leave empty to prevent deployments. Use * to allow all catalogs."
+      },
+      "allowedSchemas": {
+        "label": "Allowed Schemas (comma-separated, optional)",
+        "placeholder": "e.g., dev, {username}_schema, *",
+        "help": "Leave empty to allow any schema within allowed catalogs."
+      },
+      "defaultCatalog": {
+        "label": "Default Catalog",
+        "placeholder": "e.g., {username}_sandbox",
+        "help": "Pre-selected in UI"
+      },
+      "defaultSchema": {
+        "label": "Default Schema",
+        "placeholder": "e.g., default",
+        "help": "Pre-selected in UI"
+      },
+      "requireApproval": "Require approval for deployments",
+      "canApprove": "Can approve deployment requests"
+    },
+    "accessControl": {
+      "requestableBy": {
+        "title": "Who can request this role?",
+        "description": "Select which roles are allowed to request access to this role. Users with these roles will see this role in their requestable roles list."
+      },
+      "approvers": {
+        "title": "Who can approve requests for this role?",
+        "description": "Select which roles can approve access requests for this role. Users with these roles will receive notifications when someone requests this role.",
+        "hint": "If no approvers are selected, requests will be sent to Admin by default."
+      },
+      "noRole": "Users with no role (new users)",
+      "noRolesAvailable": "No other roles available",
+      "defaultApprover": "Default"
+    },
+    "actions": {
+      "cancel": "Cancel",
+      "create": "Create Role",
+      "update": "Update Role",
+      "addRole": "Add Role",
+      "actions": "Actions",
+      "editRole": "Edit Role",
+      "deleteRole": "Delete Role"
+    }
+  },
+  "mcpTokens": {
+    "title": "MCP API Tokens",
+    "description": "Manage API tokens for AI assistant integrations via the Model Context Protocol",
+    "refresh": "Refresh",
+    "createToken": "Create Token",
+    "showRevokedTokens": "Show revoked tokens",
+    "emptyState": {
+      "title": "No MCP tokens yet",
+      "description": "Create a token to allow AI assistants to access your tools"
+    },
+    "table": {
+      "name": "Name",
+      "scopes": "Scopes",
+      "created": "Created",
+      "lastUsed": "Last Used",
+      "expires": "Expires",
+      "status": "Status",
+      "actions": "Actions",
+      "never": "Never",
+      "moreScopes": "+{{count}} more",
+      "createdBy": "by {{name}}"
+    },
+    "status": {
+      "active": "Active",
+      "revoked": "Revoked",
+      "expired": "Expired"
+    },
+    "tooltips": {
+      "revokeToken": "Revoke token"
+    },
+    "info": {
+      "title": "Using MCP Tokens",
+      "description": "MCP tokens allow AI assistants to interact with your data governance platform. Each token has specific scopes that control which tools can be accessed.",
+      "endpoint": "Endpoint:",
+      "header": "Header:"
+    },
+    "createDialog": {
+      "title": "Create MCP Token",
+      "description": "Create a new API token for AI assistant integrations. The token will only be shown once.",
+      "tokenName": "Token Name",
+      "tokenNamePlaceholder": "e.g., Claude Assistant - Analytics Team",
+      "tokenNameHelp": "A descriptive name to identify this token",
+      "expiration": "Expiration (days)",
+      "expirationHelp": "Leave empty for no expiration",
+      "scopes": "Scopes",
+      "scopesHelp": "Select the permissions this token should have",
+      "selectedScopes": "Selected:",
+      "cancel": "Cancel",
+      "create": "Create Token",
+      "creating": "Creating..."
+    },
+    "createdDialog": {
+      "title": "Token Created Successfully",
+      "warning": "Copy this token now — it won't be shown again!",
+      "tokenName": "Token Name",
+      "apiToken": "API Token",
+      "scopes": "Scopes",
+      "expires": "Expires",
+      "copy": "Copy",
+      "copied": "Copied!",
+      "done": "Done"
+    },
+    "revokeDialog": {
+      "title": "Revoke Token?",
+      "description": "Are you sure you want to revoke the token",
+      "warning": "This action cannot be undone. Any AI assistants using this token will immediately lose access.",
+      "cancel": "Cancel",
+      "revoke": "Revoke Token"
+    },
+    "messages": {
+      "loadError": "Failed to load MCP tokens",
+      "tokenNameRequired": "Token name is required",
+      "scopeRequired": "At least one scope is required",
+      "createError": "Failed to create token",
+      "copied": "Token copied to clipboard",
+      "revoked": "Token \"{{name}}\" has been revoked",
+      "revokeError": "Failed to revoke token"
+    }
+  },
+  "uiCustomization": {
+    "title": "UI Customization",
+    "description": "Customize the application branding, language settings, and appearance.",
+    "i18n": {
+      "title": "Language Settings",
+      "enableLabel": "Enable Internationalization",
+      "enableDescription": "When disabled, the application will always use English regardless of browser settings."
+    },
+    "logo": {
+      "title": "Custom Logo",
+      "urlLabel": "Logo URL",
+      "urlPlaceholder": "https://example.com/logo.svg",
+      "help": "Enter the URL of your custom logo. Supports SVG, PNG, or JPG formats. Recommended size: 40x40 pixels.",
+      "invalidUrl": "Please enter a valid HTTP or HTTPS URL",
+      "preview": "Preview:",
+      "loadError": "Failed to load image",
+      "openInNewTab": "Open in new tab"
+    },
+    "about": {
+      "title": "Custom About Page Content",
+      "description": "Replace the default About page content with custom Markdown. Leave empty to use the default content.",
+      "editTab": "Edit",
+      "previewTab": "Preview",
+      "placeholder": "# About Our Company\n\nWrite your custom about page content here using **Markdown**...",
+      "noContent": "No custom content. The default About page will be shown."
+    },
+    "css": {
+      "title": "Custom Stylesheet",
+      "warningTitle": "Use with caution",
+      "warningDescription": "Invalid or conflicting CSS may break the UI. If the application becomes unusable, clear this field to restore normal functionality. Changes require a page reload.",
+      "label": "Custom CSS",
+      "placeholder": "/* Override CSS variables */\n:root {\n  --primary: 220 70% 50%;\n}\n\n/* Custom styles */\n.my-custom-class {\n  color: red;\n}",
+      "help": "Enter custom CSS to override the default theme. You can modify CSS variables defined in :root to change colors throughout the app."
+    },
+    "saveButton": "Save UI Settings",
+    "messages": {
+      "saveSuccess": "UI customization settings saved",
+      "saveError": "Failed to save UI customization settings",
+      "reloadRequired": "Reload the page to see some changes."
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "request": {
+    "title": "Demander l'Accès",
+    "description": "Demander la permission de voir et d'utiliser ce {{entityType}}.",
+    "reason": {
+      "label": "Raison de l'Accès",
+      "placeholder": "Expliquez pourquoi vous avez besoin d'accéder à ce {{entityType}}...",
+      "required": "Veuillez fournir une raison pour demander l'accès",
+      "minLength": "Veuillez fournir une raison plus détaillée (au moins 10 caractères)"
+    },
+    "duration": {
+      "label": "Durée d'Accès",
+      "placeholder": "Sélectionner la durée",
+      "helpText": "L'accès expirera après la durée sélectionnée. Vous pouvez demander un renouvellement avant l'expiration.",
+      "days": "{{count}} jour",
+      "days_plural": "{{count}} jours",
+      "months": "{{count}} mois",
+      "months_plural": "{{count}} mois",
+      "years": "{{count}} an",
+      "years_plural": "{{count}} ans"
+    },
+    "submit": "Envoyer la Demande",
+    "cancel": "Annuler",
+    "success": "Demande d'accès envoyée avec succès",
+    "error": "Échec de l'envoi de la demande d'accès"
+  },
+  "panel": {
+    "title": "Autorisations d'Accès",
+    "description": "Utilisateurs avec accès limité dans le temps à cette ressource",
+    "noGrants": "Aucune autorisation d'accès pour cette ressource",
+    "noGrantsHint": "Les utilisateurs peuvent demander un accès limité dans le temps en utilisant le bouton \"Demander l'Accès\".",
+    "columns": {
+      "user": "Utilisateur",
+      "permission": "Niveau de Permission",
+      "granted": "Accordé",
+      "expires": "Expire",
+      "actions": "Actions"
+    },
+    "revoke": "Révoquer",
+    "revokeConfirm": "Êtes-vous sûr de vouloir révoquer cette autorisation d'accès ?"
+  },
+  "entityTypes": {
+    "data_product": "produit de données",
+    "dataset": "jeu de données",
+    "data_contract": "contrat de données"
+  }
+}
+

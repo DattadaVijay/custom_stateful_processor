@@ -1,0 +1,127 @@
+{
+  "title": "Zoeken",
+  "placeholder": "Zoek over alle assets...",
+  "tabs": {
+    "askOntos": "Vraag Ontos",
+    "indexSearch": "Index Zoeken",
+    "conceptGraph": "Concept Grafiek",
+    "knowledgeGraph": "Knowledge Graph",
+    "concepts": "Concepten"
+  },
+  "noResults": "Geen resultaten gevonden",
+  "noResultsHint": "Probeer je zoektermen of filters aan te passen",
+  "results": "{{count}} resultaat gevonden",
+  "results_plural": "{{count}} resultaten gevonden",
+  "filters": {
+    "all": "Alles",
+    "dataProducts": "Dataproducten",
+    "dataContracts": "Datacontracten",
+    "datasets": "Datasets",
+    "glossaryTerms": "Glossary Termen",
+    "teams": "Teams",
+    "projects": "Projecten"
+  },
+  "sort": {
+    "relevance": "Relevantie",
+    "newest": "Nieuwste",
+    "oldest": "Oudste",
+    "name": "Naam"
+  },
+  "resultItem": {
+    "type": "Type",
+    "owner": "Eigenaar",
+    "updated": "Bijgewerkt"
+  },
+  "kg": {
+    "prefixSearch": "Prefix Zoeken",
+    "prefixSearchDesc": "Vind resources of eigenschappen op IRI substring.",
+    "startPath": "Start pad",
+    "pathExplorer": "Pad Verkenner",
+    "pathExplorerDesc": "Klik op objecten om het pad horizontaal uit te breiden.",
+    "directionFilter": "Richtingsfilter",
+    "everything": "Alles",
+    "incomingOnly": "Alleen Inkomend",
+    "outgoingOnly": "Alleen Uitgaand",
+    "contentFilter": "Inhoudsfilter",
+    "showConceptsOnly": "Toon alleen concepten/klassen",
+    "noOutgoingLinks": "Geen uitgaande links voor huidige selectie.",
+    "noLinksMatch": "Geen links komen overeen met de huidige filters.",
+    "step": "Stap",
+    "sparql": "SPARQL",
+    "sparqlDesc": "Voer geavanceerde queries uit over de geladen grafiek.",
+    "examples": "Voorbeelden",
+    "runSparql": "SPARQL Uitvoeren",
+    "resourcesInNamespace": "Resources in app namespace",
+    "resourcesWithLabel": "Resources met rdfs:label",
+    "subjectsAndTypes": "Subjects en hun types",
+    "topPredicates": "Top predicaten op frequentie",
+    "mostLinkedSeeAlso": "Meest gelinkt via rdfs:seeAlso"
+  },
+  "index": {
+    "title": "Index Zoeken",
+    "description": "Zoek over alle geïndexeerde applicatiedata. Typ om te zoeken."
+  },
+  "concepts": {
+    "searchAndSelect": "Zoek en selecteer een concept:",
+    "searchPlaceholder": "Typ om te zoeken op naam, label of IRI...",
+    "clear": "Wissen",
+    "conceptHierarchy": "Concept Hiërarchie",
+    "parentClasses": "Ouderklassen:",
+    "noParentClasses": "Geen ouderklassen gevonden",
+    "subclasses": "Subklassen:",
+    "noSubclasses": "Geen subklassen gevonden",
+    "relatedProperties": "Gerelateerde Eigenschappen",
+    "noRelatedProperties": "Geen gerelateerde eigenschappen gevonden.",
+    "linkedCatalogObjects": "Gekoppelde Catalogus Objecten",
+    "noCatalogObjects": "Geen catalogus objecten toegewezen.",
+    "assignToConcept": "Toewijzen aan Concept",
+    "assignDialog": {
+      "title": "Object Toewijzen aan Concept",
+      "entityType": "Entity Type",
+      "selectEntityType": "Selecteer entity type...",
+      "dataProduct": "Dataproduct",
+      "dataContract": "Datacontract",
+      "dataDomain": "Datadomein",
+      "selectEntity": "Selecteer {{entityType}}..."
+    },
+    "messages": {
+      "linkedSuccess": "Concept \"{{label}}\" gekoppeld aan {{entityType}} \"{{entityId}}\".",
+      "assignError": "Selecteer alstublieft zowel een entity type als specifieke entity.",
+      "assignFailed": "Kon concept niet toewijzen aan object.",
+      "navigationError": "Kan niet navigeren naar {{entityType}}"
+    }
+  },
+  "llm": {
+    "title": "Vraag Ontos",
+    "subtitle": "Stel vragen over dataproducten, kosten en analytics",
+    "rerun": "Opnieuw uitvoeren",
+    "copyToInput": "Bewerken & opnieuw verzenden",
+    "disabledTitle": "AI-Aangedreven Zoeken",
+    "disabledSubtitle": "Natuurlijke taal zoeken is momenteel niet ingeschakeld.",
+    "disabledMessage": "LLM zoeken vereist configuratie. Neem contact op met je beheerder om deze functie in te schakelen.",
+    "welcomeTitle": "Hoe kan ik je vandaag helpen?",
+    "welcomeMessage": "Ik kan je helpen dataproducten te ontdekken, business termen te begrijpen, kosten te analyseren en analytics queries uit te voeren.",
+    "tryAsking": "Probeer te vragen:",
+    "inputPlaceholder": "Stel een vraag over je data...",
+    "inputHint": "Druk op Enter om te verzenden, Shift+Enter voor nieuwe regel",
+    "model": "Model",
+    "thinking": "Nadenken...",
+    "history": "Geschiedenis",
+    "newConversation": "Nieuw Gesprek",
+    "untitled": "Naamloos",
+    "examples": {
+      "findCustomerData": "Waar kan ik klantdata vinden?",
+      "dataProductsCost": "Hoeveel kosten alle dataproducten?",
+      "businessTermsSales": "Welke business termen zijn gerelateerd aan verkoop?",
+      "showDataProducts": "Toon me dataproducten in het Klant domein"
+    },
+    "messages": {
+      "sessionDeleted": "Sessie verwijderd",
+      "sessionDeletedDesc": "Het gesprek is verwijderd.",
+      "loadSessionFailed": "Kon sessie niet laden",
+      "deleteSessionFailed": "Kon sessie niet verwijderen",
+      "loadFailed": "Kon LLM zoeken niet laden. Probeer het later opnieuw."
+    }
+  }
+}
+

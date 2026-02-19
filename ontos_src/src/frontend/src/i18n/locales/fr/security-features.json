@@ -1,0 +1,72 @@
+{
+  "title": "Fonctionnalités de Sécurité",
+  "subtitle": "Gérez la sécurité des données et les paramètres de confidentialité",
+  "newFeature": "Nouvelle Fonctionnalité de Sécurité",
+  "addFeature": "Ajouter une Fonctionnalité de Sécurité",
+  "editFeature": "Modifier la Fonctionnalité de Sécurité",
+  "searchPlaceholder": "Rechercher des fonctionnalités de sécurité...",
+  "loading": "Chargement des fonctionnalités de sécurité...",
+  "toast": {
+    "featureCreated": "Fonctionnalité de sécurité créée avec succès",
+    "featureUpdated": "Fonctionnalité de sécurité mise à jour avec succès",
+    "featureDeleted": "Fonctionnalité de sécurité supprimée avec succès",
+    "loadError": "Échec du chargement des fonctionnalités de sécurité",
+    "saveError": "Échec de l'enregistrement de la fonctionnalité de sécurité",
+    "deleteError": "Échec de la suppression de la fonctionnalité de sécurité"
+  },
+  "table": {
+    "name": "Nom",
+    "type": "Type",
+    "target": "Actif Cible",
+    "status": "Statut",
+    "enabled": "Activé",
+    "updated": "Mis à jour",
+    "actions": "Actions",
+    "conditions": "Conditions",
+    "lastUpdated": "Dernière Mise à Jour"
+  },
+  "messages": {
+    "success": "Succès",
+    "error": "Erreur",
+    "deleteConfirm": "Êtes-vous sûr de vouloir supprimer cette fonctionnalité de sécurité ?",
+    "deleteSuccess": "Fonctionnalité de sécurité supprimée avec succès",
+    "deleteError": "Échec de la suppression de la fonctionnalité de sécurité",
+    "enableSuccess": "Fonctionnalité de sécurité activée",
+    "disableSuccess": "Fonctionnalité de sécurité désactivée"
+  },
+  "types": {
+    "encryption": "Chiffrement",
+    "masking": "Masquage de Données",
+    "rowLevel": "Sécurité au Niveau Ligne",
+    "columnLevel": "Sécurité au Niveau Colonne",
+    "differential": "Confidentialité Différentielle",
+    "rowFiltering": "Filtrage de Lignes",
+    "columnMasking": "Masquage de Colonnes",
+    "differentialPrivacy": "Confidentialité Différentielle",
+    "homomorphicEncryption": "Chiffrement Homomorphe",
+    "envelopeEncryption": "Chiffrement par Enveloppe",
+    "tokenization": "Tokenisation"
+  },
+  "details": {
+    "backToList": "Retour aux Fonctionnalités de Sécurité",
+    "edit": "Modifier",
+    "delete": "Supprimer",
+    "enable": "Activer",
+    "disable": "Désactiver",
+    "notFound": "Fonctionnalité de sécurité non trouvée",
+    "loading": "Chargement..."
+  },
+  "form": {
+    "createTitle": "Créer une Fonctionnalité de Sécurité",
+    "editTitle": "Modifier la Fonctionnalité de Sécurité",
+    "name": "Nom",
+    "type": "Type",
+    "selectType": "Sélectionner le type",
+    "target": "Actif Cible",
+    "configuration": "Configuration",
+    "cancel": "Annuler",
+    "save": "Enregistrer",
+    "saveChanges": "Enregistrer les Modifications",
+    "addFeature": "Ajouter la Fonctionnalité"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "request": {
+    "title": "Zugang anfordern",
+    "description": "Berechtigung zum Anzeigen und Verwenden dieses {{entityType}} anfordern.",
+    "reason": {
+      "label": "Begründung für den Zugang",
+      "placeholder": "Erklären Sie, warum Sie Zugang zu diesem {{entityType}} benötigen...",
+      "required": "Bitte geben Sie einen Grund für die Zugriffsanfrage an",
+      "minLength": "Bitte geben Sie eine detailliertere Begründung an (mindestens 10 Zeichen)"
+    },
+    "duration": {
+      "label": "Zugangsdauer",
+      "placeholder": "Dauer auswählen",
+      "helpText": "Der Zugang läuft nach der ausgewählten Dauer ab. Sie können vor Ablauf eine Verlängerung beantragen.",
+      "days": "{{count}} Tag",
+      "days_plural": "{{count}} Tage",
+      "months": "{{count}} Monat",
+      "months_plural": "{{count}} Monate",
+      "years": "{{count}} Jahr",
+      "years_plural": "{{count}} Jahre"
+    },
+    "submit": "Anfrage senden",
+    "submitting": "Anfrage wird gesendet...",
+    "success": "Ihre Zugriffsanfrage wurde eingereicht und Sie werden über die Entscheidung informiert."
+  },
+  "panel": {
+    "title": "Zugriffsberechtigungen",
+    "description": "Benutzer mit zeitlich begrenztem Zugriff auf diese Ressource",
+    "noGrants": "Keine Zugriffsberechtigungen für diese Ressource",
+    "noGrantsHint": "Benutzer können zeitlich begrenzten Zugang über die Schaltfläche \"Zugang anfordern\" beantragen.",
+    "requestButton": "Zugang anfordern",
+    "refresh": "Aktualisieren",
+    "activeGrants": "Aktive Berechtigungen",
+    "pendingRequests": "Ausstehende Anfragen",
+    "expiresAt": "Läuft ab",
+    "grantedAt": "Gewährt",
+    "requestedAt": "Angefordert",
+    "revoke": "Widerrufen",
+    "revokeConfirm": "Sind Sie sicher, dass Sie den Zugriff für {{user}} widerrufen möchten?",
+    "revokeSuccess": "Zugriff erfolgreich widerrufen",
+    "handle": "Anfrage bearbeiten"
+  },
+  "handle": {
+    "title": "Zugriffsanfrage bearbeiten",
+    "approve": "Genehmigen",
+    "deny": "Ablehnen",
+    "clarify": "Klärung anfordern",
+    "grantDuration": "Gewährte Dauer",
+    "response": "Antwortnachricht",
+    "responsePlaceholder": "Geben Sie Feedback oder zusätzliche Informationen an...",
+    "approveSuccess": "Zugriffsanfrage genehmigt",
+    "denySuccess": "Zugriffsanfrage abgelehnt",
+    "clarifySuccess": "Klärung angefordert"
+  },
+  "entityTypes": {
+    "data_product": "Datenprodukt",
+    "dataset": "Datensatz",
+    "data_contract": "Datenvertrag"
+  }
+}
+

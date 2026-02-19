@@ -1,0 +1,278 @@
+# ============================================================================
+# ODCS Data Contract: Customer Master
+# ============================================================================
+# This contract defines the golden record master data for customer entities.
+# Used as the MDM master contract against which source systems are matched.
+# ============================================================================
+
+id: mdm-demo-customer-master-001
+version: '1.0.0'
+apiVersion: v3.0.2
+kind: DataContract
+name: Customer Master Contract
+status: active
+domain: Customer
+
+description:
+  purpose: >-
+    Master customer data contract defining the golden record structure for 
+    customer entities. This is the authoritative source for customer information
+    after MDM deduplication and matching processes.
+  usage: >-
+    Used as the target master data for MDM matching operations. Source systems
+    are compared against this master to identify duplicates, matches, and new
+    records. All matched records are merged into this master based on
+    survivorship rules.
+  limitations: >-
+    Data quality confidence score must be >= 0.80 for production use.
+    Source system provenance must be maintained for audit purposes.
+    PII fields require appropriate access controls.
+
+# Contract-level semantic assignments
+authoritativeDefinitions:
+  - url: "http://example.com/business/concepts#CustomerMaster"
+    type: "businessDefinition"
+
+# MDM-specific custom properties
+customProperties:
+  - property: mdmEntityType
+    value: customer
+  - property: mdmRole
+    value: master
+  - property: mdmMatchingRules
+    value:
+      - name: email_exact_match
+        type: exact
+        fields:
+          - email
+        weight: 1.0
+        threshold: 1.0
+      - name: name_fuzzy_match
+        type: fuzzy
+        fields:
+          - customer_name
+        weight: 0.4
+        threshold: 0.85
+        algorithm: levenshtein
+      - name: phone_exact_match
+        type: exact
+        fields:
+          - phone
+        weight: 0.3
+        threshold: 1.0
+      - name: address_fuzzy_match
+        type: fuzzy
+        fields:
+          - address_line1
+          - city
+          - state
+          - postal_code
+        weight: 0.3
+        threshold: 0.80
+        algorithm: token_set_ratio
+  - property: mdmSurvivorshipRules
+    value:
+      - field: customer_name
+        strategy: most_recent
+      - field: email
+        strategy: most_trusted
+        priority:
+          - ERP
+          - CRM
+          - Marketing
+      - field: phone
+        strategy: most_complete
+      - field: address_line1
+        strategy: most_recent
+      - field: company_name
+        strategy: most_complete
+      - field: industry
+        strategy: most_trusted
+        priority:
+          - ERP
+          - CRM
+  - property: mdmConfidenceThreshold
+    value: 0.80
+  - property: mdmReviewThreshold
+    value: 0.90
+  - property: mdmAutoMergeAbove
+    value: 0.95
+
+# Service level agreements
+slaProperties:
+  - property: latency
+    value: "1h"
+    unit: hours
+    element: data_freshness
+  - property: availability
+    value: 99.9
+    unit: percent
+    element: uptime
+
+# Schema definition
+schema:
+  - name: customer_master
+    physicalName: app_demo_data.mdm_demo.customer_master
+    description: Customer golden record master table
+    logicalType: object
+    authoritativeDefinitions:
+      - url: "http://example.com/business/concepts#CustomerMaster"
+        type: "businessDefinition"
+    properties:
+      - name: golden_id
+        logicalType: string
+        physicalType: STRING
+        required: true
+        unique: true
+        description: Unique golden record identifier for the customer
+        authoritativeDefinitions:
+          - url: "http://example.com/business/properties#goldenId"
+            type: "businessDefinition"
+      - name: customer_name
+        logicalType: string
+        physicalType: STRING
+        required: false
+        unique: false
+        description: Full customer name (combined first and last name)
+        authoritativeDefinitions:
+          - url: "http://example.com/business/properties#customerName"
+            type: "businessDefinition"
+      - name: email
+        logicalType: string
+        physicalType: STRING
+        required: false
+        unique: true
+        description: Primary email address for the customer
+        classification: PII
+        authoritativeDefinitions:
+          - url: "http://example.com/business/properties#email"
+            type: "businessDefinition"
+      - name: phone
+        logicalType: string
+        physicalType: STRING
+        required: false
+        unique: false
+        description: Primary phone number
+        classification: PII
+        authoritativeDefinitions:
+          - url: "http://example.com/business/properties#phoneNumber"
+            type: "businessDefinition"
+      - name: address_line1
+        logicalType: string
+        physicalType: STRING
+        required: false
+        unique: false
+        description: Street address line 1
+        classification: PII
+      - name: address_line2
+        logicalType: string
+        physicalType: STRING
+        required: false
+        unique: false
+        description: Street address line 2 (apartment, suite, etc.)
+        classification: PII
+      - name: city
+        logicalType: string
+        physicalType: STRING
+        required: false
+        unique: false
+        description: City name
+      - name: state
+        logicalType: string
+        physicalType: STRING
+        required: false
+        unique: false
+        description: State or province code
+      - name: postal_code
+        logicalType: string
+        physicalType: STRING
+        required: false
+        unique: false
+        description: Postal or ZIP code
+      - name: country
+        logicalType: string
+        physicalType: STRING
+        required: false
+        unique: false
+        description: Country code (ISO 3166-1 alpha-2)
+      - name: company_name
+        logicalType: string
+        physicalType: STRING
+        required: false
+        unique: false
+        description: Company or organization name
+      - name: industry
+        logicalType: string
+        physicalType: STRING
+        required: false
+        unique: false
+        description: Industry classification
+      - name: customer_type
+        logicalType: string
+        physicalType: STRING
+        required: false
+        unique: false
+        description: "Customer type: individual, business, enterprise"
+      - name: confidence_score
+        logicalType: number
+        physicalType: DOUBLE
+        required: false
+        unique: false
+        description: Overall data quality confidence score (0-1)
+      - name: created_at
+        logicalType: date
+        physicalType: TIMESTAMP
+        required: false
+        unique: false
+        description: Record creation timestamp
+      - name: updated_at
+        logicalType: date
+        physicalType: TIMESTAMP
+        required: false
+        unique: false
+        description: Last update timestamp
+      - name: last_merged_at
+        logicalType: date
+        physicalType: TIMESTAMP
+        required: false
+        unique: false
+        description: Last MDM merge timestamp
+    quality:
+      - type: library
+        dimension: completeness
+        name: golden_id_completeness
+        description: Golden ID must always be present
+        rule: nullCount
+        mustBe: 0
+      - type: library
+        dimension: uniqueness
+        name: golden_id_uniqueness
+        description: Golden ID must be unique
+        rule: duplicateCount
+        mustBe: 0
+      - type: library
+        dimension: uniqueness
+        name: email_uniqueness
+        description: Email must be unique
+        rule: duplicateCount
+        mustBe: 0
+
+# Team and contact information
+team:
+  - username: mdm-team@company.com
+    name: MDM Team
+    role: owner
+  - username: data-engineering@company.com
+    name: Data Engineering
+    role: maintainer
+  - username: data-governance@company.com
+    name: Data Governance
+    role: steward
+
+# Tags for discovery
+tags:
+  - mdm
+  - master-data
+  - customer
+  - golden-record
+  - data-quality

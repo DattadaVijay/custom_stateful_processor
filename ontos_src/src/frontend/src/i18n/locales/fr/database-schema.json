@@ -1,0 +1,16 @@
+{
+  "title": "Schéma de Base de Données",
+  "loading": "Chargement du schéma de base de données...",
+  "errorLoadingSchema": "Erreur lors du Chargement du Schéma",
+  "legend": "Légende",
+  "notNull": "NON NULL",
+  "tableCount": "{{count}} tables",
+  "tableCount_one": "{{count}} table",
+  "relationshipCount": "{{count}} relations",
+  "relationshipCount_one": "{{count}} relation",
+  "columns": "{{count}} colonnes",
+  "columns_one": "{{count}} colonne",
+  "tableInfo": "Documentation de la table",
+  "noDescription": "Aucune description disponible pour cette table."
+}
+

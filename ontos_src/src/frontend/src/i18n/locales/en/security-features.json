@@ -1,0 +1,72 @@
+{
+  "title": "Security Features",
+  "subtitle": "Manage data security and privacy settings",
+  "newFeature": "New Security Feature",
+  "addFeature": "Add Security Feature",
+  "editFeature": "Edit Security Feature",
+  "searchPlaceholder": "Search security features...",
+  "loading": "Loading security features...",
+  "toast": {
+    "featureCreated": "Security feature created successfully",
+    "featureUpdated": "Security feature updated successfully",
+    "featureDeleted": "Security feature deleted successfully",
+    "loadError": "Failed to load security features",
+    "saveError": "Failed to save security feature",
+    "deleteError": "Failed to delete security feature"
+  },
+  "table": {
+    "name": "Name",
+    "type": "Type",
+    "target": "Target Asset",
+    "status": "Status",
+    "enabled": "Enabled",
+    "updated": "Updated",
+    "actions": "Actions",
+    "conditions": "Conditions",
+    "lastUpdated": "Last Updated"
+  },
+  "messages": {
+    "success": "Success",
+    "error": "Error",
+    "deleteConfirm": "Are you sure you want to delete this security feature?",
+    "deleteSuccess": "Security feature deleted successfully",
+    "deleteError": "Failed to delete security feature",
+    "enableSuccess": "Security feature enabled",
+    "disableSuccess": "Security feature disabled"
+  },
+  "types": {
+    "encryption": "Encryption",
+    "masking": "Data Masking",
+    "rowLevel": "Row-Level Security",
+    "columnLevel": "Column-Level Security",
+    "differential": "Differential Privacy",
+    "rowFiltering": "Row Filtering",
+    "columnMasking": "Column Masking",
+    "differentialPrivacy": "Differential Privacy",
+    "homomorphicEncryption": "Homomorphic Encryption",
+    "envelopeEncryption": "Envelope Encryption",
+    "tokenization": "Tokenization"
+  },
+  "details": {
+    "backToList": "Back to Security Features",
+    "edit": "Edit",
+    "delete": "Delete",
+    "enable": "Enable",
+    "disable": "Disable",
+    "notFound": "Security feature not found",
+    "loading": "Loading..."
+  },
+  "form": {
+    "createTitle": "Add Security Feature",
+    "editTitle": "Edit Security Feature",
+    "name": "Name",
+    "type": "Type",
+    "selectType": "Select type",
+    "target": "Target",
+    "configuration": "Configuration",
+    "cancel": "Cancel",
+    "save": "Save",
+    "saveChanges": "Save Changes",
+    "addFeature": "Add Feature"
+  }
+}

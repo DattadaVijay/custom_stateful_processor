@@ -1,0 +1,73 @@
+{
+  "title": "Beveiligingsfuncties",
+  "subtitle": "Beheer databeveiliging en privacy instellingen",
+  "newFeature": "Nieuwe Beveiligingsfunctie",
+  "addFeature": "Beveiligingsfunctie Toevoegen",
+  "editFeature": "Beveiligingsfunctie Bewerken",
+  "searchPlaceholder": "Zoek beveiligingsfuncties...",
+  "loading": "Beveiligingsfuncties laden...",
+  "toast": {
+    "featureCreated": "Beveiligingsfunctie succesvol aangemaakt",
+    "featureUpdated": "Beveiligingsfunctie succesvol bijgewerkt",
+    "featureDeleted": "Beveiligingsfunctie succesvol verwijderd",
+    "loadError": "Kon beveiligingsfuncties niet laden",
+    "saveError": "Kon beveiligingsfunctie niet opslaan",
+    "deleteError": "Kon beveiligingsfunctie niet verwijderen"
+  },
+  "table": {
+    "name": "Naam",
+    "type": "Type",
+    "target": "Doel Asset",
+    "status": "Status",
+    "enabled": "Ingeschakeld",
+    "updated": "Bijgewerkt",
+    "actions": "Acties",
+    "conditions": "Voorwaarden",
+    "lastUpdated": "Laatst Bijgewerkt"
+  },
+  "messages": {
+    "success": "Succes",
+    "error": "Fout",
+    "deleteConfirm": "Weet je zeker dat je deze beveiligingsfunctie wilt verwijderen?",
+    "deleteSuccess": "Beveiligingsfunctie succesvol verwijderd",
+    "deleteError": "Kon beveiligingsfunctie niet verwijderen",
+    "enableSuccess": "Beveiligingsfunctie ingeschakeld",
+    "disableSuccess": "Beveiligingsfunctie uitgeschakeld"
+  },
+  "types": {
+    "encryption": "Encryptie",
+    "masking": "Data Maskering",
+    "rowLevel": "Rij-niveau Beveiliging",
+    "columnLevel": "Kolom-niveau Beveiliging",
+    "differential": "Differential Privacy",
+    "rowFiltering": "Rij Filtering",
+    "columnMasking": "Kolom Maskering",
+    "differentialPrivacy": "Differential Privacy",
+    "homomorphicEncryption": "Homomorfe Encryptie",
+    "envelopeEncryption": "Envelope Encryptie",
+    "tokenization": "Tokenisatie"
+  },
+  "details": {
+    "backToList": "Terug naar Beveiligingsfuncties",
+    "edit": "Bewerken",
+    "delete": "Verwijderen",
+    "enable": "Inschakelen",
+    "disable": "Uitschakelen",
+    "notFound": "Beveiligingsfunctie niet gevonden",
+    "loading": "Laden..."
+  },
+  "form": {
+    "createTitle": "Beveiligingsfunctie Toevoegen",
+    "editTitle": "Beveiligingsfunctie Bewerken",
+    "name": "Naam",
+    "type": "Type",
+    "selectType": "Selecteer type",
+    "target": "Doel",
+    "configuration": "Configuratie",
+    "cancel": "Annuleren",
+    "save": "Opslaan",
+    "saveChanges": "Wijzigingen Opslaan",
+    "addFeature": "Functie Toevoegen"
+  }
+}
+

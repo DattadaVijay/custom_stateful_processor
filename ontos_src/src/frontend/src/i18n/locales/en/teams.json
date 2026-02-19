@@ -1,0 +1,88 @@
+{
+  "title": "Teams",
+  "addNewTeam": "Add New Team",
+  "editTeam": "Edit Team",
+  "deleteTeam": "Delete Team",
+  "showingTeamsForProject": "Showing teams for project:",
+  "form": {
+    "dialog": {
+      "createTitle": "Create New Team",
+      "editTitle": "Edit Team",
+      "createDescription": "Create a new team with members and role overrides.",
+      "editDescription": "Update team details and members."
+    },
+    "sections": {
+      "info": "Team Information",
+      "members": "Team Members",
+      "tags": "Tags"
+    },
+    "labels": {
+      "name": "Team Name *",
+      "title": "Display Title",
+      "description": "Description",
+      "domain": "Data Domain",
+      "type": "Type",
+      "identifier": "Email / Group Name",
+      "roleOverride": "Role Override",
+      "noOverride": "No override"
+    },
+    "placeholders": {
+      "name": "Enter team name",
+      "title": "Enter display title (optional)",
+      "description": "Enter team description (optional)",
+      "selectDomain": "Select a data domain (optional)",
+      "userEmail": "user@example.com",
+      "groupName": "group-name",
+      "noMembersHelp": "No team members added yet. Click \"Add Member\" to start building your team.",
+      "tagSearch": "Search and select tags for this team..."
+    },
+    "memberTypes": {
+      "user": "User",
+      "group": "Group"
+    },
+    "buttons": {
+      "addMember": "Add Member",
+      "removeMember": "Remove Member",
+      "update": "Update Team",
+      "create": "Create Team"
+    },
+    "toasts": {
+      "createdTitle": "Team Created",
+      "updatedTitle": "Team Updated",
+      "createdDescription": "Team \"{{name}}\" has been created successfully.",
+      "updatedDescription": "Team \"{{name}}\" has been updated successfully.",
+      "createFailedTitle": "Failed to Create Team",
+      "updateFailedTitle": "Failed to Update Team",
+      "failedDescription": "An unexpected error occurred."
+    }
+  },
+  "table": {
+    "name": "Name",
+    "description": "Description",
+    "members": "Members",
+    "lastUpdated": "Last Updated",
+    "actions": "Actions",
+    "domainPrefix": "↳ Domain:",
+    "moreMembers": "more"
+  },
+  "permissions": {
+    "deniedView": "You do not have permission to view teams.",
+    "deniedCreate": "You do not have permission to create teams.",
+    "deniedEdit": "You do not have permission to edit teams.",
+    "deniedDelete": "You do not have permission to delete teams.",
+    "permissionDenied": "Permission Denied"
+  },
+  "messages": {
+    "teamDeleted": "Team Deleted",
+    "teamDeletedSuccess": "The team was successfully deleted.",
+    "errorFetchingTeams": "Error fetching teams",
+    "errorDeletingTeam": "Error Deleting Team",
+    "errorLoadingData": "Error Loading Data"
+  },
+  "deleteDialog": {
+    "title": "Are you absolutely sure?",
+    "description": "This action cannot be undone. This will permanently delete the team and all its members.",
+    "cancel": "Cancel",
+    "delete": "Delete"
+  }
+}

@@ -1,0 +1,378 @@
+{
+  "title": "設定",
+  "tabs": {
+    "general": "一般",
+    "databricks": "Databricks",
+    "git": "Git",
+    "jobs": "ジョブとワークフロー",
+    "roles": "ロール",
+    "semanticModels": "セマンティックモデル",
+    "tags": "タグ",
+    "search": "検索",
+    "mcpTokens": "MCPトークン",
+    "workflows": "ワークフロー",
+    "uiCustomization": "UIカスタマイズ"
+  },
+  "accessDenied": {
+    "title": "アクセス拒否",
+    "message": "設定ページにアクセスする権限がありません。このページは管理者権限を持つユーザーのみに制限されています。",
+    "action": "アクセス権が必要と思われる場合は、管理者に連絡するか、",
+    "returnHome": "ホームページに戻る",
+    "requestRole": "して適切なロールをリクエストしてください。"
+  },
+  "general": {
+    "title": "一般設定",
+    "description": "基本的なアプリケーション設定を構成",
+    "enableBackgroundJobs": "バックグラウンドジョブを有効化",
+    "workspaceDeploymentPath": {
+      "label": "ワークスペースデプロイパス",
+      "placeholder": "/Workspace/Users/user@domain.com/ontos-workflows",
+      "help": "バックグラウンドジョブ用のワークフローファイルがデプロイされるDatabricksワークスペース内のパス。"
+    },
+    "unityCatalog": {
+      "title": "Unity Catalog",
+      "help": "アプリケーションデータを保存するUnity Catalogの場所。",
+      "catalog": {
+        "label": "カタログ",
+        "placeholder": "app_data"
+      },
+      "schema": {
+        "label": "スキーマ",
+        "placeholder": "app_ontos"
+      },
+      "volume": {
+        "label": "ボリューム",
+        "placeholder": "app_files"
+      }
+    },
+    "auditLog": {
+      "label": "監査ログディレクトリ",
+      "placeholder": "audit_logs",
+      "help": "監査ログファイルが保存されるディレクトリ。"
+    },
+    "llm": {
+      "title": "AI / LLM 設定",
+      "enabled": {
+        "label": "AI機能を有効化"
+      },
+      "endpoint": {
+        "label": "LLMエンドポイント",
+        "placeholder": "databricks-claude-sonnet-4-5",
+        "help": "LLM用のDatabricksサービングエンドポイント名。"
+      },
+      "systemPrompt": {
+        "label": "システムプロンプト",
+        "placeholder": "あなたはデータスチュワードです...",
+        "help": "AIアシスタントの動作を定義するシステムプロンプト。"
+      },
+      "disclaimer": {
+        "label": "免責事項テキスト",
+        "placeholder": "この機能はAIを使用してデータ資産を分析します...",
+        "help": "AI機能を使用する際にユーザーに表示される免責事項。"
+      }
+    },
+    "saveButton": "設定を保存",
+    "messages": {
+      "saveSuccess": "設定が正常に保存されました",
+      "saveError": "設定の保存に失敗しました"
+    }
+  },
+  "databricks": {
+    "title": "Databricks設定",
+    "description": "Databricks接続設定を構成",
+    "labels": {
+      "host": "ホスト",
+      "token": "トークン",
+      "warehouseId": "ウェアハウスID",
+      "catalog": "カタログ",
+      "schema": "スキーマ"
+    },
+    "placeholders": {
+      "host": "https://<your-workspace>.cloud.databricks.com",
+      "token": "dapi...",
+      "warehouseId": "1234abcd5678efgh",
+      "catalog": "main",
+      "schema": "uc_swiss_knife"
+    }
+  },
+  "git": {
+    "title": "Git設定",
+    "description": "YAML保存用Gitリポジトリを構成",
+    "labels": {
+      "repoUrl": "リポジトリURL",
+      "branch": "ブランチ",
+      "token": "トークン"
+    },
+    "placeholders": {
+      "repoUrl": "https://github.com/your-org/your-repo.git",
+      "branch": "main",
+      "token": "ghp_... または類似"
+    }
+  },
+  "jobs": {
+    "title": "ジョブとワークフローの設定",
+    "description": "Databricksジョブクラスタを設定し、バックグラウンドワークフローを有効化",
+    "jobClusterId": {
+      "label": "ジョブクラスタID",
+      "placeholder": "ジョブクラスタIDを入力"
+    },
+    "availableWorkflows": {
+      "label": "利用可能なワークフロー",
+      "description": "バックグラウンドワークフローの有効化・無効化"
+    },
+    "noWorkflows": "利用可能なワークフローがありません",
+    "saveButton": "設定を保存",
+    "messages": {
+      "saveSuccess": "設定が正常に保存されました",
+      "saveError": "設定の保存に失敗しました"
+    }
+  },
+  "jobsActions": {
+    "start": "開始",
+    "stop": "停止",
+    "pause": "一時停止",
+    "resume": "再開",
+    "history": "実行履歴を表示",
+    "cannotDisableRunning": "実行中のワークフローは無効化できません"
+  },
+  "jobRuns": {
+    "viewHistory": "実行履歴を表示",
+    "dialogTitle": "実行履歴: {{workflowName}}",
+    "dialogDescription": "このワークフローの最近の実行履歴",
+    "emptyState": "このワークフローの実行は見つかりませんでした",
+    "runId": "実行ID",
+    "runName": "名前",
+    "status": "ステータス",
+    "started": "開始",
+    "duration": "所要時間",
+    "notified": "通知済み",
+    "statuses": {
+      "success": "成功",
+      "failed": "失敗",
+      "canceled": "キャンセル",
+      "timedout": "タイムアウト",
+      "running": "実行中",
+      "pending": "保留",
+      "unknown": "不明"
+    }
+  },
+  "roles": {
+    "title": "ロールベースのアクセス制御",
+    "description": "アプリケーションロールを定義し、ディレクトリグループに権限を割り当てます。",
+    "table": {
+      "nameColumn": "名前",
+      "descriptionColumn": "説明",
+      "assignedGroupsColumn": "割り当てられたグループ",
+      "none": "なし",
+      "assigned": "割り当て済み",
+      "request": "リクエスト",
+      "requestTooltip": "このロールへのアクセスをリクエスト",
+      "alreadyAssignedTooltip": "このロールはすでに割り当てられています"
+    },
+    "dialog": {
+      "createTitle": "ロールを作成",
+      "editTitle": "ロールを編集: {{name}}",
+      "description": "ロール名、割り当てられたグループ、機能の権限、承認権限を定義します。"
+    },
+    "tabs": {
+      "general": "一般",
+      "privileges": "特権",
+      "permissions": "権限",
+      "deployment": "デプロイメント",
+      "accessControl": "アクセス制御"
+    },
+    "general": {
+      "roleName": "ロール名",
+      "roleNameRequired": "ロール名は必須です",
+      "description": "説明",
+      "assignedGroups": "割り当てられたディレクトリグループ（カンマ区切り）",
+      "assignedGroupsPlaceholder": "例：data-stewards, finance-team",
+      "assignedGroupsHelp": "これらのグループに所属するユーザーは、このロールの権限を継承します。"
+    },
+    "privileges": {
+      "homeSections": {
+        "title": "ホームセクション",
+        "description": "このロールを持つユーザーのホームページに表示されるセクションを選択します。"
+      },
+      "approvalPrivileges": {
+        "title": "承認権限",
+        "description": "このロールに特定の種類のリクエストを承認する権限を付与します。"
+      }
+    },
+    "permissions": {
+      "featurePermissions": {
+        "title": "機能の権限",
+        "description": "アプリケーション内の各機能のアクセスレベルを設定します。"
+      }
+    },
+    "deployment": {
+      "title": "デプロイメントポリシー",
+      "description": "このロールを持つユーザーがデプロイできるUnity Catalogのカタログ/スキーマを制御します。ワイルドカード（* は全て）とテンプレート変数（{username}、{email}）をサポートします。",
+      "allowedCatalogs": {
+        "label": "許可されたカタログ（カンマ区切り）",
+        "placeholder": "例：prod_catalog, {username}_sandbox, *",
+        "help": "デプロイメントを防ぐには空のままにします。すべてのカタログを許可するには * を使用します。"
+      },
+      "allowedSchemas": {
+        "label": "許可されたスキーマ（カンマ区切り、オプション）",
+        "placeholder": "例：dev, {username}_schema, *",
+        "help": "許可されたカタログ内の任意のスキーマを許可するには空のままにします。"
+      },
+      "defaultCatalog": {
+        "label": "デフォルトカタログ",
+        "placeholder": "例：{username}_sandbox",
+        "help": "UIで事前選択"
+      },
+      "defaultSchema": {
+        "label": "デフォルトスキーマ",
+        "placeholder": "例：default",
+        "help": "UIで事前選択"
+      },
+      "requireApproval": "デプロイメントに承認が必要",
+      "canApprove": "デプロイメントリクエストを承認できる"
+    },
+    "accessControl": {
+      "requestableBy": {
+        "title": "このロールをリクエストできるユーザー",
+        "description": "このロールへのアクセスをリクエストできるロールを選択します。これらのロールを持つユーザーは、リクエスト可能なロール一覧にこのロールが表示されます。"
+      },
+      "approvers": {
+        "title": "このロールのリクエストを承認できるユーザー",
+        "description": "このロールへのアクセスリクエストを承認できるロールを選択します。これらのロールを持つユーザーは、誰かがこのロールをリクエストした際に通知を受け取ります。",
+        "hint": "承認者が選択されていない場合、リクエストはデフォルトで管理者に送信されます。"
+      },
+      "noRole": "ロールなしのユーザー（新規ユーザー）",
+      "noRolesAvailable": "他のロールがありません",
+      "defaultApprover": "デフォルト"
+    },
+    "actions": {
+      "cancel": "キャンセル",
+      "create": "ロールを作成",
+      "update": "ロールを更新",
+      "addRole": "ロールを追加",
+      "actions": "アクション",
+      "editRole": "ロールを編集",
+      "deleteRole": "ロールを削除"
+    }
+  },
+  "mcpTokens": {
+    "title": "MCP APIトークン",
+    "description": "Model Context Protocolを介したAIアシスタント統合用のAPIトークンを管理",
+    "refresh": "更新",
+    "createToken": "トークンを作成",
+    "showRevokedTokens": "取り消されたトークンを表示",
+    "emptyState": {
+      "title": "MCPトークンはまだありません",
+      "description": "AIアシスタントがツールにアクセスできるようにトークンを作成してください"
+    },
+    "table": {
+      "name": "名前",
+      "scopes": "スコープ",
+      "created": "作成日",
+      "lastUsed": "最終使用",
+      "expires": "有効期限",
+      "status": "ステータス",
+      "actions": "アクション",
+      "never": "なし",
+      "moreScopes": "他{{count}}件",
+      "createdBy": "作成者: {{name}}"
+    },
+    "status": {
+      "active": "有効",
+      "revoked": "取り消し済み",
+      "expired": "期限切れ"
+    },
+    "tooltips": {
+      "revokeToken": "トークンを取り消す"
+    },
+    "info": {
+      "title": "MCPトークンの使用方法",
+      "description": "MCPトークンにより、AIアシスタントがデータガバナンスプラットフォームと連携できます。各トークンには、アクセスできるツールを制御する特定のスコープがあります。",
+      "endpoint": "エンドポイント:",
+      "header": "ヘッダー:"
+    },
+    "createDialog": {
+      "title": "MCPトークンを作成",
+      "description": "AIアシスタント統合用の新しいAPIトークンを作成します。トークンは一度だけ表示されます。",
+      "tokenName": "トークン名",
+      "tokenNamePlaceholder": "例：Claude Assistant - 分析チーム",
+      "tokenNameHelp": "このトークンを識別するための説明的な名前",
+      "expiration": "有効期限（日数）",
+      "expirationHelp": "無期限にするには空欄のままにします",
+      "scopes": "スコープ",
+      "scopesHelp": "このトークンに付与する権限を選択してください",
+      "selectedScopes": "選択済み:",
+      "cancel": "キャンセル",
+      "create": "トークンを作成",
+      "creating": "作成中..."
+    },
+    "createdDialog": {
+      "title": "トークンが正常に作成されました",
+      "warning": "今すぐこのトークンをコピーしてください — 再表示されません！",
+      "tokenName": "トークン名",
+      "apiToken": "APIトークン",
+      "scopes": "スコープ",
+      "expires": "有効期限",
+      "copy": "コピー",
+      "copied": "コピーしました！",
+      "done": "完了"
+    },
+    "revokeDialog": {
+      "title": "トークンを取り消しますか？",
+      "description": "本当にこのトークンを取り消しますか",
+      "warning": "この操作は取り消せません。このトークンを使用しているAIアシスタントは直ちにアクセスできなくなります。",
+      "cancel": "キャンセル",
+      "revoke": "トークンを取り消す"
+    },
+    "messages": {
+      "loadError": "MCPトークンの読み込みに失敗しました",
+      "tokenNameRequired": "トークン名は必須です",
+      "scopeRequired": "少なくとも1つのスコープが必要です",
+      "createError": "トークンの作成に失敗しました",
+      "copied": "トークンをクリップボードにコピーしました",
+      "revoked": "トークン「{{name}}」が取り消されました",
+      "revokeError": "トークンの取り消しに失敗しました"
+    }
+  },
+  "uiCustomization": {
+    "title": "UIカスタマイズ",
+    "description": "アプリケーションのブランディング、言語設定、外観をカスタマイズします。",
+    "i18n": {
+      "title": "言語設定",
+      "enableLabel": "国際化を有効にする",
+      "enableDescription": "無効にすると、ブラウザの設定に関係なく常に英語が使用されます。"
+    },
+    "logo": {
+      "title": "カスタムロゴ",
+      "urlLabel": "ロゴURL",
+      "urlPlaceholder": "https://example.com/logo.svg",
+      "help": "カスタムロゴのURLを入力してください。SVG、PNG、JPG形式をサポート。推奨サイズ：40x40ピクセル。",
+      "invalidUrl": "有効なHTTPまたはHTTPS URLを入力してください",
+      "preview": "プレビュー：",
+      "loadError": "画像の読み込みに失敗しました",
+      "openInNewTab": "新しいタブで開く"
+    },
+    "about": {
+      "title": "カスタム「About」ページコンテンツ",
+      "description": "デフォルトのAboutページをカスタムMarkdownで置き換えます。",
+      "editTab": "編集",
+      "previewTab": "プレビュー",
+      "placeholder": "# 会社について\n\n**Markdown**を使用してカスタムコンテンツを記述してください...",
+      "noContent": "カスタムコンテンツがありません。デフォルトのAboutページが表示されます。"
+    },
+    "css": {
+      "title": "カスタムスタイルシート",
+      "warningTitle": "注意して使用してください",
+      "warningDescription": "無効なCSSはUIを壊す可能性があります。変更を反映するにはページをリロードしてください。",
+      "label": "カスタムCSS",
+      "placeholder": "/* CSS変数を上書き */\n:root {\n  --primary: 220 70% 50%;\n}",
+      "help": "デフォルトテーマを上書きするカスタムCSSを入力してください。"
+    },
+    "saveButton": "UI設定を保存",
+    "messages": {
+      "saveSuccess": "UIカスタマイズ設定を保存しました",
+      "saveError": "設定の保存に失敗しました",
+      "reloadRequired": "一部の変更を確認するにはページをリロードしてください。"
+    }
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "title": "Data Asset Beoordelingen",
+  "subtitle": "Beoordeel en keur data assets goed",
+  "newReview": "Nieuwe Beoordeling",
+  "createRequest": "Nieuw Data Asset Beoordelingsverzoek Aanmaken",
+  "searchPlaceholder": "Zoek beoordelingen...",
+  "loading": "Beoordelingen laden...",
+  "noRequests": "Geen beoordelingsverzoeken gevonden.",
+  "toast": {
+    "requestCreated": "Beoordelingsverzoek {{id}} aangemaakt.",
+    "requestDeleted": "Beoordelingsverzoek verwijderd.",
+    "deleteError": "Kon verzoek niet verwijderen.",
+    "bulkDeleted": "{{count}} verzoek(en) verwijderd.",
+    "bulkDeleteError": "Sommige verzoeken konden niet worden verwijderd."
+  },
+  "confirm": {
+    "deleteRequest": "Weet je zeker dat je dit beoordelingsverzoek wilt verwijderen?",
+    "bulkDelete": "Weet je zeker dat je {{count}} geselecteerde verzoek(en) wilt verwijderen?"
+  },
+  "filters": {
+    "allStatus": "Alle Status",
+    "pending": "In Afwachting",
+    "approved": "Goedgekeurd",
+    "rejected": "Afgewezen"
+  },
+  "table": {
+    "requestId": "Verzoek ID",
+    "asset": "Asset",
+    "type": "Type",
+    "requester": "Aanvrager",
+    "reviewer": "Beoordelaar",
+    "status": "Status",
+    "assets": "Assets",
+    "requested": "Aangevraagd",
+    "created": "Aangemaakt",
+    "updated": "Bijgewerkt",
+    "actions": "Acties"
+  },
+  "messages": {
+    "success": "Succes",
+    "error": "Fout",
+    "approveSuccess": "Beoordeling succesvol goedgekeurd",
+    "rejectSuccess": "Beoordeling succesvol afgewezen",
+    "approveError": "Kon beoordeling niet goedkeuren",
+    "rejectError": "Kon beoordeling niet afwijzen"
+  },
+  "status": {
+    "pending": "In Afwachting",
+    "in_review": "In Beoordeling",
+    "approved": "Goedgekeurd",
+    "rejected": "Afgewezen",
+    "cancelled": "Geannuleerd"
+  },
+  "details": {
+    "backToList": "Terug naar Beoordelingen",
+    "approve": "Goedkeuren",
+    "reject": "Afwijzen",
+    "cancel": "Beoordeling Annuleren",
+    "notFound": "Beoordeling niet gevonden",
+    "loading": "Laden...",
+    "asset": "Asset",
+    "requester": "Aanvrager",
+    "reviewer": "Beoordelaar",
+    "reason": "Reden",
+    "comments": "Opmerkingen",
+    "addComment": "Opmerking Toevoegen"
+  }
+}
+

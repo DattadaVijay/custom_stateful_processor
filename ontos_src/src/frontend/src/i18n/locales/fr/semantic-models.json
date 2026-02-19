@@ -1,0 +1,67 @@
+{
+  "rebuildGraph": "Reconstruire le graphe",
+  "rebuildingGraph": "Reconstruction…",
+  "rebuildGraphTooltip": "Recharger les ontologies, les sources implicites et les objets applicatifs pour tout interroger.",
+  "title": "Glossaire Métier",
+  "subtitle": "Gérez les glossaires métier et les définitions sémantiques",
+  "newModel": "Nouveau Glossaire",
+  "newTerm": "Nouveau Terme",
+  "searchPlaceholder": "Rechercher des termes...",
+  "loading": "Chargement des modèles sémantiques...",
+  "filters": {
+    "allGlossaries": "Tous les Glossaires",
+    "allStatus": "Tous les Statuts",
+    "bySource": "Filtrer par Source",
+    "all": "Tous",
+    "none": "Aucun",
+    "groupBySource": "Grouper par Source"
+  },
+  "table": {
+    "name": "Nom",
+    "glossary": "Glossaire",
+    "definition": "Définition",
+    "status": "Statut",
+    "updated": "Mis à jour",
+    "actions": "Actions"
+  },
+  "messages": {
+    "success": "Succès",
+    "error": "Erreur",
+    "deleteConfirm": "Êtes-vous sûr de vouloir supprimer ce terme ?",
+    "deleteSuccess": "Terme supprimé avec succès",
+    "deleteError": "Échec de la suppression du terme"
+  },
+  "status": {
+    "draft": "Brouillon",
+    "pending": "En attente",
+    "in_review": "En révision",
+    "under_review": "En révision",
+    "active": "Actif",
+    "approved": "Approuvé",
+    "certified": "Certifié",
+    "deprecated": "Obsolète",
+    "retired": "Retiré"
+  },
+  "details": {
+    "backToList": "Retour aux Termes",
+    "edit": "Modifier",
+    "delete": "Supprimer",
+    "notFound": "Terme non trouvé",
+    "loading": "Chargement...",
+    "linkedAssets": "Actifs Liés",
+    "synonyms": "Synonymes",
+    "relatedTerms": "Termes Associés"
+  },
+  "form": {
+    "createTitle": "Créer un Terme",
+    "editTitle": "Modifier le Terme",
+    "name": "Nom",
+    "glossary": "Glossaire",
+    "definition": "Définition",
+    "synonyms": "Synonymes",
+    "status": "Statut",
+    "cancel": "Annuler",
+    "save": "Enregistrer"
+  }
+}
+

@@ -1,0 +1,229 @@
+{
+  "title": "Data Products",
+  "subtitle": "Manage your data products",
+  "newProduct": "New Data Product",
+  "importProduct": "Import",
+  "searchPlaceholder": "Search data products...",
+  "loading": "Loading data products...",
+  "filters": {
+    "allStatus": "All Status",
+    "allOwners": "All Owners",
+    "mySubscriptions": "My Subscriptions"
+  },
+  "toolbar": {
+    "showAll": "Show all products",
+    "showSubscriptions": "Show only my subscriptions",
+    "mySubscriptionsCount": "My Subscriptions ({{count}})",
+    "createProduct": "Create Product",
+    "uploadFile": "Upload File"
+  },
+  "permissions": {
+    "denied": "Permission Denied",
+    "noView": "You do not have permission to view data products.",
+    "noCreate": "You do not have permission to create data products.",
+    "noEdit": "You do not have permission to edit data products.",
+    "noDelete": "You do not have permission to delete data products.",
+    "noBulkDelete": "You do not have permission to bulk delete.",
+    "noGenieSpace": "You do not have permission to create Genie Spaces."
+  },
+  "bulk": {
+    "deleteConfirm": "Are you sure you want to delete {{count}} selected product(s)?",
+    "deleteSuccess": "Bulk Delete Success",
+    "deleteSuccessCount": "{{count}} product(s) deleted.",
+    "deleteError": "Bulk Delete Error",
+    "deleteErrorCount": "{{count}} product(s) could not be deleted. First error: {{error}}",
+    "requestAccessTitle": "Request access for selected",
+    "requestAccess": "Request Access ({{count}})",
+    "createGenieSpaceTitle": "Create Genie Space from selected",
+    "createGenieSpace": "Create Genie Space ({{count}})",
+    "deleteTitle": "Delete selected",
+    "deleteSelected": "Delete Selected ({{count}})"
+  },
+  "access": {
+    "submitting": "Submitting",
+    "requestingAccess": "Requesting access for {{count}} item(s)...",
+    "requestError": "Failed to submit access requests",
+    "requestSent": "Request Sent",
+    "requestSubmitted": "Access request submitted. You will be notified."
+  },
+  "upload": {
+    "success": "Upload Successful",
+    "successMessage": "Successfully processed {{filename}}. {{count}} product(s) processed.",
+    "failed": "Upload Failed",
+    "unexpectedError": "An unexpected error occurred during upload.",
+    "uploading": "Uploading...",
+    "tooltipTitle": "Upload Data Product (ODPS format)",
+    "tooltipDescription": "Accepts YAML or JSON files following the ODPS (Open Data Product Standard) schema.",
+    "tooltipHint": "For Data Contracts (ODCS), use the Data Contracts page instead."
+  },
+  "genie": {
+    "noSelection": "No Selection",
+    "selectAtLeastOne": "Please select at least one data product.",
+    "createConfirm": "Create a Genie Space for {{count}} selected product(s)?",
+    "initiating": "Initiating Genie Space",
+    "requestingCreation": "Requesting Genie Space creation for {{count}} product(s)...",
+    "requestSubmitted": "Request Submitted",
+    "willBeNotified": "Genie Space creation initiated. You'll be notified.",
+    "creationError": "Failed to start Genie Space creation."
+  },
+  "navigation": {
+    "error": "Navigation Error",
+    "missingId": "Could not navigate to details, product ID is missing."
+  },
+  "table": {
+    "title": "Title",
+    "name": "Name",
+    "status": "Status",
+    "domain": "Domain",
+    "owner": "Owner",
+    "version": "Version",
+    "type": "Type",
+    "tags": "Tags",
+    "created": "Created",
+    "updated": "Updated",
+    "actions": "Actions",
+    "viewDetails": "View details",
+    "editProduct": "Edit product",
+    "deleteProduct": "Delete product",
+    "subscribed": "Subscribed"
+  },
+  "messages": {
+    "deleteConfirm": "Are you sure you want to delete this data product?",
+    "deleteSuccess": "Data product deleted successfully",
+    "deleteError": "Failed to delete data product",
+    "fetchError": "Failed to fetch data products",
+    "importSuccess": "Data product imported successfully",
+    "importError": "Failed to import data product",
+    "success": "Success",
+    "error": "Error"
+  },
+  "status": {
+    "draft": "Draft",
+    "sandbox": "Sandbox",
+    "proposed": "Proposed",
+    "under_review": "Under Review",
+    "in_review": "In Review",
+    "active": "Active",
+    "approved": "Approved",
+    "certified": "Certified",
+    "deprecated": "Deprecated",
+    "retired": "Retired",
+    "published": "Published"
+  },
+  "viewMode": {
+    "table": "Table",
+    "graph": "Graph"
+  },
+  "details": {
+    "backToList": "Back to List",
+    "edit": "Edit",
+    "delete": "Delete",
+    "subscribe": "Subscribe",
+    "unsubscribe": "Unsubscribe",
+    "publish": "Publish",
+    "unpublish": "Unpublish",
+    "published": "Published",
+    "notFound": "Data product not found",
+    "loading": "Loading...",
+    "noDescription": "No description provided",
+    "coreMetadata": {
+      "status": "Status",
+      "version": "Version",
+      "owner": "Owner",
+      "domain": "Domain",
+      "created": "Created",
+      "updated": "Updated",
+      "tags": "Tags",
+      "noTags": "No tags",
+      "notAssigned": "Not assigned"
+    },
+    "sections": {
+      "overview": "Overview",
+      "description": "Description",
+      "inputPorts": "Input Ports",
+      "outputPorts": "Output Ports",
+      "contracts": "Data Contracts",
+      "subscribers": "Subscribers",
+      "lineage": "Lineage"
+    },
+    "inputPorts": {
+      "title": "Input Ports",
+      "subtitle": "Data sources consumed by this product",
+      "noInputPorts": "No input ports defined",
+      "addInputPort": "Add Input Port"
+    },
+    "outputPorts": {
+      "title": "Output Ports",
+      "subtitle": "Data exposed by this product",
+      "noOutputPorts": "No output ports defined",
+      "addOutputPort": "Add Output Port"
+    },
+    "contracts": {
+      "title": "Data Contracts",
+      "subtitle": "Contracts associated with this product",
+      "noContracts": "No contracts linked",
+      "viewContract": "View Contract"
+    },
+    "subscribers": {
+      "title": "Subscribers",
+      "subtitle": "Users and teams subscribed to this product",
+      "noSubscribers": "No subscribers yet",
+      "table": {
+        "email": "Email",
+        "subscribed": "Subscribed",
+        "reason": "Reason"
+      }
+    },
+    "subscription": {
+      "subscribed": "Subscribed",
+      "unsubscribed": "Unsubscribed",
+      "subscribeMessage": "You will receive updates for this data product",
+      "unsubscribeMessage": "You will no longer receive updates for this data product",
+      "error": "Failed to update subscription"
+    },
+    "deleteConfirm": "Are you sure you want to delete \"{{name}}\"?",
+    "deleteSuccess": "Data product deleted successfully",
+    "deleteError": "Failed to delete data product"
+  },
+  "form": {
+    "createTitle": "Create Data Product",
+    "editTitle": "Edit Data Product",
+    "name": "Name",
+    "namePlaceholder": "Enter product name",
+    "description": "Description",
+    "descriptionPlaceholder": "Enter product description",
+    "purpose": "Purpose",
+    "purposePlaceholder": "What is the purpose of this data product?",
+    "usage": "Usage",
+    "usagePlaceholder": "How should this data product be used?",
+    "status": "Status",
+    "version": "Version",
+    "versionPlaceholder": "e.g., 1.0.0",
+    "domain": "Domain",
+    "selectDomain": "Select a domain",
+    "noDomain": "No domain",
+    "ownerTeam": "Owner Team",
+    "selectOwnerTeam": "Select owner team",
+    "noOwner": "No owner",
+    "tags": "Tags",
+    "tagsPlaceholder": "Enter tags separated by commas",
+    "cancel": "Cancel",
+    "save": "Save",
+    "create": "Create",
+    "saving": "Saving...",
+    "createSuccess": "Data product created successfully",
+    "updateSuccess": "Data product updated successfully",
+    "createError": "Failed to create data product",
+    "updateError": "Failed to update data product"
+  },
+  "import": {
+    "title": "Import Data Product",
+    "dropzone": "Drop a YAML or JSON file here, or click to select",
+    "pasteLabel": "Or paste content directly",
+    "pastePlaceholder": "Paste YAML or JSON content...",
+    "cancel": "Cancel",
+    "import": "Import",
+    "importing": "Importing..."
+  }
+}
+

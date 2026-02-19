@@ -1,0 +1,89 @@
+{
+  "title": "Gestion des Données de Référence",
+  "subtitle": "Définissez des contrats de données de référence et gérez la correspondance d'entités entre systèmes",
+  "newConfiguration": "Nouvelle Configuration MDM",
+  "configurations": "Configurations MDM",
+  "noConfigurations": "Aucune configuration MDM pour l'instant.",
+  "getStarted": "Créez votre première configuration pour commencer.",
+  "sources": "sources",
+  "lastRun": "Dernière Exécution",
+  "stats": {
+    "matchingRuns": "Exécutions de Correspondance",
+    "totalMatches": "Correspondances Totales",
+    "newRecords": "Nouveaux Enregistrements",
+    "pendingReview": "En Attente de Révision"
+  },
+  "configDetails": {
+    "title": "Détails de la Configuration",
+    "selectConfig": "Sélectionnez une configuration pour voir les détails",
+    "startMatching": "Démarrer la Correspondance",
+    "editRules": "Modifier les Règles MDM",
+    "linkSource": "Lier un Contrat Source",
+    "deleteConfig": "Supprimer la Configuration"
+  },
+  "tabs": {
+    "overview": "Aperçu",
+    "sources": "Sources",
+    "matchingRules": "Règles de Correspondance",
+    "matchingRuns": "Exécutions de Correspondance",
+    "reviewQueue": "File de Révision"
+  },
+  "overview": {
+    "description": "Description",
+    "entityType": "Type d'Entité",
+    "goldenRecordTarget": "Cible de l'Enregistrement Maître"
+  },
+  "sourcesTab": {
+    "title": "Sources Liées",
+    "dataContract": "Contrat de Données",
+    "keyColumn": "Colonne Clé",
+    "matchColumns": "Colonnes de Correspondance",
+    "noSources": "Aucun contrat source lié pour l'instant."
+  },
+  "rulesTab": {
+    "title": "Règles de Correspondance",
+    "noRules": "Aucune règle de correspondance configurée pour l'instant.",
+    "matchingRulesButton": "Modifier les Règles MDM",
+    "description": "Configurez les règles utilisées pour identifier et faire correspondre les enregistrements en double."
+  },
+  "runsTab": {
+    "title": "Historique des Exécutions",
+    "runId": "ID d'Exécution",
+    "status": "Statut",
+    "matchesFound": "Correspondances Trouvées",
+    "newRecords": "Nouveaux Enregistrements",
+    "pendingReview": "En Attente de Révision",
+    "noRuns": "Aucune exécution de correspondance pour l'instant. Démarrez un travail pour voir les résultats.",
+    "selectRun": "Sélectionnez une exécution pour voir les candidats"
+  },
+  "candidates": {
+    "title": "Candidats de Correspondance",
+    "sourceRecord": "Enregistrement Source",
+    "targetRecord": "Enregistrement Cible",
+    "matchType": "Type de Correspondance",
+    "confidence": "Confiance",
+    "viewDetails": "Voir les Détails",
+    "approve": "Approuver",
+    "reject": "Rejeter",
+    "mergeApproved": "Fusionner les Approuvés",
+    "createReview": "Créer une Demande de Révision",
+    "noCandidates": "Aucun candidat de correspondance pour cette exécution."
+  },
+  "toast": {
+    "matchingStarted": "Travail de correspondance MDM démarré",
+    "mergeCompleted": "Fusion terminée",
+    "configDeleted": "Configuration supprimée",
+    "sourceRemoved": "Lien source supprimé"
+  },
+  "errors": {
+    "loadFailed": "Échec du chargement des configurations MDM",
+    "startMatchingFailed": "Échec du démarrage de la correspondance",
+    "mergeFailed": "Échec de la fusion",
+    "deleteFailed": "Échec de la suppression"
+  },
+  "confirm": {
+    "deleteConfig": "Êtes-vous sûr de vouloir supprimer cette configuration MDM ?",
+    "deleteSource": "Êtes-vous sûr de vouloir supprimer ce lien source ?"
+  }
+}
+

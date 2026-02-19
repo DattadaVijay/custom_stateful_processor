@@ -1,0 +1,105 @@
+{
+  "title": "Compliance",
+  "subtitle": "Verwalten Sie Compliance-Richtlinien und -Ausführungen",
+  "newPolicy": "Neue Richtlinie",
+  "createRule": "Regel erstellen",
+  "editRule": "Compliance-Regel bearbeiten",
+  "createNewRule": "Neue Compliance-Regel erstellen",
+  "searchPlaceholder": "Richtlinien suchen...",
+  "loading": "Compliance-Daten werden geladen...",
+  "stats": {
+    "overallCompliance": "Gesamte Compliance",
+    "acrossAllRules": "Über alle Regeln",
+    "activeRules": "Aktive Regeln",
+    "currentlyEnforced": "Derzeit durchgesetzt",
+    "criticalIssues": "Kritische Probleme",
+    "requireAttention": "Erfordern Aufmerksamkeit",
+    "lastUpdated": "Zuletzt aktualisiert",
+    "today": "Heute"
+  },
+  "form": {
+    "name": "Name",
+    "description": "Beschreibung",
+    "category": "Kategorie",
+    "selectCategory": "Kategorie auswählen",
+    "severity": "Schweregrad",
+    "selectSeverity": "Schweregrad auswählen",
+    "ruleCode": "Regelcode",
+    "rulePlaceholder": "Compliance-Regel im DSL-Format eingeben",
+    "failureMessage": "Fehlermeldung",
+    "failureMessagePlaceholder": "z.B. Namen müssen snake_case verwenden (Kleinbuchstaben mit Unterstrichen)",
+    "failureMessageHint": "Benutzerfreundliche Nachricht, die angezeigt wird, wenn diese Richtlinie fehlschlägt. Erklärt, was falsch ist und wie es behoben werden kann."
+  },
+  "categories": {
+    "security": "Sicherheit",
+    "dataQuality": "Datenqualität",
+    "privacy": "Datenschutz",
+    "governance": "Governance"
+  },
+  "errors": {
+    "loadingPolicies": "Fehler beim Laden der Richtlinien",
+    "savingPolicy": "Fehler beim Speichern der Richtlinie",
+    "deletingPolicy": "Fehler beim Löschen der Richtlinie"
+  },
+  "toast": {
+    "policySaved": "Richtlinie '{{name}}' erfolgreich gespeichert",
+    "policyDeleted": "Richtlinie erfolgreich gelöscht"
+  },
+  "score": {
+    "title": "Compliance-Score",
+    "overall": "Gesamtscore",
+    "trend": "Trend"
+  },
+  "filters": {
+    "allStatus": "Alle Status",
+    "allSeverity": "Alle Schweregrade"
+  },
+  "table": {
+    "name": "Name",
+    "status": "Status",
+    "severity": "Schweregrad",
+    "lastRun": "Letzte Ausführung",
+    "score": "Score",
+    "actions": "Aktionen"
+  },
+  "messages": {
+    "success": "Erfolg",
+    "error": "Fehler",
+    "deleteConfirm": "Möchten Sie diese Richtlinie wirklich löschen?",
+    "deleteSuccess": "Richtlinie erfolgreich gelöscht",
+    "deleteError": "Fehler beim Löschen der Richtlinie"
+  },
+  "status": {
+    "draft": "Entwurf",
+    "active": "Aktiv",
+    "paused": "Pausiert",
+    "disabled": "Deaktiviert"
+  },
+  "severity": {
+    "critical": "Kritisch",
+    "high": "Hoch",
+    "medium": "Mittel",
+    "low": "Niedrig"
+  },
+  "details": {
+    "backToList": "Zurück zu Richtlinien",
+    "edit": "Bearbeiten",
+    "delete": "Löschen",
+    "run": "Jetzt ausführen",
+    "notFound": "Richtlinie nicht gefunden",
+    "loading": "Wird geladen..."
+  },
+  "runs": {
+    "title": "Compliance-Ausführungen",
+    "runNow": "Jetzt ausführen",
+    "noRuns": "Noch keine Compliance-Ausführungen",
+    "table": {
+      "startTime": "Startzeit",
+      "endTime": "Endzeit",
+      "status": "Status",
+      "score": "Score",
+      "issues": "Probleme"
+    }
+  }
+}
+

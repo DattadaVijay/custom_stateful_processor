@@ -1,0 +1,30 @@
+.animatedLogo {
+  display: block;
+  margin: 0 auto;
+}
+
+.drawPath {
+  fill: none;
+  stroke-dasharray: 10000;
+  stroke-dashoffset: 10000;
+  animation: draw 4s ease-in-out infinite;
+}
+
+@keyframes draw {
+  0% {
+    stroke-dashoffset: 10000;
+    fill: none;
+  }
+  50% {
+    stroke-dashoffset: 0;
+    fill: none;
+  }
+  90% {
+    stroke-dashoffset: 0;
+    fill: var(--ontos-orange, #fe5f46);
+  }
+  100% {
+    stroke-dashoffset: 0;
+    fill: var(--ontos-orange, #fe5f46);
+  }
+}

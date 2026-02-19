@@ -1,0 +1,123 @@
+{
+  "title": "Metadatos",
+  "description": "Notas, enlaces y archivos adjuntos.",
+  "previewRenderedPage": "Vista previa de la página renderizada",
+  "notes": {
+    "title": "Notas adicionales",
+    "add": "Añadir",
+    "refresh": "Actualizar",
+    "noNotes": "Aún no hay notas.",
+    "preview": "Vista previa",
+    "edit": "Editar",
+    "delete": "Eliminar",
+    "editTitle": "Editar nota",
+    "addTitle": "Añadir nota",
+    "attachShared": "Adjuntar nota compartida",
+    "selectShared": "Seleccionar nota compartida",
+    "table": {
+      "title": "Título",
+      "description": "Descripción",
+      "created": "Creado",
+      "actions": "Acciones",
+      "level": "Nivel",
+      "flags": "Indicadores"
+    },
+    "form": {
+      "title": "Título",
+      "shortDescription": "Descripción breve",
+      "content": "Contenido (Markdown)",
+      "save": "Guardar",
+      "cancel": "Cancelar",
+      "level": "Nivel",
+      "inheritable": "Heredable",
+      "shared": "Asset compartido"
+    },
+    "messages": {
+      "deleteFailed": "Error al eliminar",
+      "addFailed": "Error al añadir nota",
+      "updateFailed": "Error al actualizar"
+    }
+  },
+  "links": {
+    "title": "Enlaces relacionados",
+    "add": "Añadir",
+    "refresh": "Actualizar",
+    "noLinks": "Aún no hay enlaces.",
+    "open": "Abrir",
+    "edit": "Editar",
+    "delete": "Eliminar",
+    "editTitle": "Editar enlace",
+    "addTitle": "Añadir enlace",
+    "attachShared": "Adjuntar enlace compartido",
+    "selectShared": "Seleccionar enlace compartido",
+    "table": {
+      "title": "Título",
+      "url": "URL",
+      "description": "Descripción",
+      "created": "Creado",
+      "actions": "Acciones",
+      "level": "Nivel",
+      "flags": "Indicadores"
+    },
+    "form": {
+      "title": "Título",
+      "url": "URL",
+      "shortDescription": "Descripción breve",
+      "save": "Guardar",
+      "cancel": "Cancelar",
+      "level": "Nivel",
+      "inheritable": "Heredable",
+      "shared": "Asset compartido"
+    },
+    "messages": {
+      "deleteFailed": "Error al eliminar",
+      "addFailed": "Error al añadir enlace",
+      "updateFailed": "Error al actualizar"
+    }
+  },
+  "documents": {
+    "title": "Documentos adjuntos",
+    "add": "Añadir",
+    "refresh": "Actualizar",
+    "noDocuments": "No hay documentos subidos.",
+    "preview": "Vista previa",
+    "delete": "Eliminar",
+    "attachShared": "Adjuntar documento compartido",
+    "selectShared": "Seleccionar documento compartido",
+    "table": {
+      "title": "Título",
+      "filename": "Nombre del archivo",
+      "description": "Descripción",
+      "size": "Tamaño",
+      "created": "Creado",
+      "actions": "Acciones",
+      "level": "Nivel",
+      "flags": "Indicadores"
+    },
+    "form": {
+      "title": "Título",
+      "shortDescription": "Descripción breve",
+      "file": "Archivo",
+      "upload": "Subir",
+      "cancel": "Cancelar",
+      "level": "Nivel",
+      "inheritable": "Heredable",
+      "shared": "Asset compartido"
+    },
+    "messages": {
+      "deleteFailed": "Error al eliminar",
+      "uploadFailed": "Error al subir"
+    }
+  },
+  "sharedAssets": {
+    "selectDescription": "Seleccione un asset compartido para adjuntar a esta entidad",
+    "noSharedNotes": "No hay notas compartidas disponibles",
+    "noSharedLinks": "No hay enlaces compartidos disponibles",
+    "noSharedDocuments": "No hay documentos compartidos disponibles"
+  },
+  "messages": {
+    "loadFailed": "Error al cargar metadatos",
+    "attachSuccess": "Asset compartido adjuntado correctamente",
+    "attachFailed": "Error al adjuntar asset compartido"
+  }
+}

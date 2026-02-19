@@ -1,0 +1,255 @@
+# ============================================================================
+# ODCS Data Contract: Contract Vendors (Contract Management Source)
+# ============================================================================
+# This contract defines vendor data from the Contract Management system.
+# Used as a source for MDM matching against the SAP Vendor Master.
+# ============================================================================
+
+id: mdm-demo-contract-vendors-001
+version: '1.0.0'
+apiVersion: v3.0.2
+kind: DataContract
+name: Contract Vendors Contract
+status: active
+domain: Procurement
+
+description:
+  purpose: >-
+    Vendor data contract for the Contract Management system. Contains supplier
+    profiles, contract relationships, and vendor status from contract lifecycle
+    management operations.
+  usage: >-
+    Primary source for vendor contract information and supplier relationships.
+    Used as an MDM source system for matching against the SAP Vendor Master.
+    New and changed records are periodically matched and merged into master.
+  limitations: >-
+    Data may contain duplicates prior to MDM processing.
+    Country names use full text instead of ISO codes (requires mapping).
+    Some legacy records may have incomplete contact information.
+
+# Contract-level semantic assignments
+authoritativeDefinitions:
+  - url: "http://example.com/business/concepts#ContractVendor"
+    type: "businessDefinition"
+
+# MDM-specific custom properties
+customProperties:
+  - property: mdmEntityType
+    value: vendor
+  - property: mdmRole
+    value: source
+  - property: mdmSourceSystem
+    value: CONTRACT_MGMT
+  - property: mdmSourcePriority
+    value: 2
+  - property: mdmKeyColumn
+    value: external_vendor_id
+  - property: mdmColumnMappings
+    value:
+      # Map columns with different names between source and master
+      vendor_name: vendor_name
+      vendor_name_alt: vendor_name_2
+      country: country_code  # Requires transformation via reference table
+      city: city
+      address: street_address
+      primary_contact: contact_person
+      contact_email: email
+      contact_phone: phone
+  - property: mdmTransformations
+    value:
+      - field: country
+        type: reference_lookup
+        reference_table: mdm_vendor_demo.country_code_mapping
+        lookup_column: country_name
+        result_column: iso_code
+      - field: vendor_name
+        type: normalize_legal_suffix
+        patterns:
+          - from: "Ltd."
+            to: "Ltd"
+          - from: "Limited"
+            to: "Ltd"
+          - from: "GmbH"
+            to: "GmbH"
+          - from: "B.V."
+            to: "BV"
+          - from: " AB"
+            to: " AB"
+      - field: contact_email
+        type: lowercase
+  - property: mdmExclusionRules
+    value:
+      - field: status
+        operator: equals
+        value: "inactive"
+      - field: vendor_name
+        operator: is_null
+      - field: external_vendor_id
+        operator: is_null
+      - field: vendor_category
+        operator: equals
+        value: "Test"
+  - property: mdmChangeDetection
+    value:
+      timestampColumn: modified_date
+      strategy: incremental
+
+# Service level agreements
+slaProperties:
+  - property: latency
+    value: "30m"
+    unit: minutes
+    element: contract_sync
+  - property: availability
+    value: 99.5
+    unit: percent
+    element: uptime
+
+# Schema definition
+schema:
+  - name: contract_vendors
+    physicalName: vf_it4it_demo_catalog.mdm_vendor_demo.contract_vendors
+    description: Contract Management vendor/supplier data table
+    logicalType: object
+    authoritativeDefinitions:
+      - url: "http://example.com/business/concepts#ContractVendor"
+        type: "businessDefinition"
+    properties:
+      - name: external_vendor_id
+        logicalType: string
+        physicalType: STRING
+        required: true
+        unique: true
+        description: Contract system supplier ID
+      - name: vendor_name
+        logicalType: string
+        physicalType: STRING
+        required: false
+        unique: false
+        description: Full supplier name
+      - name: vendor_name_alt
+        logicalType: string
+        physicalType: STRING
+        required: false
+        unique: false
+        description: Alternative name or trading name
+      - name: country
+        logicalType: string
+        physicalType: STRING
+        required: false
+        unique: false
+        description: Full country name (requires mapping to ISO code)
+      - name: city
+        logicalType: string
+        physicalType: STRING
+        required: false
+        unique: false
+        description: City name
+      - name: address
+        logicalType: string
+        physicalType: STRING
+        required: false
+        unique: false
+        description: Full address
+      - name: relationship_type
+        logicalType: string
+        physicalType: STRING
+        required: false
+        unique: false
+        description: "Relationship type: strategic, preferred, standard, spot"
+      - name: status
+        logicalType: string
+        physicalType: STRING
+        required: false
+        unique: false
+        description: "Vendor status: active, inactive, pending, blocked"
+      - name: vendor_category
+        logicalType: string
+        physicalType: STRING
+        required: false
+        unique: false
+        description: Supplier category classification
+      - name: contract_count
+        logicalType: integer
+        physicalType: INT
+        required: false
+        unique: false
+        description: Number of active contracts
+      - name: total_contract_value
+        logicalType: number
+        physicalType: DOUBLE
+        required: false
+        unique: false
+        description: Total value of contracts
+        classification: Confidential
+      - name: primary_contact
+        logicalType: string
+        physicalType: STRING
+        required: false
+        unique: false
+        description: Primary contact name
+      - name: contact_email
+        logicalType: string
+        physicalType: STRING
+        required: false
+        unique: false
+        description: Contact email address
+      - name: contact_phone
+        logicalType: string
+        physicalType: STRING
+        required: false
+        unique: false
+        description: Contact phone number
+      - name: created_date
+        logicalType: date
+        physicalType: TIMESTAMP
+        required: false
+        unique: false
+        description: Record creation timestamp
+      - name: modified_date
+        logicalType: date
+        physicalType: TIMESTAMP
+        required: false
+        unique: false
+        description: Last modification timestamp
+    quality:
+      - type: library
+        dimension: completeness
+        name: vendor_id_completeness
+        description: External vendor ID must always be present
+        rule: nullCount
+        mustBe: 0
+      - type: library
+        dimension: uniqueness
+        name: vendor_id_uniqueness
+        description: External vendor ID must be unique
+        rule: duplicateCount
+        mustBe: 0
+      - type: library
+        dimension: completeness
+        name: vendor_name_completeness
+        description: Vendor name should be present for most records
+        rule: nullPercent
+        mustBeLessThan: 5
+
+# Team and contact information
+team:
+  - username: contract-mgmt@company.com
+    name: Contract Management Team
+    role: owner
+  - username: procurement@company.com
+    name: Procurement Team
+    role: maintainer
+  - username: data-engineering@company.com
+    name: Data Engineering
+    role: maintainer
+
+# Tags for discovery
+tags:
+  - contract-management
+  - vendor
+  - supplier
+  - procurement
+  - mdm-source
+  - contracts
+

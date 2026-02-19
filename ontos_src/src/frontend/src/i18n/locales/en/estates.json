@@ -1,0 +1,107 @@
+{
+  "title": "Estate Manager",
+  "subtitle": "Manage your data estates and synchronization",
+  "newEstate": "New Estate",
+  "addEstate": "Add Estate",
+  "editEstate": "Edit Estate",
+  "searchPlaceholder": "Search estates...",
+  "loading": "Loading estates...",
+  "errors": {
+    "fetchEstates": "Error Fetching Estates",
+    "couldNotLoad": "Could not load estates.",
+    "savingEstate": "Error Saving Estate",
+    "deletingEstate": "Error Deleting Estate",
+    "triggeringSync": "Error Triggering Sync",
+    "validationError": "Validation Error",
+    "validationMessage": "Please fill in all required fields: Name, Description, Workspace URL, Metastore Name, Cloud Type, and Connection Type."
+  },
+  "toast": {
+    "estateCreated": "Estate created successfully",
+    "estateUpdated": "Estate updated successfully",
+    "estateDeleted": "Estate deleted successfully",
+    "triggeringSync": "Triggering Sync",
+    "syncRequested": "Requesting sync for the estate...",
+    "syncTriggered": "Sync triggered successfully. Refreshing data..."
+  },
+  "form": {
+    "createTitle": "Add New Estate",
+    "editTitle": "Edit Estate",
+    "dialogDescription": "Configure the Databricks estate connection and basic settings. Sharing policies are managed on the detail page.",
+    "name": "Name",
+    "description": "Description",
+    "type": "Type",
+    "workspaceUrl": "Workspace URL",
+    "cloud": "Cloud",
+    "selectCloudProvider": "Select cloud provider",
+    "connectionType": "Connection Type",
+    "selectConnectionType": "Select connection type",
+    "connectionString": "Connection String",
+    "metastoreName": "Metastore Name",
+    "syncSchedule": "Sync Schedule",
+    "enableSync": "Enable Sync",
+    "cancel": "Cancel",
+    "save": "Save"
+  },
+  "connectionTypes": {
+    "deltaShare": "Delta Share",
+    "unityCatalog": "Unity Catalog",
+    "database": "Database (Future Use)"
+  },
+  "table": {
+    "name": "Name",
+    "workspaceUrl": "Workspace URL",
+    "cloud": "Cloud",
+    "connection": "Connection",
+    "metastore": "Metastore",
+    "syncStatus": "Sync Status",
+    "lastSync": "Last Sync",
+    "type": "Type",
+    "status": "Status",
+    "assets": "Assets",
+    "actions": "Actions"
+  },
+  "filters": {
+    "allStatus": "All Status"
+  },
+  "messages": {
+    "success": "Success",
+    "error": "Error",
+    "deleteConfirm": "Are you sure you want to delete this estate?",
+    "deleteSuccess": "Estate deleted successfully",
+    "deleteError": "Failed to delete estate",
+    "syncSuccess": "Sync started successfully",
+    "syncError": "Failed to start sync"
+  },
+  "status": {
+    "connected": "Connected",
+    "disconnected": "Disconnected",
+    "syncing": "Syncing",
+    "error": "Error"
+  },
+  "details": {
+    "backToList": "Back to Estates",
+    "edit": "Edit",
+    "delete": "Delete",
+    "sync": "Sync Now",
+    "viewDetails": "View Details",
+    "notFound": "Estate not found",
+    "loading": "Loading...",
+    "overview": {
+      "title": "Estate Overview",
+      "type": "Type",
+      "status": "Status",
+      "lastSync": "Last Sync",
+      "created": "Created"
+    },
+    "assets": {
+      "title": "Assets",
+      "catalogs": "Catalogs",
+      "schemas": "Schemas",
+      "tables": "Tables"
+    },
+    "syncHistory": {
+      "title": "Sync History",
+      "noHistory": "No sync history"
+    }
+  }
+}

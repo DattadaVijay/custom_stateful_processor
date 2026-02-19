@@ -1,0 +1,423 @@
+from __future__ import annotations # Ensure forward references work
+from dataclasses import dataclass
+from typing import Any, Dict, List, Optional, Iterable, TYPE_CHECKING
+import re
+
+# Import Search Interfaces
+from src.common.search_interfaces import SearchableAsset, SearchIndexItem
+# Import Permission Checker and Feature Access Level
+if TYPE_CHECKING:
+    from src.common.authorization import PermissionChecker
+# Import AuthorizationManager and UserInfo
+from src.controller.authorization_manager import AuthorizationManager
+from src.models.users import UserInfo
+from src.common.features import FeatureAccessLevel
+# Import search configuration
+from src.common.search_config_loader import get_search_config_loader, SearchConfigLoader
+from src.models.search_config import (
+    SearchConfig, 
+    FieldConfig, 
+    MatchType, 
+    SortField,
+)
+
+from src.common.logging import get_logger
+logger = get_logger(__name__)
+
+
+@dataclass
+class SearchMatch:
+    """Represents a search match with scoring information."""
+    item: SearchIndexItem
+    matched_field: str          # Which field matched (title, description, tags, etc.)
+    field_priority: int         # Priority of the matched field (lower = better)
+    boost_score: float          # Boost score from the field config
+    match_quality: float        # Quality of the match (1.0 = exact, 0.5 = partial, etc.)
+    
+    @property
+    def total_score(self) -> float:
+        """Calculate total score for ranking."""
+        return self.boost_score * self.match_quality
+
+
+class SearchManager:
+    def __init__(
+        self,
+        searchable_managers: Iterable[SearchableAsset],
+        config_loader: Optional[SearchConfigLoader] = None
+    ):
+        """
+        Initialize search manager with a collection of pre-instantiated searchable asset managers.
+        
+        Args:
+            searchable_managers: Iterable of managers implementing SearchableAsset
+            config_loader: Optional SearchConfigLoader instance. Uses global loader if not provided.
+        """
+        self.searchable_managers = list(searchable_managers)
+        self.index: List[SearchIndexItem] = []
+        self._config_loader = config_loader or get_search_config_loader()
+        
+        logger.info(f"SearchManager initialized with {len(self.searchable_managers)} managers.")
+        
+        self.build_index() # Build index after receiving managers
+
+    @property
+    def config(self) -> SearchConfig:
+        """Get the current search configuration (with hot-reload support)."""
+        return self._config_loader.load()
+
+    def build_index(self):
+        """Builds or rebuilds the search index by querying searchable managers."""
+        logger.info(f"Building search index from {len(self.searchable_managers)} managers...")
+        new_index: List[SearchIndexItem] = [] # Build into a new list
+        config = self.config
+
+        for manager in self.searchable_managers:
+            manager_name = manager.__class__.__name__
+            try:
+                # Ensure managers populate the new feature_id field
+                items = manager.get_search_index_items()
+                for item in items:
+                    if not hasattr(item, 'feature_id') or not item.feature_id:
+                         logger.warning(f"Search item {item.id} from {manager_name} is missing feature_id. Skipping.")
+                         continue
+                    
+                    # Check if this asset type is enabled in config
+                    asset_config = config.asset_types.get(item.type)
+                    if asset_config and not asset_config.enabled:
+                        logger.debug(f"Skipping item {item.id} - asset type '{item.type}' is disabled")
+                        continue
+                    
+                    new_index.append(item)
+            except Exception as e:
+                logger.error(f"Failed to get search items from {manager_name}: {e}", exc_info=True)
+        
+        # Atomically replace the index
+        self.index = new_index
+        logger.info(f"Search index build complete. Total items: {len(self.index)}")
+
+    def search(
+        self, 
+        query: str, 
+        auth_manager: AuthorizationManager, 
+        user: UserInfo, 
+        team_role_override: Optional[str] = None
+    ) -> List[SearchIndexItem]:
+        """
+        Performs a configurable search on indexed items.
+        
+        Uses search configuration to determine:
+        - Which fields to search (based on indexed flag)
+        - How to match (prefix, substring, exact, fuzzy)
+        - How to rank results (by field priority, then boost score)
+        
+        Supports special query prefixes:
+        - tag:namespace/tagname - Filter by exact tag match
+        - tag:namespace - Filter by namespace prefix (matches all tags in namespace)
+        
+        Results are filtered by user permissions.
+        
+        Args:
+            query: The search query string
+            auth_manager: AuthorizationManager for permission checking
+            user: Current user info
+            team_role_override: Optional team role override
+            
+        Returns:
+            List of matching SearchIndexItem, sorted by relevance
+        """
+        if not query:
+            return []
+
+        query_stripped = query.strip()
+        if not query_stripped:
+            return []
+        
+        config = self.config
+        matches: List[SearchMatch] = []
+        
+        # Check for tag: prefix filter
+        if query_stripped.lower().startswith('tag:'):
+            tag_pattern = query_stripped[4:].strip()  # Extract pattern after 'tag:'
+            matches = self._filter_by_tag(tag_pattern, config)
+        else:
+            # Normal search
+            query_lower = query_stripped.lower()
+            for item in self.index:
+                match = self._find_best_match(item, query_lower, config)
+                if match:
+                    matches.append(match)
+
+        # Filter based on permissions using AuthorizationManager
+        if not user.groups:
+             logger.warning(f"User {user.username} has no groups, returning empty search results.")
+             return []
+             
+        filtered_matches: List[SearchMatch] = []
+        try:
+             effective_permissions = auth_manager.get_user_effective_permissions(user.groups, team_role_override)
+             for match in matches:
+                 if auth_manager.has_permission(effective_permissions, match.item.feature_id, FeatureAccessLevel.READ_ONLY):
+                     filtered_matches.append(match)
+        except Exception as e:
+            logger.error(f"Error checking permissions during search for user {user.username}: {e}", exc_info=True)
+            return []
+
+        # Sort results based on ranking configuration
+        sorted_matches = self._sort_matches(filtered_matches, config)
+        
+        # Extract items from matches
+        results = [m.item for m in sorted_matches]
+        
+        logger.info(
+            f"Search for '{query}' returned {len(results)} results "
+            f"after permission filtering for user {user.username}."
+        )
+        return results
+
+    def _filter_by_tag(
+        self, 
+        tag_pattern: str, 
+        config: SearchConfig
+    ) -> List[SearchMatch]:
+        """
+        Filter indexed items by tag pattern.
+        
+        Supports:
+        - Exact match: tag:namespace/tagname - matches items with exactly that tag
+        - Namespace prefix: tag:namespace - matches all items with tags starting with 'namespace/'
+        
+        Args:
+            tag_pattern: The tag pattern to match (e.g., 'finance/pii' or 'finance')
+            config: Search configuration
+            
+        Returns:
+            List of SearchMatch for items that have matching tags
+        """
+        matches: List[SearchMatch] = []
+        pattern_lower = tag_pattern.lower()
+        
+        # Determine if this is an exact match or prefix match
+        # If pattern contains '/', it's an exact match; otherwise prefix match
+        is_exact_match = '/' in pattern_lower
+        
+        for item in self.index:
+            if not item.tags:
+                continue
+            
+            # Check if any tag matches the pattern
+            tag_matched = False
+            for tag in item.tags:
+                tag_lower = str(tag).lower()
+                
+                if is_exact_match:
+                    # Exact match: pattern must equal the tag
+                    if tag_lower == pattern_lower:
+                        tag_matched = True
+                        break
+                else:
+                    # Prefix match: tag must start with pattern + '/'
+                    # e.g., pattern 'finance' matches 'finance/pii', 'finance/sensitive'
+                    if tag_lower.startswith(pattern_lower + '/') or tag_lower == pattern_lower:
+                        tag_matched = True
+                        break
+            
+            if tag_matched:
+                # Get the tags field config for scoring
+                field_configs = config.get_all_field_configs(item.type)
+                tags_config = field_configs.get('tags')
+                
+                matches.append(SearchMatch(
+                    item=item,
+                    matched_field='tags',
+                    field_priority=tags_config.priority if tags_config else 10,
+                    boost_score=tags_config.boost if tags_config else 1.0,
+                    match_quality=1.0,  # Exact tag matches get full quality
+                ))
+        
+        return matches
+
+    def _find_best_match(
+        self, 
+        item: SearchIndexItem, 
+        query: str, 
+        config: SearchConfig
+    ) -> Optional[SearchMatch]:
+        """
+        Find the best matching field for an item.
+        
+        Returns the match with the lowest priority (highest importance) if multiple fields match.
+        """
+        best_match: Optional[SearchMatch] = None
+        
+        # Get all field configs for this asset type
+        field_configs = config.get_all_field_configs(item.type)
+        
+        # Check each configured field
+        for field_name, field_config in field_configs.items():
+            if not field_config.indexed:
+                continue
+            
+            # Get the field value
+            value = self._get_field_value(item, field_name)
+            if value is None:
+                continue
+            
+            # Check if this field matches
+            match_quality = self._check_match(value, query, field_config.match_type)
+            if match_quality > 0:
+                match = SearchMatch(
+                    item=item,
+                    matched_field=field_name,
+                    field_priority=field_config.priority,
+                    boost_score=field_config.boost,
+                    match_quality=match_quality,
+                )
+                
+                # Keep the best match (lowest priority = highest importance)
+                if best_match is None or match.field_priority < best_match.field_priority:
+                    best_match = match
+                elif match.field_priority == best_match.field_priority:
+                    # Same priority, prefer higher boost score
+                    if match.total_score > best_match.total_score:
+                        best_match = match
+        
+        return best_match
+
+    def _get_field_value(self, item: SearchIndexItem, field_name: str) -> Optional[str]:
+        """
+        Get the value of a field from a SearchIndexItem.
+        
+        Handles standard fields and extra_data fields.
+        """
+        # Standard fields
+        if field_name == "title":
+            return item.title
+        elif field_name == "description":
+            return item.description
+        elif field_name == "tags":
+            # Join tags into a single searchable string
+            return " ".join(str(t) for t in item.tags) if item.tags else None
+        elif field_name == "type":
+            return item.type
+        elif field_name == "id":
+            return item.id
+        
+        # Check extra_data for custom fields
+        if item.extra_data and field_name in item.extra_data:
+            value = item.extra_data[field_name]
+            if isinstance(value, list):
+                return " ".join(str(v) for v in value)
+            return str(value) if value is not None else None
+        
+        return None
+
+    def _check_match(self, value: str, query: str, match_type: MatchType) -> float:
+        """
+        Check if a value matches the query using the specified match type.
+        
+        Returns a match quality score:
+        - 0.0: No match
+        - 0.5-0.8: Partial match (fuzzy)
+        - 1.0: Full match (exact, prefix at start, substring found)
+        """
+        if not value:
+            return 0.0
+        
+        value_lower = value.lower()
+        
+        if match_type == MatchType.EXACT:
+            return 1.0 if value_lower == query else 0.0
+        
+        elif match_type == MatchType.PREFIX:
+            # Check if query matches start of value (or any word in value)
+            if value_lower.startswith(query):
+                return 1.0
+            # Also check word boundaries for multi-word values
+            # Split on spaces AND slashes to handle FQN tag format (namespace/tagname)
+            import re
+            words = re.split(r'[\s/]+', value_lower)
+            for word in words:
+                if word.startswith(query):
+                    return 0.9  # Slightly lower score for non-leading word match
+            return 0.0
+        
+        elif match_type == MatchType.SUBSTRING:
+            if query in value_lower:
+                # Higher score if match is at start or word boundary
+                if value_lower.startswith(query):
+                    return 1.0
+                elif f" {query}" in value_lower:
+                    return 0.9
+                return 0.8
+            return 0.0
+        
+        elif match_type == MatchType.FUZZY:
+            # Simple fuzzy matching using edit distance approximation
+            return self._fuzzy_match(value_lower, query)
+        
+        return 0.0
+
+    def _fuzzy_match(self, value: str, query: str) -> float:
+        """
+        Simple fuzzy matching implementation.
+        
+        Returns a score between 0 and 1 based on similarity.
+        """
+        # First check for substring match
+        if query in value:
+            return 0.9
+        
+        # Check if all query characters appear in order (subsequence)
+        query_idx = 0
+        for char in value:
+            if query_idx < len(query) and char == query[query_idx]:
+                query_idx += 1
+        
+        if query_idx == len(query):
+            # All characters found in order
+            return 0.7
+        
+        # Check character overlap for very fuzzy matching
+        query_set = set(query)
+        value_set = set(value[:len(query) * 2])  # Only check beginning of value
+        overlap = len(query_set & value_set) / len(query_set) if query_set else 0
+        
+        if overlap >= 0.8:
+            return 0.5
+        
+        return 0.0
+
+    def _sort_matches(self, matches: List[SearchMatch], config: SearchConfig) -> List[SearchMatch]:
+        """
+        Sort matches according to ranking configuration.
+        """
+        ranking = config.ranking
+        
+        def sort_key(match: SearchMatch) -> tuple:
+            """Generate sort key based on ranking config."""
+            keys = []
+            
+            for sort_field in [ranking.primary_sort, ranking.secondary_sort, ranking.tertiary_sort]:
+                if sort_field == SortField.MATCH_PRIORITY:
+                    keys.append(match.field_priority)  # Lower is better
+                elif sort_field == SortField.BOOST_SCORE:
+                    keys.append(-match.total_score)  # Higher is better (negate for ascending sort)
+                elif sort_field == SortField.TITLE_ASC:
+                    keys.append(match.item.title.lower() if match.item.title else "")
+                elif sort_field == SortField.TITLE_DESC:
+                    # Reverse by using a tuple that inverts string comparison
+                    keys.append(tuple(-ord(c) for c in (match.item.title.lower() if match.item.title else "")))
+            
+            return tuple(keys)
+        
+        return sorted(matches, key=sort_key)
+
+    def reload_config(self) -> None:
+        """Force reload the search configuration from disk."""
+        self._config_loader.load(force_reload=True)
+        logger.info("Search configuration reloaded")
+
+    def get_config(self) -> SearchConfig:
+        """Get the current search configuration."""
+        return self.config

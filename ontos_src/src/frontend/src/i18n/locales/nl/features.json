@@ -1,0 +1,83 @@
+{
+  "data-domains": {
+    "name": "Domeinen",
+    "description": "Organiseer dataproducten en assets in logische domeinen."
+  },
+  "datasets": {
+    "name": "Datasets",
+    "description": "Beheer datasets en hun fysieke implementaties over omgevingen."
+  },
+  "teams": {
+    "name": "Teams",
+    "description": "Beheer teams en teamleden met rol overschrijvingen."
+  },
+  "projects": {
+    "name": "Projecten",
+    "description": "Beheer projecten en wijs teams toe voor workspace isolatie."
+  },
+  "data-contracts": {
+    "name": "Contracten",
+    "description": "Definieer en handhaaf technische metadata standaarden."
+  },
+  "data-products": {
+    "name": "Producten",
+    "description": "Groepeer en beheer gerelateerde Databricks assets met tags."
+  },
+  "semantic-models": {
+    "name": "Business Glossary",
+    "description": "Verken business glossary termen, concepten en hun relaties."
+  },
+  "data-asset-reviews": {
+    "name": "Asset Beoordeling",
+    "description": "Beoordeel en keur Databricks assets goed zoals tabellen, views en functies."
+  },
+  "compliance": {
+    "name": "Compliance",
+    "description": "Maak en verifieer compliance regels en bereken scores."
+  },
+  "estate-manager": {
+    "name": "Estate Manager",
+    "description": "Beheer meerdere Databricks instanties over regio's en clouds."
+  },
+  "master-data": {
+    "name": "Master Data Management",
+    "description": "Bouw een golden record van je data."
+  },
+  "catalog-commander": {
+    "name": "Catalog Commander",
+    "description": "Zij-aan-zij catalogus verkenner voor asset beheer."
+  },
+  "security": {
+    "name": "Beveiligingsfuncties",
+    "description": "Schakel geavanceerde beveiliging in zoals differential privacy."
+  },
+  "security-features": {
+    "name": "Beveiligingsfuncties",
+    "description": "Schakel geavanceerde beveiliging in zoals differential privacy."
+  },
+  "entitlements": {
+    "name": "Rechten",
+    "description": "Beheer toegangsprivileges via persona's en groepen."
+  },
+  "entitlements-sync": {
+    "name": "Rechten Sync",
+    "description": "Synchroniseer rechten met externe systemen."
+  },
+  "search": {
+    "name": "Zoeken",
+    "description": "Zoek over dataproducten, contracten en knowledge graph."
+  },
+  "audit": {
+    "name": "Auditlogboek",
+    "description": "Bekijk en filter applicatie auditlogs."
+  },
+  "settings": {
+    "name": "Instellingen",
+    "description": "Configureer applicatie-instellingen, jobs en integraties."
+  },
+  "about": {
+    "name": "Over",
+    "description": "Informatie over de applicatie en zijn functies."
+  }
+}
+

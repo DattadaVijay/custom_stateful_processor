@@ -1,0 +1,78 @@
+{
+  "title": "Over Ontos",
+  "intro": "Deze applicatie draait als een Databricks App en biedt Unity Catalog en gerelateerde diensten gericht op metadatabeheer, governance en operationele tools.",
+  "version": "Versie",
+  "runningSince": "Actief Sinds",
+  "loading": "Laden...",
+  "unavailable": "Niet beschikbaar",
+  "coreFeatures": "Kernfuncties",
+  "noFeatures": "Geen functies beschikbaar voor de geselecteerde functievoorbeelden.",
+  "techStack": "Technologie Stack",
+  "stack": {
+    "frontend": { "title": "Frontend", "desc": "React, TypeScript, Shadcn UI, Tailwind CSS, Vite" },
+    "backend": { "title": "Backend", "desc": "Python, FastAPI" },
+    "database": { "title": "Database", "desc": "PostgreSQL" },
+    "platform": { "title": "Platform", "desc": "Databricks Apps" }
+  },
+  "learnMore": "Bijdragen & Meer Leren",
+  "cta": {
+    "github": "Bekijk op GitHub",
+    "docs": "Lees Documentatie"
+  },
+  "details": {
+    "data-domains": [
+      "• Definieer en beheer datadomeinen, subdomeinen en eigendomsstructuren.",
+      "• Visualiseer relaties tussen domeinen en afhankelijke dataproducten.",
+      "• Wijs assets en producten toe aan domeinen voor duidelijkere verantwoordelijkheid.",
+      "• Volgt de BITOL Open Data Domain Standard (ODDS)."
+    ],
+    "data-contracts": [
+      "• Instrumenteer Dataproducten met technische metadata gebaseerd op de Open Data Contract Standard (ODCS).",
+      "• Schemavalidatie, kwaliteitscontroles, toegangscontrole verificatie, voorbeelddata weergave.",
+      "• Contracten kunnen tekstgebaseerd zijn (bijv. JSON/YAML); ondersteunt BITOL ODCS JSON schema."
+    ],
+    "data-products": [
+      "• Groepeer Databricks assets (tabellen, views, functies, modellen, dashboards, jobs, notebooks).",
+      "• Gebruik tags (bijv. data-product-name, data-product-domain)."
+    ],
+    "business-glossary": [
+      "• Hiërarchische woordenlijsten per organisatie-eenheid (bedrijf, LOB, afdeling, team, project).",
+      "• Bottom-up samengevoegd voor gebruikers, met mogelijkheid tot overschrijven.",
+      "• Termen hebben tags, markdown beschrijvingen, levenscyclusstatus, toegewezen assets."
+    ],
+    "master-data": [
+      "• Integreert met Zingg.ai voor MDM-mogelijkheden."
+    ],
+    "compliance": [
+      "• Definieer en verifieer compliance regels.",
+      "• Bereken een algemene compliance score."
+    ],
+    "estate-manager": [
+      "• Centraal overzicht van meerdere workspaces.",
+      "• Monitor resource gebruik en kosten.",
+      "• Beheer configuraties over estates."
+    ],
+    "security": [
+      "• Schakel geavanceerde beveiligingsfuncties in (bijv. differential privacy) op assets."
+    ],
+    "entitlements": [
+      "• Definieer herbruikbare persona's (bijv. Analist, Engineer).",
+      "• Wijs persona's toe aan Databricks groepen.",
+      "• Vereenvoudig privilege beheer op schaal."
+    ],
+    "entitlements-sync": [
+      "• Houd rechten gesynchroniseerd met externe systemen (bijv. IDP).",
+      "• Detecteer en los synchronisatieconflicten op.",
+      "• Onderhoud audit logs van alle wijzigingen."
+    ],
+    "catalog-commander": [
+      "• Norton Commander-geïnspireerde dual-pane verkenner voor catalogus asset beheer.",
+      "• Kopieer/verplaats tabellen en schema's eenvoudig."
+    ],
+    "data-asset-reviews": [
+      "• Workflow voor het beoordelen en goedkeuren van assets (tabellen, views, functies).",
+      "• Inclusief notificaties voor reviewers en aanvragers."
+    ]
+  }
+}
+

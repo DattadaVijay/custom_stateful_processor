@@ -1,0 +1,1155 @@
+# Default Process Workflows
+#
+# These workflows are loaded into the database on first startup.
+# They can be edited, duplicated, or disabled through the UI.
+# Default workflows cannot be deleted.
+
+workflows:
+  # Naming Convention Validation
+  - id: "naming-convention-check"
+    name: "Naming Convention Validation"
+    description: "Validates that catalog objects follow naming conventions (lowercase with underscores). Applies auto-fix for required tags when possible."
+    trigger:
+      type: "on_create"
+      entity_types:
+        - "catalog"
+        - "schema"
+        - "table"
+    scope:
+      type: "all"
+    is_active: true
+    is_default: true
+    steps:
+      - id: "validate-name"
+        name: "Validate Naming Convention"
+        type: "validation"
+        config:
+          rule: |
+            MATCH (obj:Object)
+            ASSERT obj.name MATCHES '^[a-z][a-z0-9_]*$'
+            ON_FAIL FAIL 'Name must be lowercase with underscores only (e.g., my_table_name)'
+        on_pass: "check-owner-tag"
+        on_fail: "notify-naming-failure"
+
+      - id: "check-owner-tag"
+        name: "Check Owner Tag"
+        type: "validation"
+        config:
+          rule: |
+            MATCH (obj:Object)
+            ASSERT HAS_TAG('owner')
+            ON_FAIL FAIL 'Owner tag is required'
+        on_pass: "success"
+        on_fail: "auto-fix-owner-tag"
+
+      - id: "auto-fix-owner-tag"
+        name: "Auto-assign Owner Tag"
+        type: "assign_tag"
+        config:
+          key: "owner"
+          value_source: "current_user"
+        on_pass: "success"
+        on_fail: "notify-tag-failure"
+
+      - id: "notify-naming-failure"
+        name: "Notify Naming Failure"
+        type: "notification"
+        config:
+          recipients: "requester"
+          template: "validation_failed"
+          custom_message: "The object name does not follow naming conventions. Names must be lowercase with underscores only."
+        on_pass: "fail-naming"
+
+      - id: "notify-tag-failure"
+        name: "Notify Tag Failure"
+        type: "notification"
+        config:
+          recipients: "requester"
+          template: "validation_failed"
+          custom_message: "Could not auto-assign owner tag. Please add the owner tag manually."
+        on_pass: "fail-tagging"
+
+      - id: "success"
+        name: "Validation Passed"
+        type: "pass"
+
+      - id: "fail-naming"
+        name: "Naming Convention Failed"
+        type: "fail"
+        config:
+          message: "Object name does not follow naming conventions"
+
+      - id: "fail-tagging"
+        name: "Tagging Failed"
+        type: "fail"
+        config:
+          message: "Required tags could not be applied"
+
+  # Data Product Publish Approval
+  - id: "data-product-approval"
+    name: "Data Product Publish Approval"
+    description: "Requires domain owner approval before publishing data products from draft to published status."
+    trigger:
+      type: "on_status_change"
+      entity_types:
+        - "data_product"
+      from_status: "draft"
+      to_status: "published"
+    scope:
+      type: "all"
+    is_active: true
+    is_default: true
+    steps:
+      - id: "check-contract"
+        name: "Check Data Contract"
+        type: "validation"
+        config:
+          rule: |
+            MATCH (obj:Object)
+            ASSERT obj.contract_id != '' OR obj.contracts != []
+            ON_FAIL FAIL 'Data product must have at least one data contract'
+        on_pass: "request-approval"
+        on_fail: "notify-no-contract"
+
+      - id: "request-approval"
+        name: "Request Domain Owner Approval"
+        type: "approval"
+        config:
+          approvers: "domain_owners"
+          timeout_days: 7
+          require_all: false
+        on_pass: "notify-approved"
+        on_fail: "notify-rejected"
+
+      - id: "notify-no-contract"
+        name: "Notify Missing Contract"
+        type: "notification"
+        config:
+          recipients: "requester"
+          template: "validation_failed"
+          custom_message: "Cannot publish data product without a data contract. Please attach at least one contract first."
+        on_pass: "fail-no-contract"
+
+      - id: "notify-approved"
+        name: "Notify Approval"
+        type: "notification"
+        config:
+          recipients: "requester"
+          template: "product_approved"
+          custom_message: "Your data product has been approved and is now published."
+        on_pass: "success"
+
+      - id: "notify-rejected"
+        name: "Notify Rejection"
+        type: "notification"
+        config:
+          recipients: "requester"
+          template: "product_rejected"
+          custom_message: "Your data product publish request has been rejected. Please review the feedback and resubmit."
+        on_pass: "fail-rejected"
+
+      - id: "success"
+        name: "Publish Approved"
+        type: "pass"
+
+      - id: "fail-no-contract"
+        name: "No Contract"
+        type: "fail"
+        config:
+          message: "Data product requires a data contract"
+
+      - id: "fail-rejected"
+        name: "Publish Rejected"
+        type: "fail"
+        config:
+          message: "Data product publish request was rejected"
+
+  # Data Contract Validation
+  - id: "data-contract-validation"
+    name: "Data Contract Schema Validation"
+    description: "Validates that data contracts have required schema fields and quality rules defined."
+    trigger:
+      type: "on_create"
+      entity_types:
+        - "data_contract"
+    scope:
+      type: "all"
+    is_active: true
+    is_default: true
+    steps:
+      - id: "check-schema"
+        name: "Check Schema Definition"
+        type: "validation"
+        config:
+          rule: |
+            MATCH (obj:Object)
+            ASSERT obj.schema != '' AND obj.schema != '{}' AND obj.schema != '[]'
+            ON_FAIL FAIL 'Data contract must have a schema defined'
+        on_pass: "check-owner"
+        on_fail: "notify-no-schema"
+
+      - id: "check-owner"
+        name: "Check Owner"
+        type: "validation"
+        config:
+          rule: |
+            MATCH (obj:Object)
+            ASSERT obj.owner != '' OR HAS_TAG('owner')
+            ON_FAIL FAIL 'Data contract must have an owner'
+        on_pass: "success"
+        on_fail: "auto-fix-owner"
+
+      - id: "auto-fix-owner"
+        name: "Auto-assign Owner"
+        type: "assign_tag"
+        config:
+          key: "owner"
+          value_source: "current_user"
+        on_pass: "success"
+
+      - id: "notify-no-schema"
+        name: "Notify Missing Schema"
+        type: "notification"
+        config:
+          recipients: "requester"
+          template: "validation_failed"
+          custom_message: "Data contract must have a schema definition. Please add the schema before proceeding."
+        on_pass: "fail-no-schema"
+
+      - id: "success"
+        name: "Validation Passed"
+        type: "pass"
+
+      - id: "fail-no-schema"
+        name: "No Schema"
+        type: "fail"
+        config:
+          message: "Data contract requires a schema definition"
+
+  # PII Detection and Tagging
+  - id: "pii-detection"
+    name: "PII Detection and Classification"
+    description: "Detects potential PII columns and applies appropriate tags for data governance."
+    trigger:
+      type: "on_create"
+      entity_types:
+        - "table"
+    scope:
+      type: "all"
+    is_active: false  # Disabled by default - enable when needed
+    is_default: true
+    steps:
+      - id: "check-pii-columns"
+        name: "Check for PII Columns"
+        type: "conditional"
+        config:
+          condition: |
+            obj.name CONTAINS 'email' OR obj.name CONTAINS 'phone' OR 
+            obj.name CONTAINS 'ssn' OR obj.name CONTAINS 'address' OR
+            obj.name CONTAINS 'dob' OR obj.name CONTAINS 'birth'
+        on_pass: "tag-pii"
+        on_fail: "success-no-pii"
+
+      - id: "tag-pii"
+        name: "Apply PII Tag"
+        type: "assign_tag"
+        config:
+          key: "contains_pii"
+          value: "true"
+        on_pass: "notify-pii-detected"
+
+      - id: "notify-pii-detected"
+        name: "Notify PII Detection"
+        type: "notification"
+        config:
+          recipients: "requester"
+          template: "pii_detected"
+          custom_message: "Potential PII detected in table. The table has been tagged for review."
+        on_pass: "success-pii"
+
+      - id: "success-no-pii"
+        name: "No PII Detected"
+        type: "pass"
+
+      - id: "success-pii"
+        name: "PII Tagged"
+        type: "pass"
+
+  # Dataset Subscription Notification
+  - id: "dataset-subscription-notify"
+    name: "Dataset Update Notification"
+    description: "Notifies subscribers when a dataset is updated."
+    trigger:
+      type: "on_update"
+      entity_types:
+        - "dataset"
+    scope:
+      type: "all"
+    is_active: true
+    is_default: true
+    steps:
+      - id: "check-subscribers"
+        name: "Check for Subscribers"
+        type: "conditional"
+        config:
+          condition: |
+            LENGTH(obj.subscribers) > 0 OR LENGTH(obj.subscriptions) > 0
+        on_pass: "notify-subscribers"
+        on_fail: "success-no-subscribers"
+
+      - id: "notify-subscribers"
+        name: "Notify Subscribers"
+        type: "notification"
+        config:
+          recipients: "owner"  # Will be enhanced to support subscriber list
+          template: "dataset_updated"
+          custom_message: "A dataset you are subscribed to has been updated."
+        on_pass: "success"
+
+      - id: "success-no-subscribers"
+        name: "No Subscribers"
+        type: "pass"
+
+      - id: "success"
+        name: "Subscribers Notified"
+        type: "pass"
+
+  # Pre-Creation Compliance Check (Inline Validation)
+  - id: "pre-creation-compliance"
+    name: "Pre-Creation Compliance Validation"
+    description: "Runs compliance policy checks BEFORE creating assets. Blocks creation if policies fail. Uses policy_check steps to reference existing compliance policies by ID."
+    trigger:
+      type: "before_create"
+      entity_types:
+        - "catalog"
+        - "schema"
+        - "table"
+    scope:
+      type: "all"
+    is_active: false  # Disabled by default - enable after configuring policies
+    is_default: true
+    steps:
+      - id: "naming-policy-check"
+        name: "Check Naming Convention Policy"
+        type: "policy_check"
+        config:
+          # This policy_id should be replaced with an actual UUID from your compliance policies
+          # The UI allows selecting policies from a dropdown
+          policy_id: "naming-conventions"
+          policy_name: "Naming Conventions"
+        on_pass: "tagging-policy-check"
+        on_fail: "fail-naming"
+
+      - id: "tagging-policy-check"
+        name: "Check Required Tags Policy"
+        type: "policy_check"
+        config:
+          policy_id: "required-tags"
+          policy_name: "Required Tags"
+        on_pass: "success"
+        on_fail: "fail-tagging"
+
+      - id: "success"
+        name: "All Policies Passed"
+        type: "pass"
+
+      - id: "fail-naming"
+        name: "Naming Policy Failed"
+        type: "fail"
+        config:
+          message: "Asset name does not comply with naming convention policy"
+
+      - id: "fail-tagging"
+        name: "Tagging Policy Failed"
+        type: "fail"
+        config:
+          message: "Asset does not have required tags"
+
+  # Pre-Creation Table Validation
+  - id: "table-pre-creation"
+    name: "Table Pre-Creation Validation"
+    description: "Validates table definitions before creation, including naming conventions and schema requirements."
+    trigger:
+      type: "before_create"
+      entity_types:
+        - "table"
+    scope:
+      type: "all"
+    is_active: true
+    is_default: true
+    steps:
+      - id: "validate-table-name"
+        name: "Validate Table Name"
+        type: "validation"
+        config:
+          rule: |
+            MATCH (obj:Object)
+            ASSERT obj.name MATCHES '^[a-z][a-z0-9_]*$'
+            ON_FAIL FAIL 'Table name must be lowercase with underscores only (e.g., my_table)'
+        on_pass: "validate-no-reserved-words"
+        on_fail: "fail-invalid-name"
+
+      - id: "validate-no-reserved-words"
+        name: "Check Reserved Words"
+        type: "validation"
+        config:
+          rule: |
+            MATCH (obj:Object)
+            ASSERT NOT (obj.name = 'table' OR obj.name = 'select' OR obj.name = 'insert' OR obj.name = 'update' OR obj.name = 'delete' OR obj.name = 'from' OR obj.name = 'where')
+            ON_FAIL FAIL 'Table name cannot be a SQL reserved word'
+        on_pass: "success"
+        on_fail: "fail-reserved-word"
+
+      - id: "success"
+        name: "Table Validation Passed"
+        type: "pass"
+
+      - id: "fail-invalid-name"
+        name: "Invalid Table Name"
+        type: "fail"
+        config:
+          message: "Table name must be lowercase with underscores only"
+
+      - id: "fail-reserved-word"
+        name: "Reserved Word Used"
+        type: "fail"
+        config:
+          message: "Table name cannot be a SQL reserved word"
+
+  # =========================================================================
+  # Request-Based Workflows
+  # =========================================================================
+
+  # Dataset Review Request
+  - id: "dataset-review-request"
+    name: "Dataset Review Request"
+    description: "Handles dataset review requests with data steward approval and creates a formal asset review record."
+    trigger:
+      type: "on_request_review"
+      entity_types:
+        - "dataset"
+    scope:
+      type: "all"
+    is_active: true
+    is_default: true
+    steps:
+      - id: "notify-requester"
+        name: "Confirm Request Received"
+        type: "notification"
+        config:
+          recipients: "requester"
+          template: "request_submitted"
+          custom_message: "Your dataset review request has been submitted. A data steward will review it shortly."
+        on_pass: "create-review"
+
+      - id: "create-review"
+        name: "Create Asset Review"
+        type: "create_asset_review"
+        config:
+          reviewer_role: "DataSteward"
+          review_type: "standard"
+          notes: "Dataset review requested via workflow"
+          use_entity_as_asset: true
+        on_pass: "request-approval"
+
+      - id: "request-approval"
+        name: "Request Data Steward Approval"
+        type: "approval"
+        config:
+          approvers: "DataSteward"
+          timeout_days: 7
+          require_all: false
+        on_pass: "notify-approved"
+        on_fail: "notify-rejected"
+
+      - id: "notify-approved"
+        name: "Notify Approval"
+        type: "notification"
+        config:
+          recipients: "requester"
+          template: "request_approved"
+          custom_message: "Your dataset review request has been approved."
+        on_pass: "success"
+
+      - id: "notify-rejected"
+        name: "Notify Rejection"
+        type: "notification"
+        config:
+          recipients: "requester"
+          template: "request_rejected"
+          custom_message: "Your dataset review request has been denied. Please check the feedback and resubmit if needed."
+        on_pass: "fail-rejected"
+
+      - id: "success"
+        name: "Review Approved"
+        type: "pass"
+
+      - id: "fail-rejected"
+        name: "Review Rejected"
+        type: "fail"
+        config:
+          message: "Dataset review request was rejected"
+
+  # Data Contract Review Request
+  - id: "contract-review-request"
+    name: "Data Contract Review Request"
+    description: "Handles data contract review requests with data steward approval and creates a formal asset review record."
+    trigger:
+      type: "on_request_review"
+      entity_types:
+        - "data_contract"
+    scope:
+      type: "all"
+    is_active: true
+    is_default: true
+    steps:
+      - id: "notify-requester"
+        name: "Confirm Request Received"
+        type: "notification"
+        config:
+          recipients: "requester"
+          template: "request_submitted"
+          custom_message: "Your data contract review request has been submitted. A data steward will review it shortly."
+        on_pass: "create-review"
+
+      - id: "create-review"
+        name: "Create Asset Review"
+        type: "create_asset_review"
+        config:
+          reviewer_role: "DataSteward"
+          review_type: "standard"
+          notes: "Data contract review requested via workflow"
+          use_entity_as_asset: true
+        on_pass: "request-approval"
+
+      - id: "request-approval"
+        name: "Request Data Steward Approval"
+        type: "approval"
+        config:
+          approvers: "DataSteward"
+          timeout_days: 7
+          require_all: false
+        on_pass: "notify-approved"
+        on_fail: "notify-rejected"
+
+      - id: "notify-approved"
+        name: "Notify Approval"
+        type: "notification"
+        config:
+          recipients: "requester"
+          template: "request_approved"
+          custom_message: "Your data contract has been approved and is ready for the next step."
+        on_pass: "success"
+
+      - id: "notify-rejected"
+        name: "Notify Rejection"
+        type: "notification"
+        config:
+          recipients: "requester"
+          template: "request_rejected"
+          custom_message: "Your data contract review request has been denied. Please review the feedback."
+        on_pass: "fail-rejected"
+
+      - id: "success"
+        name: "Contract Review Approved"
+        type: "pass"
+
+      - id: "fail-rejected"
+        name: "Contract Review Rejected"
+        type: "fail"
+        config:
+          message: "Data contract review request was rejected"
+
+  # Data Contract Publish Request
+  - id: "contract-publish-request"
+    name: "Data Contract Publish Request"
+    description: "Handles requests to publish data contracts to the marketplace with approver authorization."
+    trigger:
+      type: "on_request_publish"
+      entity_types:
+        - "data_contract"
+    scope:
+      type: "all"
+    is_active: true
+    is_default: true
+    steps:
+      - id: "notify-requester"
+        name: "Confirm Publish Request Received"
+        type: "notification"
+        config:
+          recipients: "requester"
+          template: "request_submitted"
+          custom_message: "Your request to publish the data contract to the marketplace has been submitted."
+        on_pass: "request-approval"
+
+      - id: "request-approval"
+        name: "Request Contract Approver Authorization"
+        type: "approval"
+        config:
+          approvers: "ContractApprover"
+          timeout_days: 5
+          require_all: false
+        on_pass: "notify-approved"
+        on_fail: "notify-rejected"
+
+      - id: "notify-approved"
+        name: "Notify Publish Approved"
+        type: "notification"
+        config:
+          recipients: "requester"
+          template: "request_approved"
+          custom_message: "Your data contract has been approved for publishing to the marketplace."
+        on_pass: "success"
+
+      - id: "notify-rejected"
+        name: "Notify Publish Rejected"
+        type: "notification"
+        config:
+          recipients: "requester"
+          template: "request_rejected"
+          custom_message: "Your publish request has been denied. Please review the feedback."
+        on_pass: "fail-rejected"
+
+      - id: "success"
+        name: "Publish Approved"
+        type: "pass"
+
+      - id: "fail-rejected"
+        name: "Publish Rejected"
+        type: "fail"
+        config:
+          message: "Data contract publish request was rejected"
+
+  # Dataset Publish Notification
+  - id: "dataset-publish-notify"
+    name: "Dataset Publish Notification"
+    description: "Notifies the owner when their dataset is published to the marketplace."
+    trigger:
+      type: "on_request_publish"
+      entity_types:
+        - "dataset"
+    scope:
+      type: "all"
+    is_active: true
+    is_default: true
+    steps:
+      - id: "notify-owner"
+        name: "Notify Dataset Owner"
+        type: "notification"
+        config:
+          recipients: "owner"
+          template: "request_approved"
+          custom_message: "Your dataset '{{entity_name}}' has been published to the marketplace and is now discoverable by other users."
+        on_pass: "success"
+
+      - id: "success"
+        name: "Publish Complete"
+        type: "pass"
+
+  # Data Product Review Request
+  - id: "product-review-request"
+    name: "Data Product Review Request"
+    description: "Handles data product review requests with domain owner approval and creates a formal asset review record."
+    trigger:
+      type: "on_request_review"
+      entity_types:
+        - "data_product"
+    scope:
+      type: "all"
+    is_active: true
+    is_default: true
+    steps:
+      - id: "notify-requester"
+        name: "Confirm Request Received"
+        type: "notification"
+        config:
+          recipients: "requester"
+          template: "request_submitted"
+          custom_message: "Your data product review request has been submitted."
+        on_pass: "create-review"
+
+      - id: "create-review"
+        name: "Create Asset Review"
+        type: "create_asset_review"
+        config:
+          reviewer_role: "DomainOwner"
+          review_type: "standard"
+          notes: "Data product review requested via workflow"
+          use_entity_as_asset: true
+        on_pass: "request-approval"
+
+      - id: "request-approval"
+        name: "Request Domain Owner Approval"
+        type: "approval"
+        config:
+          approvers: "DomainOwner"
+          timeout_days: 7
+          require_all: false
+        on_pass: "notify-approved"
+        on_fail: "notify-rejected"
+
+      - id: "notify-approved"
+        name: "Notify Approval"
+        type: "notification"
+        config:
+          recipients: "requester"
+          template: "request_approved"
+          custom_message: "Your data product has been approved and is ready for publication."
+        on_pass: "success"
+
+      - id: "notify-rejected"
+        name: "Notify Rejection"
+        type: "notification"
+        config:
+          recipients: "requester"
+          template: "request_rejected"
+          custom_message: "Your data product review request has been denied."
+        on_pass: "fail-rejected"
+
+      - id: "success"
+        name: "Product Review Approved"
+        type: "pass"
+
+      - id: "fail-rejected"
+        name: "Product Review Rejected"
+        type: "fail"
+        config:
+          message: "Data product review request was rejected"
+
+  # Access Grant Request
+  - id: "access-grant-request"
+    name: "Access Grant Request"
+    description: "Handles access grant requests with admin approval."
+    trigger:
+      type: "on_request_access"
+      entity_types:
+        - "access_grant"
+    scope:
+      type: "all"
+    is_active: true
+    is_default: true
+    steps:
+      - id: "notify-requester"
+        name: "Confirm Access Request Received"
+        type: "notification"
+        config:
+          recipients: "requester"
+          template: "request_submitted"
+          custom_message: "Your access request has been submitted and is pending approval."
+        on_pass: "request-approval"
+
+      - id: "request-approval"
+        name: "Request Admin Approval"
+        type: "approval"
+        config:
+          approvers: "Admin"
+          timeout_days: 3
+          require_all: false
+        on_pass: "notify-approved"
+        on_fail: "notify-rejected"
+
+      - id: "notify-approved"
+        name: "Notify Access Approved"
+        type: "notification"
+        config:
+          recipients: "requester"
+          template: "request_approved"
+          custom_message: "Your access request has been approved. You now have access to the requested resource."
+        on_pass: "success"
+
+      - id: "notify-rejected"
+        name: "Notify Access Rejected"
+        type: "notification"
+        config:
+          recipients: "requester"
+          template: "request_rejected"
+          custom_message: "Your access request has been denied. Please contact an administrator for more information."
+        on_pass: "fail-rejected"
+
+      - id: "success"
+        name: "Access Granted"
+        type: "pass"
+
+      - id: "fail-rejected"
+        name: "Access Denied"
+        type: "fail"
+        config:
+          message: "Access request was denied"
+
+  # Status Change Request (Generic)
+  - id: "status-change-request"
+    name: "Status Change Request"
+    description: "Handles status change requests for datasets and data products that require approval."
+    trigger:
+      type: "on_request_status_change"
+      entity_types:
+        - "dataset"
+        - "data_product"
+    scope:
+      type: "all"
+    is_active: true
+    is_default: true
+    steps:
+      - id: "notify-requester"
+        name: "Confirm Status Change Request"
+        type: "notification"
+        config:
+          recipients: "requester"
+          template: "request_submitted"
+          custom_message: "Your status change request has been submitted for approval."
+        on_pass: "request-approval"
+
+      - id: "request-approval"
+        name: "Request Admin Approval"
+        type: "approval"
+        config:
+          approvers: "Admin"
+          timeout_days: 5
+          require_all: false
+        on_pass: "notify-approved"
+        on_fail: "notify-rejected"
+
+      - id: "notify-approved"
+        name: "Notify Status Change Approved"
+        type: "notification"
+        config:
+          recipients: "requester"
+          template: "request_approved"
+          custom_message: "Your status change request has been approved."
+        on_pass: "success"
+
+      - id: "notify-rejected"
+        name: "Notify Status Change Rejected"
+        type: "notification"
+        config:
+          recipients: "requester"
+          template: "request_rejected"
+          custom_message: "Your status change request has been denied."
+        on_pass: "fail-rejected"
+
+      - id: "success"
+        name: "Status Change Approved"
+        type: "pass"
+
+      - id: "fail-rejected"
+        name: "Status Change Rejected"
+        type: "fail"
+        config:
+          message: "Status change request was rejected"
+
+  # =========================================================================
+  # Data Asset Review Workflows
+  # =========================================================================
+
+  # Data Asset Review Request
+  - id: "data-asset-review-request"
+    name: "Data Asset Review Request"
+    description: "Handles data asset review requests with reviewer notification and approval."
+    trigger:
+      type: "on_request_review"
+      entity_types:
+        - "data_asset_review"
+    scope:
+      type: "all"
+    is_active: true
+    is_default: true
+    steps:
+      - id: "notify-reviewer"
+        name: "Notify Reviewer"
+        type: "notification"
+        config:
+          recipients: "owner"
+          template: "request_submitted"
+          custom_message: "A new data asset review request has been assigned to you."
+        on_pass: "request-approval"
+
+      - id: "request-approval"
+        name: "Request Reviewer Approval"
+        type: "approval"
+        config:
+          approvers: "DataSteward"
+          timeout_days: 7
+          require_all: false
+        on_pass: "notify-approved"
+        on_fail: "notify-rejected"
+
+      - id: "notify-approved"
+        name: "Notify Review Approved"
+        type: "notification"
+        config:
+          recipients: "requester"
+          template: "request_approved"
+          custom_message: "Your data asset review has been completed and approved."
+        on_pass: "success"
+
+      - id: "notify-rejected"
+        name: "Notify Review Needs Changes"
+        type: "notification"
+        config:
+          recipients: "requester"
+          template: "request_rejected"
+          custom_message: "Your data asset review requires changes. Please review the feedback."
+        on_pass: "fail-rejected"
+
+      - id: "success"
+        name: "Review Completed"
+        type: "pass"
+
+      - id: "fail-rejected"
+        name: "Review Needs Changes"
+        type: "fail"
+        config:
+          message: "Data asset review requires changes"
+
+  # =========================================================================
+  # Project Access Request Workflow
+  # =========================================================================
+
+  - id: "project-access-request"
+    name: "Project Access Request"
+    description: "Handles project access requests with team member notification."
+    trigger:
+      type: "on_request_access"
+      entity_types:
+        - "project"
+    scope:
+      type: "all"
+    is_active: true
+    is_default: true
+    steps:
+      - id: "notify-requester"
+        name: "Confirm Request Received"
+        type: "notification"
+        config:
+          recipients: "requester"
+          template: "request_submitted"
+          custom_message: "Your project access request has been submitted to the project team."
+        on_pass: "notify-team"
+
+      - id: "notify-team"
+        name: "Notify Project Team"
+        type: "notification"
+        config:
+          recipients: "owner"
+          template: "request_submitted"
+          custom_message: "A user has requested access to your project."
+        on_pass: "success"
+
+      - id: "success"
+        name: "Request Submitted"
+        type: "pass"
+
+  # =========================================================================
+  # Role Access Request Workflow
+  # =========================================================================
+
+  - id: "role-access-request"
+    name: "Role Access Request"
+    description: "Handles role access requests with approver notification and approval workflow."
+    trigger:
+      type: "on_request_access"
+      entity_types:
+        - "role"
+    scope:
+      type: "all"
+    is_active: true
+    is_default: true
+    steps:
+      - id: "notify-requester"
+        name: "Confirm Request Received"
+        type: "notification"
+        config:
+          recipients: "requester"
+          template: "request_submitted"
+          custom_message: "Your role access request has been submitted for approval."
+        on_pass: "request-approval"
+
+      - id: "request-approval"
+        name: "Request Admin Approval"
+        type: "approval"
+        config:
+          approvers: "Admin"
+          timeout_days: 5
+          require_all: false
+        on_pass: "notify-approved"
+        on_fail: "notify-rejected"
+
+      - id: "notify-approved"
+        name: "Notify Role Granted"
+        type: "notification"
+        config:
+          recipients: "requester"
+          template: "request_approved"
+          custom_message: "Your role access request has been approved. Please contact an administrator to be added to the appropriate group."
+        on_pass: "success"
+
+      - id: "notify-rejected"
+        name: "Notify Role Denied"
+        type: "notification"
+        config:
+          recipients: "requester"
+          template: "request_rejected"
+          custom_message: "Your role access request has been denied."
+        on_pass: "fail-rejected"
+
+      - id: "success"
+        name: "Role Request Approved"
+        type: "pass"
+
+      - id: "fail-rejected"
+        name: "Role Request Rejected"
+        type: "fail"
+        config:
+          message: "Role access request was denied"
+
+  # =========================================================================
+  # Job Lifecycle Workflows
+  # =========================================================================
+
+  # Job Failure Notification
+  - id: "job-failure-notification"
+    name: "Job Failure Notification"
+    description: "Notifies administrators when a background job fails."
+    trigger:
+      type: "on_job_failure"
+      entity_types:
+        - "job"
+    scope:
+      type: "all"
+    is_active: true
+    is_default: true
+    steps:
+      - id: "notify-admins"
+        name: "Notify Administrators"
+        type: "notification"
+        config:
+          recipients: "Admin"
+          template: "validation_failed"
+          custom_message: "A background job has failed. Please check the job logs for details."
+        on_pass: "success"
+
+      - id: "success"
+        name: "Notification Sent"
+        type: "pass"
+
+  # Job Success Notification
+  - id: "job-success-notification"
+    name: "Job Success Notification"
+    description: "Notifies users when a background job completes successfully."
+    trigger:
+      type: "on_job_success"
+      entity_types:
+        - "job"
+    scope:
+      type: "all"
+    is_active: false  # Disabled by default to avoid notification spam
+    is_default: true
+    steps:
+      - id: "notify-requester"
+        name: "Notify Job Requester"
+        type: "notification"
+        config:
+          recipients: "requester"
+          template: "request_approved"
+          custom_message: "Your background job has completed successfully."
+        on_pass: "success"
+
+      - id: "success"
+        name: "Notification Sent"
+        type: "pass"
+
+  # =========================================================================
+  # Subscription Workflows
+  # =========================================================================
+
+  # Dataset Subscription Welcome
+  - id: "subscription-welcome"
+    name: "Subscription Welcome"
+    description: "Sends a welcome notification when a user subscribes to a dataset."
+    trigger:
+      type: "on_subscribe"
+      entity_types:
+        - "dataset"
+    scope:
+      type: "all"
+    is_active: false  # Disabled by default
+    is_default: true
+    steps:
+      - id: "notify-subscriber"
+        name: "Welcome Subscriber"
+        type: "notification"
+        config:
+          recipients: "requester"
+          template: "request_approved"
+          custom_message: "You have successfully subscribed to this dataset. You will receive updates when changes occur."
+        on_pass: "notify-owner"
+
+      - id: "notify-owner"
+        name: "Notify Dataset Owner"
+        type: "notification"
+        config:
+          recipients: "owner"
+          template: "request_submitted"
+          custom_message: "A new user has subscribed to your dataset."
+        on_pass: "success"
+
+      - id: "success"
+        name: "Subscription Complete"
+        type: "pass"
+
+  # =========================================================================
+  # Access Grant Lifecycle Workflows
+  # =========================================================================
+
+  # Access Expiring Soon
+  - id: "access-expiring-warning"
+    name: "Access Expiring Warning"
+    description: "Notifies users when their access is about to expire."
+    trigger:
+      type: "on_expiring"
+      entity_types:
+        - "access_grant"
+    scope:
+      type: "all"
+    is_active: true
+    is_default: true
+    steps:
+      - id: "notify-grantee"
+        name: "Notify Grantee of Expiration"
+        type: "notification"
+        config:
+          recipients: "requester"
+          template: "request_submitted"
+          custom_message: "Your access is expiring soon. Contact the resource owner if you need to extend your access."
+        on_pass: "success"
+
+      - id: "success"
+        name: "Warning Sent"
+        type: "pass"
+
+  # Access Revoked
+  - id: "access-revoked-notification"
+    name: "Access Revoked Notification"
+    description: "Notifies users when their access has been revoked."
+    trigger:
+      type: "on_revoke"
+      entity_types:
+        - "access_grant"
+    scope:
+      type: "all"
+    is_active: true
+    is_default: true
+    steps:
+      - id: "notify-grantee"
+        name: "Notify of Revocation"
+        type: "notification"
+        config:
+          recipients: "requester"
+          template: "request_rejected"
+          custom_message: "Your access has been revoked. Contact an administrator if you believe this was done in error."
+        on_pass: "success"
+
+      - id: "success"
+        name: "Revocation Notification Sent"
+        type: "pass"
+

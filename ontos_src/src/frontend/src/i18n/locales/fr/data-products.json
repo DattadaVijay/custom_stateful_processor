@@ -1,0 +1,229 @@
+{
+  "title": "Produits de Données",
+  "subtitle": "Gérez vos produits de données",
+  "newProduct": "Nouveau Produit de Données",
+  "importProduct": "Importer",
+  "searchPlaceholder": "Rechercher des produits de données...",
+  "loading": "Chargement des produits de données...",
+  "filters": {
+    "allStatus": "Tous les Statuts",
+    "allOwners": "Tous les Propriétaires",
+    "mySubscriptions": "Mes Abonnements"
+  },
+  "toolbar": {
+    "showAll": "Afficher tous les produits",
+    "showSubscriptions": "Afficher uniquement mes abonnements",
+    "mySubscriptionsCount": "Mes Abonnements ({{count}})",
+    "createProduct": "Créer un Produit",
+    "uploadFile": "Télécharger un Fichier"
+  },
+  "permissions": {
+    "denied": "Permission Refusée",
+    "noView": "Vous n'avez pas la permission de voir les produits de données.",
+    "noCreate": "Vous n'avez pas la permission de créer des produits de données.",
+    "noEdit": "Vous n'avez pas la permission de modifier des produits de données.",
+    "noDelete": "Vous n'avez pas la permission de supprimer des produits de données.",
+    "noBulkDelete": "Vous n'avez pas la permission pour la suppression en masse.",
+    "noGenieSpace": "Vous n'avez pas la permission de créer des Genie Spaces."
+  },
+  "bulk": {
+    "deleteConfirm": "Êtes-vous sûr de vouloir supprimer {{count}} produit(s) sélectionné(s) ?",
+    "deleteSuccess": "Suppression en Masse Réussie",
+    "deleteSuccessCount": "{{count}} produit(s) supprimé(s).",
+    "deleteError": "Erreur de Suppression en Masse",
+    "deleteErrorCount": "{{count}} produit(s) n'ont pas pu être supprimés. Première erreur : {{error}}",
+    "requestAccessTitle": "Demander l'accès pour la sélection",
+    "requestAccess": "Demander l'Accès ({{count}})",
+    "createGenieSpaceTitle": "Créer un Genie Space à partir de la sélection",
+    "createGenieSpace": "Créer Genie Space ({{count}})",
+    "deleteTitle": "Supprimer la sélection",
+    "deleteSelected": "Supprimer la Sélection ({{count}})"
+  },
+  "access": {
+    "submitting": "Envoi en cours",
+    "requestingAccess": "Demande d'accès pour {{count}} élément(s)...",
+    "requestError": "Échec de l'envoi des demandes d'accès",
+    "requestSent": "Demande Envoyée",
+    "requestSubmitted": "Demande d'accès envoyée. Vous serez notifié."
+  },
+  "upload": {
+    "success": "Téléchargement Réussi",
+    "successMessage": "{{filename}} traité avec succès. {{count}} produit(s) traité(s).",
+    "failed": "Téléchargement Échoué",
+    "unexpectedError": "Une erreur inattendue s'est produite lors du téléchargement.",
+    "uploading": "Téléchargement...",
+    "tooltipTitle": "Télécharger un Produit de Données (format ODPS)",
+    "tooltipDescription": "Accepte les fichiers YAML ou JSON suivant le schéma ODPS (Open Data Product Standard).",
+    "tooltipHint": "Pour les Contrats de Données (ODCS), utilisez la page Contrats de Données."
+  },
+  "genie": {
+    "noSelection": "Aucune Sélection",
+    "selectAtLeastOne": "Veuillez sélectionner au moins un produit de données.",
+    "createConfirm": "Créer un Genie Space pour {{count}} produit(s) sélectionné(s) ?",
+    "initiating": "Initialisation du Genie Space",
+    "requestingCreation": "Demande de création de Genie Space pour {{count}} produit(s)...",
+    "requestSubmitted": "Demande Envoyée",
+    "willBeNotified": "Création du Genie Space initiée. Vous serez notifié.",
+    "creationError": "Échec du démarrage de la création du Genie Space."
+  },
+  "navigation": {
+    "error": "Erreur de Navigation",
+    "missingId": "Impossible de naviguer vers les détails, l'ID du produit est manquant."
+  },
+  "table": {
+    "title": "Titre",
+    "name": "Nom",
+    "status": "Statut",
+    "domain": "Domaine",
+    "owner": "Propriétaire",
+    "version": "Version",
+    "type": "Type",
+    "tags": "Tags",
+    "created": "Créé",
+    "updated": "Mis à jour",
+    "actions": "Actions",
+    "viewDetails": "Voir les détails",
+    "editProduct": "Modifier le produit",
+    "deleteProduct": "Supprimer le produit",
+    "subscribed": "Abonné"
+  },
+  "messages": {
+    "deleteConfirm": "Êtes-vous sûr de vouloir supprimer ce produit de données ?",
+    "deleteSuccess": "Produit de données supprimé avec succès",
+    "deleteError": "Échec de la suppression du produit de données",
+    "fetchError": "Échec de la récupération des produits de données",
+    "importSuccess": "Produit de données importé avec succès",
+    "importError": "Échec de l'importation du produit de données",
+    "success": "Succès",
+    "error": "Erreur"
+  },
+  "status": {
+    "draft": "Brouillon",
+    "sandbox": "Bac à sable",
+    "proposed": "Proposé",
+    "under_review": "En révision",
+    "in_review": "En révision",
+    "active": "Actif",
+    "approved": "Approuvé",
+    "certified": "Certifié",
+    "deprecated": "Obsolète",
+    "retired": "Retiré",
+    "published": "Publié"
+  },
+  "viewMode": {
+    "table": "Tableau",
+    "graph": "Graphe"
+  },
+  "details": {
+    "backToList": "Retour à la Liste",
+    "edit": "Modifier",
+    "delete": "Supprimer",
+    "subscribe": "S'abonner",
+    "unsubscribe": "Se désabonner",
+    "publish": "Publier",
+    "unpublish": "Dépublier",
+    "published": "Publié",
+    "notFound": "Produit de données non trouvé",
+    "loading": "Chargement...",
+    "noDescription": "Aucune description fournie",
+    "coreMetadata": {
+      "status": "Statut",
+      "version": "Version",
+      "owner": "Propriétaire",
+      "domain": "Domaine",
+      "created": "Créé",
+      "updated": "Mis à jour",
+      "tags": "Tags",
+      "noTags": "Aucun tag",
+      "notAssigned": "Non assigné"
+    },
+    "sections": {
+      "overview": "Aperçu",
+      "description": "Description",
+      "inputPorts": "Ports d'Entrée",
+      "outputPorts": "Ports de Sortie",
+      "contracts": "Contrats de Données",
+      "subscribers": "Abonnés",
+      "lineage": "Lignage"
+    },
+    "inputPorts": {
+      "title": "Ports d'Entrée",
+      "subtitle": "Sources de données consommées par ce produit",
+      "noInputPorts": "Aucun port d'entrée défini",
+      "addInputPort": "Ajouter un Port d'Entrée"
+    },
+    "outputPorts": {
+      "title": "Ports de Sortie",
+      "subtitle": "Données exposées par ce produit",
+      "noOutputPorts": "Aucun port de sortie défini",
+      "addOutputPort": "Ajouter un Port de Sortie"
+    },
+    "contracts": {
+      "title": "Contrats de Données",
+      "subtitle": "Contrats associés à ce produit",
+      "noContracts": "Aucun contrat lié",
+      "viewContract": "Voir le Contrat"
+    },
+    "subscribers": {
+      "title": "Abonnés",
+      "subtitle": "Utilisateurs et équipes abonnés à ce produit",
+      "noSubscribers": "Aucun abonné pour le moment",
+      "table": {
+        "email": "Email",
+        "subscribed": "Abonné",
+        "reason": "Raison"
+      }
+    },
+    "subscription": {
+      "subscribed": "Abonné",
+      "unsubscribed": "Désabonné",
+      "subscribeMessage": "Vous recevrez des mises à jour pour ce produit de données",
+      "unsubscribeMessage": "Vous ne recevrez plus de mises à jour pour ce produit de données",
+      "error": "Échec de la mise à jour de l'abonnement"
+    },
+    "deleteConfirm": "Êtes-vous sûr de vouloir supprimer \"{{name}}\" ?",
+    "deleteSuccess": "Produit de données supprimé avec succès",
+    "deleteError": "Échec de la suppression du produit de données"
+  },
+  "form": {
+    "createTitle": "Créer un Produit de Données",
+    "editTitle": "Modifier le Produit de Données",
+    "name": "Nom",
+    "namePlaceholder": "Entrez le nom du produit",
+    "description": "Description",
+    "descriptionPlaceholder": "Entrez la description du produit",
+    "purpose": "Objectif",
+    "purposePlaceholder": "Quel est l'objectif de ce produit de données ?",
+    "usage": "Utilisation",
+    "usagePlaceholder": "Comment ce produit de données doit-il être utilisé ?",
+    "status": "Statut",
+    "version": "Version",
+    "versionPlaceholder": "ex., 1.0.0",
+    "domain": "Domaine",
+    "selectDomain": "Sélectionner un domaine",
+    "noDomain": "Aucun domaine",
+    "ownerTeam": "Équipe Propriétaire",
+    "selectOwnerTeam": "Sélectionner l'équipe propriétaire",
+    "noOwner": "Aucun propriétaire",
+    "tags": "Tags",
+    "tagsPlaceholder": "Entrez les tags séparés par des virgules",
+    "cancel": "Annuler",
+    "save": "Enregistrer",
+    "create": "Créer",
+    "saving": "Enregistrement...",
+    "createSuccess": "Produit de données créé avec succès",
+    "updateSuccess": "Produit de données mis à jour avec succès",
+    "createError": "Échec de la création du produit de données",
+    "updateError": "Échec de la mise à jour du produit de données"
+  },
+  "import": {
+    "title": "Importer un Produit de Données",
+    "dropzone": "Déposez un fichier YAML ou JSON ici, ou cliquez pour sélectionner",
+    "pasteLabel": "Ou collez le contenu directement",
+    "pastePlaceholder": "Collez le contenu YAML ou JSON...",
+    "cancel": "Annuler",
+    "import": "Importer",
+    "importing": "Importation..."
+  }
+}
+

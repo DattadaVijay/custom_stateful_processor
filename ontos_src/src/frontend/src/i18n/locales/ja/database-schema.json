@@ -1,0 +1,16 @@
+{
+  "title": "データベーススキーマ",
+  "loading": "データベーススキーマを読み込み中...",
+  "errorLoadingSchema": "スキーマの読み込みエラー",
+  "legend": "凡例",
+  "notNull": "NOT NULL",
+  "tableCount": "{{count}}個のテーブル",
+  "tableCount_one": "{{count}}個のテーブル",
+  "relationshipCount": "{{count}}個の関連",
+  "relationshipCount_one": "{{count}}個の関連",
+  "columns": "{{count}}個のカラム",
+  "columns_one": "{{count}}個のカラム",
+  "tableInfo": "テーブル説明",
+  "noDescription": "このテーブルの説明はありません。"
+}
+

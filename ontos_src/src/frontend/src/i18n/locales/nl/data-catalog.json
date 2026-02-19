@@ -1,0 +1,71 @@
+{
+  "title": "Data Catalogus",
+  "subtitle": "Blader door alle kolommen in Unity Catalog tabellen en views",
+  "searchPlaceholder": "Zoek kolommen...",
+  "noResults": "Geen kolommen gevonden",
+  "tryDifferentSearch": "Probeer een andere zoekterm",
+  "noTablesAccessible": "Geen tabellen toegankelijk in Unity Catalog",
+  "showingColumns": "Toont {{count}} kolommen",
+  "matchingSearch": "overeenkomend",
+  
+  "columns": {
+    "label": "Label",
+    "description": "Beschrijving",
+    "columnName": "Kolomnaam",
+    "type": "Type",
+    "tableName": "Tabel"
+  },
+  
+  "tabs": {
+    "overview": "Overzicht",
+    "dataDetails": "Data Details",
+    "lineage": "Lineage"
+  },
+  
+  "overview": {
+    "basicInfo": "Basis Informatie",
+    "catalog": "Catalogus",
+    "schema": "Schema",
+    "owner": "Eigenaar",
+    "type": "Type",
+    "created": "Aangemaakt",
+    "updated": "Bijgewerkt",
+    "storage": "Opslag & Statistieken",
+    "columns": "Kolommen",
+    "rows": "Rijen",
+    "size": "Grootte",
+    "format": "Formaat",
+    "location": "Opslaglocatie",
+    "description": "Beschrijving",
+    "tags": "Tags"
+  },
+  
+  "dataDetails": {
+    "title": "Kolommen",
+    "description": "Kolomdefinities en metadata",
+    "columnName": "Kolomnaam",
+    "type": "Type",
+    "nullable": "Nullable",
+    "description": "Beschrijving"
+  },
+  
+  "lineage": {
+    "title": "Data Lineage",
+    "description": "Visualiseer upstream en downstream afhankelijkheden",
+    "noLineage": "Geen lineage informatie beschikbaar",
+    "noLineageHint": "Deze tabel heeft mogelijk geen upstream of downstream afhankelijkheden",
+    "both": "Beide Richtingen",
+    "upstream": "Alleen Upstream",
+    "downstream": "Alleen Downstream",
+    "legend": "Legenda",
+    "impactSummary": "Impact Samenvatting",
+    "impactWarning": "Wijzigingen aan deze tabel kunnen beïnvloeden:",
+    "notifyOwners": "Te informeren eigenaren"
+  },
+  
+  "errors": {
+    "fetchFailed": "Kon data niet ophalen",
+    "tableNotFound": "Tabel niet gevonden"
+  }
+}
+

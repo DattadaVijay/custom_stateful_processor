@@ -1,0 +1,89 @@
+{
+  "title": "Teams",
+  "addNewTeam": "Nieuw Team Toevoegen",
+  "editTeam": "Team Bewerken",
+  "deleteTeam": "Team Verwijderen",
+  "showingTeamsForProject": "Teams tonen voor project:",
+  "form": {
+    "dialog": {
+      "createTitle": "Nieuw Team Aanmaken",
+      "editTitle": "Team Bewerken",
+      "createDescription": "Maak een nieuw team aan met leden en rol overschrijvingen.",
+      "editDescription": "Werk teamdetails en leden bij."
+    },
+    "sections": {
+      "info": "Team Informatie",
+      "members": "Teamleden",
+      "tags": "Tags"
+    },
+    "labels": {
+      "name": "Teamnaam *",
+      "title": "Weergavetitel",
+      "description": "Beschrijving",
+      "domain": "Datadomein",
+      "type": "Type",
+      "identifier": "E-mail / Groepsnaam",
+      "roleOverride": "Rol Overschrijving",
+      "noOverride": "Geen overschrijving"
+    },
+    "placeholders": {
+      "name": "Voer teamnaam in",
+      "title": "Voer weergavetitel in (optioneel)",
+      "description": "Voer teambeschrijving in (optioneel)",
+      "selectDomain": "Selecteer een datadomein (optioneel)",
+      "userEmail": "gebruiker@voorbeeld.com",
+      "groupName": "groepsnaam",
+      "noMembersHelp": "Nog geen teamleden toegevoegd. Klik \"Lid Toevoegen\" om je team op te bouwen.",
+      "tagSearch": "Zoek en selecteer tags voor dit team..."
+    },
+    "memberTypes": {
+      "user": "Gebruiker",
+      "group": "Groep"
+    },
+    "buttons": {
+      "addMember": "Lid Toevoegen",
+      "removeMember": "Lid Verwijderen",
+      "update": "Team Bijwerken",
+      "create": "Team Aanmaken"
+    },
+    "toasts": {
+      "createdTitle": "Team Aangemaakt",
+      "updatedTitle": "Team Bijgewerkt",
+      "createdDescription": "Team \"{{name}}\" is succesvol aangemaakt.",
+      "updatedDescription": "Team \"{{name}}\" is succesvol bijgewerkt.",
+      "createFailedTitle": "Kon Team Niet Aanmaken",
+      "updateFailedTitle": "Kon Team Niet Bijwerken",
+      "failedDescription": "Er is een onverwachte fout opgetreden."
+    }
+  },
+  "table": {
+    "name": "Naam",
+    "description": "Beschrijving",
+    "members": "Leden",
+    "lastUpdated": "Laatst Bijgewerkt",
+    "actions": "Acties",
+    "domainPrefix": "↳ Domein:",
+    "moreMembers": "meer"
+  },
+  "permissions": {
+    "deniedView": "Je hebt geen toestemming om teams te bekijken.",
+    "deniedCreate": "Je hebt geen toestemming om teams aan te maken.",
+    "deniedEdit": "Je hebt geen toestemming om teams te bewerken.",
+    "deniedDelete": "Je hebt geen toestemming om teams te verwijderen.",
+    "permissionDenied": "Geen Toegang"
+  },
+  "messages": {
+    "teamDeleted": "Team Verwijderd",
+    "teamDeletedSuccess": "Het team is succesvol verwijderd.",
+    "errorFetchingTeams": "Fout bij ophalen teams",
+    "errorDeletingTeam": "Fout bij Verwijderen Team",
+    "errorLoadingData": "Fout bij Laden Data"
+  },
+  "deleteDialog": {
+    "title": "Weet je het absoluut zeker?",
+    "description": "Deze actie kan niet ongedaan worden gemaakt. Dit zal het team en al zijn leden permanent verwijderen.",
+    "cancel": "Annuleren",
+    "delete": "Verwijderen"
+  }
+}
+

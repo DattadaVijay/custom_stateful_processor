@@ -1,0 +1,72 @@
+{
+  "title": "Características de Seguridad",
+  "subtitle": "Gestiona la seguridad de datos y configuraciones de privacidad",
+  "newFeature": "Nueva Característica de Seguridad",
+  "addFeature": "Agregar Característica de Seguridad",
+  "editFeature": "Editar Característica de Seguridad",
+  "searchPlaceholder": "Buscar características de seguridad...",
+  "loading": "Cargando características de seguridad...",
+  "toast": {
+    "featureCreated": "Característica de seguridad creada exitosamente",
+    "featureUpdated": "Característica de seguridad actualizada exitosamente",
+    "featureDeleted": "Característica de seguridad eliminada exitosamente",
+    "loadError": "Error al cargar características de seguridad",
+    "saveError": "Error al guardar característica de seguridad",
+    "deleteError": "Error al eliminar característica de seguridad"
+  },
+  "table": {
+    "name": "Nombre",
+    "type": "Tipo",
+    "target": "Activo Objetivo",
+    "status": "Estado",
+    "enabled": "Habilitado",
+    "updated": "Actualizado",
+    "actions": "Acciones",
+    "conditions": "Condiciones",
+    "lastUpdated": "Última Actualización"
+  },
+  "messages": {
+    "success": "Éxito",
+    "error": "Error",
+    "deleteConfirm": "¿Estás seguro de que quieres eliminar esta característica de seguridad?",
+    "deleteSuccess": "Característica de seguridad eliminada exitosamente",
+    "deleteError": "Error al eliminar la característica de seguridad",
+    "enableSuccess": "Característica de seguridad habilitada",
+    "disableSuccess": "Característica de seguridad deshabilitada"
+  },
+  "types": {
+    "encryption": "Cifrado",
+    "masking": "Enmascaramiento de Datos",
+    "rowLevel": "Seguridad a Nivel de Fila",
+    "columnLevel": "Seguridad a Nivel de Columna",
+    "differential": "Privacidad Diferencial",
+    "rowFiltering": "Filtrado de Filas",
+    "columnMasking": "Enmascaramiento de Columnas",
+    "differentialPrivacy": "Privacidad Diferencial",
+    "homomorphicEncryption": "Cifrado Homomórfico",
+    "envelopeEncryption": "Cifrado de Sobre",
+    "tokenization": "Tokenización"
+  },
+  "details": {
+    "backToList": "Volver a Características de Seguridad",
+    "edit": "Editar",
+    "delete": "Eliminar",
+    "enable": "Habilitar",
+    "disable": "Deshabilitar",
+    "notFound": "Característica de seguridad no encontrada",
+    "loading": "Cargando..."
+  },
+  "form": {
+    "createTitle": "Crear Característica de Seguridad",
+    "editTitle": "Editar Característica de Seguridad",
+    "name": "Nombre",
+    "type": "Tipo",
+    "selectType": "Seleccionar tipo",
+    "target": "Activo Objetivo",
+    "configuration": "Configuración",
+    "cancel": "Cancelar",
+    "save": "Guardar",
+    "saveChanges": "Guardar Cambios",
+    "addFeature": "Agregar Característica"
+  }
+}

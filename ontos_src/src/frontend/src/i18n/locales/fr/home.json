@@ -1,0 +1,223 @@
+{
+  "title": "Bienvenue sur Ontos",
+  "tagline": "Gérez le glossaire métier, les contrats de données, les produits de données, les personas et plus encore",
+  "search": {
+    "placeholder": "Rechercher des produits de données, termes du glossaire, contrats..."
+  },
+  "overview": {
+    "title": "Aperçu",
+    "loading": "Chargement...",
+    "noData": "Aucune donnée d'aperçu disponible pour les aperçus de fonctionnalités sélectionnés ou vos permissions.",
+    "error": "Erreur",
+    "tiles": {
+      "compliance": {
+        "title": "Conformité",
+        "description": "Score de conformité actuel",
+        "notAvailable": "N/D"
+      },
+      "dataContracts": {
+        "title": "Contrats de données",
+        "description": "Contrats actifs"
+      },
+      "dataProducts": {
+        "title": "Produits de données",
+        "description": "Total des produits de données"
+      },
+      "semanticModels": {
+        "title": "Glossaire Métier",
+        "description": "Modèles / Termes"
+      },
+      "estates": {
+        "title": "Estates",
+        "description": "Aucun estate configuré",
+        "lastSync": "Dernière synchro : {{date}} ({{status}})",
+        "syncStatus": {
+          "success": "succès",
+          "failed": "échec",
+          "in_progress": "en cours",
+          "unknown": "inconnu"
+        }
+      }
+    }
+  },
+  "complianceTrend": {
+    "title": "Tendance de conformité",
+    "period": "Derniers 30 jours",
+    "loading": "Chargement des données de conformité...",
+    "error": "Erreur de chargement des données de tendance : {{error}}",
+    "noData": "Aucune donnée de conformité disponible pour la période sélectionnée.",
+    "chartLabel": "Score de conformité"
+  },
+  "noAccess": {
+    "message": "Vous n'avez actuellement aucun rôle spécifique assigné.",
+    "action": "Pour accéder aux fonctionnalités, veuillez",
+    "link": "demander l'accès à un rôle",
+    "contactAdmin": "Veuillez contacter un administrateur pour demander l'accès à l'application."
+  },
+  "requestRoleSection": {
+    "title": "Rôles",
+    "cardTitle": "Rôles Disponibles",
+    "description": "Vous n'avez actuellement aucun rôle d'application attribué. Sélectionnez un rôle ci-dessous pour demander l'accès et commencer.",
+    "info": "Après avoir soumis une demande, un administrateur l'examinera et vous serez notifié de la décision via la cloche de notification.",
+    "noDescription": "Aucune description disponible",
+    "requestAccess": "Demander l'Accès",
+    "moreRoles": "Et {{count}} autres rôles disponibles..."
+  },
+  "quickActions": {
+    "title": "Actions rapides",
+    "loading": "Chargement...",
+    "noActions": "Aucune action disponible.",
+    "actions": {
+      "browseProducts": "Parcourir les produits de données",
+      "browseGlossary": "Parcourir le glossaire métier",
+      "createProduct": "Créer un produit de données",
+      "defineContract": "Définir un contrat de données",
+      "reviewAssets": "Examiner les actifs de données",
+      "manageEntitlements": "Gérer les droits",
+      "catalogCommander": "Catalog Commander",
+      "settings": "Paramètres"
+    }
+  },
+  "recentActivity": {
+    "title": "Activité récente",
+    "loading": "Chargement de l'activité récente...",
+    "error": "Échec du chargement de l'activité récente",
+    "noActivity": "Aucune activité récente.",
+    "entityLabel": "Entité :",
+    "actionLabel": "Action :",
+    "userLabel": "Utilisateur :",
+    "timeLabel": "Heure :",
+    "iriLabel": "Iri :",
+    "linkIdLabel": "ID de lien :",
+    "openButton": "Ouvrir",
+    "openDetails": "Ouvrir les détails",
+    "noDetails": "Aucun détail disponible",
+    "by": "par",
+    "at": "à"
+  },
+  "discoverySection": {
+    "title": "Découverte",
+    "dataDomains": "Domaines de données",
+    "exactMatchOnly": "Correspondances exactes uniquement",
+    "allDomains": "Tous les domaines",
+    "clearFilter": "Effacer le filtre de domaine",
+    "selectDomain": "Sélectionnez un domaine pour voir sa hiérarchie et filtrer les produits.",
+    "popularProducts": "Produits de données populaires",
+    "loading": "Chargement des produits...",
+    "error": "Échec du chargement des produits de données",
+    "noProducts": "Aucun produit de données trouvé.",
+    "domain": "Domaine",
+    "owner": "Propriétaire",
+    "unknown": "Inconnu",
+    "status": "N/D",
+    "untitled": "Sans titre",
+    "info": "Info"
+  },
+  "dataCurationSection": {
+    "title": "Curation de données",
+    "createDataProduct": {
+      "title": "Créer un produit de données",
+      "description": "Utilisez l'assistant pour définir un nouveau produit de données.",
+      "button": "Ouvrir"
+    },
+    "defineDataContract": {
+      "title": "Définir un contrat de données",
+      "description": "Créer ou mettre à jour un contrat technique.",
+      "button": "Ouvrir"
+    },
+    "createDataset": {
+      "title": "Créer un dataset",
+      "description": "Gérer les datasets pour le matching et le mastering.",
+      "button": "Ouvrir"
+    },
+    "createSchema": {
+      "title": "Créer un schéma",
+      "description": "Créer ou gérer des schémas et des permissions.",
+      "openButton": "Ouvrir",
+      "createButton": "Créer"
+    },
+    "createCatalog": {
+      "title": "Créer un catalogue",
+      "description": "Provisionner des catalogues et gérer l'accès.",
+      "openButton": "Ouvrir",
+      "createButton": "Créer"
+    }
+  },
+  "requiredActionsSection": {
+    "title": "Actions requises",
+    "pendingNotifications": "Notifications en attente",
+    "loading": "Chargement...",
+    "noActions": "Aucune action en attente.",
+    "openButton": "Ouvrir",
+    "markReadButton": "Marquer comme lu",
+    "readLabel": "Lu",
+    "alertMessage": "Cette liste affiche uniquement les notifications nécessitant une action assignées à votre/vos rôle(s)."
+  },
+  "marketplace": {
+    "welcome": "Bonjour",
+    "welcomeWithName": "Bonjour, {{name}}",
+    "tagline": "Bienvenue sur le Marketplace des Données. Découvrez, comprenez et abonnez-vous aux produits de données et datasets.",
+    "searchPlaceholder": "Comment pouvons-nous vous aider aujourd'hui ?",
+    "searchDatasetsPlaceholder": "Rechercher des datasets par nom, chemin ou contrat...",
+    "browseAssetType": "Parcourir :",
+    "assetTypes": {
+      "products": "Produits de Données",
+      "datasets": "Datasets"
+    },
+    "browseDataDomains": "Parcourir les Domaines de Données",
+    "allDomains": "Tous les Domaines",
+    "loadingDomains": "Chargement des domaines...",
+    "tabs": {
+      "explore": "Explorer les Données",
+      "subscriptions": "Mes Données"
+    },
+    "products": {
+      "available": "{{count}} produit disponible",
+      "available_plural": "{{count}} produits disponibles",
+      "subscribed": "{{count}} produit abonné",
+      "subscribed_plural": "{{count}} produits abonnés",
+      "noProducts": "Aucun produit de données trouvé.",
+      "adjustFilters": "Essayez d'ajuster votre recherche ou filtre.",
+      "noSubscriptions": "Vous n'êtes encore abonné à aucun produit de données.",
+      "browseToSubscribe": "Parcourez l'onglet Explorer pour trouver des produits auxquels vous abonner.",
+      "exploreProducts": "Explorer les Produits de Données",
+      "owner": "Propriétaire",
+      "unknown": "Inconnu"
+    },
+    "datasets": {
+      "available": "{{count}} dataset disponible",
+      "available_plural": "{{count}} datasets disponibles",
+      "subscribed": "{{count}} dataset abonné",
+      "subscribed_plural": "{{count}} datasets abonnés",
+      "noDatasets": "Aucun dataset trouvé.",
+      "adjustFilters": "Essayez d'ajuster votre recherche.",
+      "noSubscriptions": "Vous n'êtes encore abonné à aucun dataset.",
+      "browseToSubscribe": "Parcourez l'onglet Explorer pour trouver des datasets auxquels vous abonner.",
+      "exploreDatasets": "Explorer les Datasets",
+      "owner": "Propriétaire"
+    },
+    "modeToggle": {
+      "marketplace": "Marketplace",
+      "management": "Gestion"
+    },
+    "domainView": {
+      "pills": "Liste",
+      "graph": "Graphe"
+    },
+    "exactMatchOnly": "Correspondance exacte uniquement",
+    "selectDomainForGraph": "Sélectionnez un domaine pour voir sa hiérarchie.",
+    "domainInfo": {
+      "parentDomain": "Parent",
+      "childDomains": "{{count}} domaine enfant",
+      "childDomains_plural": "{{count}} domaines enfants"
+    },
+    "tilesPerRow": {
+      "placeholder": "Tuiles",
+      "one": "1 par ligne",
+      "two": "2 par ligne",
+      "three": "3 par ligne",
+      "four": "4 par ligne"
+    },
+    "openInDetails": "Ouvrir dans la vue détaillée"
+  }
+}

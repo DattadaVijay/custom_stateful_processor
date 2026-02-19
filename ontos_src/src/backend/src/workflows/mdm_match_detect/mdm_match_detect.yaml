@@ -1,0 +1,79 @@
+name: "MDM Match Detection"
+description: "Detect matching records between source and master datasets using configurable rules"
+format: "MULTI_TASK"
+
+environments:
+  - environment_key: "mdm-env"
+    spec:
+      dependencies:
+        - "databricks-sdk>=0.60.0"
+        - "sqlalchemy"
+        - "psycopg2-binary"
+        - "fuzzywuzzy"
+        - "python-Levenshtein"
+
+tasks:
+  - task_key: "mdm_match_detect"
+    spark_python_task:
+      python_file: "mdm_match_detect.py"
+      parameters:
+        - "--run_id"
+        - "{{job.parameters.run_id}}"
+        - "--config_id"
+        - "{{job.parameters.config_id}}"
+        - "--source_link_id"
+        - "{{job.parameters.source_link_id}}"
+        - "--lakebase_instance_name"
+        - "{{job.parameters.lakebase_instance_name}}"
+        - "--postgres_host"
+        - "{{job.parameters.postgres_host}}"
+        - "--postgres_db"
+        - "{{job.parameters.postgres_db}}"
+        - "--postgres_port"
+        - "{{job.parameters.postgres_port}}"
+        - "--postgres_schema"
+        - "{{job.parameters.postgres_schema}}"
+        - "--product_name"
+        - "{{job.parameters.product_name}}"
+        - "--product_version"
+        - "{{job.parameters.product_version}}"
+    environment_key: "mdm-env"
+
+# Standard runtime parameters (defaults, overridden by configurable_parameters from UI)
+parameters:
+  run_id: ""
+  config_id: ""
+  source_link_id: ""
+  lakebase_instance_name: ""
+  postgres_host: ""
+  postgres_db: ""
+  postgres_port: "5432"
+  postgres_schema: "public"
+  product_name: "ontos"
+  product_version: "0.0.0"
+
+# Configurable parameters (managed via UI)
+configurable_parameters:
+  - name: "min_confidence_threshold"
+    type: "number"
+    default: "0.7"
+    description: "Minimum confidence score to consider a match"
+
+# Tags for organization
+tags:
+  environment: "production"
+  workflow-type: "batch"
+  owner: "ontos"
+  feature: "mdm"
+  team: "data-stewards"
+
+# Run settings
+max_concurrent_runs: 3
+timeout_seconds: 7200  # 2 hours
+
+# Email notifications for data stewards
+email_notifications:
+  on_start: []
+  on_failure: ["data-stewards@company.com"]
+  no_alert_for_skipped_runs: true
+

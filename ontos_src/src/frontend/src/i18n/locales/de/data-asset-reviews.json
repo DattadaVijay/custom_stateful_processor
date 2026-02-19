@@ -1,0 +1,68 @@
+{
+  "title": "Daten-Asset-Überprüfungen",
+  "subtitle": "Überprüfen und genehmigen Sie Daten-Assets",
+  "newReview": "Neue Überprüfung",
+  "createRequest": "Neue Daten-Asset-Überprüfungsanfrage erstellen",
+  "searchPlaceholder": "Überprüfungen suchen...",
+  "loading": "Überprüfungen werden geladen...",
+  "noRequests": "Keine Überprüfungsanfragen gefunden.",
+  "toast": {
+    "requestCreated": "Überprüfungsanfrage {{id}} erstellt.",
+    "requestDeleted": "Überprüfungsanfrage gelöscht.",
+    "deleteError": "Anfrage konnte nicht gelöscht werden.",
+    "bulkDeleted": "{{count}} Anfrage(n) gelöscht.",
+    "bulkDeleteError": "Einige Anfragen konnten nicht gelöscht werden."
+  },
+  "confirm": {
+    "deleteRequest": "Sind Sie sicher, dass Sie diese Überprüfungsanfrage löschen möchten?",
+    "bulkDelete": "Sind Sie sicher, dass Sie {{count}} ausgewählte Anfrage(n) löschen möchten?"
+  },
+  "filters": {
+    "allStatus": "Alle Status",
+    "pending": "Ausstehend",
+    "approved": "Genehmigt",
+    "rejected": "Abgelehnt"
+  },
+  "table": {
+    "requestId": "Anfrage-ID",
+    "asset": "Asset",
+    "type": "Typ",
+    "requester": "Antragsteller",
+    "reviewer": "Prüfer",
+    "status": "Status",
+    "assets": "Assets",
+    "requested": "Angefordert",
+    "created": "Erstellt",
+    "updated": "Aktualisiert",
+    "actions": "Aktionen"
+  },
+  "messages": {
+    "success": "Erfolg",
+    "error": "Fehler",
+    "approveSuccess": "Überprüfung erfolgreich genehmigt",
+    "rejectSuccess": "Überprüfung erfolgreich abgelehnt",
+    "approveError": "Fehler beim Genehmigen der Überprüfung",
+    "rejectError": "Fehler beim Ablehnen der Überprüfung"
+  },
+  "status": {
+    "pending": "Ausstehend",
+    "in_review": "In Überprüfung",
+    "approved": "Genehmigt",
+    "rejected": "Abgelehnt",
+    "cancelled": "Abgebrochen"
+  },
+  "details": {
+    "backToList": "Zurück zu Überprüfungen",
+    "approve": "Genehmigen",
+    "reject": "Ablehnen",
+    "cancel": "Überprüfung abbrechen",
+    "notFound": "Überprüfung nicht gefunden",
+    "loading": "Wird geladen...",
+    "asset": "Asset",
+    "requester": "Antragsteller",
+    "reviewer": "Prüfer",
+    "reason": "Grund",
+    "comments": "Kommentare",
+    "addComment": "Kommentar hinzufügen"
+  }
+}

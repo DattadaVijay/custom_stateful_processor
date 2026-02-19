@@ -1,0 +1,71 @@
+{
+  "title": "Data Catalog",
+  "subtitle": "Browse all columns across Unity Catalog tables and views",
+  "searchPlaceholder": "Search columns...",
+  "noResults": "No columns found",
+  "tryDifferentSearch": "Try a different search term",
+  "noTablesAccessible": "No tables accessible in Unity Catalog",
+  "showingColumns": "Showing {{count}} columns",
+  "matchingSearch": "matching",
+  
+  "columns": {
+    "label": "Label",
+    "description": "Description",
+    "columnName": "Column Name",
+    "type": "Type",
+    "tableName": "Table"
+  },
+  
+  "tabs": {
+    "overview": "Overview",
+    "dataDetails": "Data Details",
+    "lineage": "Lineage"
+  },
+  
+  "overview": {
+    "basicInfo": "Basic Information",
+    "catalog": "Catalog",
+    "schema": "Schema",
+    "owner": "Owner",
+    "type": "Type",
+    "created": "Created",
+    "updated": "Updated",
+    "storage": "Storage & Statistics",
+    "columns": "Columns",
+    "rows": "Rows",
+    "size": "Size",
+    "format": "Format",
+    "location": "Storage Location",
+    "description": "Description",
+    "tags": "Tags"
+  },
+  
+  "dataDetails": {
+    "title": "Columns",
+    "description": "Column definitions and metadata",
+    "columnName": "Column Name",
+    "type": "Type",
+    "nullable": "Nullable",
+    "description": "Description"
+  },
+  
+  "lineage": {
+    "title": "Data Lineage",
+    "description": "Visualize upstream and downstream dependencies",
+    "noLineage": "No lineage information available",
+    "noLineageHint": "This table may not have any upstream or downstream dependencies",
+    "both": "Both Directions",
+    "upstream": "Upstream Only",
+    "downstream": "Downstream Only",
+    "legend": "Legend",
+    "impactSummary": "Impact Summary",
+    "impactWarning": "Changes to this table may affect:",
+    "notifyOwners": "Owners to notify"
+  },
+  
+  "errors": {
+    "fetchFailed": "Failed to fetch data",
+    "tableNotFound": "Table not found"
+  }
+}
+

@@ -1,0 +1,89 @@
+{
+  "title": "Master Data Management",
+  "subtitle": "Definieren Sie Stammdatenverträge und verwalten Sie Entity-Matching systemübergreifend",
+  "newConfiguration": "Neue MDM-Konfiguration",
+  "configurations": "MDM-Konfigurationen",
+  "noConfigurations": "Noch keine MDM-Konfigurationen.",
+  "getStarted": "Erstellen Sie Ihre erste Konfiguration, um zu beginnen.",
+  "sources": "Quellen",
+  "lastRun": "Letzter Lauf",
+  "stats": {
+    "matchingRuns": "Matching-Läufe",
+    "totalMatches": "Gesamte Übereinstimmungen",
+    "newRecords": "Neue Datensätze",
+    "pendingReview": "Ausstehende Überprüfung"
+  },
+  "configDetails": {
+    "title": "Konfigurationsdetails",
+    "selectConfig": "Wählen Sie eine Konfiguration, um Details anzuzeigen",
+    "startMatching": "Matching starten",
+    "editRules": "MDM-Regeln bearbeiten",
+    "linkSource": "Quellvertrag verknüpfen",
+    "deleteConfig": "Konfiguration löschen"
+  },
+  "tabs": {
+    "overview": "Übersicht",
+    "sources": "Quellen",
+    "matchingRules": "Matching-Regeln",
+    "matchingRuns": "Matching-Läufe",
+    "reviewQueue": "Überprüfungs-Warteschlange"
+  },
+  "overview": {
+    "description": "Beschreibung",
+    "entityType": "Entity-Typ",
+    "goldenRecordTarget": "Golden-Record-Ziel"
+  },
+  "sourcesTab": {
+    "title": "Verknüpfte Quellen",
+    "dataContract": "Datenvertrag",
+    "keyColumn": "Schlüsselspalte",
+    "matchColumns": "Match-Spalten",
+    "noSources": "Noch keine Quellverträge verknüpft."
+  },
+  "rulesTab": {
+    "title": "Matching-Regeln",
+    "noRules": "Noch keine Matching-Regeln konfiguriert.",
+    "matchingRulesButton": "MDM-Regeln bearbeiten",
+    "description": "Konfigurieren Sie die Regeln zum Identifizieren und Abgleichen doppelter Datensätze."
+  },
+  "runsTab": {
+    "title": "Matching-Laufverlauf",
+    "runId": "Lauf-ID",
+    "status": "Status",
+    "matchesFound": "Gefundene Übereinstimmungen",
+    "newRecords": "Neue Datensätze",
+    "pendingReview": "Ausstehende Überprüfung",
+    "noRuns": "Noch keine Matching-Läufe. Starten Sie einen Matching-Job, um Ergebnisse zu sehen.",
+    "selectRun": "Wählen Sie einen Lauf, um Kandidaten anzuzeigen"
+  },
+  "candidates": {
+    "title": "Match-Kandidaten",
+    "sourceRecord": "Quelldatensatz",
+    "targetRecord": "Zieldatensatz",
+    "matchType": "Match-Typ",
+    "confidence": "Konfidenz",
+    "viewDetails": "Details anzeigen",
+    "approve": "Genehmigen",
+    "reject": "Ablehnen",
+    "mergeApproved": "Genehmigte zusammenführen",
+    "createReview": "Überprüfungsanfrage erstellen",
+    "noCandidates": "Keine Match-Kandidaten für diesen Lauf."
+  },
+  "toast": {
+    "matchingStarted": "MDM-Matching-Job gestartet",
+    "mergeCompleted": "Zusammenführung abgeschlossen",
+    "configDeleted": "Konfiguration gelöscht",
+    "sourceRemoved": "Quellverknüpfung entfernt"
+  },
+  "errors": {
+    "loadFailed": "MDM-Konfigurationen konnten nicht geladen werden",
+    "startMatchingFailed": "Matching konnte nicht gestartet werden",
+    "mergeFailed": "Zusammenführung fehlgeschlagen",
+    "deleteFailed": "Löschen fehlgeschlagen"
+  },
+  "confirm": {
+    "deleteConfig": "Möchten Sie diese MDM-Konfiguration wirklich löschen?",
+    "deleteSource": "Möchten Sie diese Quellverknüpfung wirklich entfernen?"
+  }
+}
+
