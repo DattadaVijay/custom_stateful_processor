@@ -1,5 +1,5 @@
 resources:
   apps:
     ontos_platform:
-      name: ontos-app-${bundle.target}
+      name: ontos-appv2-${bundle.target}
       source_code_path: ../ontos_src/src
